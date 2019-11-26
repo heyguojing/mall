@@ -149,8 +149,13 @@
                                 }
                             );
                             setTimeout(function(){
-                                location.href = "{:url('index/index')}";
+                                location.href = "{:url('Index/index')}";
                             },1000);
+                        }else{
+                            layer.alert(data.msg,{title:'提示',icon:2});
+                            setTimeout(function(){
+                                window.location.reload();
+                            },1000)
                         }
                     }
                 })

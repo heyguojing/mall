@@ -33,7 +33,7 @@ class Login extends Controller
 
         // 判断用户名和密码是否为空
         if((empty($username) || empty($password) || empty($code))){
-            return json(array('status' => 0,'msg' => '用户名或密码不能为空!'));
+            return json(array('status' => 0,'msg' => '用户名或密码不能为空!!!'));
         }
 
         // 判断验证码
@@ -44,12 +44,12 @@ class Login extends Controller
 
         // 密码判断以及设置session
         $get_one = $this->admin->getOne(array('username' => $username));
-        if(!empty($get_one) || $get_one['password'] == md5(md5($get_one['password']).$get_one['salt'])){
+        if(!empty($get_one) && $get_one['password'] == md5(md5($password).$get_one['salt'])){
             // 设置session
-            session('uid',$get_one['admin_id']);
-            session('username',$username);
-            session('login_time',date('Y-m-d H:i:s',time()));
-            session('login_ip',get_client_ip());
+            session::set('uid',$get_one['admin_id']);
+            session::set('username',$username);
+            session::set('login_time',date('Y-m-d H:i:s',time()));
+            session::set('login_ip',get_client_ip());
             // 更新登陆数据
             $data = array(
                 'login_time' => time(),
