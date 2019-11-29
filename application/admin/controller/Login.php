@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 use think\Controller;
 use think\captcha\Captcha;
-use think\facade\session;
+use think\facade\Session;
 class Login extends Controller
 {
     protected $admin = '';
@@ -12,7 +12,11 @@ class Login extends Controller
     }
     public function index()
     {
-        return $this->fetch();
+        if(Session::has('uid')){
+            return $this->redirect(url('index/index'));
+        }else{
+            return $this->fetch();
+        }
     }
     public function verify()
     {
