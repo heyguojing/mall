@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-11-27 17:49:26
+Date: 2019-11-29 17:58:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,4 +37,34 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1574846278', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575007533', '127.0.0.1', '0', '0');
+
+-- ----------------------------
+-- Table structure for mall_node
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_node`;
+CREATE TABLE `mall_node` (
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL COMMENT '模块 控制器 方法 英文名称',
+  `parameter` varchar(20) DEFAULT NULL COMMENT '方法中的带有参数名称',
+  `parameter_title` varchar(50) DEFAULT NULL COMMENT '方法中的带有参数值',
+  `title` varchar(50) DEFAULT NULL COMMENT '模块 控制器 方法 中文名称',
+  `status` tinyint(1) DEFAULT '0' COMMENT '节点状态 0表示关闭 1表示开启',
+  `remark` varchar(255) DEFAULT NULL COMMENT '描述',
+  `sort` smallint(6) unsigned DEFAULT NULL COMMENT '节点排序',
+  `pid` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '父级id 这个用来无限极分类',
+  `level` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '等级',
+  `is_show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '导航栏是否显示',
+  PRIMARY KEY (`id`),
+  KEY `level` (`level`),
+  KEY `pid` (`pid`),
+  KEY `status` (`status`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=117 DEFAULT CHARSET=utf8 COMMENT='节点表';
+
+-- ----------------------------
+-- Records of mall_node
+-- ----------------------------
+INSERT INTO `mall_node` VALUES ('114', 'admin', null, null, '后台admin', '1', null, '1', '0', '0', '1');
+INSERT INTO `mall_node` VALUES ('115', 'index', null, null, 'index郭', '1', null, '2', '0', '0', '1');
+INSERT INTO `mall_node` VALUES ('116', 'edit', null, null, '编辑', '1', null, '1', '0', '0', '1');
