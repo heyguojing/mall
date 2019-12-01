@@ -1,4 +1,4 @@
-<?php /*a:1:{s:56:"C:\wamp\www\mall\application\admin\view\login\index.html";i:1574760671;}*/ ?>
+<?php /*a:1:{s:56:"C:\wamp\www\mall\application\admin\view\login\index.html";i:1575213417;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -10,21 +10,11 @@
     <link rel="shortcut icon" href="/static/admin/images/favicon.ico">
     <link href="/static/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/admin/assets/css/font-awesome.min.css" />
-    <!--[if IE 7]>
-		  <link rel="stylesheet" href="/static/admin/assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
     <link rel="stylesheet" href="/static/admin/assets/css/ace.min.css" />
     <link rel="stylesheet" href="/static/admin/assets/css/ace-rtl.min.css" />
     <link rel="stylesheet" href="/static/admin/assets/css/ace-skins.min.css" />
     <link rel="stylesheet" href="/static/admin/css/style.css" />
-    <!--[if lte IE 8]>
-		  <link rel="stylesheet" href="/static/admin/assets/css/ace-ie.min.css" />
-		<![endif]-->
     <script src="/static/admin/assets/js/ace-extra.min.js"></script>
-    <!--[if lt IE 9]>
-		<script src="/static/admin/assets//static/admin/js/html5shiv.js"></script>
-		<script src="/static/admin/assets//static/admin/js/respond.min.js"></script>
-		<![endif]-->
     <script src="/static/admin/js/jquery-1.9.1.min.js"></script>
     <script src="/static/admin/assets/layer/layer.js" type="text/javascript"></script>
 </head>
