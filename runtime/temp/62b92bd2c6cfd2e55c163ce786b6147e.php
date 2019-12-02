@@ -1,4 +1,4 @@
-<?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575215912;}*/ ?>
+<?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575249575;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
