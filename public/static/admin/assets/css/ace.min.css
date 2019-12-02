@@ -2541,11 +2541,13 @@ li [class*=" icon-"],
 }
 
 .sidebar-collapse {
-    border-bottom: 1px solid #e0e0e0;
-    background-color: #f3f3f3;
+    /* border-bottom: 1px solid #e0e0e0; */
+    /* background-color: #f3f3f3; */
     text-align: center;
     padding: 3px 0;
-    position: relative;
+    position: absolute;
+    top:7px;
+    right:13px;
 }
 
 .sidebar-collapse>[class*="icon-"] {
@@ -16088,7 +16090,7 @@ th[aria-selected=true] .ui-jqgrid-sortable {
 .ace-settings-container {
     position: absolute;
     right: 0;
-    top: 50px;
+    top: 0px;
     z-index: 12;
 }
 

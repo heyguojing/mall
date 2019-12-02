@@ -16,7 +16,7 @@ use Org\Util\File;
 use think\Db;
 use Org\Util\Rule;
 
-//打印数据
+//测试打印
 if (!function_exists('p')) {
 	function p ($arr)
 	{

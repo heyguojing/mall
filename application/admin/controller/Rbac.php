@@ -9,7 +9,7 @@ class Rbac extends Common
     public function __construct()
     {
         parent::__construct();
-        $this->table = model('Rbac');
+        $this->table = model('Node');
     }
     public function index()
     {
@@ -25,6 +25,10 @@ class Rbac extends Common
      */
     public function node()
     {
+        $where['field'] = array('id','name','title','pid');
+        $page_data = $this->table->pageData($where,'range');
+        $page_data = node_merge($page_data);
+        $this->assign('page_data',$page_data);
         return $this->fetch();
     }
     /**

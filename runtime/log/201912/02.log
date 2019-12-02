@@ -577,8 +577,221 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T00:09:10+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.136312s] [吞吐率：7.34req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+[2019-12-02T10:22:21+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.065003s] [吞吐率：15.38req/s] [内存消耗：3,261.42kb] [文件加载：79]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/logout.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:21+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.045003s] [吞吐率：22.22req/s] [内存消耗：3,022.55kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T10:22:27+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.045003s] [吞吐率：22.22req/s] [内存消耗：3,028.16kb] [文件加载：74]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => '03rq',
+)
+---------------------------------------------------------------
+
+[2019-12-02T10:22:28+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.059003s] [吞吐率：16.95req/s] [内存消耗：3,065.93kb] [文件加载：77]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:28+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.062004s] [吞吐率：16.13req/s] [内存消耗：3,022.71kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T10:22:34+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.047002s] [吞吐率：21.28req/s] [内存消耗：3,028.16kb] [文件加载：74]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'yi5s',
+)
+---------------------------------------------------------------
+
+[2019-12-02T10:22:35+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.052003s] [吞吐率：19.23req/s] [内存消耗：3,065.93kb] [文件加载：77]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:35+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.059003s] [吞吐率：16.95req/s] [内存消耗：3,022.71kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T10:22:38+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.068004s] [吞吐率：14.70req/s] [内存消耗：4,280.09kb] [文件加载：79]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'omcp',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `mall_admin`  SET `login_time` = 1575253358 , `login_ip` = '127.0.0.1'  WHERE  `admin_id` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:39+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.051003s] [吞吐率：19.61req/s] [内存消耗：2,798.01kb] [文件加载：72]
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -586,12 +799,34 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
-  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:40+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.070004s] [吞吐率：14.28req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
   'referer' => 'http://www.mall.com/admin/index/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; pgv_si=s5676521472; thinkphp_show_page_trace=0|0; PHPSESSID=mst5vk0oq54uafs8caifsrqqr7',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
 )
 [ info ] [ PARAM ] array (
 )
@@ -599,8 +834,8 @@
 ) ]
 ---------------------------------------------------------------
 
-[2019-12-02T00:09:12+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
-[运行时间：0.106797s] [吞吐率：9.36req/s] [内存消耗：2,476.20kb] [文件加载：76]
+[2019-12-02T10:22:43+08:00] 127.0.0.1 GET www.mall.com/admin/index/logout.html
+[运行时间：0.062004s] [吞吐率：16.13req/s] [内存消耗：2,757.74kb] [文件加载：73]
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -608,6 +843,1648 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\success.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:46+08:00] 127.0.0.1 GET www.mall.com/admin/index/%7B&url%7D
+[运行时间：0.052003s] [吞吐率：19.23req/s] [内存消耗：2,755.38kb] [文件加载：72]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/logout.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\error.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:48+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.057004s] [吞吐率：17.54req/s] [内存消耗：3,060.69kb] [文件加载：77]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/%7B&url%7D',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:49+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.058004s] [吞吐率：17.24req/s] [内存消耗：3,022.55kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T10:22:54+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.070004s] [吞吐率：14.28req/s] [内存消耗：4,280.09kb] [文件加载：79]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'kzxo',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `mall_admin`  SET `login_time` = 1575253374 , `login_ip` = '127.0.0.1'  WHERE  `admin_id` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:55+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.050003s] [吞吐率：20.00req/s] [内存消耗：2,589.48kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:22:55+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.064004s] [吞吐率：15.62req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:23:00+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.056003s] [吞吐率：17.86req/s] [内存消耗：3,234.52kb] [文件加载：78]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\rbac\node.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:31:09+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.053003s] [吞吐率：18.87req/s] [内存消耗：2,974.16kb] [文件加载：76]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\rbac\add_node.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T10:31:10+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.048003s] [吞吐率：20.83req/s] [内存消耗：2,998.13kb] [文件加载：76]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=93vvcv5r74mjm44mtugch7smp3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\rbac\node.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:40:56+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.046003s] [吞吐率：21.74req/s] [内存消耗：2,566.46kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\error.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:40:59+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.051003s] [吞吐率：19.61req/s] [内存消耗：3,060.69kb] [文件加载：77]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:41:00+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.054003s] [吞吐率：18.52req/s] [内存消耗：3,022.55kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T11:41:03+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.046002s] [吞吐率：21.74req/s] [内存消耗：4,280.09kb] [文件加载：79]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'bul4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `mall_admin`  SET `login_time` = 1575258063 , `login_ip` = '127.0.0.1'  WHERE  `admin_id` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+
+[2019-12-02T11:41:04+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.048003s] [吞吐率：20.83req/s] [内存消耗：2,589.48kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:41:05+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.065004s] [吞吐率：15.38req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:41:08+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.064004s] [吞吐率：15.62req/s] [内存消耗：4,230.07kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->file[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T11:42:26+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.076004s] [吞吐率：13.16req/s] [内存消耗：4,230.15kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:15+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.085005s] [吞吐率：11.76req/s] [内存消耗：4,229.27kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:17+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.073004s] [吞吐率：13.70req/s] [内存消耗：4,230.15kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:19+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.048003s] [吞吐率：20.83req/s] [内存消耗：2,589.81kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:19+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.046002s] [吞吐率：21.74req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:21+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.073004s] [吞吐率：13.70req/s] [内存消耗：4,230.07kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:23+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.057003s] [吞吐率：17.54req/s] [内存消耗：2,589.88kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:23+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.065003s] [吞吐率：15.38req/s] [内存消耗：2,495.38kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T11:43:23+08:00] 127.0.0.1 GET www.mall.com/static/admin//static/admin/images/favicon.ico
+[运行时间：0.039002s] [吞吐率：25.64req/s] [内存消耗：2,057.91kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2019-12-02T11:43:27+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.064004s] [吞吐率：15.62req/s] [内存消耗：4,230.07kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=vh06pjshep6ggdam7fr65q3217',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T12:34:03+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.054003s] [吞吐率：18.52req/s] [内存消耗：2,566.46kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\error.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:34:06+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.053003s] [吞吐率：18.87req/s] [内存消耗：3,060.69kb] [文件加载：77]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:34:06+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.062003s] [吞吐率：16.13req/s] [内存消耗：3,022.55kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T12:34:09+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html?rand=0.48128327183767583
+[运行时间：0.054003s] [吞吐率：18.52req/s] [内存消耗：3,023.09kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+  'rand' => '0.48128327183767583',
+)
+---------------------------------------------------------------
+
+[2019-12-02T12:34:14+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.049003s] [吞吐率：20.41req/s] [内存消耗：3,028.16kb] [文件加载：74]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => '58ax',
+)
+---------------------------------------------------------------
+
+[2019-12-02T12:34:15+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.051002s] [吞吐率：19.61req/s] [内存消耗：3,065.93kb] [文件加载：77]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:34:15+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.066004s] [吞吐率：15.15req/s] [内存消耗：3,022.71kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T12:34:18+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.050003s] [吞吐率：20.00req/s] [内存消耗：4,280.09kb] [文件加载：79]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'xj5p',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002001s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `mall_admin`  SET `login_time` = 1575261258 , `login_ip` = '127.0.0.1'  WHERE  `admin_id` = 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T12:34:19+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.048003s] [吞吐率：20.83req/s] [内存消耗：2,589.48kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:34:20+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.065003s] [吞吐率：15.38req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:34:22+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.063004s] [吞吐率：15.87req/s] [内存消耗：4,230.09kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T12:37:23+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.055003s] [吞吐率：18.18req/s] [内存消耗：2,589.81kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:37:23+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.049003s] [吞吐率：20.41req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:37:25+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/role.html
+[运行时间：0.066004s] [吞吐率：15.15req/s] [内存消耗：3,013.04kb] [文件加载：78]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T12:37:25+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.065004s] [吞吐率：15.38req/s] [内存消耗：4,230.09kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T12:37:27+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.051003s] [吞吐率：19.61req/s] [内存消耗：2,986.39kb] [文件加载：76]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\rbac\add_node.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T12:37:35+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.052003s] [吞吐率：19.23req/s] [内存消耗：4,230.09kb] [文件加载：83]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T12:40:27+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.079005s] [吞吐率：12.66req/s] [内存消耗：4,188.96kb] [文件加载：76]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=4f8vfkcdpij7ef7vnmbs43pgih',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+
+[2019-12-02T14:51:45+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.049003s] [吞吐率：20.41req/s] [内存消耗：2,566.46kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\error.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:51:48+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.049003s] [吞吐率：20.41req/s] [内存消耗：3,060.69kb] [文件加载：77]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:51:49+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.052003s] [吞吐率：19.23req/s] [内存消耗：3,022.55kb] [文件加载：73]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:51:53+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.048003s] [吞吐率：20.83req/s] [内存消耗：4,280.09kb] [文件加载：79]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'xpta',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `mall_admin`  SET `login_time` = 1575269513 , `login_ip` = '127.0.0.1'  WHERE  `admin_id` = 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T14:51:54+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.055004s] [吞吐率：18.18req/s] [内存消耗：2,589.48kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:51:54+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.060004s] [吞吐率：16.67req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:52:25+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.045002s] [吞吐率：22.22req/s] [内存消耗：2,589.88kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:52:25+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.070004s] [吞吐率：14.28req/s] [内存消耗：2,495.38kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:52:25+08:00] 127.0.0.1 GET www.mall.com/static/admin//static/admin/images/favicon.ico
+[运行时间：0.035002s] [吞吐率：28.57req/s] [内存消耗：2,057.91kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2019-12-02T14:58:54+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/role.html
+[运行时间：0.059004s] [吞吐率：16.95req/s] [内存消耗：2,528.00kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:58:54+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.064004s] [吞吐率：15.62req/s] [内存消耗：2,528.00kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:58:57+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.062004s] [吞吐率：16.13req/s] [内存消耗：2,589.81kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:58:57+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.058004s] [吞吐率：17.24req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:58:59+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.052003s] [吞吐率：19.23req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:02+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.066004s] [吞吐率：15.15req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:06+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addrole.html
+[运行时间：0.046002s] [吞吐率：21.74req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:07+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/adduser.html
+[运行时间：0.050003s] [吞吐率：20.00req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:08+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/adduser.html
+[运行时间：0.056003s] [吞吐率：17.86req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:08+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.053003s] [吞吐率：18.87req/s] [内存消耗：2,528.00kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:28+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.047002s] [吞吐率：21.28req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:29+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.046002s] [吞吐率：21.74req/s] [内存消耗：2,589.81kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:59:29+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.042002s] [吞吐率：23.81req/s] [内存消耗：2,494.98kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:59:31+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.064004s] [吞吐率：15.62req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T14:59:34+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.049002s] [吞吐率：20.41req/s] [内存消耗：2,589.88kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:59:34+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.068004s] [吞吐率：14.71req/s] [内存消耗：2,495.38kb] [文件加载：68]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T14:59:34+08:00] 127.0.0.1 GET www.mall.com/static/admin//static/admin/images/favicon.ico
+[运行时间：0.038002s] [吞吐率：26.31req/s] [内存消耗：2,057.91kb] [文件加载：59]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+
+[2019-12-02T14:59:36+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.048003s] [吞吐率：20.83req/s] [内存消耗：2,528.01kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T15:00:44+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.047003s] [吞吐率：21.28req/s] [内存消耗：2,589.81kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T15:00:44+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.061003s] [吞吐率：16.39req/s] [内存消耗：2,494.98kb] [文件加载：68]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; pgv_si=s5676521472; thinkphp_show_page_trace=0|0; PHPSESSID=mst5vk0oq54uafs8caifsrqqr7',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\copy.html [ array (
+) ]
+---------------------------------------------------------------
+
+<<<<<<< HEAD
+[2019-12-02T00:09:12+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.106797s] [吞吐率：9.36req/s] [内存消耗：2,476.20kb] [文件加载：76]
+=======
+[2019-12-02T15:00:46+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.053003s] [吞吐率：18.87req/s] [内存消耗：2,986.38kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/copy.html',
@@ -623,6 +2500,23 @@
 
 [2019-12-02T00:09:13+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
 [运行时间：0.106774s] [吞吐率：9.37req/s] [内存消耗：2,476.20kb] [文件加载：76]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\rbac\add_node.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T15:00:47+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.069004s] [吞吐率：14.49req/s] [内存消耗：4,230.07kb] [文件加载：83]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -630,6 +2524,7 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/copy.html',
@@ -645,6 +2540,23 @@
 
 [2019-12-02T00:09:14+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.148271s] [吞吐率：6.74req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ error ] [0]method not exist:think\db\Query->filed[C:\wamp\www\mall\thinkphp\library\think\db\Query.php:180]
+---------------------------------------------------------------
+
+[2019-12-02T15:03:08+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.068004s] [吞吐率：14.71req/s] [内存消耗：4,182.87kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -652,6 +2564,7 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/index.html',
@@ -667,12 +2580,32 @@
 
 [2019-12-02T00:09:14+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.104150s] [吞吐率：9.60req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`level` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:08:52+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.061003s] [吞吐率：16.39req/s] [内存消耗：4,183.24kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -689,12 +2622,34 @@
 
 [2019-12-02T00:09:15+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/%7B&url%7D
 [运行时间：0.152212s] [吞吐率：6.57req/s] [内存消耗：2,474.38kb] [文件加载：78]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`level` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:09:30+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.067004s] [吞吐率：14.92req/s] [内存消耗：4,189.26kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -709,12 +2664,34 @@
 
 [2019-12-02T00:09:15+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.106582s] [吞吐率：9.38req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:10:48+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.073004s] [吞吐率：13.70req/s] [内存消耗：4,189.35kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -731,12 +2708,34 @@
 
 [2019-12-02T00:09:16+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.136807s] [吞吐率：7.31req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:11:10+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.071004s] [吞吐率：14.08req/s] [内存消耗：4,189.34kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -753,12 +2752,34 @@
 
 [2019-12-02T00:09:17+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
 [运行时间：0.157490s] [吞吐率：6.35req/s] [内存消耗：2,476.20kb] [文件加载：76]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:11:25+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.072004s] [吞吐率：13.89req/s] [内存消耗：4,189.34kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -775,6 +2796,55 @@
 
 [2019-12-02T00:09:20+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
 [运行时间：0.115370s] [吞吐率：8.67req/s] [内存消耗：2,476.20kb] [文件加载：76]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=hucpsb3ums0n9i9ps6cql25o0h',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:24:08+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.050002s] [吞吐率：20.00req/s] [内存消耗：2,574.66kb] [文件加载：70]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\error.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T15:24:11+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.068004s] [吞吐率：14.70req/s] [内存消耗：3,060.69kb] [文件加载：77]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -782,6 +2852,7 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/copy.html',
@@ -797,12 +2868,80 @@
 
 [2019-12-02T00:09:22+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
 [运行时间：0.097988s] [吞吐率：10.21req/s] [内存消耗：2,183.10kb] [文件加载：70]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/rbac/node.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T15:24:12+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.065004s] [吞吐率：15.38req/s] [内存消耗：3,022.55kb] [文件加载：73]
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T15:24:17+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.065004s] [吞吐率：15.38req/s] [内存消耗：4,280.09kb] [文件加载：79]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://www.mall.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => 'qi4l',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `mall_admin`  SET `login_time` = 1575271457 , `login_ip` = '127.0.0.1'  WHERE  `admin_id` = 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:24:18+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.053003s] [吞吐率：18.87req/s] [内存消耗：2,589.48kb] [文件加载：70]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+<<<<<<< HEAD
   'cache-control' => 'max-age=0',
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
@@ -811,6 +2950,15 @@
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; pgv_si=s5676521472; thinkphp_show_page_trace=0|0; PHPSESSID=mst5vk0oq54uafs8caifsrqqr7',
+=======
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -818,8 +2966,13 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T00:09:22+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.222003s] [吞吐率：4.50req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+[2019-12-02T15:24:18+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.056003s] [吞吐率：17.86req/s] [内存消耗：2,494.98kb] [文件加载：68]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -827,12 +2980,21 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; pgv_si=s5676521472; thinkphp_show_page_trace=0|0; PHPSESSID=mst5vk0oq54uafs8caifsrqqr7',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -840,14 +3002,20 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T00:09:25+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
 [运行时间：0.093215s] [吞吐率：10.73req/s] [内存消耗：2,452.23kb] [文件加载：76]
+=======
+[2019-12-02T15:24:20+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.040002s] [吞吐率：25.00req/s] [内存消耗：2,589.81kb] [文件加载：70]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -864,6 +3032,25 @@
 
 [2019-12-02T00:09:26+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.116106s] [吞吐率：8.61req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T15:24:20+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.052003s] [吞吐率：19.23req/s] [内存消耗：2,494.98kb] [文件加载：68]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -871,12 +3058,21 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; pgv_si=s5676521472; thinkphp_show_page_trace=0|0; PHPSESSID=mst5vk0oq54uafs8caifsrqqr7',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -884,14 +3080,20 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T00:09:28+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
 [运行时间：0.151054s] [吞吐率：6.62req/s] [内存消耗：2,452.23kb] [文件加载：76]
+=======
+[2019-12-02T15:24:44+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.046002s] [吞吐率：21.74req/s] [内存消耗：2,589.81kb] [文件加载：70]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -908,6 +3110,25 @@
 
 [2019-12-02T00:09:29+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.097151s] [吞吐率：10.29req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\index\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T15:24:44+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.051003s] [吞吐率：19.61req/s] [内存消耗：2,494.98kb] [文件加载：68]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -915,12 +3136,21 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; pgv_si=s5676521472; thinkphp_show_page_trace=0|0; PHPSESSID=mst5vk0oq54uafs8caifsrqqr7',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -928,8 +3158,13 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T00:09:30+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
 [运行时间：0.110613s] [吞吐率：9.04req/s] [内存消耗：2,452.23kb] [文件加载：76]
+=======
+[2019-12-02T15:24:50+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.057003s] [吞吐率：17.54req/s] [内存消耗：4,183.16kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -937,6 +3172,7 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/copy.html',
@@ -952,12 +3188,32 @@
 
 [2019-12-02T00:09:31+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.106796s] [吞吐率：9.36req/s] [内存消耗：2,094.46kb] [文件加载：68]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`level` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:27:19+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.068004s] [吞吐率：14.70req/s] [内存消耗：4,182.95kb] [文件加载：76]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -974,18 +3230,75 @@
 
 [2019-12-02T20:47:20+08:00] 127.0.0.1 GET www.mall.com/admin
 [运行时间：0.171461s] [吞吐率：5.83req/s] [内存消耗：2,159.48kb] [文件加载：70]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`level` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:30:24+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.064003s] [吞吐率：15.62req/s] [内存消耗：4,182.93kb] [文件加载：76]
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8dua1mv73553foqqjlncqa1e6c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:55:09+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.050003s] [吞吐率：20.00req/s] [内存消耗：2,575.04kb] [文件加载：71]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'pgv_pvi=7600446464',
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -998,8 +3311,13 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T20:47:23+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
 [运行时间：0.180606s] [吞吐率：5.54req/s] [内存消耗：2,537.20kb] [文件加载：77]
+=======
+[2019-12-02T15:55:12+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.059004s] [吞吐率：16.95req/s] [内存消耗：3,065.36kb] [文件加载：78]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -1007,12 +3325,21 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'pgv_pvi=7600446464; PHPSESSID=agaut9lap1phamfj0h5turpci2; thinkphp_show_page_trace=0|0',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/rbac/node.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -1020,27 +3347,45 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T20:47:24+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
 [运行时间：0.382759s] [吞吐率：2.61req/s] [内存消耗：2,493.45kb] [文件加载：73]
+=======
+[2019-12-02T15:55:12+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.065004s] [吞吐率：15.38req/s] [内存消耗：3,023.23kb] [文件加载：74]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
   'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/login/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+<<<<<<< HEAD
   'cookie' => 'pgv_pvi=7600446464; PHPSESSID=agaut9lap1phamfj0h5turpci2; thinkphp_show_page_trace=0|0',
+=======
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T20:47:29+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
 [运行时间：0.105456s] [吞吐率：9.48req/s] [内存消耗：3,580.32kb] [文件加载：79]
+=======
+[2019-12-02T15:55:18+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
+[运行时间：0.059003s] [吞吐率：16.95req/s] [内存消耗：4,280.76kb] [文件加载：80]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -1051,16 +3396,25 @@
   'accept' => 'application/json, text/javascript, */*; q=0.01',
   'origin' => 'http://www.mall.com',
   'x-requested-with' => 'XMLHttpRequest',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
   'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
   'referer' => 'http://www.mall.com/admin/login/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+<<<<<<< HEAD
   'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; PHPSESSID=agaut9lap1phamfj0h5turpci2; thinkphp_show_page_trace=0|0',
+=======
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
   'username' => 'admin',
   'password' => '123456',
+<<<<<<< HEAD
   'code' => 'fz6q',
 )
 [ info ] [ DB ] INIT mysql
@@ -1072,6 +3426,19 @@
 
 [2019-12-02T20:47:30+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
 [运行时间：0.111767s] [吞吐率：8.95req/s] [内存消耗：2,182.59kb] [文件加载：70]
+=======
+  'code' => 'xor6',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_admin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `mall_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `mall_admin`  SET `login_time` = 1575273318 , `login_ip` = '127.0.0.1'  WHERE  `admin_id` = 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:55:19+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.057004s] [吞吐率：17.54req/s] [内存消耗：2,590.16kb] [文件加载：71]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -1079,12 +3446,21 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/login/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'pgv_pvi=7600446464; PHPSESSID=agaut9lap1phamfj0h5turpci2; thinkphp_show_page_trace=0|0',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -1092,8 +3468,13 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T20:47:30+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.223431s] [吞吐率：4.48req/s] [内存消耗：2,094.01kb] [文件加载：68]
+=======
+[2019-12-02T15:55:19+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.063004s] [吞吐率：15.87req/s] [内存消耗：2,495.66kb] [文件加载：69]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -1101,12 +3482,21 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/index.html',
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'pgv_pvi=7600446464; PHPSESSID=agaut9lap1phamfj0h5turpci2; thinkphp_show_page_trace=0|0',
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -1114,6 +3504,7 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T20:47:31+08:00] 127.0.0.1 GET www.mall.com/static/admin//static/admin/images/favicon.ico
 [运行时间：0.072638s] [吞吐率：13.77req/s] [内存消耗：1,730.82kb] [文件加载：59]
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
@@ -1121,12 +3512,17 @@
 
 [2019-12-02T20:49:51+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
 [运行时间：0.105730s] [吞吐率：9.46req/s] [内存消耗：2,183.13kb] [文件加载：70]
+=======
+[2019-12-02T15:55:22+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.039002s] [吞吐率：25.64req/s] [内存消耗：2,590.48kb] [文件加载：71]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'pragma' => 'no-cache',
   'cache-control' => 'no-cache',
   'upgrade-insecure-requests' => '1',
@@ -1136,6 +3532,16 @@
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; PHPSESSID=agaut9lap1phamfj0h5turpci2; thinkphp_show_page_trace=0|0',
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -1143,14 +3549,20 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T20:49:51+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.162182s] [吞吐率：6.17req/s] [内存消耗：2,094.55kb] [文件加载：68]
+=======
+[2019-12-02T15:55:22+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
+[运行时间：0.050003s] [吞吐率：20.00req/s] [内存消耗：2,495.66kb] [文件加载：69]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'pragma' => 'no-cache',
   'cache-control' => 'no-cache',
   'upgrade-insecure-requests' => '1',
@@ -1160,6 +3572,15 @@
   'accept-encoding' => 'gzip, deflate',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
   'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=7600446464; PHPSESSID=agaut9lap1phamfj0h5turpci2; thinkphp_show_page_trace=0|0',
+=======
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 )
 [ info ] [ PARAM ] array (
 )
@@ -1167,6 +3588,7 @@
 ) ]
 ---------------------------------------------------------------
 
+<<<<<<< HEAD
 [2019-12-02T20:49:52+08:00] 127.0.0.1 GET www.mall.com/static/admin//static/admin/images/favicon.ico
 [运行时间：0.085388s] [吞吐率：11.71req/s] [内存消耗：1,731.16kb] [文件加载：59]
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
@@ -1174,12 +3596,17 @@
 
 [2019-12-02T20:49:59+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
 [运行时间：0.094478s] [吞吐率：10.58req/s] [内存消耗：2,183.13kb] [文件加载：70]
+=======
+[2019-12-02T15:55:26+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.054003s] [吞吐率：18.52req/s] [内存消耗：4,181.57kb] [文件加载：77]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'pragma' => 'no-cache',
   'cache-control' => 'no-cache',
   'upgrade-insecure-requests' => '1',
@@ -1198,12 +3625,33 @@
 
 [2019-12-02T20:50:00+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.183473s] [吞吐率：5.45req/s] [内存消耗：2,094.55kb] [文件加载：68]
+=======
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:55:28+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/addnode.html
+[运行时间：0.054003s] [吞吐率：18.52req/s] [内存消耗：2,987.05kb] [文件加载：77]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'pragma' => 'no-cache',
   'cache-control' => 'no-cache',
   'upgrade-insecure-requests' => '1',
@@ -1227,12 +3675,31 @@
 
 [2019-12-02T20:50:02+08:00] 127.0.0.1 GET www.mall.com/admin/index/logout.html
 [运行时间：0.112161s] [吞吐率：8.92req/s] [内存消耗：2,162.64kb] [文件加载：71]
+=======
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\rbac\add_node.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T15:55:37+08:00] 127.0.0.1 POST www.mall.com/admin/rbac/addnode.html
+[运行时间：0.063003s] [吞吐率：15.87req/s] [内存消耗：4,375.66kb] [文件加载：87]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -1243,6 +3710,28 @@
 )
 [ info ] [ PARAM ] array (
 )
+=======
+  'content-length' => '61',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://www.mall.com',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/rbac/addnode.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'admin',
+  'title' => '后台',
+  'status' => '1',
+  'is_show' => '1',
+  'sort' => '1',
+)
+[ info ] [ DB ] INIT mysql
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\success.html [ array (
   0 => 'code',
   1 => 'msg',
@@ -1250,10 +3739,22 @@
   3 => 'url',
   4 => 'wait',
 ) ]
+<<<<<<< HEAD
 ---------------------------------------------------------------
 
 [2019-12-02T20:50:06+08:00] 127.0.0.1 GET www.mall.com/admin/index/%7B&url%7D
 [运行时间：0.084076s] [吞吐率：11.89req/s] [内存消耗：2,160.45kb] [文件加载：70]
+=======
+[ error ] [8]Use of undefined constant intval - assumed 'intval'[C:\wamp\www\mall\application\admin\controller\Rbac.php:57]
+[ error ] [8]Use of undefined constant intval - assumed 'intval'[C:\wamp\www\mall\application\admin\controller\Rbac.php:59]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002001s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] INSERT INTO `mall_node` (`name` , `title` , `status` , `is_show` , `sort`) VALUES ('admin' , '后台' , 1 , 1 , 1) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:55:40+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/%7B&url%7D
+[运行时间：0.053004s] [吞吐率：18.87req/s] [内存消耗：3,013.64kb] [文件加载：79]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -1261,6 +3762,7 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/logout.html',
@@ -1281,6 +3783,21 @@
 
 [2019-12-02T20:50:06+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
 [运行时间：0.089395s] [吞吐率：11.19req/s] [内存消耗：2,537.52kb] [文件加载：77]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/rbac/addnode.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T15:55:47+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/adduser.html
+[运行时间：0.051003s] [吞吐率：19.61req/s] [内存消耗：3,013.70kb] [文件加载：79]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -1288,6 +3805,7 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/%7B&url%7D',
@@ -1303,12 +3821,28 @@
 
 [2019-12-02T20:50:06+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
 [运行时间：0.211242s] [吞吐率：4.73req/s] [内存消耗：2,493.50kb] [文件加载：73]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-02T15:55:48+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.058003s] [吞吐率：17.24req/s] [内存消耗：4,182.43kb] [文件加载：77]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/login/index.html',
@@ -1322,12 +3856,33 @@
 
 [2019-12-02T20:50:09+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html?rand=0.6513158368811955
 [运行时间：0.068359s] [吞吐率：14.63req/s] [内存消耗：2,493.95kb] [文件加载：73]
+=======
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T15:55:50+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.074005s] [吞吐率：13.51req/s] [内存消耗：4,182.51kb] [文件加载：77]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/login/index.html',
@@ -1342,12 +3897,34 @@
 
 [2019-12-02T20:50:13+08:00] 127.0.0.1 POST www.mall.com/admin/login/login.html
 [运行时间：0.078749s] [吞吐率：12.70req/s] [内存消耗：3,580.32kb] [文件加载：79]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.001001s ]
+---------------------------------------------------------------
+
+[2019-12-02T16:22:24+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.076005s] [吞吐率：13.16req/s] [内存消耗：4,305.40kb] [文件加载：84]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'content-length' => '40',
   'accept' => 'application/json, text/javascript, */*; q=0.01',
   'origin' => 'http://www.mall.com',
@@ -1373,12 +3950,35 @@
 
 [2019-12-02T20:50:14+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
 [运行时间：0.083565s] [吞吐率：11.97req/s] [内存消耗：2,182.88kb] [文件加载：70]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.001000s ]
+[ error ] [0]致命错误: Call to undefined function app\admin\controller\node_merger()[C:\wamp\www\mall\application\admin\controller\Rbac.php:30]
+---------------------------------------------------------------
+
+[2019-12-02T16:22:38+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.064004s] [吞吐率：15.62req/s] [内存消耗：4,305.39kb] [文件加载：84]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -1395,12 +3995,35 @@
 
 [2019-12-02T20:50:14+08:00] 127.0.0.1 GET www.mall.com/admin/index/copy.html
 [运行时间：0.154597s] [吞吐率：6.47req/s] [内存消耗：2,094.30kb] [文件加载：68]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+[ error ] [0]致命错误: Call to undefined function app\admin\controller\node_merge()[C:\wamp\www\mall\application\admin\controller\Rbac.php:30]
+---------------------------------------------------------------
+
+[2019-12-02T16:23:04+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.058003s] [吞吐率：17.24req/s] [内存消耗：4,185.02kb] [文件加载：77]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -1417,12 +4040,34 @@
 
 [2019-12-02T20:50:18+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/role.html
 [运行时间：0.090961s] [吞吐率：10.99req/s] [内存消耗：2,473.98kb] [文件加载：78]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T16:23:18+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
+[运行时间：0.070004s] [吞吐率：14.28req/s] [内存消耗：4,185.02kb] [文件加载：77]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
 [ info ] [ HEADER ] array (
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
+<<<<<<< HEAD
   'upgrade-insecure-requests' => '1',
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -1437,6 +4082,55 @@
 
 [2019-12-02T20:50:19+08:00] 127.0.0.1 GET www.mall.com/admin/rbac/node.html
 [运行时间：0.094613s] [吞吐率：10.57req/s] [内存消耗：2,476.05kb] [文件加载：76]
+=======
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=8j2ocbgf9gb626qqdrtarq4jtb',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=localhost;dbname=mall;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mall_node` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`pid` FROM `mall_node` ORDER BY `id` ASC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+
+[2019-12-02T16:58:43+08:00] 127.0.0.1 GET www.mall.com/admin/index/index.html
+[运行时间：0.073004s] [吞吐率：13.70req/s] [内存消耗：2,569.24kb] [文件加载：71]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ace.settings=%7B%22navbar-fixed%22%3A1%2C%22main-container-fixed%22%3A-1%2C%22sidebar-fixed%22%3A1%2C%22sidebar-collapsed%22%3A-1%7D; pgv_pvi=2395768832',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\common\error.html [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T16:58:46+08:00] 127.0.0.1 GET www.mall.com/admin/login/index.html
+[运行时间：0.060003s] [吞吐率：16.67req/s] [内存消耗：3,067.47kb] [文件加载：78]
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287
 [ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
 [ info ] [ ROUTE ] array (
 )
@@ -1444,6 +4138,7 @@
   'host' => 'www.mall.com',
   'connection' => 'keep-alive',
   'upgrade-insecure-requests' => '1',
+<<<<<<< HEAD
   'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
   'referer' => 'http://www.mall.com/admin/index/index.html',
@@ -1455,3 +4150,35 @@
 )
 [ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\rbac\node.html [ array (
 ) ]
+=======
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://www.mall.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=t4uaolicuusnlbim4iq0qhme2i',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] C:\wamp\www\mall\application\admin\view\login\index.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2019-12-02T16:58:46+08:00] 127.0.0.1 GET www.mall.com/admin/login/verify.html
+[运行时间：0.091005s] [吞吐率：10.99req/s] [内存消耗：3,025.34kb] [文件加载：74]
+[ info ] [ LANG ] C:\wamp\www\mall\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mall.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.mall.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; pgv_pvi=2395768832; PHPSESSID=t4uaolicuusnlbim4iq0qhme2i',
+)
+[ info ] [ PARAM ] array (
+)
+>>>>>>> ad6d6bb62a59447eec7c653ee85c6b5cbbbc3287

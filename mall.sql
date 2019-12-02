@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-11-29 17:58:53
+Date: 2019-12-02 17:53:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575007533', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575273318', '127.0.0.1', '0', '0');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -60,11 +60,9 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=117 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
 -- ----------------------------
-INSERT INTO `mall_node` VALUES ('114', 'admin', null, null, '后台admin', '1', null, '1', '0', '0', '1');
-INSERT INTO `mall_node` VALUES ('115', 'index', null, null, 'index郭', '1', null, '2', '0', '0', '1');
-INSERT INTO `mall_node` VALUES ('116', 'edit', null, null, '编辑', '1', null, '1', '0', '0', '1');
+INSERT INTO `mall_node` VALUES ('1', 'admin', null, null, '后台', '1', null, '1', '0', '0', '1');
