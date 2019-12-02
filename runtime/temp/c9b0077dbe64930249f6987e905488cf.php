@@ -1,4 +1,4 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575203306;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575293030;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -81,7 +81,9 @@
                 </div>
             </div>
             <div class="Operate_cont clearfix">
-                     <input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
+                <input type="hidden" name="level" value="<?php echo htmlentities($level); ?>">
+                <input type="hidden" name="pid" value="<?php echo htmlentities($pid); ?>">
+                <input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
             </div>
         </form>
     </div>

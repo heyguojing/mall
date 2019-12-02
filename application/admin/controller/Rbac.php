@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use think\Db;
-use think\Request;
+use think\facade\Request;
 use think\facade\Session;
 class Rbac extends Common
 {
@@ -38,13 +38,19 @@ class Rbac extends Common
     {
         if($this->request->isPost()){
             $data = $this->postNodeData();
+            $data['pid'] = input('pid',0,'intval');
+            $data['level'] = input('level',0,'intval');
             $res = $this->table->addData($data);
             if($res){
-                return $this->success('当前节点：'.$data['title'].'添加成功','Rbac/node',5);
+                return $this->success('当前节点：'.$data['title'].'添加成功','Rbac/node');
             }else{
-                return $this->error('添加失败','');
+                return $this->error('添加失败','Rbac/addNode');
             }
         }else{
+            $level = input('level',0,'intval');
+            $pid = input('pid',0,'intval');
+            $this->assign('level',$level);
+            $this->assign('pid',$pid);
             return $this->fetch();
         }
     }
