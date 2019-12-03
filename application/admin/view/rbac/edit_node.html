@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>节点添加</title>
+    <title>节点编辑</title>
     <link href="__ADMIN__/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="__ADMIN__/css/style.css" />
     <link rel="stylesheet" href="__ADMIN__/assets/css/ace.min.css" />
@@ -23,7 +23,7 @@
                 </li>
                 <li class="uline">/</li>
                 <li>
-                    <a class="active" href="javascript:;">添加{$type}</a>
+                    <a class="active" href="javascript:;">编辑{$type}</a>
                 </li>
             </ul>
        </div>
@@ -31,14 +31,14 @@
             <div class="Operate_cont clearfix">
                 <label class="form-label">{$type}名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="name" datatype="*" nullmsg="{$type}名称不能为空！">
+                    <input type="text" class="input-text" value="{$editdata.name}" placeholder=""  name="name" datatype="*" nullmsg="{$type}名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">{$type}描述：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="title" datatype="*" nullmsg="{$type}描述不能为空！">
+                    <input type="text" class="input-text" value="{$editdata['title']}" placeholder=""  name="title" datatype="*" nullmsg="{$type}描述不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
@@ -60,10 +60,10 @@
                 <label class="form-label text-inline">状态：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="status" value="1" checked>显示
+                        <input type="radio" name="status" value="1" <if condition="$editdata['status'] eq 1"> checked </if> >显示
                     </label>
                     <label for="">
-                        <input type="radio" name="status" value="0">隐藏
+                        <input type="radio" name="status" value="0" <if condition="$editdata['status'] eq 0"> checked </if> >隐藏
                     </label>
                 </div>
             </div>
@@ -71,17 +71,17 @@
                 <label class="form-label text-inline">是否显示在菜单栏：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="is_show" value="1" checked>显示
+                        <input type="radio" name="is_show" value="1" <if condition="$editdata['is_show'] eq 1"> checked </if> >显示
                     </label>
                     <label for="">
-                        <input type="radio" name="is_show" value="">隐藏
+                        <input type="radio" name="is_show" value="0" <if condition="$editdata['is_show'] eq 0"> checked </if> >隐藏
                     </label>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">排序：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="sort" datatype="*" nullmsg="排序名称不能为空！">
+                    <input type="text" class="input-text" value="{$editdata['sort']}" placeholder=""  name="sort" datatype="*" nullmsg="排序名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>            

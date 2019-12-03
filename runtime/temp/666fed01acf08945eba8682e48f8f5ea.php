@@ -1,17 +1,18 @@
+<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\rbac\edit_node.html";i:1575387539;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>节点添加</title>
-    <link href="__ADMIN__/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="__ADMIN__/css/style.css" />
-    <link rel="stylesheet" href="__ADMIN__/assets/css/ace.min.css" />
-    <link rel="stylesheet" href="__ADMIN__/assets/css/font-awesome.min.css" />
-    <link href="__ADMIN__/Widget/icheck/icheck.css" rel="stylesheet" type="text/css" />
-    <script src="__ADMIN__/js/jquery-1.9.1.min.js"></script>
-    <script src="__ADMIN__/assets/js/bootstrap.min.js"></script>
+    <title>节点编辑</title>
+    <link href="/static/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/admin/css/style.css" />
+    <link rel="stylesheet" href="/static/admin/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="/static/admin/assets/css/font-awesome.min.css" />
+    <link href="/static/admin/Widget/icheck/icheck.css" rel="stylesheet" type="text/css" />
+    <script src="/static/admin/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/admin/assets/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -19,40 +20,40 @@
         <div class="crumbs">
             <ul>
                 <li>
-                    <a href="index.html">{$type}管理</a>
+                    <a href="index.html"><?php echo htmlentities($type); ?>管理</a>
                 </li>
                 <li class="uline">/</li>
                 <li>
-                    <a class="active" href="javascript:;">添加{$type}</a>
+                    <a class="active" href="javascript:;">编辑<?php echo htmlentities($type); ?></a>
                 </li>
             </ul>
        </div>
         <form action="" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
-                <label class="form-label">{$type}名称：</label>
+                <label class="form-label"><?php echo htmlentities($type); ?>名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="name" datatype="*" nullmsg="{$type}名称不能为空！">
+                    <input type="text" class="input-text" value="<?php echo htmlentities($editdata['name']); ?>" placeholder=""  name="name" datatype="*" nullmsg="<?php echo htmlentities($type); ?>名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
-                <label class="form-label">{$type}描述：</label>
+                <label class="form-label"><?php echo htmlentities($type); ?>描述：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="title" datatype="*" nullmsg="{$type}描述不能为空！">
+                    <input type="text" class="input-text" value="<?php echo htmlentities($editdata['title']); ?>" placeholder=""  name="title" datatype="*" nullmsg="<?php echo htmlentities($type); ?>描述不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <if condition="$parameter eq 1">
             <div class="Operate_cont clearfix">
-                <label class="form-label">{$type}参数名：</label>
+                <label class="form-label"><?php echo htmlentities($type); ?>参数名：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" name="{$parameter}" placeholder="">
+                    <input type="text" class="input-text" value="" name="<?php echo htmlentities($parameter); ?>" placeholder="">
                 </div>
             </div>
             <div class="Operate_cont clearfix">
-                <label class="form-label">{$type}参数值：</label>
+                <label class="form-label"><?php echo htmlentities($type); ?>参数值：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" name="{$parameter_title}" placeholder="">
+                    <input type="text" class="input-text" value="" name="<?php echo htmlentities($parameter_title); ?>" placeholder="">
                 </div>
             </div>
             </if>
@@ -60,10 +61,10 @@
                 <label class="form-label text-inline">状态：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="status" value="1" checked>显示
+                        <input type="radio" name="status" value="1" <if condition="$editdata['status'] eq 1"> checked </if> >显示
                     </label>
                     <label for="">
-                        <input type="radio" name="status" value="0">隐藏
+                        <input type="radio" name="status" value="0" <if condition="$editdata['status'] eq 0"> checked </if> >隐藏
                     </label>
                 </div>
             </div>
@@ -71,29 +72,29 @@
                 <label class="form-label text-inline">是否显示在菜单栏：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="is_show" value="1" checked>显示
+                        <input type="radio" name="is_show" value="1" <if condition="$editdata['is_show'] eq 1"> checked </if> >显示
                     </label>
                     <label for="">
-                        <input type="radio" name="is_show" value="">隐藏
+                        <input type="radio" name="is_show" value="0" <if condition="$editdata['is_show'] eq 0"> checked </if> >隐藏
                     </label>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">排序：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="sort" datatype="*" nullmsg="排序名称不能为空！">
+                    <input type="text" class="input-text" value="<?php echo htmlentities($editdata['sort']); ?>" placeholder=""  name="sort" datatype="*" nullmsg="排序名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>            
             <div class="Operate_cont clearfix">
-                <input type="hidden" name="level" value="{$level}">
-                <input type="hidden" name="pid" value="{$pid}">
+                <input type="hidden" name="level" value="<?php echo htmlentities($level); ?>">
+                <input type="hidden" name="pid" value="<?php echo htmlentities($pid); ?>">
                 <input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
             </div>
         </form>
     </div>
 
-    <script type="text/javascript" src="__ADMIN__/Widget/Validform/5.3.2/Validform.min.js"></script>
+    <script type="text/javascript" src="/static/admin/Widget/Validform/5.3.2/Validform.min.js"></script>
     <script type="text/javascript">
          $(function() {
             //表单验证

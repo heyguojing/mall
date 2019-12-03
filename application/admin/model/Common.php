@@ -18,7 +18,7 @@ class Common extends Model
         return Db::name($this->table)->data($data)->insert();
     }
     /**
-     * 更行数据
+     * 更新数据
      */
     public function saveData($where = array(),$data = array())
     {

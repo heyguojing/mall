@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\node.html";i:1575300564;}*/ ?>
-=======
-<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\node.html";i:1575335162;}*/ ?>
->>>>>>> 83002a61b142ea2c151b293e3cdba29382d4ce64
 <!DOCTYPE html>
 <html lang="en">
 

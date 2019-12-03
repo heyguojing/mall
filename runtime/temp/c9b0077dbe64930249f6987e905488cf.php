@@ -1,11 +1,11 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575335541;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575387081;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>添加产品分类</title>
+    <title>节点添加</title>
     <link href="/static/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/admin/css/style.css" />
     <link rel="stylesheet" href="/static/admin/assets/css/ace.min.css" />
@@ -20,29 +20,43 @@
         <div class="crumbs">
             <ul>
                 <li>
-                    <a href="index.html">产品分类管理</a>
+                    <a href="index.html"><?php echo htmlentities($type); ?>管理</a>
                 </li>
                 <li class="uline">/</li>
                 <li>
-                    <a class="active" href="javascript:;">产品分类</a>
+                    <a class="active" href="javascript:;">添加<?php echo htmlentities($type); ?></a>
                 </li>
             </ul>
        </div>
         <form action="" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
-                <label class="form-label">节点名称：</label>
+                <label class="form-label"><?php echo htmlentities($type); ?>名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="name" datatype="*" nullmsg="节点名称不能为空！">
+                    <input type="text" class="input-text" value="" placeholder=""  name="name" datatype="*" nullmsg="<?php echo htmlentities($type); ?>名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
-                <label class="form-label">中文名称：</label>
+                <label class="form-label"><?php echo htmlentities($type); ?>描述：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="title" datatype="*" nullmsg="中文名称不能为空！">
+                    <input type="text" class="input-text" value="" placeholder=""  name="title" datatype="*" nullmsg="<?php echo htmlentities($type); ?>描述不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
+            <if condition="$parameter eq 1">
+            <div class="Operate_cont clearfix">
+                <label class="form-label"><?php echo htmlentities($type); ?>参数名：</label>
+                <div class="formControls ">
+                    <input type="text" class="input-text" value="" name="<?php echo htmlentities($parameter); ?>" placeholder="">
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label"><?php echo htmlentities($type); ?>参数值：</label>
+                <div class="formControls ">
+                    <input type="text" class="input-text" value="" name="<?php echo htmlentities($parameter_title); ?>" placeholder="">
+                </div>
+            </div>
+            </if>
             <div class="Operate_cont clearfix">
                 <label class="form-label text-inline">状态：</label>
                 <div class="formControls form-inline">
@@ -50,7 +64,7 @@
                         <input type="radio" name="status" value="1" checked>显示
                     </label>
                     <label for="">
-                        <input type="radio" name="status" value="">隐藏
+                        <input type="radio" name="status" value="0">隐藏
                     </label>
                 </div>
             </div>
@@ -72,14 +86,6 @@
                     <span class="Validform_checktip"></span>
                 </div>
             </div>            
-            <!-- <div class="Operate_cont clearfix">
-                <label class="form-label">备注：</label>
-                <div class="formControls">
-                    <textarea name="" rows="" class="textarea" placeholder="说点什么...最少输入10个字符"  onKeyUp="textarealength(this,100)" datatype="*" nullmsg="备注不能为空！"></textarea>
-                    <span class="Validform_checktip"></span>
-                    <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-                </div>
-            </div> -->
             <div class="Operate_cont clearfix">
                 <input type="hidden" name="level" value="<?php echo htmlentities($level); ?>">
                 <input type="hidden" name="pid" value="<?php echo htmlentities($pid); ?>">

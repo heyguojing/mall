@@ -44,13 +44,73 @@ class Rbac extends Common
             if($res){
                 return $this->success('当前节点：'.$data['title'].'添加成功','Rbac/node');
             }else{
-                return $this->error('添加失败','Rbac/addNode');
+                return $this->error('添加失败');
             }
         }else{
-            $level = input('level',0,'intval');
             $pid = input('pid',0,'intval');
+            $level = input('level',1,'intval');
+            switch($level){
+                case 1:
+                $type = "应用";
+                $parameter = 0;
+                break;
+                case 2:
+                $type = "控制器";
+                $parameter = 0;
+                break;
+                case 3:
+                $type = "方法";
+                $parameter = 1;
+                break;
+            }
             $this->assign('level',$level);
             $this->assign('pid',$pid);
+            $this->assign('type',$type);
+            $this->assign('parameter',$parameter);
+            return $this->fetch();
+        }
+    }
+    /**
+     * 节点编辑
+     */
+    public function editNode()
+    {   
+        $id = input('id');
+        $where = array('id' => $id);
+        $editdata = $this->table->getOne($where);
+        if(empty($editdata)){
+            $this->error('节点不存在','Rbac/node');
+        }
+        // post
+        if($this->request->isPost()){
+            $data = $this->postNodeData();
+            $res = $this->table->saveData($where,$data);
+            if($res){
+                return $this->success('当前节点：'.$data['title'].'编辑成功','Rbac/node');
+            }else{
+                return $this->error('编辑失败');
+            }
+        }else{
+            $level = input('level',1,'intval');
+            switch($level){
+                case 1:
+                $type = "应用";
+                $parameter = 0;
+                break;
+                case 2:
+                $type = "控制器";
+                $parameter = 0;
+                break;
+                case 3:
+                $type = "方法";
+                $parameter = 1;
+                break;
+            }
+            $this->assign('level',$level);
+            $this->assign('pid',$pid);
+            $this->assign('type',$type);
+            $this->assign('parameter',$parameter);
+            $this->assign('editdata',$editdata);
             return $this->fetch();
         }
     }
@@ -62,9 +122,11 @@ class Rbac extends Common
         $data = array(
             'name' => input('name'),
             'title' => input('title'),
-            'status' => input('status',0,intval),
+            'status' => input('status',0,'intval'),
             'is_show' => input('is_show'),
-            'sort' => input('sort',0,intval)
+            'sort' => input('sort',0,'intval'),
+            'parameter' => input('parameter','','strip_tags'),
+            'parameter_title' => input('parameter_title','','strip_tags')
         );
         return $data;
     }
