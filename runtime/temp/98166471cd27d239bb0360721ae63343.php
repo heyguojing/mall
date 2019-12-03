@@ -1,4 +1,4 @@
-<?php /*a:1:{s:56:"C:\wamp\www\mall\application\admin\view\login\index.html";i:1575249575;}*/ ?>
+<?php /*a:1:{s:56:"C:\wamp\www\mall\application\admin\view\login\index.html";i:1575300564;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
