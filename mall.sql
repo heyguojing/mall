@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-12-02 17:53:20
+Date: 2019-12-03 18:04:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575273318', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575355136', '127.0.0.1', '0', '0');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -60,9 +60,16 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
 -- ----------------------------
-INSERT INTO `mall_node` VALUES ('1', 'admin', null, null, '后台', '1', null, '1', '0', '0', '1');
+INSERT INTO `mall_node` VALUES ('1', 'admin', null, null, 'RBAC用户权限管理', '1', null, '1', '0', '0', '1');
+INSERT INTO `mall_node` VALUES ('2', 'node', null, null, '节点列表', '1', null, '1', '1', '2', '1');
+INSERT INTO `mall_node` VALUES ('3', 'addNode', null, null, '节点添加', '1', null, '1', '2', '3', '1');
+INSERT INTO `mall_node` VALUES ('4', 'editNode', null, null, '节点编辑', '1', null, '2', '2', '3', '1');
+INSERT INTO `mall_node` VALUES ('5', 'delNode', null, null, '节点删除', '1', null, '1', '2', '3', '1');
+INSERT INTO `mall_node` VALUES ('6', 'memberMan', null, null, '会员管理', '1', null, '2', '0', '0', '1');
+INSERT INTO `mall_node` VALUES ('7', 'memberList', null, null, '会员列表', '1', null, '1', '6', '2', '1');
+INSERT INTO `mall_node` VALUES ('8', 'memberLev', null, null, '会员等级', '1', null, '2', '6', '2', '1');
