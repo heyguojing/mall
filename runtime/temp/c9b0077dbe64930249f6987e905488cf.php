@@ -1,4 +1,4 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575293030;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575335541;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -72,14 +72,14 @@
                     <span class="Validform_checktip"></span>
                 </div>
             </div>            
-            <div class="Operate_cont clearfix">
+            <!-- <div class="Operate_cont clearfix">
                 <label class="form-label">备注：</label>
                 <div class="formControls">
                     <textarea name="" rows="" class="textarea" placeholder="说点什么...最少输入10个字符"  onKeyUp="textarealength(this,100)" datatype="*" nullmsg="备注不能为空！"></textarea>
                     <span class="Validform_checktip"></span>
                     <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
                 </div>
-            </div>
+            </div> -->
             <div class="Operate_cont clearfix">
                 <input type="hidden" name="level" value="<?php echo htmlentities($level); ?>">
                 <input type="hidden" name="pid" value="<?php echo htmlentities($pid); ?>">
