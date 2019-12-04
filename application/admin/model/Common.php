@@ -46,6 +46,13 @@ class Common extends Model
         return Db::name($this->table)->where($where)->field($field)->order($order)->find();
     }
     /**
+     * 获取多个字段，指定键值
+     */
+    public function getField($where,$field,$key)
+    {
+        return Db::name($this->table)->where($where)->column($field);
+    }
+    /**
      * 设置字段递增
      */
     public function setIncData($where = array(),$field = "",$num = 1) 

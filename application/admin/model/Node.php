@@ -11,7 +11,8 @@ class Node extends Common
         $this->table = 'node';
     }
     /**
-     * 节点分页
+     * 节点分页 求总数
+     * 
      */
     public function pageData($param = array(),$range = 'total')
     {

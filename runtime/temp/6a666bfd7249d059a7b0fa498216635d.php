@@ -1,4 +1,4 @@
-<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\node.html";i:1575335162;}*/ ?>
+<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\node.html";i:1575472930;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="/static/admin/assets/css/ace-skins.min.css" />
     <link rel="stylesheet" href="/static/admin/css/style.css" />
     <link rel="stylesheet" href="/static/admin/css/node.css" />
+    <script src="/static/admin/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/admin/assets/layer/layer.js" type="text/javascript"></script>
+    
 </head>
 
 <body>
@@ -58,3 +61,4 @@
 </body>
 
 </html>
+<script src="/static/admin/js/common.js" type="text/javascript"></script>

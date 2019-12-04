@@ -119,9 +119,25 @@ class Rbac extends Common
      */
     public function delNode()
     {
-        $id = input('id');
+        $id = input('id',0,'intvel');
         $deldata = $this->table->getOne(array('id' => $id));
-        
+        if(empty($deldata)){
+            $this->error('删除失败，节点不存在',url('Rbac/node'));
+        }
+        // 判断是否有子节点
+        $where = array('pid'=>$id);
+        $data = $this->table->pageData($where,'total');
+        if($data > 0){
+            print_r($data);
+            $this->error('不能删除,该节点包含子节点',url('Rbac/node'));
+        }
+        $where = array('id' => $id);
+        $res = $this->table->delData($where);
+        if($res){
+            $this->success('删除成功',url('Rbac/node'));
+        }else{
+            $this->error('删除失败',url('Rbac/node'));
+        }
     }
     /**
      * 接收post过来的数据

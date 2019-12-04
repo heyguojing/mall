@@ -1,4 +1,4 @@
-<?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575300564;}*/ ?>
+<?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575472528;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -102,7 +102,7 @@
         .s-box .success,
         .s-box .error {
             line-height: 200px;
-            font-size: 36px;
+            font-size: 24px;
             text-align: center;
         }
         
@@ -200,7 +200,7 @@
             <!-- <img class="logo" src="/static/admin/images/logo_e.png" alt=""> -->
             <div class="success"><?php echo htmlentities($msg); ?></div>
             <div class="jump">
-                <p>页面自动 <a id="href" href="<?php echo htmlentities($url); ?>">跳转</a> 等待时间： <b id="wait"><?php echo htmlentities($wait); ?></b></p>
+                <p>页面自动 <a id="href" href="<?php echo htmlentities($url); ?>">跳转</a> 等待时间： <b id="wait">100</b></p>
             </div>
         </div>
     </div>
