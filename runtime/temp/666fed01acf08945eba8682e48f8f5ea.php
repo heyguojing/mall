@@ -1,4 +1,4 @@
-<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\rbac\edit_node.html";i:1575387539;}*/ ?>
+<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\rbac\edit_node.html";i:1575425488;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -20,7 +20,7 @@
         <div class="crumbs">
             <ul>
                 <li>
-                    <a href="index.html"><?php echo htmlentities($type); ?>管理</a>
+                    <a href="javascript:;"><?php echo htmlentities($type); ?>管理</a>
                 </li>
                 <li class="uline">/</li>
                 <li>
@@ -43,7 +43,7 @@
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
-            <if condition="$parameter eq 1">
+            <?php if($parameter == 1): ?>
             <div class="Operate_cont clearfix">
                 <label class="form-label"><?php echo htmlentities($type); ?>参数名：</label>
                 <div class="formControls ">
@@ -56,15 +56,15 @@
                     <input type="text" class="input-text" value="" name="<?php echo htmlentities($parameter_title); ?>" placeholder="">
                 </div>
             </div>
-            </if>
+            <?php endif; ?>
             <div class="Operate_cont clearfix">
                 <label class="form-label text-inline">状态：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="status" value="1" <if condition="$editdata['status'] eq 1"> checked </if> >显示
+                        <input type="radio" name="status" value="1" <?php if($editdata['status'] == 1): ?> checked <?php endif; ?> >显示
                     </label>
                     <label for="">
-                        <input type="radio" name="status" value="0" <if condition="$editdata['status'] eq 0"> checked </if> >隐藏
+                        <input type="radio" name="status" value="0" <?php if($editdata['status'] == 0): ?> checked <?php endif; ?> >隐藏
                     </label>
                 </div>
             </div>
@@ -72,10 +72,10 @@
                 <label class="form-label text-inline">是否显示在菜单栏：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="is_show" value="1" <if condition="$editdata['is_show'] eq 1"> checked </if> >显示
+                        <input type="radio" name="is_show" value="1" <?php if($editdata['is_show'] == 1): ?> checked <?php endif; ?> >显示
                     </label>
                     <label for="">
-                        <input type="radio" name="is_show" value="0" <if condition="$editdata['is_show'] eq 0"> checked </if> >隐藏
+                        <input type="radio" name="is_show" value="0" <?php if($editdata['is_show'] == 0): ?> checked <?php endif; ?> >隐藏
                     </label>
                 </div>
             </div>

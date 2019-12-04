@@ -86,7 +86,7 @@ class Rbac extends Common
             $data = $this->postNodeData();
             $res = $this->table->saveData($where,$data);
             if($res){
-                return $this->success('当前节点：'.$data['title'].'编辑成功','Rbac/node');
+                return $this->success('当前节点：'.$data['title'].'编辑成功',url('rbac/node'));
             }else{
                 return $this->error('编辑失败');
             }
@@ -113,6 +113,15 @@ class Rbac extends Common
             $this->assign('editdata',$editdata);
             return $this->fetch();
         }
+    }
+    /**
+     * 节点删除
+     */
+    public function delNode()
+    {
+        $id = input('id');
+        $deldata = $this->table->getOne(array('id' => $id));
+        
     }
     /**
      * 接收post过来的数据

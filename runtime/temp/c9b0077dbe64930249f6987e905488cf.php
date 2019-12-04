@@ -1,4 +1,4 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575387081;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575423367;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -20,7 +20,7 @@
         <div class="crumbs">
             <ul>
                 <li>
-                    <a href="index.html"><?php echo htmlentities($type); ?>管理</a>
+                    <a href="javascript:;"><?php echo htmlentities($type); ?>管理</a>
                 </li>
                 <li class="uline">/</li>
                 <li>
@@ -28,7 +28,7 @@
                 </li>
             </ul>
        </div>
-        <form action="" method="post" class="form form-horizontal">
+        <form action="<?php echo url('Rbac/addNode'); ?>" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
                 <label class="form-label"><?php echo htmlentities($type); ?>名称：</label>
                 <div class="formControls ">
@@ -43,7 +43,7 @@
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
-            <if condition="$parameter eq 1">
+            <?php if($parameter == 1): ?>
             <div class="Operate_cont clearfix">
                 <label class="form-label"><?php echo htmlentities($type); ?>参数名：</label>
                 <div class="formControls ">
@@ -56,7 +56,7 @@
                     <input type="text" class="input-text" value="" name="<?php echo htmlentities($parameter_title); ?>" placeholder="">
                 </div>
             </div>
-            </if>
+            <?php endif; ?>
             <div class="Operate_cont clearfix">
                 <label class="form-label text-inline">状态：</label>
                 <div class="formControls form-inline">

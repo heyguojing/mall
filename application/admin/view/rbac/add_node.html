@@ -19,7 +19,7 @@
         <div class="crumbs">
             <ul>
                 <li>
-                    <a href="index.html">{$type}管理</a>
+                    <a href="javascript:;">{$type}管理</a>
                 </li>
                 <li class="uline">/</li>
                 <li>
@@ -27,7 +27,7 @@
                 </li>
             </ul>
        </div>
-        <form action="" method="post" class="form form-horizontal">
+        <form action="{:url('Rbac/addNode')}" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
                 <label class="form-label">{$type}名称：</label>
                 <div class="formControls ">
@@ -42,7 +42,7 @@
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
-            <if condition="$parameter eq 1">
+            {if condition="$parameter eq 1"}
             <div class="Operate_cont clearfix">
                 <label class="form-label">{$type}参数名：</label>
                 <div class="formControls ">
@@ -55,7 +55,7 @@
                     <input type="text" class="input-text" value="" name="{$parameter_title}" placeholder="">
                 </div>
             </div>
-            </if>
+            {/if}
             <div class="Operate_cont clearfix">
                 <label class="form-label text-inline">状态：</label>
                 <div class="formControls form-inline">
