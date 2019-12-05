@@ -19,15 +19,15 @@ class Node extends Common
         $where = array();
         // 父级id
         if(isset($param['pid']) && $param['pid'] > 0){
-            $where[] = array('pid' => $param['pid']);
+            $where[] = array('pid','=',$param['pid']);
         }
         // 是否展示
         if(isset($param['is_show']) && $param['is_show'] > -1){
-            $where[] = array('is_show' => $param['is_show']);
+            $where[] = array('is_show','=',$param['is_show']);
         }
         // 等级
         if(isset($param['level']) &&$param['level'] > 0){
-            $where = array('level' => $param['level']);
+            $where[] = array('level','=',$param['level']);
         }
         if($range == 'total'){
             // 求总数

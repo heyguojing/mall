@@ -1,14 +1,16 @@
 <?php
 namespace app\admin\controller;
 use think\Db;
-use think\facade\Request;
+use think\Request;
+use think\facade\Request as RequestFacade;
 use think\facade\Session;
 class Rbac extends Common
 {
     protected $table = '';
-    public function __construct()
+    public function __construct(Request $request)
     {
         parent::__construct();
+        $this->request = $request;
         $this->table = model('Node');
     }
     public function index()
@@ -119,7 +121,7 @@ class Rbac extends Common
      */
     public function delNode()
     {
-        $id = input('id',0,'intvel');
+        $id = input('id',0,'intval');
         $deldata = $this->table->getOne(array('id' => $id));
         if(empty($deldata)){
             $this->error('删除失败，节点不存在',url('Rbac/node'));
@@ -128,7 +130,6 @@ class Rbac extends Common
         $where = array('pid'=>$id);
         $data = $this->table->pageData($where,'total');
         if($data > 0){
-            print_r($data);
             $this->error('不能删除,该节点包含子节点',url('Rbac/node'));
         }
         $where = array('id' => $id);

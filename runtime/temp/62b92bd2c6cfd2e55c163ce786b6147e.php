@@ -1,4 +1,4 @@
-<?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575472528;}*/ ?>
+<?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575508849;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -200,7 +200,7 @@
             <!-- <img class="logo" src="/static/admin/images/logo_e.png" alt=""> -->
             <div class="success"><?php echo htmlentities($msg); ?></div>
             <div class="jump">
-                <p>页面自动 <a id="href" href="<?php echo htmlentities($url); ?>">跳转</a> 等待时间： <b id="wait">100</b></p>
+                <p>页面自动 <a id="href" href="<?php echo htmlentities($url); ?>">跳转</a> 等待时间： <b id="wait"><?php echo htmlentities($wait); ?></b></p>
             </div>
         </div>
     </div>

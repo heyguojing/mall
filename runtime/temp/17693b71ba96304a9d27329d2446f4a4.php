@@ -1,4 +1,4 @@
-<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\common\success.html";i:1575425846;}*/ ?>
+<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\common\success.html";i:1575514612;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -102,7 +102,7 @@
         .s-box .success,
         .s-box .error {
             line-height: 200px;
-            font-size: 36px;
+            font-size: 24px;
             text-align: center;
         }
         
