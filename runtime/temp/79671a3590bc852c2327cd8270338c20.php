@@ -1,4 +1,4 @@
-<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575300564;}*/ ?>
+<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1575621468;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575249575;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>网站后台管理系统 </title>
-    <link rel="shortcut icon" href="/static/admin//static/admin/images/favicon.ico">
+    <link rel="shortcut icon" href="/static/admin/images/favicon.ico">
     <link href="/static/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/admin/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/static/admin/assets/css/ace.min.css" />

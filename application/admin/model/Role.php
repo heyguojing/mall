@@ -43,6 +43,7 @@ class Role extends Common
             $field = isset($param['field'])?$param['field']:"";
             // 排序
             $order = isset($param['order'])?$param['order']:'id asc';
+            
             return Db::name($this->table)->where($where)->field($field)->limit($limit)->order($order)->select();
         }
     }

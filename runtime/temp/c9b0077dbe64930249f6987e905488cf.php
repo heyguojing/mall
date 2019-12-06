@@ -1,7 +1,8 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575466917;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_node.html";i:1575537672;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,19 +28,19 @@
                     <a class="active" href="javascript:;">添加<?php echo htmlentities($type); ?></a>
                 </li>
             </ul>
-       </div>
+        </div>
         <form action="<?php echo url('Rbac/addNode'); ?>" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
                 <label class="form-label"><?php echo htmlentities($type); ?>名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="name" datatype="*" nullmsg="<?php echo htmlentities($type); ?>名称不能为空！">
+                    <input type="text" class="input-text" value="" placeholder="" name="name" datatype="*" nullmsg="<?php echo htmlentities($type); ?>名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label"><?php echo htmlentities($type); ?>描述：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="title" datatype="*" nullmsg="<?php echo htmlentities($type); ?>描述不能为空！">
+                    <input type="text" class="input-text" value="" placeholder="" name="title" datatype="*" nullmsg="<?php echo htmlentities($type); ?>描述不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
@@ -82,10 +83,10 @@
             <div class="Operate_cont clearfix">
                 <label class="form-label">排序：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="sort" datatype="*" nullmsg="排序名称不能为空！">
+                    <input type="text" class="input-text" value="" placeholder="" name="sort" datatype="*" nullmsg="排序名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
-            </div>            
+            </div>
             <div class="Operate_cont clearfix">
                 <input type="hidden" name="level" value="<?php echo htmlentities($level); ?>">
                 <input type="hidden" name="pid" value="<?php echo htmlentities($pid); ?>">
@@ -96,20 +97,21 @@
 
     <script type="text/javascript" src="/static/admin/Widget/Validform/5.3.2/Validform.min.js"></script>
     <script type="text/javascript">
-         $(function() {
+        $(function () {
             //表单验证
             $("form").Validform({
-                tiptype:function(msg,o,cssctl){
-                    if(!o.obj.is("form")){
+                tiptype: function (msg, o, cssctl) {
+                    if (!o.obj.is("form")) {
                         //默认表单
-                        var objtip=o.obj.parents(".formControls").find(".Validform_checktip");
-                        cssctl(objtip,o.type);
+                        var objtip = o.obj.parents(".formControls").find(".Validform_checktip");
+                        cssctl(objtip, o.type);
                         objtip.text(msg);
                     }
                 },
-                showAllError:true
+                showAllError: true
             })
         });
     </script>
 </body>
+
 </html>

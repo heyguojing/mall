@@ -69,3 +69,12 @@ if (!function_exists('get_client_ip')) {
 		return $ip[$type];
 	}
 }
+/**
+ * 去除//
+ */
+if (!function_exists('reduce_double_slashes')) {
+	function reduce_double_slashes ($str)
+	{
+		return preg_replace("#(^|[^:])//+#", "\\1/", $str);
+	}
+}
