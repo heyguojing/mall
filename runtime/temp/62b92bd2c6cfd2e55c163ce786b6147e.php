@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575514890;}*/ ?>
+=======
+<?php /*a:1:{s:57:"C:\wamp\www\mall\application\admin\view\common\error.html";i:1575552419;}*/ ?>
+>>>>>>> e8d0bc07eff6fbedfb38b60d105697f1f296c45d
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
