@@ -32,14 +32,14 @@
             <div class="Operate_cont clearfix">
                 <label class="form-label">角色英文名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="name" datatype="*" nullmsg="角色英文名称不能为空！">
+                    <input type="text" class="input-text" value="{$editdata['name']}" placeholder=""  name="name" datatype="*" nullmsg="角色英文名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">角色描述：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="remark" datatype="*" nullmsg="角色描述不能为空！">
+                    <input type="text" class="input-text" value="{$editdata['remark']}" placeholder=""  name="remark" datatype="*" nullmsg="角色描述不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
@@ -47,10 +47,10 @@
                 <label class="form-label text-inline">是否开启：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="status" value="1" checked>是
+                        <input type="radio" name="status" value="1" {if condition="$editdata['status'] eq 1"}checked{/if}>是
                     </label>
                     <label for="">
-                        <input type="radio" name="status" value="0">否
+                        <input type="radio" name="status" value="0" {if condition="$editdata['status'] eq 0"}checked{/if}>否
                     </label>
                 </div>
             </div>        

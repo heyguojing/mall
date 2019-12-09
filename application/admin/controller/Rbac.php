@@ -39,7 +39,7 @@ class Rbac extends Common
         $where = array();
         // 判断名称
         if($remark !="" && $remark != 'n'){
-            $where['remark'] = $remark;
+            $where['remark'] = $this->strSpaceDel($remark);
         }else{
             $remark = 'n';
         }
@@ -64,8 +64,6 @@ class Rbac extends Common
         $page = new Page($role_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
         // 显示分页
         $show = $page->show(5);
-        $sql = $this->role->getLastSql();
-        p($sql);
         $this->assign('page',$show);
         // 模板赋值
         $this->assign('page_data',$page_data);
@@ -90,6 +88,38 @@ class Rbac extends Common
         }else{
             return $this->fetch();
         }
+    }
+    /**
+     * 角色编辑
+     */
+    public function editRole()
+    {
+        $id = input('id');
+        $where = array('id' => $id);
+        $editdata = $this->node->getOne($where);
+        if(empty($editdata)){
+            $this->error('角色id不存在','Rbac/node');
+        }
+        // post
+        if($this->request->isPost()){
+            $data = $this->postRoleData();
+            $res = $this->node->saveData($where,$data);
+            if($res){
+                return $this->success('当前角色：'.$data['remark'].'编辑成功',url('rbac/role'));
+            }else{
+                return $this->error('角色编辑失败');
+            }
+        }else{
+            $this->assign('editdata',$editdata);
+            return $this->fetch();
+        }    
+    }
+    /**
+     * 角色删除
+     */
+    public function delRole()
+    {
+        
     }
     /**
      * 节点列表页
@@ -236,5 +266,18 @@ class Rbac extends Common
             'status' => input('status','0','intval')
         );
         return $data;
+    }
+    /**
+     * 过滤字符串中的空格
+     */
+    function strSpaceDel($str){
+        $str = preg_replace("/ /","",$str);
+        $str = preg_replace("/&nbsp;/","",$str);
+        $str = preg_replace("/　/","",$str);
+        $str = preg_replace("/\r\n/","",$str);
+        $str = str_replace(chr(13),"",$str);
+        $str = str_replace(chr(10),"",$str);
+        $str = str_replace(chr(9),"",$str);
+        return $str;
     }
 }

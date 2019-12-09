@@ -100,10 +100,10 @@
                                     <td>{$role.remark}</td>
                                     <td>{if condition="$role['status'] eq 1"}开启{else/}关闭{/if}</td>
                                     <td>
-                                        <a title="编辑" href="{:url('Rbac/editRole')}" class="btn btn-xs btn-info">
+                                        <a title="编辑" href="{:url('Rbac/editRole',array('id' => $role['id']))}" class="btn btn-xs btn-info">
                                             <i class="fa fa-edit bigger-120"></i>
                                         </a>
-                                        <a title="删除" href="{:url('Rbac/delRole')}" onclick="confirm_msg(this)" url="{:url('Rbac/delRole')}" class="btn btn-xs btn-warning">
+                                        <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="{:url('Rbac/delRole',array('id' => $role['id']))}" class="btn btn-xs btn-warning">
                                             <i class="fa fa-trash  bigger-120"></i>
                                         </a>
                                         <a title="配置权限" href="javascript:;" onclick="confirm_msg(this)" url="{:url('Rbac/access')}" class="btn btn-xs btn-warning">

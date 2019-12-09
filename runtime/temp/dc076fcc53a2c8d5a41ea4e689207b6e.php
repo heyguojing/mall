@@ -1,4 +1,4 @@
-<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1575879525;}*/ ?>
+<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1575898606;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -101,10 +101,10 @@
                                     <td><?php echo htmlentities($role['remark']); ?></td>
                                     <td><?php if($role['status'] == 1): ?>开启<?php else: ?>关闭<?php endif; ?></td>
                                     <td>
-                                        <a title="编辑" href="<?php echo url('Rbac/editRole'); ?>" class="btn btn-xs btn-info">
+                                        <a title="编辑" href="<?php echo url('Rbac/editRole',array('id' => $role['id'])); ?>" class="btn btn-xs btn-info">
                                             <i class="fa fa-edit bigger-120"></i>
                                         </a>
-                                        <a title="删除" href="<?php echo url('Rbac/delRole'); ?>" onclick="confirm_msg(this)" url="<?php echo url('Rbac/delRole'); ?>" class="btn btn-xs btn-warning">
+                                        <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/delRole',array('id' => $role['id'])); ?>" class="btn btn-xs btn-warning">
                                             <i class="fa fa-trash  bigger-120"></i>
                                         </a>
                                         <a title="配置权限" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/access'); ?>" class="btn btn-xs btn-warning">
