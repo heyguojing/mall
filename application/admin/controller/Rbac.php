@@ -6,8 +6,8 @@ use think\facade\Session;
 use Org\Util\Page;
 class Rbac extends Common
 {
-    protected $node = '';
-    protected $role = '';
+    protected $node;
+    protected $role;
     public function __construct(Request $request)
     {
         parent::__construct();
@@ -33,41 +33,43 @@ class Rbac extends Common
             $remark = input('post.remark','n');
             $status = input('post.status',-1,'intval');
         }else{
-            $remark = input('get.remark','n');
-            $status = input('get.status',-1,'intval');
+            $remark = input('remark','n');
+            $status = input('status',-1,'intval');
         }
         $where = array();
         // 判断名称
         if($remark !="" && $remark != 'n'){
             $where['remark'] = $remark;
         }else{
-            $where['remark'] = 'n';
+            $remark = 'n';
         }
         // 判断状态
         if($status > -1){
             $where['status'] = $status;
         }else{
-            $where['status'] = -1;
+            $status = -1;
         }
         // 求总数
         $role_total = $this->role->pageData($where,'total');//总条数
         $where['page'] = input('page',1,'intval');
-        $where['field'] = input('id','name','remark','status');
+        $where['field'] = array('id','name','remark','status');
         $where['order'] = 'id asc';
         $where['limit'] = 10;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
         $page_data = $this->role->pageData($where,'range');
         // 求分页url
-        $page_url = url('Rbac/role',array('remark' => $where['remark'],'status' => $where['status']));
+        $page_url = url('Rbac/role',array('remark' => $remark,'status' => $status,''));
         // 载入分页
         $page = new Page($role_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
         // 显示分页
         $show = $page->show(5);
+        $sql = $this->role->getLastSql();
+        p($sql);
         $this->assign('page',$show);
         // 模板赋值
         $this->assign('page_data',$page_data);
-        $this->assign('remark',$where['remark']);
+        $this->assign('remark',$remark);
         $this->assign('status',$status);
         $this->assign('page_total',$role_total);
         return $this->fetch();

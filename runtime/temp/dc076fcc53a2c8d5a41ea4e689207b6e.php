@@ -1,4 +1,4 @@
-<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1575625964;}*/ ?>
+<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1575879525;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -22,6 +22,7 @@
     <script src="/static/admin/js/lrtk.js" type="text/javascript"></script>
     <script src="/static/admin/assets/layer/layer.js" type="text/javascript"></script>
     <script src="/static/admin/assets/laydate/laydate.js" type="text/javascript"></script>
+    <script src="/static/admin/js/common.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                     <div class="search_style">
                         <ul class="search_content clearfix">
                             <li>
-                                <label class="l_f">角色名称:</label>
+                                <label class="l_f">角色中文名称:</label>
                                 <input name="remark" type="text" class="text_add" value="<?php if($remark != 'n'): ?> <?php echo htmlentities($remark); ?> <?php endif; ?>"/>
                             </li>
                             <li>
@@ -61,7 +62,7 @@
                 <!--操作-->
                 <div class="border clearfix">
                     <span class="l_f">
-                        <a href="javascript:;" class="btn btn-warning">
+                        <a href="<?php echo url('Rbac/addRole'); ?>" class="btn btn-warning">
                             <i class="fa fa-plus"></i> 添加角色</a>
                         <a href="javascript:;" class="btn btn-danger">
                             <i class="fa fa-trash"></i> 批量删除</a>
@@ -106,7 +107,7 @@
                                         <a title="删除" href="<?php echo url('Rbac/delRole'); ?>" onclick="confirm_msg(this)" url="<?php echo url('Rbac/delRole'); ?>" class="btn btn-xs btn-warning">
                                             <i class="fa fa-trash  bigger-120"></i>
                                         </a>
-                                        <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/delRole'); ?>" class="btn btn-xs btn-warning">
+                                        <a title="配置权限" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/access'); ?>" class="btn btn-xs btn-warning">
                                             <i class="fa fa-trash  bigger-120"></i>配置权限
                                         </a>
                                     </td>
@@ -123,7 +124,7 @@
                     <div class="col-sm-6">
                         <div class="dataTables_paginate paging_bootstrap">
                             <ul class="pagination">
-                                <?php echo htmlspecialchars_decode($page);?>
+                                {<?php echo htmlspecialchars_decode($page);?>}
                             </ul>
                         </div>
                     </div>

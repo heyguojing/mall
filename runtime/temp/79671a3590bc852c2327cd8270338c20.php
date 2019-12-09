@@ -1,4 +1,4 @@
-<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1575621468;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575249575;}*/ ?>
+<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1575621468;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575879808;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -228,18 +228,18 @@
         <li class="home"><a href="javascript:void(0)" name="<?php echo url('index/copy'); ?>" class="iframeurl" title=""><i class="icon"></i><span class="menu-text"> 系统首页 </span></a></li>
         <li><a href="#" class="dropdown-toggle"><i class="icon"></i><span class="menu-text"> rbac </span><b class="arrow icon-angle-down"></b></a>
             <ul class="submenu">
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/index'); ?>" title="产品类表" class="iframeurl"><i class="icon-double-angle-right"></i>管理员列表</a></li>
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/role'); ?>" title="品牌管理" class="iframeurl"><i class="icon-double-angle-right"></i>角色列表</a></li>
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/node'); ?>" title="分类管理" class="iframeurl"><i class="icon-double-angle-right"></i>节点列表</a></li>
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addUser'); ?>" title="分类管理" class="iframeurl"><i class="icon-double-angle-right"></i>添加管理员</a></li>
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addRole'); ?>" title="分类管理" class="iframeurl"><i class="icon-double-angle-right"></i>添加角色</a></li>
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addNode'); ?>" title="分类管理" class="iframeurl"><i class="icon-double-angle-right"></i>添加节点</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/index'); ?>" title="Rbac管理" class="iframeurl"><i class="icon-double-angle-right"></i>管理员列表</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/role'); ?>" title="角色管理" class="iframeurl"><i class="icon-double-angle-right"></i>角色列表</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/node'); ?>" title="节点管理" class="iframeurl"><i class="icon-double-angle-right"></i>节点列表</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addUser'); ?>" title="添加用户" class="iframeurl"><i class="icon-double-angle-right"></i>添加管理员</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addRole'); ?>" title="添加角色" class="iframeurl"><i class="icon-double-angle-right"></i>添加角色</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addNode'); ?>" title="添加节点" class="iframeurl"><i class="icon-double-angle-right"></i>添加节点</a></li>
             </ul>
         </li>
         <li><a href="#" class="dropdown-toggle"><i class="icon"></i><span class="menu-text"> 产品管理 </span><b class="arrow icon-angle-down"></b></a>
             <ul class="submenu">
                 <li class="home"><a href="javascript:void(0)" name="Products_List.html" title="产品类表" class="iframeurl"><i class="icon-double-angle-right"></i>产品类表</a></li>
-                <li class="home"><a href="javascript:void(0)" name="Brand_Manage.html" title="品牌管理" class="iframeurl"><i class="icon-double-angle-right"></i>品牌管理</a></li>
+                <li class="home"><a href="javascript:void(0)" name="Brand_Manage.html" title="品牌管理" class="iframeurl"><i class="icon-double-angle-right"></i>角色管理</a></li>
                 <li class="home"><a href="javascript:void(0)" name="Category_Manage.html" title="分类管理" class="iframeurl"><i class="icon-double-angle-right"></i>分类管理</a></li>
             </ul>
         </li>

@@ -5,9 +5,9 @@ use think\Db;
 class Role extends Common
 {
     protected $table;
-    public function __construct()
+    public function __construct($data = [])
     {
-        parent::__construct();
+        parent::__construct($data);
         $this->table = 'role';
     }
     /**
@@ -17,14 +17,13 @@ class Role extends Common
     public function pageData($param = array(),$range = 'total')
     {
         $where = array();
-
         // 状态判断是否展示
         if(isset($param['status']) && $param['status'] > -1){
             $where[] = array('status','=',$param['status']);
         }
         // 根据角色中文名查询
-        if(isset($param['name']) && $param['name'] != ''){
-            $where[] = array('name','like','%'.$param['name'].'%');
+        if(isset($param['remark']) && $param['remark'] != ''){
+            $where[] = array('remark','like','%'.$param['remark'].'%');
         }
         if($range == 'total'){
             // 求总数
@@ -43,7 +42,6 @@ class Role extends Common
             $field = isset($param['field'])?$param['field']:"";
             // 排序
             $order = isset($param['order'])?$param['order']:'id asc';
-            
             return Db::name($this->table)->where($where)->field($field)->limit($limit)->order($order)->select();
         }
     }
