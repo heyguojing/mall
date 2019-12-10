@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : php
-Source Server Version : 50721
+Source Server         : localhost_3306
+Source Server Version : 50714
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50721
+Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2019-12-10 10:54:17
+Date: 2019-12-11 00:10:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575941495', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575991900', '127.0.0.1', '0', '0');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -60,7 +60,7 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
@@ -71,6 +71,7 @@ INSERT INTO `mall_node` VALUES ('6', 'memberMan', null, null, '会员管理', '1
 INSERT INTO `mall_node` VALUES ('7', 'memberList', null, null, '会员列表', '1', null, '1', '6', '2', '1');
 INSERT INTO `mall_node` VALUES ('8', 'memberLev', null, null, '会员等级', '1', null, '2', '6', '2', '1');
 INSERT INTO `mall_node` VALUES ('9', 'memberlist', '', '', '会员列表', '1', null, '1', '7', '3', '1');
+INSERT INTO `mall_node` VALUES ('10', 'access', '', '', '配置权限', '1', null, '1', '2', '3', '0');
 
 -- ----------------------------
 -- Table structure for mall_role

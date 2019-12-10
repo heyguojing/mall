@@ -1,0 +1,4 @@
+<?php
+//000000086400
+ exit();?>
+think_serialize:a:2:{i:0;a:5:{s:2:"id";i:1;s:4:"name";s:5:"admin";s:5:"title";s:22:"RBAC用户权限管理";s:3:"pid";i:0;s:5:"child";a:1:{i:0;a:5:{s:2:"id";i:2;s:4:"name";s:4:"node";s:5:"title";s:12:"节点列表";s:3:"pid";i:1;s:5:"child";a:1:{i:0;a:5:{s:2:"id";i:10;s:4:"name";s:6:"access";s:5:"title";s:12:"配置权限";s:3:"pid";i:2;s:5:"child";a:0:{}}}}}}i:1;a:5:{s:2:"id";i:6;s:4:"name";s:9:"memberMan";s:5:"title";s:12:"会员管理";s:3:"pid";i:0;s:5:"child";a:2:{i:0;a:5:{s:2:"id";i:7;s:4:"name";s:10:"memberList";s:5:"title";s:12:"会员列表";s:3:"pid";i:6;s:5:"child";a:1:{i:0;a:5:{s:2:"id";i:9;s:4:"name";s:10:"memberlist";s:5:"title";s:12:"会员列表";s:3:"pid";i:7;s:5:"child";a:0:{}}}}i:1;a:5:{s:2:"id";i:8;s:4:"name";s:9:"memberLev";s:5:"title";s:12:"会员等级";s:3:"pid";i:6;s:5:"child";a:0:{}}}}}

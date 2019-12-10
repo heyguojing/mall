@@ -1,4 +1,4 @@
-<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\common\success.html";i:1575963995;}*/ ?>
+<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\common\success.html";i:1575982432;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -54,7 +54,7 @@
             <!-- <img class="logo" src="/static/admin/images/logo_s.png" alt=""> -->
             <div class="success"><?php echo htmlentities($msg); ?></div>
             <div class="jump">
-                <p>页面自动 <a id="href" href="<?php echo htmlentities($url); ?>">跳转</a> 等待时间： <b id="wait">100</b></p>
+                <p>页面自动 <a id="href" href="<?php echo htmlentities($url); ?>">跳转</a> 等待时间： <b id="wait"><?php echo htmlentities($wait); ?></b></p>
             </div>
         </div>
     </div>
