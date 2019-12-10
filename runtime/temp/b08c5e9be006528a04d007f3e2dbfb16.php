@@ -1,4 +1,4 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_role.html";i:1575599515;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_role.html";i:1575941527;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -13,6 +13,7 @@
     <link href="/static/admin/Widget/icheck/icheck.css" rel="stylesheet" type="text/css" />
     <script src="/static/admin/js/jquery-1.9.1.min.js"></script>
     <script src="/static/admin/assets/js/bootstrap.min.js"></script>
+    <script src="/static/admin/js/common.js" type="text/javascript"></script>
 </head>
 
 <body>

@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50714
+Source Server         : php
+Source Server Version : 50721
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50714
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-12-03 23:49:58
+Date: 2019-12-10 10:54:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575386643', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1575941495', '127.0.0.1', '0', '0');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -60,16 +60,39 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
 -- ----------------------------
-INSERT INTO `mall_node` VALUES ('1', 'admin', null, null, 'RBAC用户权限管理', '1', null, '1', '0', '1', '1');
+INSERT INTO `mall_node` VALUES ('1', 'admin', '', '', 'RBAC用户权限管理', '1', null, '1', '0', '1', '1');
 INSERT INTO `mall_node` VALUES ('2', 'node', null, null, '节点列表', '1', null, '1', '1', '2', '1');
-INSERT INTO `mall_node` VALUES ('3', 'addNode', null, null, '节点添加', '1', null, '1', '2', '3', '1');
-INSERT INTO `mall_node` VALUES ('4', 'editNode', null, null, '节点编辑', '1', null, '2', '2', '3', '1');
-INSERT INTO `mall_node` VALUES ('5', 'delNode', null, null, '节点删除', '1', null, '1', '2', '3', '1');
 INSERT INTO `mall_node` VALUES ('6', 'memberMan', null, null, '会员管理', '1', null, '2', '0', '1', '1');
 INSERT INTO `mall_node` VALUES ('7', 'memberList', null, null, '会员列表', '1', null, '1', '6', '2', '1');
 INSERT INTO `mall_node` VALUES ('8', 'memberLev', null, null, '会员等级', '1', null, '2', '6', '2', '1');
+INSERT INTO `mall_node` VALUES ('9', 'memberlist', '', '', '会员列表', '1', null, '1', '7', '3', '1');
+
+-- ----------------------------
+-- Table structure for mall_role
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_role`;
+CREATE TABLE `mall_role` (
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
+  `name` varchar(20) NOT NULL COMMENT '角色英文名称',
+  `pid` smallint(6) DEFAULT NULL COMMENT '父级id',
+  `status` tinyint(1) unsigned DEFAULT NULL COMMENT '开启状态0表示关闭1表示开启',
+  `remark` varchar(255) DEFAULT NULL COMMENT '角色中文名称',
+  PRIMARY KEY (`id`),
+  KEY `pid` (`pid`),
+  KEY `status` (`status`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='角色表';
+
+-- ----------------------------
+-- Records of mall_role
+-- ----------------------------
+INSERT INTO `mall_role` VALUES ('3', 'Member', null, '1', '普通管理员');
+INSERT INTO `mall_role` VALUES ('4', 'user1', null, '1', '普通管理员');
+INSERT INTO `mall_role` VALUES ('5', 'user2', null, '1', '普通管理员');
+INSERT INTO `mall_role` VALUES ('6', 'user3', null, '1', '普通管理员');
+INSERT INTO `mall_role` VALUES ('7', 'user4', null, '1', '普通管理员');
+INSERT INTO `mall_role` VALUES ('8', 'users', null, '1', '管理员');

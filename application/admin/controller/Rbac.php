@@ -81,7 +81,7 @@ class Rbac extends Common
             $data = $this->postRoleData();
             $res = $this->role->addData($data);
             if($res){
-                return $this->success('当前角色：'.$data['title'].'添加成功','Rbac/node');
+                return $this->success('当前角色：'.$data['title'].'添加成功','Rbac/role');
             }else{
                 return $this->error('角色添加失败');
             }
@@ -96,14 +96,14 @@ class Rbac extends Common
     {
         $id = input('id');
         $where = array('id' => $id);
-        $editdata = $this->node->getOne($where);
+        $editdata = $this->role->getOne($where);
         if(empty($editdata)){
-            $this->error('角色id不存在','Rbac/node');
+            $this->error('角色id不存在','Rbac/role');
         }
         // post
         if($this->request->isPost()){
             $data = $this->postRoleData();
-            $res = $this->node->saveData($where,$data);
+            $res = $this->role->saveData($where,$data);
             if($res){
                 return $this->success('当前角色：'.$data['remark'].'编辑成功',url('rbac/role'));
             }else{
@@ -119,7 +119,32 @@ class Rbac extends Common
      */
     public function delRole()
     {
-        
+        $id = input('id','','intval');
+        p($id);
+        if(is_array($id)){
+            $role_one = $id;
+            p($role_one);
+            $ids = implode(',',$id);
+        }else{
+            $role_one = array((int)$id);
+            $ids = $id;
+        }
+        // 判断id是否存在
+        foreach($role_one as $v){
+            $data = $this->role->getOne(array('id' => $v));
+            if(empty($data)){
+                $this->error('角色id不存在','Rbac/role');
+            }
+        }
+        // 执行删除
+        foreach($role_one as $val){
+            $res = $this->role->delData(array('id' => $val));
+        }
+        if($res){
+            $this->success('角色删除成功','Rbac/role');
+        }else{
+            $this->error('角色删除失败','Rbac/role');
+        }
     }
     /**
      * 节点列表页

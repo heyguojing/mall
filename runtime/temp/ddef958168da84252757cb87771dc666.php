@@ -1,4 +1,4 @@
-<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\rbac\edit_role.html";i:1575901954;}*/ ?>
+<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\rbac\edit_role.html";i:1575942288;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -25,11 +25,11 @@
                 </li>
                 <li class="uline">/</li>
                 <li>
-                    <a class="active" href="javascript:;">添加角色</a>
+                    <a class="active" href="javascript:;">编辑角色</a>
                 </li>
             </ul>
        </div>
-        <form action="<?php echo url('Rbac/addRole'); ?>" method="post" class="form form-horizontal">
+        <form action="<?php echo url('Rbac/editRole'); ?>" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
                 <label class="form-label">角色英文名称：</label>
                 <div class="formControls ">
@@ -56,6 +56,7 @@
                 </div>
             </div>        
             <div class="Operate_cont clearfix">
+                <input type="hidden" name="id" id="id" value="<?php echo htmlentities($editdata['id']); ?>">
                 <input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
             </div>
         </form>

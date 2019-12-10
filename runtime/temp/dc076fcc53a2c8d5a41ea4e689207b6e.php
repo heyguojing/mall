@@ -1,4 +1,4 @@
-<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1575898606;}*/ ?>
+<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1575962786;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -22,7 +22,6 @@
     <script src="/static/admin/js/lrtk.js" type="text/javascript"></script>
     <script src="/static/admin/assets/layer/layer.js" type="text/javascript"></script>
     <script src="/static/admin/assets/laydate/laydate.js" type="text/javascript"></script>
-    <script src="/static/admin/js/common.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -64,57 +63,58 @@
                     <span class="l_f">
                         <a href="<?php echo url('Rbac/addRole'); ?>" class="btn btn-warning">
                             <i class="fa fa-plus"></i> 添加角色</a>
-                        <a href="javascript:;" class="btn btn-danger">
-                            <i class="fa fa-trash"></i> 批量删除</a>
+                        <a href="javascript:;" class="btn btn-danger" onclick="formAutoSubmit('id','right_form')"><i class="fa fa-trash"></i> 批量删除</a>
                     </span>
                 </div>
                 <!--角色列表-->
                 <div class="clearfix">
                     <div class="table_menu_list">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th width="25px">
-                                        <label>
-                                            <input type="checkbox" class="ace">
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </th>
-                                    <th>角色id</th>
-                                    <th>角色名称</th>
-                                    <th>描述</th>
-                                    <th>开启状态</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if(is_array($page_data) || $page_data instanceof \think\Collection || $page_data instanceof \think\Paginator): $i = 0; $__LIST__ = $page_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$role): $mod = ($i % 2 );++$i;?>
-                                <tr>
-                                    <td>
-                                        <label>
-                                            <input type="checkbox" class="ace">
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </td>
-                                    <td><?php echo htmlentities($role['id']); ?></td>
-                                    <td><?php echo htmlentities($role['name']); ?></td>
-                                    <td><?php echo htmlentities($role['remark']); ?></td>
-                                    <td><?php if($role['status'] == 1): ?>开启<?php else: ?>关闭<?php endif; ?></td>
-                                    <td>
-                                        <a title="编辑" href="<?php echo url('Rbac/editRole',array('id' => $role['id'])); ?>" class="btn btn-xs btn-info">
-                                            <i class="fa fa-edit bigger-120"></i>
-                                        </a>
-                                        <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/delRole',array('id' => $role['id'])); ?>" class="btn btn-xs btn-warning">
-                                            <i class="fa fa-trash  bigger-120"></i>
-                                        </a>
-                                        <a title="配置权限" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/access'); ?>" class="btn btn-xs btn-warning">
-                                            <i class="fa fa-trash  bigger-120"></i>配置权限
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php endforeach; endif; else: echo "" ;endif; ?>
-                            </tbody>
-                        </table>
+                        <form action="<?php echo url('rbac/delRole'); ?>" method="post" class="right_form">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="25px">
+                                            <label>
+                                                <input type="checkbox" class="ace">
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </th>
+                                        <th>角色id</th>
+                                        <th>角色名称</th>
+                                        <th>描述</th>
+                                        <th>开启状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if(is_array($page_data) || $page_data instanceof \think\Collection || $page_data instanceof \think\Paginator): $i = 0; $__LIST__ = $page_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$role): $mod = ($i % 2 );++$i;?>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                <input type="checkbox" class="ace id" name="id[]" value="<?php echo htmlentities($role['id']); ?>">
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+                                        <td><?php echo htmlentities($role['id']); ?></td>
+                                        <td><?php echo htmlentities($role['name']); ?></td>
+                                        <td><?php echo htmlentities($role['remark']); ?></td>
+                                        <td><?php if($role['status'] == 1): ?>开启<?php else: ?>关闭<?php endif; ?></td>
+                                        <td>
+                                            <a title="编辑" href="<?php echo url('Rbac/editRole',array('id' => $role['id'])); ?>" class="btn btn-xs btn-info">
+                                                <i class="fa fa-edit bigger-120"></i>
+                                            </a>
+                                            <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/delRole',array('id' => $role['id'])); ?>" class="btn btn-xs btn-warning">
+                                                <i class="fa fa-trash  bigger-120"></i>
+                                            </a>
+                                            <a title="配置权限" href="<?php echo url('Rbac/access',array('id'=>$role['id'])); ?>" class="btn btn-xs btn-warning">
+                                                <i class="fa fa-trash  bigger-120"></i>配置权限
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
                 <div class="row">
@@ -124,7 +124,7 @@
                     <div class="col-sm-6">
                         <div class="dataTables_paginate paging_bootstrap">
                             <ul class="pagination">
-                                {<?php echo htmlspecialchars_decode($page);?>}
+                                <?php echo htmlentities($page); ?>
                             </ul>
                         </div>
                     </div>
@@ -133,5 +133,5 @@
         </div>
     </div>
 </body>
-
+<script src="/static/admin/js/common.js" type="text/javascript"></script>
 </html>
