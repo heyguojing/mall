@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>节点列表</title>
+    <title>权限列表</title>
     <link rel="shortcut icon" href="__ADMIN__/images/favicon.ico">
     <link href="__ADMIN__/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="__ADMIN__/assets/css/font-awesome.min.css" />
@@ -17,16 +17,17 @@
     <script src="__ADMIN__/js/jquery-1.9.1.min.js"></script>
 </head>
 <script type="text/javascript">
-    $(function () {
-        $("input[level=1]").click(function () {
-            var inselec = $(this).parents(".app").find("input");
-            $(this).attr('checked') ? inselec.attr('checked', 'checked') : inselec.removeAttr('checked');
-        })
-        $("input[level=2]").click(function () {
-            var inselec = $(this).parents("dl").find("input");
-            $(this).attr('checked') ? inselec.attr('checked', 'checked') : inselec.removeAttr('checked');
-        })
-    })
+    $(function(){
+    	$("input[level=1]").click(function () {
+            var inputs = $(this).parents(".app").find("input");
+            $(this).prop('checked')?inputs.attr('checked','checked'):inputs.removeAttr('checked');
+	    })
+	    $("input[level=2]").click(function () {
+            
+		    var inputs = $(this).parents("dl").find("input");
+		    $(this).prop('checked')?inputs.attr('checked','checked'):inputs.removeAttr('checked');
+	    })
+    });
 </script>
 <body>
     <div class="crumbs">
@@ -38,33 +39,41 @@
     </div>
     <div id="wrap">
         <a href="{:url('Rbac/role')}" class="add-app">返回</a>
-        {volist name="page_data" id="app"}
-        <div class="app">
-            <p>
-                <strong>{$app.title}</strong>
-                <input type="checkbox" name="access[]" value="{$app.id_1}" level="1" {if condition="$app['access'] eq 1" } checked="checked"
-                    {/if}>
-            </p>
-            {volist name="app.child" id="action"}
-            <dl>
-                <dt>
-                    <strong>{$action.title}</strong>
-                    <input type="checkbox" name="access[]" value="{$action.id_2}" level="2" {if condition="$action['access'] eq 1" } checked="checked"
+        <form action="{:url('rbac/access')}" method="post">
+            {volist name="page_data" id="app"}
+            <div class="app">
+                <p>
+                    <strong>{$app.title}</strong>
+                    <input type="checkbox" name="access[]" value="{$app.id}_1" level="1" {if condition="$app['access'] eq 1" } checked="checked"
                         {/if}>
-                </dt>
-                {volist name="action.child" id="method"}
-                <dd>
-                    <span>{$method.title}</span>
-                    <input type="checkbox" name="access[]" value="{$method.id_3}" level="3" {if condition="$method['access'] eq 1" } checked="checked"
-                        {/if}>
-                </dd>
+                </p>
+                {volist name="app.child" id="action"}
+                <dl>
+                    <dt>
+                        <strong>{$action.title}</strong>
+                        <input type="checkbox" name="access[]" value="{$action.id}_2" level="2" {if condition="$action['access'] eq 1" } checked="checked"
+                            {/if}>
+                    </dt>
+                    {volist name="action.child" id="method"}
+                    <dd>
+                        <span>{$method.title}</span>
+                        <input type="checkbox" name="access[]" value="{$method.id}_3" level="3" {if condition="$method['access'] eq 1" } checked="checked"
+                            {/if}>
+                    </dd>
+                    {/volist}
+                </dl>
                 {/volist}
-            </dl>
+            </div>
             {/volist}
-        </div>
-        {/volist}
+            <input type="hidden" name="rid" value="{$rid}">
+            <input type="submit" class="btn btn-primary radius submit" value="保存修改">
+        </form>
     </div>
 </body>
 
 </html>
-<script src="__ADMIN__/js/common.js" type="text/javascript"></script>
+<style>
+    .submit{
+        width:80px;margin:0 auto 10px;display: flex;align-content: center;
+    }
+</style>

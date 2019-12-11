@@ -62,4 +62,19 @@ class Role extends Common
     {
         return Db::name('access')->where($where)->column($field);
     }
+    /**
+     * 删除角色原有权限
+     */
+    public function accessDelData($where)
+    {
+        return Db::name('access')->where($where)->delete();
+    }
+    /**
+     * 设置新的权限
+     */
+    public function accessAddData($data)
+    {
+        $res =  Db::name('access')->insertAll($data);
+        return $res;
+    }
 }

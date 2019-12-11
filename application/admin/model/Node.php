@@ -58,6 +58,7 @@ class Node extends Common
         if($res){
             $where['field'] = array('id','name','title','pid');
             $page_data = $this->pageData($where,'range');
+            cache('node_data',$page_data,86400);
             $page_data = node_merge($page_data);
             cache('rbac_node',$page_data,86400);
         }
@@ -72,6 +73,7 @@ class Node extends Common
         if($res){
             $where['field'] = array('id','name','title','pid');
             $page_data = $this->pageData($where,'range');
+            cache('node_data',$page_data,86400);
             $page_data = node_merge($page_data);
             cache('rbac_node',$page_data,86400);
         }
@@ -86,6 +88,7 @@ class Node extends Common
         if($res){
             $where['field'] = array('id','name','title','pid');
             $page_data = $this->pageData($where,'range');
+            cache('node_data',$page_data,86400);
             $page_data = node_merge($page_data);
             cache('rbac_node',$page_data,86400);
         }

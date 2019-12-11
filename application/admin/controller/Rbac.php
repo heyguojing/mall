@@ -158,8 +158,45 @@ class Rbac extends Common
         }
         // 是否post
         if($this->request->isPost()){
-
-
+            // 删除角色原有权限
+            $where = array('role_id' => $rid);
+            $this->role->accessDelData($where);
+            // 获取access权限
+            $data = array();
+            $access = input('access');
+            foreach($access as $v){
+                $tmp = explode("_",$v);
+                $data[] = array(
+                    //这里roleId唯一，一个角色可以对应多个权限
+                    'role_id' => $rid,
+                    'node_id' => $tmp[0],
+                    'level' => $tmp[1]
+                );
+            };
+            // 设置新权限
+            $res = $this->role->accessAddData($data);
+            p($this->role->getLastSql());
+            var_dump($res);
+            if($res){
+                // 节点列表
+                $node_data = cache('node_data');
+                if(empty($node_data)){
+                    $where['field'] = array('id','name','title','pid');
+                    $node_data = $this->node->pageData($where,'range');
+                    cache('node_data',$node_data,86400);
+                }   
+                // 重新设置当前角色拥有的权限
+                if(!$page_data = cache('access_'.$rid)){
+                    $field = 'node_id';
+                    $where = array('role_id' => $rid);
+                    $page_data = $this->role->accessGetField($where,$field);
+                    $page_data = node_merge($node_data,$page_data);
+                    cache('access_'.$rid,$page_data,86400);
+                }                     
+                $this->success('设置权限成功',url('rbac/role'));
+            }else{
+                $this->success('设置权限失败',url('rbac/role'));
+            }
 
         }else{
             // 节点列表
@@ -167,8 +204,6 @@ class Rbac extends Common
             if(empty($node_data)){
                 $where['field'] = array('id','name','title','pid');
                 $node_data = $this->node->pageData($where,'range');
-                print_r('<pre>');
-                print_r($node_data);
                 cache('node_data',$node_data,86400);
             }
             // 获取角色原有的权限

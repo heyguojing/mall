@@ -1,3 +1,4 @@
+<?php /*a:1:{s:59:"C:\wamp\www\mall\application\admin\view\common\success.html";i:1575982432;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -42,18 +43,18 @@
         .s-box .jump {position:absolute;bottom:0;left:0;font-size:12px;}
         .s-box .border-box .jump p {text-align:center;padding-left:30px;}
         .s-box .jump a {color:#333;}
-        .mask {position:fixed;width:140px;height:220px;background:url(__ADMIN__/images/info_logo.png) no-repeat;right:0;top:0;}
+        .mask {position:fixed;width:140px;height:220px;background:url(/static/admin/images/info_logo.png) no-repeat;right:0;top:0;}
     </style>
 </head>
 
 <body>
     <div class="s-box">
-        <div class="border-box e">
+        <div class="border-box">
             <span class="info">温馨提示！</span>
-            <!-- <img class="logo" src="__ADMIN__/images/logo_e.png" alt=""> -->
-            <div class="success">{$msg}</div>
+            <!-- <img class="logo" src="/static/admin/images/logo_s.png" alt=""> -->
+            <div class="success"><?php echo htmlentities($msg); ?></div>
             <div class="jump">
-                <p>页面自动 <a id="href" href="{$url}">跳转</a> 等待时间： <b id="wait">100</b></p>
+                <p>页面自动 <a id="href" href="<?php echo htmlentities($url); ?>">跳转</a> 等待时间： <b id="wait"><?php echo htmlentities($wait); ?></b></p>
             </div>
         </div>
     </div>

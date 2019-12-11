@@ -1,4 +1,4 @@
-<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1575621468;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575249575;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575879808;}*/ ?>
+<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1575893124;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575893124;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
