@@ -49,4 +49,46 @@ class Node extends Common
             return Db::name($this->table)->where($where)->field($field)->limit($limit)->order($order)->select();
         }
     }
+    /**
+     * 添加数据cache
+     */
+    public function addData($data = array())
+    {
+        $res =  Db::name($this->table)->data($data)->insert();
+        if($res){
+            $where['field'] = array('id','name','title','pid');
+            $page_data = $this->pageData($where,'range');
+            $page_data = node_merge($page_data);
+            cache('rbac_node',$page_data,86400);
+        }
+        return $res;
+    }
+    /**
+     * 更新数据cache
+     */
+    public function saveData($where = array(),$data = array())
+    {
+        $res =  Db::name($this->table)->where($where)->update($data);
+        if($res){
+            $where['field'] = array('id','name','title','pid');
+            $page_data = $this->pageData($where,'range');
+            $page_data = node_merge($page_data);
+            cache('rbac_node',$page_data,86400);
+        }
+        return $res;
+    }
+    /**
+     * 删除数据cache
+     */
+    public function delData($where)
+    {
+        $res =  Db::name($this->table)->where($where)->delete();
+        if($res){
+            $where['field'] = array('id','name','title','pid');
+            $page_data = $this->pageData($where,'range');
+            $page_data = node_merge($page_data);
+            cache('rbac_node',$page_data,86400);
+        }
+        return $res;
+    }
 }

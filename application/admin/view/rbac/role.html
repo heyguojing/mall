@@ -105,7 +105,7 @@
                                             <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="{:url('Rbac/delRole',array('id' => $role['id']))}" class="btn btn-xs btn-warning">
                                                 <i class="fa fa-trash  bigger-120"></i>
                                             </a>
-                                            <a title="配置权限" href="{:url('Rbac/access',array('id'=>$role['id']))}" class="btn btn-xs btn-warning">
+                                            <a title="配置权限" href="{:url('Rbac/access',array('rid'=>$role['id']))}" class="btn btn-xs btn-warning">
                                                 <i class="fa fa-trash  bigger-120"></i>配置权限
                                             </a>
                                         </td>

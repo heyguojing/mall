@@ -1,4 +1,4 @@
-<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1575962786;}*/ ?>
+<?php /*a:1:{s:54:"C:\wamp\www\mall\application\admin\view\rbac\role.html";i:1576029451;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -106,7 +106,7 @@
                                             <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="<?php echo url('Rbac/delRole',array('id' => $role['id'])); ?>" class="btn btn-xs btn-warning">
                                                 <i class="fa fa-trash  bigger-120"></i>
                                             </a>
-                                            <a title="配置权限" href="<?php echo url('Rbac/access',array('id'=>$role['id'])); ?>" class="btn btn-xs btn-warning">
+                                            <a title="配置权限" href="<?php echo url('Rbac/access',array('rid'=>$role['id'])); ?>" class="btn btn-xs btn-warning">
                                                 <i class="fa fa-trash  bigger-120"></i>配置权限
                                             </a>
                                         </td>

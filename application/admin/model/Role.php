@@ -45,4 +45,21 @@ class Role extends Common
             return Db::name($this->table)->where($where)->field($field)->limit($limit)->order($order)->select();
         }
     }
+    /**
+     * 删除数据
+     */
+    public function delData($role_id)
+    {
+        // 删除权限
+        Db::name('access')->where(array('role_id' => $role_id))->delete();
+        // 删除角色
+        return Db::name($this->table)->where(array('id' => $role_id))->delete();
+    }
+    /**
+     * 获取当前角色的权限
+     */
+    public function accessGetField($where,$field)
+    {
+        return Db::name('access')->where($where)->column($field);
+    }
 }

@@ -94,10 +94,10 @@ class Rbac extends Common
      */
     public function editRole()
     {
-        $id = input('id');
+        $id = input('id',0,'intval');
         $where = array('id' => $id);
-        $editdata = $this->role->getOne($where);
-        if(empty($editdata)){
+        $role_one = $this->role->getOne($where);
+        if(empty($role_one)){
             $this->error('角色id不存在','Rbac/role');
         }
         // post
@@ -119,11 +119,9 @@ class Rbac extends Common
      */
     public function delRole()
     {
-        $id = input('id','','intval');
-        p($id);
+        $id = input('id',0,'intval');
         if(is_array($id)){
             $role_one = $id;
-            p($role_one);
             $ids = implode(',',$id);
         }else{
             $role_one = array((int)$id);
@@ -133,17 +131,57 @@ class Rbac extends Common
         foreach($role_one as $v){
             $data = $this->role->getOne(array('id' => $v));
             if(empty($data)){
-                $this->error('角色id不存在','Rbac/role');
+                $this->error('角色id不存在',url('Rbac/role'));
             }
         }
         // 执行删除
         foreach($role_one as $val){
-            $res = $this->role->delData(array('id' => $val));
+            $res = $this->role->delData(array($val));
         }
         if($res){
-            $this->success('角色删除成功','Rbac/role');
+            $this->success('角色删除成功',url('Rbac/role'));
         }else{
-            $this->error('角色删除失败','Rbac/role');
+            $this->error('角色删除失败',url('Rbac/role'));
+        }
+    }
+    /**
+     * 配置用户权限
+     */
+    public function access()
+    {
+        //判断id是否存在
+        $rid = input('rid',0,'intval');
+        $where = array('id' => $rid);
+        $editdata = $this->role->getOne($where);
+        if(empty($editdata)){
+            $this->error('角色id不存在','Rbac/role');
+        }
+        // 是否post
+        if($this->request->isPost()){
+
+
+
+        }else{
+            // 节点列表
+            $node_data = cache('node_data');
+            if(empty($node_data)){
+                $where['field'] = array('id','name','title','pid');
+                $node_data = $this->node->pageData($where,'range');
+                print_r('<pre>');
+                print_r($node_data);
+                cache('node_data',$node_data,86400);
+            }
+            // 获取角色原有的权限
+            if(!$page_data = cache('access_'.$rid)){
+                $field = 'node_id';
+                $where = array('role_id' => $rid);
+                $page_data = $this->role->accessGetField($where,$field);
+                $page_data = node_merge($node_data,$page_data);
+                cache('access_'.$rid,$page_data,86400);
+            }
+            $this->assign('page_data',$page_data);
+            $this->assign('rid',$rid);
+            return $this->fetch();
         }
     }
     /**
@@ -151,9 +189,14 @@ class Rbac extends Common
      */
     public function node()
     {
-        $where['field'] = array('id','name','title','pid');
-        $page_data = $this->node->pageData($where,'range');
-        $page_data = node_merge($page_data);
+        // 生成缓存，如果有缓存就从缓存里面取，否则从数据库拿；
+        $page_data = cache('rbac_node');
+        if(empty($page_data)){
+            $where['field'] = array('id','name','title','pid');
+            $page_data = $this->node->pageData($where,'range');
+            $page_data = node_merge($page_data);
+            cache('rbac_node',$page_data,86400);
+        }
         $this->assign('page_data',$page_data);
         return $this->fetch();
     }
