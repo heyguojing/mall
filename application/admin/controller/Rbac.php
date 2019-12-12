@@ -110,7 +110,7 @@ class Rbac extends Common
                 return $this->error('角色编辑失败');
             }
         }else{
-            $this->assign('editdata',$editdata);
+            $this->assign('editdata',$role_one);
             return $this->fetch();
         }    
     }
@@ -174,10 +174,7 @@ class Rbac extends Common
                 );
             };
             // 设置新权限
-            $res = $this->role->accessAddData($data);
-            p($this->role->getLastSql());
-            var_dump($res);
-            if($res){
+            if($this->role->accessAddData($data)){
                 // 节点列表
                 $node_data = cache('node_data');
                 if(empty($node_data)){
@@ -186,16 +183,14 @@ class Rbac extends Common
                     cache('node_data',$node_data,86400);
                 }   
                 // 重新设置当前角色拥有的权限
-                if(!$page_data = cache('access_'.$rid)){
-                    $field = 'node_id';
-                    $where = array('role_id' => $rid);
-                    $page_data = $this->role->accessGetField($where,$field);
-                    $page_data = node_merge($node_data,$page_data);
-                    cache('access_'.$rid,$page_data,86400);
-                }                     
-                $this->success('设置权限成功',url('rbac/role'));
+                $field = 'node_id';
+                $where = array('role_id' => $rid);
+                $page_data = $this->role->accessGetField($where,$field);
+                $page_data = node_merge($node_data,$page_data);
+                cache('access_'.$rid,$page_data,86400);
+                $this->success('设置权限成功',url('rbac/role'));                 
             }else{
-                $this->success('设置权限失败',url('rbac/role'));
+                $this->error('设置权限失败',url('rbac/role'));
             }
 
         }else{

@@ -22,7 +22,7 @@ class Login extends Controller
     {
         ob_clean();//清楚缓存
         $captcha = new Captcha();
-        $captcha->codeSet = '123456789qwertyuipasdfghjklzxcvbnm';
+        $captcha->codeSet = '123456789';
         $captcha->fontSize = 40;
         $captcha->length = 4;
         $captcha->useCurve = true;

@@ -1,4 +1,4 @@
-<?php /*a:1:{s:56:"C:\wamp\www\mall\application\admin\view\rbac\access.html";i:1576077637;}*/ ?>
+<?php /*a:1:{s:56:"C:\wamp\www\mall\application\admin\view\rbac\access.html";i:1576137931;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,6 +75,6 @@
 </html>
 <style>
     .submit{
-        width:80px;margin:0 auto 10px;display: flex;align-content: center;
+        width:80px;margin:10px auto 0;display: flex;align-content: center;
     }
 </style>
