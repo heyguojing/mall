@@ -1,4 +1,4 @@
-<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1575893124;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575893124;}*/ ?>
+<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1576161927;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1576159143;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1575300564;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1575893124;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/static/admin/assets/css/ace-skins.min.css" />
     <link rel="stylesheet" href="/static/admin/css/style.css" />
     <script src="/static/admin/assets/js/ace-extra.min.js"></script>
-    <script src="/static/admin/js/jquery-1.9.1.min.js"></script>
+    <script src="/static/admin/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
         if ("ontouchend" in document) document.write("<script src='/static/admin/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
     </script>
@@ -26,7 +26,7 @@
     <script src="/static/admin/assets/layer/layer.js" type="text/javascript"></script>
     <script src="/static/admin/assets/laydate/laydate.js" type="text/javascript"></script>
     <script src="/static/admin/js/jquery.nicescroll.js" type="text/javascript"></script>
-
+    <script src="/static/admin/js/index.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function() {
             var cid = $('#nav_list> li>.submenu');
@@ -160,6 +160,8 @@
                     </a>
                     <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li><a href="javascript:void(0);" name="Systems.html" title="系统设置" class="iframeurl"><i class="icon-cog"></i>网站设置</a></li>
+                        
+                        <li><a href="javascript:void(0)" url="<?php echo url('Index/delCache'); ?>" title="删除缓存" class="delCache"><i class="icon-user"></i>删除缓存</a></li>
                         <li><a href="javascript:void(0)" name="admin_info.html" title="个人信息" class="iframeurl"><i class="icon-user"></i>个人资料</a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo url('index/logout'); ?>" id="Exit_system"><i class="icon-off"></i>退出</a></li>

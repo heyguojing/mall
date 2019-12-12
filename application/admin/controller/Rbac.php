@@ -25,6 +25,22 @@ class Rbac extends Common
         }
     }
     /**
+     * 添加管理员
+     */
+    public function addUser()
+    {
+        if($this->request->isPost()){
+            $data = $this->role->postRoleData();
+        }else{
+            // 载入角色组
+            $where['status'] = 1;
+            $where['order'] = 'id asc';
+            $role_data = $this->role->pageData($where,'range');
+            $this->assign('role_data',$role_data);
+            return $this->fetch();
+        }
+    }
+    /**
      * 角色列表
      */
     public function role()

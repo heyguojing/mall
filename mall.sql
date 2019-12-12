@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2019-12-12 00:17:42
+Date: 2019-12-13 00:17:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -68,7 +68,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1576080859', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1576159628', '127.0.0.1', '0', '0');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -91,7 +91,7 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
@@ -113,6 +113,7 @@ INSERT INTO `mall_node` VALUES ('18', 'delnode', '', '', '删除节点', '1', nu
 INSERT INTO `mall_node` VALUES ('19', 'editrole', '', '', '编辑角色', '1', null, '0', '2', '3', '1');
 INSERT INTO `mall_node` VALUES ('20', 'delrole', '', '', '删除角色', '1', null, '0', '2', '3', '1');
 INSERT INTO `mall_node` VALUES ('21', 'access', '', '', '配置权限', '1', null, '0', '2', '3', '1');
+INSERT INTO `mall_node` VALUES ('23', 'editUser', '', '', '管理员编辑', '1', null, '0', '2', '3', '1');
 
 -- ----------------------------
 -- Table structure for mall_role
@@ -138,3 +139,18 @@ INSERT INTO `mall_role` VALUES ('5', 'user2', null, '1', '普通管理员');
 INSERT INTO `mall_role` VALUES ('6', 'user3', null, '1', '普通管理员');
 INSERT INTO `mall_role` VALUES ('7', 'user4', null, '1', '普通管理员');
 INSERT INTO `mall_role` VALUES ('8', 'users', null, '1', '管理员');
+
+-- ----------------------------
+-- Table structure for mall_role_user
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_role_user`;
+CREATE TABLE `mall_role_user` (
+  `role_id` mediumint(9) unsigned DEFAULT NULL COMMENT '角色id',
+  `user_id` char(32) DEFAULT NULL COMMENT '用户id',
+  KEY `group_id` (`role_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户与角色中间表';
+
+-- ----------------------------
+-- Records of mall_role_user
+-- ----------------------------

@@ -1,4 +1,4 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_role.html";i:1575941527;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_user.html";i:1576167383;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -21,27 +21,37 @@
         <div class="crumbs">
             <ul>
                 <li>
-                    <a href="javascript:;">角色管理</a>
+                    <a href="javascript:;">管理员管理</a>
                 </li>
                 <li class="uline">/</li>
                 <li>
-                    <a class="active" href="javascript:;">添加角色</a>
+                    <a class="active" href="javascript:;">添加管理员</a>
                 </li>
             </ul>
        </div>
-        <form action="<?php echo url('Rbac/addRole'); ?>" method="post" class="form form-horizontal">
+        <form action="<?php echo url('Rbac/addUser'); ?>" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
-                <label class="form-label">角色英文名称：</label>
+                <label class="form-label">管理员名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="name" datatype="*" nullmsg="角色英文名称不能为空！">
+                        <input type="text" class="input-text" value="111" placeholder=""  name="username" datatype="*" nullmsg="管理员名称不能为空！" ajaxurl="<?php echo url('Rbac/ajaxUsername'); ?>">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
-                <label class="form-label">角色描述：</label>
+                <label class="form-label">管理员密码：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="remark" datatype="*" nullmsg="角色描述不能为空！">
+                    <input type="password" class="input-text" value="111" name="password" datatype="/^[\w\W]{6,18}$/" nullmsg="管理员密码不能为空！">
                     <span class="Validform_checktip"></span>
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label">所属角色组：</label>
+                <div class="formControls ">
+                    <?php if(is_array($role_data) || $role_data instanceof \think\Collection || $role_data instanceof \think\Paginator): $i = 0; $__LIST__ = $role_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                    <label for="">
+                        <input type="checkbox" name="role_id[]" value="{vo['id']}" class="role_id" datatype="*" nullmsg="所属角色组不能为空！"><?php echo htmlentities($vo['remark']); ?>
+                    </label>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
