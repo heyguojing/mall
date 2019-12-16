@@ -8,12 +8,14 @@ class Rbac extends Common
 {
     protected $node;
     protected $role;
+    protected $admin;
     public function __construct(Request $request)
     {
         parent::__construct();
         $this->request = $request;
         $this->node = model('Node');
         $this->role = model('Role');
+        $this->admin = model('Admin');
     }
     public function index()
     {
@@ -30,7 +32,32 @@ class Rbac extends Common
     public function addUser()
     {
         if($this->request->isPost()){
-            $data = $this->role->postRoleData();
+            // 数据
+            $data = $this->postUserData();
+            $data['login_ip'] = get_client_ip();
+            $data['login_time'] = time();
+            $data['add_time'] = time();
+            $data['salt'] = getRandKey();
+            $data['password'] = md5(md5($data['password']).$data['salt']);
+            // 添加
+            $res = $this->admin->addData($data);
+            if($res){
+                $role_id = input('role_id');
+                $role_data = array();
+                if(!empty($role_id)){
+                    foreach($role_id as $v){
+                        $role_data[] = array(
+                            'role_id' => $v,
+                            'user_id' => $res
+                        );
+                    }
+                    $this->role->userRoleAddData($role_data);
+                }
+                $this-success('添加管理员'.$data['username'].'成功',url('rbac/addUser'));
+            }else{
+                $this->error('添加管理员失败',url('rbac/addUser'));
+            }
+
         }else{
             // 载入角色组
             $where['status'] = 1;
@@ -354,6 +381,17 @@ class Rbac extends Common
         }
     }
     /**
+     * 接受管理员user数据
+     */
+    public function postUserData()
+    {
+        $data = array(
+            'username' => input('username'),
+            'password' => input('password'),
+            'status' => input('status',0,'intval'),
+        );
+    }
+    /**
      * 接收节点post数据
      */
     private function postNodeData()
@@ -370,7 +408,7 @@ class Rbac extends Common
         return $data;
     }
     /**
-     * 接收角色post数据
+     * 接收角色role数据
      */
     private function postRoleData()
     {

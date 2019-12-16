@@ -5,9 +5,9 @@ use think\Db;
 class Role extends Common
 {
     protected $table;
-    public function __construct($data = [])
+    public function __construct()
     {
-        parent::__construct($data);
+        parent::__construct();
         $this->table = 'role';
     }
     /**

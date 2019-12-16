@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2019-12-13 00:17:15
+Date: 2019-12-17 00:25:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -63,12 +63,13 @@ CREATE TABLE `mall_admin` (
   PRIMARY KEY (`admin_id`),
   UNIQUE KEY `用户名` (`username`),
   KEY `用户状态` (`status`) COMMENT '用户状态\r\n'
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1576159628', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1576502739', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('2', '', '68b9675b1a166838d316f71b2b47a3cb', '9d3357', '0', '1576513405', '127.0.0.1', '1576513405', '0');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -135,7 +136,7 @@ CREATE TABLE `mall_role` (
 -- ----------------------------
 INSERT INTO `mall_role` VALUES ('3', 'Member', null, '1', '普通管理员');
 INSERT INTO `mall_role` VALUES ('4', 'user1', null, '1', '普通管理员');
-INSERT INTO `mall_role` VALUES ('5', 'user2', null, '1', '普通管理员');
+INSERT INTO `mall_role` VALUES ('5', 'user2', null, '1', '编辑');
 INSERT INTO `mall_role` VALUES ('6', 'user3', null, '1', '普通管理员');
 INSERT INTO `mall_role` VALUES ('7', 'user4', null, '1', '普通管理员');
 INSERT INTO `mall_role` VALUES ('8', 'users', null, '1', '管理员');
