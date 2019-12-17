@@ -26,11 +26,79 @@ class Rbac extends Common
             return $this->redirect(url('Login/index'));
         }
     }
+    /**
+     * 管理员名称是否重复验证
+     */
+    public function ajaxUsername()
+    {
+        $key = input('name');
+        $val = input('param');
+        $admin_id = input('admin_id',0,'intval');
+        $res = $this->admin->ajaxValidate($val,$admin_id);
+        if(!$res){
+            $data = array(
+                'status' => 'y',
+                'info' => '用户名验证通过'
+            );
+        }else{
+            $data = array(
+                'status' => 'n',
+                'info' => '管理员用户名重复'
+            );
+        }
+        return json($data);
+    }
+    /**
+     * 管理员列表页
+     */
     public function user()
     {
-        $data = '';
+        if($this->request->isPost()){
+            $username = input('post.username','n');
+            $status = input('post.status',-1,'intval');
+            $page = input('post.page',1,'intval');
+        }else{
+            $username = input('username','n');
+            $status = input('status',-1,'intval');
+            $page = input('post.page',1,'intval');
+        }
+        $where = array();
+        // 判断名称
+        if($username !="" && $username != 'n'){
+            $where['username'] = $this->strSpaceDel($username);
+        }else{
+            $username = 'n';
+        }
+        // 判断状态
+        if($status > -1){
+            $where['status'] = $status;
+        }else{
+            $status = -1;
+        }
+        // 求总数
+        $role_total = $this->role->pageData($where,'total');//总条数
+        $where['page'] = input('page',1,'intval');
+        $where['field'] = array('id','name','username','status');
+        $where['order'] = 'id asc';
+        $where['limit'] = 10;//每页显示条数
+        $where['pageRow'] = 4;//显示页码数量
+        // 求分页数据
+        $page_data = $this->role->pageData($where,'range');
+        // 求分页url
+        $page_url = url('Rbac/role',array('username' => $username,'status' => $status,''));
+        // 载入分页
+        $page = new Page($role_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
+        // 显示分页
+        $show = $page->show(5);
+        $this->assign('page',$show);
+        // 模板赋值
+        $this->assign('page_data',$page_data);
+        $this->assign('username',$username);
+        $this->assign('status',$status);
+        $this->assign('page_total',$role_total);
         return $this->fetch();
     }
+
     /**
      * 添加管理员
      */

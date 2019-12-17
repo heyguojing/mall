@@ -1,4 +1,4 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_user.html";i:1576566168;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_user.html";i:1576589916;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -33,7 +33,7 @@
             <div class="Operate_cont clearfix">
                 <label class="form-label">管理员名称：</label>
                 <div class="formControls ">
-                        <input type="text" class="input-text" value="" placeholder=""  name="username" datatype="*" nullmsg="管理员名称不能为空！">
+                        <input type="text" class="input-text" value="" placeholder=""  name="username" datatype="*" ajaxUrl="<?php echo url('rbac/ajaxUsername'); ?>" nullmsg="管理员名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
