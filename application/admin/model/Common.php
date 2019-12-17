@@ -15,7 +15,7 @@ class Common extends Model
      */
     public function addData($data = array())
     {
-        return Db::name($this->table)->data($data)->insert();
+        return Db::name($this->table)->insert($data,0,1);
     }
     /**
      * 更新数据

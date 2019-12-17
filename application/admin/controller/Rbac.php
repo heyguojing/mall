@@ -26,6 +26,11 @@ class Rbac extends Common
             return $this->redirect(url('Login/index'));
         }
     }
+    public function user()
+    {
+        $data = '';
+        return $this->fetch();
+    }
     /**
      * 添加管理员
      */
@@ -53,7 +58,7 @@ class Rbac extends Common
                     }
                     $this->role->userRoleAddData($role_data);
                 }
-                $this-success('添加管理员'.$data['username'].'成功',url('rbac/addUser'));
+                $this->success('添加管理员'.$data['username'].'成功',url('rbac/addUser'));
             }else{
                 $this->error('添加管理员失败',url('rbac/addUser'));
             }
@@ -390,6 +395,7 @@ class Rbac extends Common
             'password' => input('password'),
             'status' => input('status',0,'intval'),
         );
+        return $data;
     }
     /**
      * 接收节点post数据

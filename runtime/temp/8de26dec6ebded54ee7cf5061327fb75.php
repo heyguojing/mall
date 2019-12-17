@@ -1,4 +1,4 @@
-<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_user.html";i:1576513272;}*/ ?>
+<?php /*a:1:{s:58:"C:\wamp\www\mall\application\admin\view\rbac\add_user.html";i:1576566168;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -33,14 +33,14 @@
             <div class="Operate_cont clearfix">
                 <label class="form-label">管理员名称：</label>
                 <div class="formControls ">
-                        <input type="text" class="input-text" value="111" placeholder=""  name="username" datatype="*" nullmsg="管理员名称不能为空！">
+                        <input type="text" class="input-text" value="" placeholder=""  name="username" datatype="*" nullmsg="管理员名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">管理员密码：</label>
                 <div class="formControls ">
-                    <input type="password" class="input-text" value="111" name="password" datatype="/^[\w\W]{6,18}$/" nullmsg="管理员密码不能为空！">
+                    <input type="password" class="input-text" value="" name="password" datatype="/^[\w\W]{6,18}$/" nullmsg="管理员密码不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
@@ -49,10 +49,10 @@
                 <div class="formControls ">
                     <?php if(is_array($role_data) || $role_data instanceof \think\Collection || $role_data instanceof \think\Paginator): $i = 0; $__LIST__ = $role_data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                     <label for="">
-                        <input type="checkbox" name="role_id[]" value="{vo['id']}" class="role_id" datatype="*" nullmsg="所属角色组不能为空！"><?php echo htmlentities($vo['remark']); ?>
+                        <input type="checkbox" name="role_id[]" value="<?php echo htmlentities($vo['id']); ?>" class="role_id" datatype="*" nullmsg="所属角色组不能为空！"><?php echo htmlentities($vo['remark']); ?>
                     </label>
                     <?php endforeach; endif; else: echo "" ;endif; ?>
-                </div>
+                </div>  
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label text-inline">是否开启：</label>

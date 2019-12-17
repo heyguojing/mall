@@ -32,14 +32,14 @@
             <div class="Operate_cont clearfix">
                 <label class="form-label">管理员名称：</label>
                 <div class="formControls ">
-                        <input type="text" class="input-text" value="111" placeholder=""  name="username" datatype="*" nullmsg="管理员名称不能为空！">
+                        <input type="text" class="input-text" value="" placeholder=""  name="username" datatype="*" nullmsg="管理员名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">管理员密码：</label>
                 <div class="formControls ">
-                    <input type="password" class="input-text" value="111" name="password" datatype="/^[\w\W]{6,18}$/" nullmsg="管理员密码不能为空！">
+                    <input type="password" class="input-text" value="" name="password" datatype="/^[\w\W]{6,18}$/" nullmsg="管理员密码不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
@@ -48,10 +48,10 @@
                 <div class="formControls ">
                     {volist name="role_data" id="vo"}
                     <label for="">
-                        <input type="checkbox" name="role_id[]" value="{vo['id']}" class="role_id" datatype="*" nullmsg="所属角色组不能为空！">{$vo.remark}
+                        <input type="checkbox" name="role_id[]" value="{$vo['id']}" class="role_id" datatype="*" nullmsg="所属角色组不能为空！">{$vo.remark}
                     </label>
                     {/volist}
-                </div>
+                </div>  
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label text-inline">是否开启：</label>

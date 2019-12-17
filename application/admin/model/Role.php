@@ -77,4 +77,11 @@ class Role extends Common
         $res =  Db::name('access')->insertAll($data);
         return $res;
     }
+    /**
+     *  添加用户与角色中间表
+     */
+    public function userRoleAddData($data)
+    {
+        return Db::name('role_user')->insertAll($data);
+    }
 }
