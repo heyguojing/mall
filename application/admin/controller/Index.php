@@ -41,11 +41,4 @@ class Index extends Common
         }
         return json($res);
     }
-    /**
-     * 
-     */
-    public function ajaxUsername()
-    {
-        return $this->fetch();
-    }
 }

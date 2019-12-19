@@ -60,7 +60,7 @@ class Rbac extends Common
         }else{
             $username = input('username','n');
             $status = input('status',-1,'intval');
-            $page = input('post.page',1,'intval');
+            $page = input('page',1,'intval');
         }
         $where = array();
         // 判断名称
@@ -77,15 +77,22 @@ class Rbac extends Common
         }
         // 求总数
         $role_total = $this->role->pageData($where,'total');//总条数
-        $where['page'] = input('page',1,'intval');
-        $where['field'] = array('id','name','username','status');
-        $where['order'] = 'id asc';
+        $where['page'] = $page;
+        $where['field'] = array('admin_id','username','login_time','login_ip','status');
+        $where['order'] = 'admin_id asc';
         $where['limit'] = 10;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
-        $page_data = $this->role->pageData($where,'range');
+        $page_data = $this->admin->pageData($where,'range');
+        // 求用户所属角色组
+       if(!empty($page_data)){
+           foreach($page_data as $k => $v){ 
+               $page_data[$k]['role'] = $this->admin->getUserRole(array('user_id' => $page_data[$k]['admin_id']),array('id','name','remark'));
+           }
+       }
+       p($page_data);
         // 求分页url
-        $page_url = url('Rbac/role',array('username' => $username,'status' => $status,''));
+        $page_url = url('Rbac/role',array('username' => $username,'status' => $status),'');
         // 载入分页
         $page = new Page($role_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
         // 显示分页

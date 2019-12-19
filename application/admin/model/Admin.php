@@ -9,7 +9,7 @@ class Admin extends Common
         parent::__construct($data);
         $this->table = "admin";
     }
-        /**
+    /**
      * 节点分页 求总数
      * 
      */
@@ -58,5 +58,12 @@ class Admin extends Common
             $where[] = array('admin_id','!=',$admin_id);
         }
         return Db::name($this->table)->where($where)->find();
+    }
+    /**
+     * 求用户所属管理员组
+     */
+    public function getUserRole($where,$field)
+    {
+        return Db::name('role')->alias('R')->join('mall_role_user RU','R.id = RU.role_id')->where($where)->field($field)->select();
     }
 }
