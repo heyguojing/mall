@@ -117,13 +117,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="dataTables_info">共 {$page_total} 条</div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                         <div class="dataTables_paginate paging_bootstrap">
                             <ul class="pagination">
-                                {$page}
+                                <?php echo(htmlspecialchars_decode($page));?>
                             </ul>
                         </div>
                     </div>

@@ -11,6 +11,11 @@ class Index extends Common
      */
     public function index()
     {
+        for($i=0;$i<105;$i++){
+            $data .= mt_rand(4099,409000).'","';
+        }
+        $arr = array('bmw','toyota','dazhong','xuefulan');
+        $str = implode(',',$arr);
         return $this->fetch();
     }
     /**

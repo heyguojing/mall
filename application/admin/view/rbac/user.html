@@ -119,6 +119,9 @@
                                             <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="{:url('Rbac/delUser',array('admin_id' => $user['admin_id']))}" class="btn btn-xs btn-warning">
                                                 <i class="fa fa-trash  bigger-120"></i>
                                             </a>
+                                            <a title="重置密码" href="javascript:;" onclick="confirm_msg(this)" url="{:url('Rbac/resetPass',array('admin_id' => $user['admin_id']))}" class="btn btn-xs btn-primary">
+                                                <i class="fa fa-edit  bigger-120"></i>重置密码
+                                            </a>
                                         </td>
                                     </tr>
                                     {/volist}
@@ -128,13 +131,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-2">
                         <div class="dataTables_info">共 {$page_total} 条</div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                         <div class="dataTables_paginate paging_bootstrap">
                             <ul class="pagination">
-                                {$page}
+                                <?php echo(htmlspecialchars_decode($page)); ?>
                             </ul>
                         </div>
                     </div>

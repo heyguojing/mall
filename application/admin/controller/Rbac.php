@@ -90,7 +90,6 @@ class Rbac extends Common
                $page_data[$k]['role'] = $this->admin->getUserRole(array('user_id' => $page_data[$k]['admin_id']),array('id','name','remark'));
            }
        }
-       p($page_data);
         // 求分页url
         $page_url = url('Rbac/role',array('username' => $username,'status' => $status),'');
         // 载入分页
@@ -148,6 +147,73 @@ class Rbac extends Common
         }
     }
     /**
+     * 编辑管理员
+     */
+    public function editUser()
+    {
+        $admin_id = input('admin_id');
+        if(empty($admin_id)){
+            $this->error('管理员id不存在',url('rbac/user'));
+        }
+        $admin_one = $this->admin->getOne(array('admin_id' => $admin_id));
+        if($this->request->isPost()){
+            // 更新user表数据
+            $data = $this->postUserData();
+            // $data['login_ip'] = get_client_ip();  //编辑数据不需要login_time
+            // $data['login_time'] = time();
+            // $data['add_time'] = time();
+            // $data['salt'] = getRandKey();
+            $res = $this->admin->saveData(array('admin_id' => $admin_id),$data);
+            // 删除原有角色
+            $this->role->delUserRole(array('user_id' => $admin_id));
+            // 添加新角色
+            $role_id = input('role_id');
+            p($role_id);
+            $role_data = array();
+            if(!empty($role_id)){
+                foreach($role_id as $k=>$v){
+                    $role_data[] = array(
+                        'user_id' => $admin_id,
+                        'role_id' => $v
+                    );
+                }
+                $addRoleRes = $this->admin->addUserRole($role_data);
+            }
+            // 结果判断
+            $res = $this->admin->addData($data);
+            if($addRoleRes || $res){
+                $this->success('用户角色'.$data['username'].'编辑成功',url('Rbac/user'));
+            }else{
+                $this->error('用户角色编辑失败',url('Rbac/user'));
+            }
+        }else{
+            // 查询数据
+            $this->assign('admin_one',$admin_one);
+            $where['status'] = 1;
+            $where['order'] = 'id asc';
+            // 查询角色组
+            $role_data = $this->role->pageData($where,'range');
+            $this->assign('role_data',$role_data);
+            $role_one = $this->admin->getUserRole(array('user_id' => $admin_id),'id');
+            $roleId_arr = array();
+            if(!empty($role_one)){
+                foreach($role_one as $k=>$v){
+                    $roleId_arr[] = $v['id'];
+                }
+            }
+            $role_one = $roleId_arr;
+            $this->assign('role_one',$role_one);
+            return $this->fetch();
+        }        
+    }
+    /**
+     * 删除管理员
+     */
+    public function delUser()
+    {
+
+    }
+    /**
      * 角色列表
      */
     public function role()
@@ -177,7 +243,7 @@ class Rbac extends Common
         $where['page'] = input('page',1,'intval');
         $where['field'] = array('id','name','remark','status');
         $where['order'] = 'id asc';
-        $where['limit'] = 10;//每页显示条数
+        $where['limit'] = 6;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
         $page_data = $this->role->pageData($where,'range');

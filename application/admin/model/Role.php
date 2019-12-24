@@ -84,4 +84,17 @@ class Role extends Common
     {
         return Db::name('role_user')->insertAll($data);
     }
+    /**
+     * 删除原有角色
+     */
+    public function delUserRole($where = array()){
+        return Db::name('role_user')->where($where)->delete();
+    }
+    /**
+     * 添加新角色
+     */
+    public function addUserRole($data)
+    {
+        return DB::name('role_user')->insertAll($data);
+    }
 }

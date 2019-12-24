@@ -1,4 +1,4 @@
-<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1576220641;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1576563764;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1576220641;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1576742920;}*/ ?>
+<?php /*a:4:{s:56:"C:\wamp\www\mall\application\admin\view\index\index.html";i:1576220641;s:56:"C:\wamp\www\mall\application\admin\view\common\head.html";i:1576563764;s:56:"C:\wamp\www\mall\application\admin\view\common\menu.html";i:1576220641;s:56:"C:\wamp\www\mall\application\admin\view\common\left.html";i:1577085023;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -231,10 +231,10 @@
         <li><a href="#" class="dropdown-toggle"><i class="icon"></i><span class="menu-text"> rbac </span><b class="arrow icon-angle-down"></b></a>
             <ul class="submenu">
                 <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/user'); ?>" title="管理员列表" class="iframeurl"><i class="icon-double-angle-right"></i>管理员列表</a></li>
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/role'); ?>" title="角色列表" class="iframeurl"><i class="icon-double-angle-right"></i>角色列表</a></li>
-                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/node'); ?>" title="节点列表" class="iframeurl"><i class="icon-double-angle-right"></i>节点列表</a></li>
                 <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addUser'); ?>" title="添加管理员" class="iframeurl"><i class="icon-double-angle-right"></i>添加管理员</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/role'); ?>" title="角色列表" class="iframeurl"><i class="icon-double-angle-right"></i>角色列表</a></li>
                 <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addRole'); ?>" title="添加角色" class="iframeurl"><i class="icon-double-angle-right"></i>添加角色</a></li>
+                <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/node'); ?>" title="节点列表" class="iframeurl"><i class="icon-double-angle-right"></i>节点列表</a></li>
                 <li class="home"><a href="javascript:void(0)" name="<?php echo url('rbac/addNode'); ?>" title="添加节点" class="iframeurl"><i class="icon-double-angle-right"></i>添加节点</a></li>
             </ul>
         </li>

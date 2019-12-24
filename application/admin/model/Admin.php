@@ -55,7 +55,7 @@ class Admin extends Common
         $where = array();
         $where[] = array('username','=',$val);
         if($admin_id > 0){ 
-            $where[] = array('admin_id','!=',$admin_id);
+            $where[] = array('admin_id','<>',$admin_id);
         }
         return Db::name($this->table)->where($where)->find();
     }
@@ -64,6 +64,11 @@ class Admin extends Common
      */
     public function getUserRole($where,$field)
     {
-        return Db::name('role')->alias('R')->join('mall_role_user RU','R.id = RU.role_id')->where($where)->field($field)->select();
+        $res = Db::name('role')->alias('R')->leftjoin('mall_role_user RU','R.id = RU.role_id')->where($where)->field($field)->select();
+        return $res;
+    }
+    public function addUserRole($data = array())
+    {
+        return Db::name('role_user')->insert($data);
     }
 }
