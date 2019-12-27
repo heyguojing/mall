@@ -132,9 +132,9 @@ class Rbac extends Common
                     }
                     $this->role->userRoleAddData($role_data);
                 }
-                $this->success('添加管理员'.$data['username'].'成功',url('rbac/addUser'));
+                $this->success('添加管理员'.$data['username'].'成功',url('rbac/user'));
             }else{
-                $this->error('添加管理员失败',url('rbac/addUser'));
+                $this->error('添加管理员失败',url('rbac/user'));
             }
 
         }else{
@@ -168,7 +168,6 @@ class Rbac extends Common
             $this->role->delUserRole(array('user_id' => $admin_id));
             // 添加新角色
             $role_id = input('role_id');
-            p($role_id);
             $role_data = array();
             if(!empty($role_id)){
                 foreach($role_id as $k=>$v){
@@ -177,14 +176,13 @@ class Rbac extends Common
                         'role_id' => $v
                     );
                 }
-                $addRoleRes = $this->admin->addUserRole($role_data);
+                $addRoleRes = $this->role->addUserRole($role_data);
             }
             // 结果判断
-            $res = $this->admin->addData($data);
             if($addRoleRes || $res){
                 $this->success('用户角色'.$data['username'].'编辑成功',url('Rbac/user'));
             }else{
-                $this->error('用户角色编辑失败',url('Rbac/user'));
+                $this->error('用户角色'.$data['username'].'编辑失败',url('Rbac/user'));
             }
         }else{
             // 查询数据
@@ -211,7 +209,30 @@ class Rbac extends Common
      */
     public function delUser()
     {
-
+        $admin_id = input('admin_id');
+        if(is_array($admin_id)){
+            $admin_arr = $admin_id;
+            $admin_ids = implode(',',$admin_id);
+        }else{
+            $admin_arr = array($admin_id);
+            $admin_ids = $admin_id;
+        }
+        // 判断用户id是否存在
+        foreach($admin_arr as $v){
+            $admin_one = $this->admin->getOne(array('admin_id' => $v));
+            if(empty($admin_one)){
+                $this->error('删除失败，用户不存在',url('Rbac/user'));
+            }
+        }
+        // 删除用户
+        foreach($admin_arr as $v){
+            $res = $this->admin->delData(array('admin_id' => $v));
+        }
+        if($res){
+            $this->success('用户id：'.$admin_ids.'删除成功',url('Rbac/user'));
+        }else{
+            $this->success('用户删除失败',url('Rbac/uesr'));
+        }
     }
     /**
      * 角色列表

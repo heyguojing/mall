@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50714
+Source Server         : php
+Source Server Version : 50721
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50714
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-12-17 00:25:04
+Date: 2019-12-25 14:59:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -63,13 +63,15 @@ CREATE TABLE `mall_admin` (
   PRIMARY KEY (`admin_id`),
   UNIQUE KEY `用户名` (`username`),
   KEY `用户状态` (`status`) COMMENT '用户状态\r\n'
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '3d53b999d53504c6c3a4dec950d0deb3', 'cce536', '0', '1576502739', '127.0.0.1', '0', '0');
-INSERT INTO `mall_admin` VALUES ('2', '', '68b9675b1a166838d316f71b2b47a3cb', '9d3357', '0', '1576513405', '127.0.0.1', '1576513405', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', '123456', 'cce536', '1', '1577240073', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('2', 'user1', '123456', '9d3357', '1', '1576513405', '127.0.0.1', '1576513405', '0');
+INSERT INTO `mall_admin` VALUES ('3', 'editor', 'ac44b803ac7cffd86c71ffdbdaa37717', '45039c', '1', '1577257125', '127.0.0.1', '1577257125', '0');
+INSERT INTO `mall_admin` VALUES ('4', 'gusts', '046f5e8894da24dab76f915e704facba', 'c6d684', '1', '1577257141', '127.0.0.1', '1577257141', '0');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -134,7 +136,7 @@ CREATE TABLE `mall_role` (
 -- ----------------------------
 -- Records of mall_role
 -- ----------------------------
-INSERT INTO `mall_role` VALUES ('3', 'Member', null, '1', '普通管理员');
+INSERT INTO `mall_role` VALUES ('3', 'Member', null, '1', '超级管理员');
 INSERT INTO `mall_role` VALUES ('4', 'user1', null, '1', '普通管理员');
 INSERT INTO `mall_role` VALUES ('5', 'user2', null, '1', '编辑');
 INSERT INTO `mall_role` VALUES ('6', 'user3', null, '1', '普通管理员');
@@ -155,3 +157,9 @@ CREATE TABLE `mall_role_user` (
 -- ----------------------------
 -- Records of mall_role_user
 -- ----------------------------
+INSERT INTO `mall_role_user` VALUES ('8', '2');
+INSERT INTO `mall_role_user` VALUES ('5', '2');
+INSERT INTO `mall_role_user` VALUES ('3', '1');
+INSERT INTO `mall_role_user` VALUES ('4', '2');
+INSERT INTO `mall_role_user` VALUES ('5', '3');
+INSERT INTO `mall_role_user` VALUES ('8', '4');
