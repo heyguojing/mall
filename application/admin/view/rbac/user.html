@@ -120,7 +120,7 @@
                                             <a title="删除" href="javascript:;" onclick="confirm_msg(this)" url="{:url('Rbac/delUser',array('admin_id' => $user['admin_id']))}" class="btn btn-xs btn-warning">
                                                 <i class="fa fa-trash  bigger-120"></i>
                                             </a>
-                                            <a title="重置密码" href="javascript:;" onclick="confirm_msg(this)" url="{:url('Rbac/resetPass',array('admin_id' => $user['admin_id']))}" class="btn btn-xs btn-primary">
+                                            <a title="重置密码" href="{:url('Rbac/editPass',array('admin_id' => $user['admin_id']))}" class="btn btn-xs btn-primary">
                                                 <i class="fa fa-edit  bigger-120"></i>重置密码
                                             </a>
                                             {else/}

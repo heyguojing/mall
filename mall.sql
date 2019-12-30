@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2019-12-25 14:59:18
+Date: 2019-12-30 16:05:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -68,9 +68,9 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', '123456', 'cce536', '1', '1577240073', '127.0.0.1', '0', '0');
-INSERT INTO `mall_admin` VALUES ('2', 'user1', '123456', '9d3357', '1', '1576513405', '127.0.0.1', '1576513405', '0');
-INSERT INTO `mall_admin` VALUES ('3', 'editor', 'ac44b803ac7cffd86c71ffdbdaa37717', '45039c', '1', '1577257125', '127.0.0.1', '1577257125', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'ac44b803ac7cffd86c71ffdbdaa37717', 'cce536', '1', '1577240073', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('2', 'user1', 'ac44b803ac7cffd86c71ffdbdaa37717', '9d3357', '1', '1576513405', '127.0.0.1', '1576513405', '0');
+INSERT INTO `mall_admin` VALUES ('3', 'editor', 'ac44b803ac7cffd86c71ffdbdaa37717', '45039c', '1', '1577693107', '127.0.0.1', '1577257125', '0');
 INSERT INTO `mall_admin` VALUES ('4', 'gusts', '046f5e8894da24dab76f915e704facba', 'c6d684', '1', '1577257141', '127.0.0.1', '1577257141', '0');
 
 -- ----------------------------

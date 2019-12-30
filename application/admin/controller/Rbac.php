@@ -162,7 +162,6 @@ class Rbac extends Common
             // $data['login_ip'] = get_client_ip();  //编辑数据不需要login_time
             // $data['login_time'] = time();
             // $data['add_time'] = time();
-            // $data['salt'] = getRandKey();
             $res = $this->admin->saveData(array('admin_id' => $admin_id),$data);
             // 删除原有角色
             $this->role->delUserRole(array('user_id' => $admin_id));
@@ -233,6 +232,34 @@ class Rbac extends Common
         }else{
             $this->success('用户删除失败',url('Rbac/uesr'));
         }
+    }
+    /**
+     * 重置密码
+     */
+    public function editPass()
+    {
+        $admin_id = input('admin_id');
+        $admin_one = $this->admin->getOne(array('admin_id' => $admin_id));
+        if(empty($admin_one)){
+            $this->error('管理员id不存在',url('rbac/user'));
+        }
+        if($this->request->isPost()){
+            // 接收密码
+            $password = input('password');
+            $password = md5(md5($password).$admin_one['salt']);
+            // 密码重置
+            $res = $this->admin->saveData(array('admin_id' => $admin_id),array('password' => $password));
+            // 结果判断
+            if($res){
+                $this->success('用户密码'.$admin_one['username'].'重置成功',url('Rbac/user'));
+            }else{
+                $this->error('用户密码'.$admin_one['username'].'重置失败',url('Rbac/user'));
+            }
+        }else{
+            // 查询数据
+            $this->assign('admin_one',$admin_one);
+            return $this->fetch();
+        }                
     }
     /**
      * 角色列表
@@ -554,8 +581,8 @@ class Rbac extends Common
     {
         $data = array(
             'username' => input('username'),
-            'password' => input('password'),
             'status' => input('status',0,'intval'),
+            'update_time' => time()
         );
         return $data;
     }
