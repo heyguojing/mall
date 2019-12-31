@@ -3,6 +3,7 @@ namespace app\admin\controller;
 use think\Controller;
 use think\captcha\Captcha;
 use think\facade\Session;
+use Org\Util\Rbac;
 class Login extends Controller
 {
     protected $admin = '';
@@ -54,6 +55,12 @@ class Login extends Controller
             session::set('username',$username);
             session::set('login_time',date('Y-m-d H:i:s',time()));
             session::set('login_ip',get_client_ip());
+            // 判断是否是超级管理员
+            if($username == config('rbac.RBAC_SUPERADMIN')){
+                session(config('rbac.ADMIN_AUTH_KEY'),true);
+            }
+            // 读取用户权限
+            Rbac::saveAccessList();
             // 更新登陆数据
             $data = array(
                 'login_time' => time(),
