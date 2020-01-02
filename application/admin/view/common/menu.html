@@ -19,16 +19,30 @@
     </div>
     <div class="menu-box">
         <ul class="menu-nav">
-            <li class="menu-nav-item active"><a href="javascript:;">权限管理</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">前台信息管理</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">系统管理</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">其他设置</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">订单管理</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">内容管理</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">会员管理</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">运营推广</a></li>
-            <li class="menu-nav-item"><a href="javascript:;">统计报表</a></li>
+            {volist name="node" id="vo" key="key"}
+            <li class="menu-nav-item {if condition=" $key eq 1 "}active{/if}">
+                <a href="javascript:;" menu_id="{$vo['id']}">{$vo['title']}</a>
+            </li>
+            {/volist}
         </ul>
     </div>
 </div>
 <!--menu end-->
+<script>
+    $(function () {
+        $(document).on('click', '.iframeurl', function () {
+            var cid = $(this).attr("name");
+            var cname = $(this).attr("title");
+            $("#iframe").attr("src", cid).ready();
+            $("#Bcrumbs").attr("href", cid).ready();
+            $(".Current_page a").attr('href', cid).ready();
+            $(".Current_page").attr('name', cid);
+            $(".Current_page").html(cname).css({
+                "color": "#333333",
+                "cursor": "default"
+            }).ready();
+            $("#parentIframe").html('<span class="parentIframe iframeurl"> </span>').css("display", "none").ready();
+            $("#parentIfour").html('').css("display", "none").ready();
+        });
+    })
+</script>

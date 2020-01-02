@@ -6,16 +6,48 @@ use think\facade\Env;
 use think\facade\Session;
 class Index extends Common
 {
+    protected $node;
+	protected $admin;
+    protected $uid;
+    public function __construct ()
+	{
+		parent::__construct();
+		$this->node = model("Node");
+		$this->admin = model("Admin");
+		$this->uid = session('uid');
+	}
     /**
      * 后台首页渲染
      */
     public function index()
     {
-        for($i=0;$i<105;$i++){
-            $data .= mt_rand(4099,409000).'","';
-        }
-        $arr = array('bmw','toyota','dazhong','xuefulan');
-        $str = implode(',',$arr);
+		$where = array(
+			'is_show' => 1,
+			'level' => 1,
+			'order' => 'sort asc,id asc',
+			'field' => 'id,name,title'
+		);
+		$node = $this->node->pageData($where, 'range');
+		if (session(config('rbac.ADMIN_AUTH_KEY'))) {
+
+		} else {
+			//定义当前模块
+			$module = array();
+			//当前用户的权限
+			$accessList = session('_ACCESS_LIST');
+			if (!empty($accessList)) {
+				foreach ($accessList as $key => $value) {
+					$module[] = $key;
+				}
+				//去除一些没有权限的模块
+				foreach ($node as $key => $value) {
+					if (!in_array(strtoupper($value['name']), $module)) {
+						unset($node[$key]);
+					}
+				}
+			}
+		}
+        $this->assign("node", $node);
         return $this->fetch();
     }
     /**
