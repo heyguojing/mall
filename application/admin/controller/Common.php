@@ -26,6 +26,6 @@ class Common extends Controller
             if($res == 0){
                 $this->error('亲，你没有操作权限');
             }
-        }
+        }   
     }
 }

@@ -1,0 +1,52 @@
+<!-- left -->
+<?php if(!empty($menu)):?>
+	{volist name="menu" id="vo"}
+	<li>
+		<a href="#" class="dropdown-toggle">
+			<i class="icon"></i>
+			<span class="menu-text"> {$vo['title']} </span>
+			<b class="arrow icon-angle-down"></b>
+		</a>
+		<?php if(!empty($vo['node'])):?>
+		<ul class="submenu">
+			{volist name="$vo['node']" id="val"} 
+				<?php if($val['parameter']):?>
+				<li class="home">
+					<a href="javascript:void(0)" name="{:url(MODULE_NAME.'/'.$vo['name'].'/'.$val['name'],array($val['parameter'] => $val['parameter_title']))}" title="{$val['title']}" class="iframeurl">
+						<i class="icon-double-angle-right"></i>{$val['title']}</a>
+				</li>
+				<?php else:?> 
+				<li class="home">
+				<a href="javascript:void(0)" name="{:url(MODULE_NAME.'/'.$vo['name'].'/'.$val['name'])}" title="{$val['title']}" class="iframeurl">
+					<i class="icon-double-angle-right"></i>{$val['title']}</a>
+				</li>
+				<?php endif;?>
+			{/volist}
+		</ul>	
+		<?php endif;?>
+	</li>
+	{/volist} 
+<?php endif;?>
+<!-- left end -->
+<script>
+	$(function () {
+		$(document).on('click', '.iframeurl', function () {
+			var cid = $(this).attr("name");
+			var cname = $(this).attr("title");
+			$("#iframe").attr("src", cid).ready();
+			$("#Bcrumbs").attr("href", cid).ready();
+			$(".Current_page a").attr('href', cid).ready();
+			$(".Current_page").attr('name', cid);
+			$(".Current_page").html(cname).css({
+				"color": "#333333",
+				"cursor": "default"
+			}).ready();
+			$("#parentIframe").html('<span class="parentIframe iframeurl"> </span>').css("display", "none").ready();
+			$("#parentIfour").html('').css("display", "none").ready();
+		});
+		$('#nav_list,.link_cz').find('li.home').on('click', function () {
+			$('#nav_list,.link_cz').find('li.home').removeClass('active');
+			$(this).addClass('active');
+		});
+	});
+</script>

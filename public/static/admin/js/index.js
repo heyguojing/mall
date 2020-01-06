@@ -29,14 +29,17 @@ $(function () {
 	$(".menu .menu-nav li").click(function () {
 		$(this).addClass('active').siblings().removeClass('active');
 	});
-	//点击触发ajax请求
+	//ajax 异步加载菜单
 	$(".menu .menu-nav li").click(function () {
 		$(this).addClass('active').siblings().removeClass('active');
 		var menu_id = $(this).find("a").attr('menu_id');
-		$.post(ajax_menu, { menu_id: menu_id }, function (data) {
+		$.post(ajax_menu_url, { menu_id: menu_id }, function (data) {
+			console.log(data);
 			$("#nav_list").html(data);
 		}, 'html')
 	});
+	//页面加载读取菜单
+
 	//时间设置
 	function currentTime() {
 		var d = new Date(),

@@ -22,7 +22,7 @@ function confirm_msg(obj){
 	return false;
 }
 /**
- * 角色全选提交
+ * 批量删除
  */
 function formAutoSubmit(id,right_form){
 	var tag = 0;

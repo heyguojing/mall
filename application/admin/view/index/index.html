@@ -27,9 +27,9 @@
     <script src="__ADMIN__/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="__ADMIN__/js/index.js" type="text/javascript"></script>
     <script type="text/javascript">
-
+        var ajax_menu_url = "{:url('Index/menu')}";
         /******/
-        $(document).on('click', '.link_cz > li', function() {
+        $(document).on('click', '.link_cz > li', function () {
             $('.link_cz > li').removeClass('active');
             $(this).addClass('active');
         });
@@ -54,7 +54,36 @@
 <body>
     {include file="common/head" /}
     <div class="main-container" id="main-container">
-        {include file="common/menu" /}
+        <!--menu-->
+        <div class="menu">
+            <div class="sidebar-shortcuts-large menu-icon" id="sidebar-shortcuts-large">
+                <a class="btn btn-success">
+                    <i class="icon-signal"></i>
+                </a>
+
+                <a class="btn btn-info">
+                    <i class="icon-pencil"></i>
+                </a>
+
+                <a class="btn btn-warning">
+                    <i class="icon-group"></i>
+                </a>
+
+                <a class="btn btn-danger">
+                    <i class="icon-cogs"></i>
+                </a>
+            </div>
+            <div class="menu-box">
+                <ul class="menu-nav">
+                    {volist name="node" id="vo" key="key"}
+                    <li class="menu-nav-item {if condition=" $key eq 1 "}active{/if}">
+                        <a href="javascript:;" menu_id="{$vo['id']}">{$vo['title']}</a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <!--menu end-->
         <div class="main-container-inner">
             <a class="menu-toggler" id="menu-toggler" href="#">
                 <span class="menu-text"></span>
@@ -72,10 +101,16 @@
                     </div>
                 </div>
                 <!-- #sidebar-shortcuts -->
-                {include file="common/left" /}
-                <div class="sidebar-collapse" id="sidebar-collapse">
-                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                <!-- left -->
+                <div id="menu_style" class="menu_style">
+                    <ul class="nav nav-list" id="nav_list">
+
+                    </ul>
                 </div>
+                <!-- left end -->
+                <!-- <div class="sidebar-collapse" id="sidebar-collapse">注释collapse
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                </div> -->
             </div>
 
             <div class="main-content">
@@ -85,12 +120,19 @@
                             <i class="icon-home home-icon"></i>
                             <a href="index.html">首页</a>
                         </li>
-                        <li class="active"><span class="Current_page iframeurl"></span></li>
-                        <li class="active" id="parentIframe"><span class="parentIframe iframeurl"></span></li>
-                        <li class="active" id="parentIfour"><span class="parentIfour iframeurl"></span></li>
+                        <li class="active">
+                            <span class="Current_page iframeurl"></span>
+                        </li>
+                        <li class="active" id="parentIframe">
+                            <span class="parentIframe iframeurl"></span>
+                        </li>
+                        <li class="active" id="parentIfour">
+                            <span class="parentIfour iframeurl"></span>
+                        </li>
                     </ul>
                 </div>
-                <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;" name="iframe" frameborder="0" src="{:url('index/copy')}"> </iframe>
+                <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;" name="iframe" frameborder="0" src="{:url('index/copy')}">
+                </iframe>
                 <!-- /.page-content -->
             </div>
             <!-- /.main-content -->
