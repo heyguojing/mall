@@ -181,70 +181,15 @@ class Rbac {
                     //登录验证模式，比较登录后保存的权限访问列表
                     $accessList = session('_ACCESS_LIST');
                 }
-				 //superman修改代码开始  2015-06-07
+				 //superman修改代码开始 适应后台多个应用组 2015-06-07
                 $arr = array();
 				if(!empty($accessList)){
-                    foreach($accessList as $key=>$v){
-                        //权限管理
-                        if($accessList["ADMIN"]){
-                            foreach($accessList["ADMIN"] as $k=> $val){
-                                $arr["ADMIN"][$k]=$val;
+                    foreach($accessList as $k=>$v){
+                        if(!empty($v)){
+                            foreach($v as $k1=> $v1){
+                                $arr[strtoupper($appName)][$k1]=$v1;
                             }
                         }
-                        //前台信息管理
-                        if($accessList["HOME"]){
-                            foreach($accessList["HOME"] as $k1=> $vo){
-                                $arr["ADMIN"][$k1]=$vo;
-                            }
-                        }
-                        //系统设置
-                        if($accessList["SYSTEM"]){
-                            foreach($accessList["SYSTEM"] as $k2=> $vo){
-                                $arr["ADMIN"][$k2]=$vo;
-                            }
-                        }
-                         //其他设置
-                        if($accessList["QITA"]){
-                            foreach($accessList["QITA"] as $k2=> $vo){
-                                $arr["ADMIN"][$k2]=$vo;
-                            }
-                        }
-                         //订单设置
-                        if($accessList["ORDER"]){
-                            foreach($accessList["ORDER"] as $k2=> $vo){
-                                $arr["ADMIN"][$k2]=$vo;
-                            }
-                        }
-                        //内容管理
-                        if($accessList["CONTENT"]){
-                            foreach($accessList["CONTENT"] as $k1=> $vo){
-                                $arr["ADMIN"][$k1]=$vo;
-                            }
-                        }
-                         //会员管理
-                        if($accessList["MEMBER"]){
-                            foreach($accessList["MEMBER"] as $k2=> $vo){
-                                $arr["ADMIN"][$k2]=$vo;
-                            }
-                        }
-                         //运营推广
-                        if($accessList["OPERATE"]){
-                            foreach($accessList["OPERATE"] as $k2=> $vo){
-                                $arr["ADMIN"][$k2]=$vo;
-                            }
-                        }
-                        //统计报表
-                        if($accessList["COUNT"]){
-                            foreach($accessList["COUNT"] as $k1=> $vo){
-                                $arr["ADMIN"][$k1]=$vo;
-                            }
-                        }
-                         //插件管理
-                        if($accessList["PLUGIN"]){
-                            foreach($accessList["PLUGIN"] as $k2=> $vo){
-                                $arr["ADMIN"][$k2]=$vo;
-                            }
-                        } 
                     }
                 }
 				$accessList = $arr;

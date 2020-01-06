@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : php
-Source Server Version : 50721
+Source Server         : localhost_3306
+Source Server Version : 50714
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50721
+Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2020-01-06 18:01:53
+Date: 2020-01-06 22:48:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -88,8 +88,8 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1578304843', '127.0.0.1', '0', '0');
-INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1578304815', '127.0.0.1', '1577777423', '1578281385');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1578317529', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1578317196', '127.0.0.1', '1577777423', '1578281385');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -128,12 +128,12 @@ INSERT INTO `mall_node` VALUES ('5', 'node', '', '', '节点列表', '1', null, 
 INSERT INTO `mall_node` VALUES ('6', 'addUser', '', '', '添加管理员', '1', null, '0', '2', '3', '1');
 INSERT INTO `mall_node` VALUES ('7', 'addRole', '', '', '添加角色', '1', null, '0', '2', '3', '1');
 INSERT INTO `mall_node` VALUES ('8', 'addNode', '', '', '添加节点', '1', null, '0', '2', '3', '1');
-INSERT INTO `mall_node` VALUES ('9', 'editNode', '', '', '编辑节点', '1', null, '0', '2', '3', '1');
+INSERT INTO `mall_node` VALUES ('9', 'editNode', '', '', '编辑节点', '1', null, '0', '2', '3', '0');
 INSERT INTO `mall_node` VALUES ('10', 'delNode', '', '', '删除节点', '1', null, '0', '2', '3', '0');
-INSERT INTO `mall_node` VALUES ('11', 'editRole', '', '', '编辑角色', '1', null, '0', '2', '3', '1');
+INSERT INTO `mall_node` VALUES ('11', 'editRole', '', '', '编辑角色', '1', null, '0', '2', '3', '0');
 INSERT INTO `mall_node` VALUES ('12', 'delRole', '', '', '删除角色', '1', null, '0', '2', '3', '0');
 INSERT INTO `mall_node` VALUES ('13', 'access', '', '', '配置权限', '1', null, '0', '2', '3', '0');
-INSERT INTO `mall_node` VALUES ('14', 'editUser', '', '', '编辑管理员', '1', null, '0', '2', '3', '1');
+INSERT INTO `mall_node` VALUES ('14', 'editUser', '', '', '编辑管理员', '1', null, '0', '2', '3', '0');
 INSERT INTO `mall_node` VALUES ('27', 'sdfs', '', '', '特殊', '1', null, '0', '26', '2', '1');
 INSERT INTO `mall_node` VALUES ('28', 'add', '', '', '添加', '1', null, '0', '27', '3', '1');
 

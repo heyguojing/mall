@@ -65,7 +65,7 @@ class Index extends Common
 		$where = array(
 			'is_show' => 1,
 			'level' => 2,
-			'order' => 'sort asc,id asc',
+			'order' => 'id asc,sort asc',
 			'field' => 'id,name,title',
 			'pid' => $id,
 		);
@@ -76,7 +76,7 @@ class Index extends Common
 				$where = array(
 					'is_show' => 1,
 					'level' => 3,
-					'order' => 'sort asc',
+					'order' => 'id asc,sort asc',
 					'field' => 'id,name,title,parameter,parameter_title',
 					'pid' => $menu[$k]['id'],
 				);
@@ -88,7 +88,7 @@ class Index extends Common
 			$where = array(
 				'is_show' => 1,
 				'level' => 1,
-				'order' => 'sort asc,id desc',
+				'order' => 'id asc,sort asc',
 				'field' => 'id,name,title'
 			);
 			$node = $this->node->pageData($where, 'range');
@@ -148,7 +148,7 @@ class Index extends Common
 
 		}
 		$this->assign('menu', $menu);
-		return view();
+		return $this->fetch();
 	}
     /**
      * 登出

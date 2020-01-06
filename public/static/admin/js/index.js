@@ -38,8 +38,6 @@ $(function () {
 			$("#nav_list").html(data);
 		}, 'html')
 	});
-	//页面加载读取菜单
-
 	//时间设置
 	function currentTime() {
 		var d = new Date(),
