@@ -60,7 +60,7 @@ class Admin extends Common
         return Db::name($this->table)->where($where)->find();
     }
     /**
-     * 求用户所属管理员组
+     * 求用户所属角色
      */
     public function getUserRole($where,$field)
     {

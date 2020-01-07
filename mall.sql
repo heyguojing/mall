@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50714
+Source Server         : php
+Source Server Version : 50721
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50714
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-01-06 22:48:53
+Date: 2020-01-07 17:58:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,14 +28,11 @@ CREATE TABLE `mall_access` (
   PRIMARY KEY (`access_id`),
   KEY `groupId` (`role_id`),
   KEY `nodeId` (`node_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=103 DEFAULT CHARSET=utf8 COMMENT='权限表';
+) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=utf8 COMMENT='权限表';
 
 -- ----------------------------
 -- Records of mall_access
 -- ----------------------------
-INSERT INTO `mall_access` VALUES ('52', '9', '25', '3', null);
-INSERT INTO `mall_access` VALUES ('51', '9', '5', '3', null);
-INSERT INTO `mall_access` VALUES ('50', '9', '4', '3', null);
 INSERT INTO `mall_access` VALUES ('47', '3', '14', '3', null);
 INSERT INTO `mall_access` VALUES ('46', '3', '13', '3', null);
 INSERT INTO `mall_access` VALUES ('45', '3', '12', '3', null);
@@ -56,15 +53,24 @@ INSERT INTO `mall_access` VALUES ('38', '1', '13', '3', null);
 INSERT INTO `mall_access` VALUES ('39', '1', '14', '3', null);
 INSERT INTO `mall_access` VALUES ('40', '1', '24', '3', null);
 INSERT INTO `mall_access` VALUES ('41', '1', '25', '3', null);
-INSERT INTO `mall_access` VALUES ('49', '9', '3', '3', null);
-INSERT INTO `mall_access` VALUES ('102', '2', '28', '3', null);
-INSERT INTO `mall_access` VALUES ('101', '2', '27', '2', null);
-INSERT INTO `mall_access` VALUES ('100', '2', '26', '1', null);
-INSERT INTO `mall_access` VALUES ('99', '2', '5', '3', null);
-INSERT INTO `mall_access` VALUES ('98', '2', '4', '3', null);
-INSERT INTO `mall_access` VALUES ('97', '2', '3', '3', null);
-INSERT INTO `mall_access` VALUES ('96', '2', '2', '2', null);
-INSERT INTO `mall_access` VALUES ('95', '2', '1', '1', null);
+INSERT INTO `mall_access` VALUES ('125', '2', '27', '2', null);
+INSERT INTO `mall_access` VALUES ('124', '2', '26', '1', null);
+INSERT INTO `mall_access` VALUES ('123', '2', '29', '3', null);
+INSERT INTO `mall_access` VALUES ('122', '2', '5', '3', null);
+INSERT INTO `mall_access` VALUES ('121', '2', '4', '3', null);
+INSERT INTO `mall_access` VALUES ('120', '2', '3', '3', null);
+INSERT INTO `mall_access` VALUES ('119', '2', '2', '2', null);
+INSERT INTO `mall_access` VALUES ('118', '2', '1', '1', null);
+INSERT INTO `mall_access` VALUES ('151', '9', '28', '3', null);
+INSERT INTO `mall_access` VALUES ('150', '9', '27', '2', null);
+INSERT INTO `mall_access` VALUES ('149', '9', '26', '1', null);
+INSERT INTO `mall_access` VALUES ('148', '9', '29', '3', null);
+INSERT INTO `mall_access` VALUES ('147', '9', '5', '3', null);
+INSERT INTO `mall_access` VALUES ('146', '9', '4', '3', null);
+INSERT INTO `mall_access` VALUES ('145', '9', '3', '3', null);
+INSERT INTO `mall_access` VALUES ('144', '9', '2', '2', null);
+INSERT INTO `mall_access` VALUES ('126', '2', '28', '3', null);
+INSERT INTO `mall_access` VALUES ('143', '9', '1', '1', null);
 
 -- ----------------------------
 -- Table structure for mall_admin
@@ -88,8 +94,30 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1578317529', '127.0.0.1', '0', '0');
-INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1578317196', '127.0.0.1', '1577777423', '1578281385');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1578387167', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('5', 'user', 'a9fe85785645f91cdbc148c48262ecad', '70ee55', '1', '1578387613', '127.0.0.1', '1577777423', '1578364990');
+
+-- ----------------------------
+-- Table structure for mall_log
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_log`;
+CREATE TABLE `mall_log` (
+  `log_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `log_user` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
+  `log_info` varchar(4000) NOT NULL DEFAULT '' COMMENT '日志内容',
+  `log_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '日志时间',
+  `log_ip` varchar(50) NOT NULL DEFAULT '0.0.0.0' COMMENT '日志ip',
+  `log_type` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT '日志类型',
+  `log_controller` varchar(20) DEFAULT '' COMMENT '日志控制器',
+  `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
+  `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
+  PRIMARY KEY (`log_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mall_log
+-- ----------------------------
+INSERT INTO `mall_log` VALUES ('1', '1', '登录成功ssss', '1543413227', '0.0.0.0', '1', '', '', '');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -112,7 +140,7 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
@@ -120,7 +148,7 @@ CREATE TABLE `mall_node` (
 INSERT INTO `mall_node` VALUES ('1', 'admin', '', '', '后台管理', '1', null, '1', '0', '1', '1');
 INSERT INTO `mall_node` VALUES ('2', 'rbac', '', '', 'Rbac用户权限管理', '1', null, '1', '1', '2', '1');
 INSERT INTO `mall_node` VALUES ('24', 'delUser', '', '', '删除管理员', '1', null, '0', '2', '3', '0');
-INSERT INTO `mall_node` VALUES ('25', 'editPass', '', '', '重置密码', '1', null, '0', '2', '3', '0');
+INSERT INTO `mall_node` VALUES ('25', 'editPass', '', '', '管理员重置密码', '1', null, '0', '2', '3', '0');
 INSERT INTO `mall_node` VALUES ('26', 'test', '', '', '商品管理', '1', null, '0', '0', '1', '1');
 INSERT INTO `mall_node` VALUES ('3', 'role', '', '', '角色列表', '1', null, '1', '2', '3', '1');
 INSERT INTO `mall_node` VALUES ('4', 'user', '', '', '管理员列表', '1', null, '1', '2', '3', '1');
@@ -136,6 +164,7 @@ INSERT INTO `mall_node` VALUES ('13', 'access', '', '', '配置权限', '1', nul
 INSERT INTO `mall_node` VALUES ('14', 'editUser', '', '', '编辑管理员', '1', null, '0', '2', '3', '0');
 INSERT INTO `mall_node` VALUES ('27', 'sdfs', '', '', '特殊', '1', null, '0', '26', '2', '1');
 INSERT INTO `mall_node` VALUES ('28', 'add', '', '', '添加', '1', null, '0', '27', '3', '1');
+INSERT INTO `mall_node` VALUES ('29', 'userPass', '', '', '用户修改密码', '1', null, '0', '2', '3', '0');
 
 -- ----------------------------
 -- Table structure for mall_role
@@ -175,3 +204,4 @@ CREATE TABLE `mall_role_user` (
 -- ----------------------------
 INSERT INTO `mall_role_user` VALUES ('1', '1');
 INSERT INTO `mall_role_user` VALUES ('2', '5');
+INSERT INTO `mall_role_user` VALUES ('9', '5');

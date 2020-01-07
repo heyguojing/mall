@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户重置密码</title>
+    <link href="__ADMIN__/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__ADMIN__/css/style.css" />
+    <link rel="stylesheet" href="__ADMIN__/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="__ADMIN__/assets/css/font-awesome.min.css" />
+    <link href="__ADMIN__/Widget/icheck/icheck.css" rel="stylesheet" type="text/css" />
+    <script src="__ADMIN__/js/jquery-1.9.1.min.js"></script>
+    <script src="__ADMIN__/assets/js/bootstrap.min.js"></script>
+    <script src="__ADMIN__/js/common.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="type_style">
+        <div class="crumbs">
+            <ul>
+                <li>
+                    <a href="{:url('rbac/user')}">管理员管理</a>
+                </li>
+                <li class="uline">/</li>
+                <li>
+                    <a class="active" href="javascript:;">重置密码</a>
+                </li>
+            </ul>
+       </div>
+        <form action="{:url('Rbac/userPass')}" method="post" class="form form-horizontal">
+            <div class="Operate_cont clearfix">
+                <label class="form-label">管理员密码：</label>
+                <div class="formControls ">
+                    <input type="password" class="input-text" value="{$admin_one['password']}" name="password" datatype="/^[\w\W]{6,18}$/" nullmsg="管理员密码不能为空！">
+                    <span class="Validform_checktip"></span>
+                </div>
+            </div>      
+            <div class="Operate_cont clearfix">
+                <input type="hidden"value="{$admin_one['admin_id']}" name="admin_id">
+                <input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="__ADMIN__/Widget/Validform/5.3.2/Validform.min.js"></script>
+    <script type="text/javascript" src="__ADMIN__/js/role.js"></script>
+</body>
+</html>

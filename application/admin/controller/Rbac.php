@@ -9,6 +9,7 @@ class Rbac extends Common
     protected $node;
     protected $role;
     protected $admin;
+    protected $uid;
     public function __construct(Request $request)
     {
         parent::__construct();
@@ -16,6 +17,7 @@ class Rbac extends Common
         $this->node = model('Node');
         $this->role = model('Role');
         $this->admin = model('Admin');
+        $this->uid = session(config('rbac.USER_AUTH_KEY'));
     }
     public function index()
     {
@@ -262,6 +264,34 @@ class Rbac extends Common
         }                
     }
     /**
+     * 用户修改密码
+     */
+    public function userPass()
+    {
+        $admin_one = $this->admin->getOne(array('admin_id' => $this->uid));
+        if(empty($admin_one)){
+            $this->error('管理员id不存在',url('rbac/user'));
+        }
+        if($this->request->isPost()){
+            // 接收密码
+            $password = input('password');
+            $password = md5(md5($password).$admin_one['salt']);
+            // 密码重置
+            $res = $this->admin->saveData(array('admin_id' => $this->uid),array('password' => $password));
+            // 结果判断
+            if($res){
+                $this->success('用户密码'.$admin_one['username'].'重置成功',url('Rbac/user'));
+            }else{
+                p("失败");die;
+                $this->error('用户密码'.$admin_one['username'].'重置失败',url('Rbac/user'));
+            }
+        }else{
+            // 查询数据
+            $this->assign('admin_one',$admin_one);
+            return $this->fetch();
+        }      
+    }
+    /**
      * 角色列表
      */
     public function role()
@@ -412,6 +442,9 @@ class Rbac extends Common
             };
             // 设置新权限
             if($this->role->accessAddData($data)){
+                //重新生成权限
+                $rbac = new \Org\Util\Rbac;
+                $rbac::saveAccessList();
                 // 节点列表
                 $node_data = cache('node_data');
                 if(empty($node_data)){
