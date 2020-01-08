@@ -126,6 +126,7 @@ class Index extends Common
 				}
 			}
 		}
+		$this->sendMail();
 		unset($user_one['role']);
 		$this->assign("node", $node);
 		$this->assign("user_one",$user_one);
@@ -251,5 +252,5 @@ class Index extends Common
             $res = array('status' => 0,'msg' => '缓存文件已经删除过了');
         }
         return json($res);
-    }
+	}
 }

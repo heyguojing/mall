@@ -18,3 +18,4 @@ Route::get('hello/:name', 'index/hello');
 return [
 
 ];
+Route::miss('Index/index');
