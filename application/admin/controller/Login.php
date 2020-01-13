@@ -61,6 +61,7 @@ class Login extends Controller
             }
             // 读取用户权限
             Rbac::saveAccessList();
+            save_log($username."登录成功",1);
             // 更新登陆数据
             $data = array(
                 'login_time' => time(),

@@ -126,7 +126,6 @@ class Index extends Common
 				}
 			}
 		}
-		$this->sendMail();
 		unset($user_one['role']);
 		$this->assign("node", $node);
 		$this->assign("user_one",$user_one);
@@ -237,8 +236,9 @@ class Index extends Common
      */
     public function logout()
     {
-        Session::clear();
-        session_unset();
+		save_log(session('username')."注销成功",1);
+        Session::clear();	
+		session_unset();
         $this->success('退出成功',url('Login/index'));
     }
     /**

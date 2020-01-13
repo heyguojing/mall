@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-01-07 17:58:28
+Date: 2020-01-13 17:43:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -94,8 +94,8 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1578387167', '127.0.0.1', '0', '0');
-INSERT INTO `mall_admin` VALUES ('5', 'user', 'a9fe85785645f91cdbc148c48262ecad', '70ee55', '1', '1578387613', '127.0.0.1', '1577777423', '1578364990');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1578886391', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1578882750', '127.0.0.1', '1577777423', '1578364990');
 
 -- ----------------------------
 -- Table structure for mall_log
@@ -112,12 +112,31 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
 -- ----------------------------
-INSERT INTO `mall_log` VALUES ('1', '1', '登录成功ssss', '1543413227', '0.0.0.0', '1', '', '', '');
+INSERT INTO `mall_log` VALUES ('1', '1', 'admin记录日志成功', '1578886383', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('2', '5', 'user注销成功', '1578886381', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('3', '1', 'admin记录日志成功', '1578886391', '127.0.0.1', '1', 'Login', 'Login', '');
+
+-- ----------------------------
+-- Table structure for mall_log_type
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_log_type`;
+CREATE TABLE `mall_log_type` (
+  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `type_name` varchar(50) NOT NULL DEFAULT '' COMMENT '类型名称',
+  `add_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
+  PRIMARY KEY (`type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mall_log_type
+-- ----------------------------
+INSERT INTO `mall_log_type` VALUES ('1', '登陆登出', '1578886391');
+INSERT INTO `mall_log_type` VALUES ('2', 'Rbac权限管理', '1578886391');
 
 -- ----------------------------
 -- Table structure for mall_node
@@ -186,7 +205,7 @@ CREATE TABLE `mall_role` (
 -- ----------------------------
 INSERT INTO `mall_role` VALUES ('1', 'admin', null, '1', '超级管理员');
 INSERT INTO `mall_role` VALUES ('2', 'user', null, '1', '编辑');
-INSERT INTO `mall_role` VALUES ('9', 'manager', null, '1', '后台管理员');
+INSERT INTO `mall_role` VALUES ('9', 'manager', null, '1', '普通管理员');
 
 -- ----------------------------
 -- Table structure for mall_role_user
