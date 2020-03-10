@@ -10,6 +10,8 @@ class Rbac extends Common
     protected $role;
     protected $admin;
     protected $uid;
+    protected $log;
+    protected $log_type;
     public function __construct(Request $request)
     {
         parent::__construct();
@@ -18,6 +20,8 @@ class Rbac extends Common
         $this->role = model('Role');
         $this->admin = model('Admin');
         $this->uid = session(config('rbac.USER_AUTH_KEY'));
+        $this->log = model('Log');
+        $this->log_type = model('logType');
     }
     public function index()
     {
@@ -678,6 +682,52 @@ class Rbac extends Common
      */
     public function log()
     {
+        if($this->request->isPost()){
+            $username = input('post.username','n');
+            $log_type = input('post.log_type',-1,'intval');
+        }else{
+            $username = input('username','n');
+            $log_type = input('log_type',-1,'intval');
+        }
+        $where = array();
+        // 判断名称
+        if($username !="" && $username != 'n'){
+            $where['username'] = $this->strSpaceDel($username);
+        }else{
+            $username = 'n';
+        }
+        // 判断状态
+        if($log_type > -1){
+            $where['log_type'] = $log_type;
+        }else{
+            $log_type = -1;
+        }
+        // 求总数
+        $role_total = $this->log->pageData($where,'total');//总条数
+        $where['page'] = input('page',1,'intval');
+        $where['field'] = array('log_id','log_info','username','log_time','log_ip','log_type');
+        $where['order'] = 'log_id desc';
+        $where['limit'] = 4;//每页显示条数
+        $where['pageRow'] = 4;//显示页码数量
+        // 求分页数据
+        $page_data = $this->log->pageData($where,'range');
+        // 求分页url
+        $page_url = url('Rbac/log',array('username' => $username,'log_type' => $log_type,''));
+        // 载入分页
+        $page = new Page($role_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
+        // 显示分页
+        $show = $page->show(5);
+        $this->assign('page',$show);
+        // 模板赋值
+        $this->assign('page_data',$page_data);
+        $this->assign('username',$username);
+        $this->assign('log_type',$log_type);
+        $this->assign('status',$status);
+        $this->assign('page_total',$role_total);
+        // 日志类型 
+        $log_type_data = $this->log_type->getField(array(),'type_id,type_name','type_id');
+        $this->assign('log_type_data',$log_type_data);
 
+        return $this->fetch();
     }
 }
