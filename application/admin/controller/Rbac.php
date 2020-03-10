@@ -134,6 +134,7 @@ class Rbac extends Common
                     }
                     $this->role->userRoleAddData($role_data);
                 }
+                save_log('管理员'.$data['username'].'添加成功',2);
                 $this->success('添加管理员'.$data['username'].'成功',url('rbac/user'));
             }else{
                 $this->error('添加管理员失败',url('rbac/user'));
@@ -181,6 +182,7 @@ class Rbac extends Common
             }
             // 结果判断
             if($addRoleRes || $res){
+                save_log('管理员：'.$data['username'].'编辑成功',2);
                 $this->success('用户角色'.$data['username'].'编辑成功',url('Rbac/user'));
             }else{
                 $this->error('用户角色'.$data['username'].'编辑失败',url('Rbac/user'));
@@ -230,6 +232,7 @@ class Rbac extends Common
             $res = $this->admin->delData(array('admin_id' => $v));
         }
         if($res){
+            save_log('管理员ID：'.$admin_ids.'删除成功',2);
             $this->success('用户id：'.$admin_ids.'删除成功',url('Rbac/user'));
         }else{
             $this->success('用户删除失败',url('Rbac/uesr'));
@@ -253,6 +256,7 @@ class Rbac extends Common
             $res = $this->admin->saveData(array('admin_id' => $admin_id),array('password' => $password));
             // 结果判断
             if($res){
+                save_log('密码'.$admin_one['username'].'重置成功',2);
                 $this->success('用户密码'.$admin_one['username'].'重置成功',url('Rbac/user'));
             }else{
                 $this->error('用户密码'.$admin_one['username'].'重置失败',url('Rbac/user'));
@@ -280,6 +284,7 @@ class Rbac extends Common
             $res = $this->admin->saveData(array('admin_id' => $this->uid),array('password' => $password));
             // 结果判断
             if($res){
+                save_log('用户'.$admin_one['username'].'密码修改成功',2);
                 $this->success('用户密码'.$admin_one['username'].'重置成功',url('Rbac/user'));
             }else{
                 p("失败");die;
@@ -321,7 +326,7 @@ class Rbac extends Common
         $where['page'] = input('page',1,'intval');
         $where['field'] = array('id','name','remark','status');
         $where['order'] = 'id asc';
-        $where['limit'] = 6;//每页显示条数
+        $where['limit'] = 2;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
         $page_data = $this->role->pageData($where,'range');
@@ -348,6 +353,7 @@ class Rbac extends Common
             $data = $this->postRoleData();
             $res = $this->role->addData($data);
             if($res){
+                save_log('角色'.$data['title'].'添加成功',2);
                 return $this->success('当前角色：'.$data['title'].'添加成功','Rbac/role');
             }else{
                 return $this->error('角色添加失败');
@@ -372,6 +378,7 @@ class Rbac extends Common
             $data = $this->postRoleData();
             $res = $this->role->saveData($where,$data);
             if($res){
+                save_log('角色'.$data['title'].'编辑成功',2);
                 return $this->success('当前角色：'.$data['remark'].'编辑成功',url('rbac/role'));
             }else{
                 return $this->error('角色编辑失败');
@@ -403,6 +410,7 @@ class Rbac extends Common
         }
         // 执行删除
         foreach($role_one as $val){
+            save_log('角色id'.$ids.'删除成功',2);
             $res = $this->role->delData(array($val));
         }
         if($res){
@@ -458,7 +466,9 @@ class Rbac extends Common
                 $page_data = $this->role->accessGetField($where,$field);
                 $page_data = node_merge($node_data,$page_data);
                 cache('access_'.$rid,$page_data,86400);
-                $this->success('设置权限成功',url('rbac/role'));                 
+                p($editdata);
+                save_log('角色名称：'.$editdata['remark'].'编辑成功',2);
+                $this->success('角色名称：'.$editdata['remark'].'编辑成功',url('rbac/role'));                 
             }else{
                 $this->error('设置权限失败',url('rbac/role'));
             }
@@ -511,6 +521,7 @@ class Rbac extends Common
             $data['level'] = input('level',0,'intval');
             $res = $this->node->addData($data);
             if($res){
+                save_log('节点'.$data['title'].'添加成功',2);
                 return $this->success('当前节点：'.$data['title'].'添加成功','Rbac/node');
             }else{
                 return $this->error('节点添加失败');
@@ -555,6 +566,7 @@ class Rbac extends Common
             $data = $this->postNodeData();
             $res = $this->node->saveData($where,$data);
             if($res){
+                save_log('节点'.$editdata['title'].'配置成功',2);
                 return $this->success('当前节点：'.$data['title'].'编辑成功',url('rbac/node'));
             }else{
                 return $this->error('节点编辑失败');
@@ -602,6 +614,7 @@ class Rbac extends Common
         $where = array('id' => $id);
         $res = $this->node->delData($where);
         if($res){
+            save_log('节点'.$deldata['title'].'添加成功',2);
             $this->success('删除成功',url('Rbac/node'));
         }else{
             $this->error('删除失败',url('Rbac/node'));
@@ -659,5 +672,12 @@ class Rbac extends Common
         $str = str_replace(chr(10),"",$str);
         $str = str_replace(chr(9),"",$str);
         return $str;
+    }
+    /**
+     * 日志列表
+     */
+    public function log()
+    {
+
     }
 }
