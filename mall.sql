@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2020-03-12 01:01:27
+Date: 2020-03-13 23:46:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -97,7 +97,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1583934523', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1584082381', '127.0.0.1', '0', '0');
 INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1578882750', '127.0.0.1', '1577777423', '1578364990');
 
 -- ----------------------------
@@ -113,11 +113,12 @@ CREATE TABLE `mall_config_group` (
   `add_time` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加用户',
   PRIMARY KEY (`group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_config_group
 -- ----------------------------
+INSERT INTO `mall_config_group` VALUES ('1', 'WEB_SITE', '站点信息', '1', '1', '1584114299', '1');
 
 -- ----------------------------
 -- Table structure for mall_log
@@ -134,7 +135,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -164,6 +165,8 @@ INSERT INTO `mall_log` VALUES ('22', '1', '节点参数列表添加成功', '158
 INSERT INTO `mall_log` VALUES ('23', '1', '节点添加参数添加成功', '1583941564', '127.0.0.1', '2', 'Rbac', 'addnode', '');
 INSERT INTO `mall_log` VALUES ('24', '1', '节点编辑参数添加成功', '1583941580', '127.0.0.1', '2', 'Rbac', 'addnode', '');
 INSERT INTO `mall_log` VALUES ('25', '1', '节点删除参数添加成功', '1583941620', '127.0.0.1', '2', 'Rbac', 'addnode', '');
+INSERT INTO `mall_log` VALUES ('26', '1', 'admin登录成功', '1584082381', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('27', '1', '配置组站点信息添加成功', '1584114299', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type

@@ -18,49 +18,45 @@ class ConfigGroup extends Common
         $this->uid = session(config('rbac.USER_AUTH_KEY'));
     }
     /**
-     * 管理员列表页
+     * 配置组列表页
      */
     public function index()
     {
         if($this->request->isPost()){
-            $username = input('post.username','n');
-            $status = input('post.status',-1,'intval');
+            $group_name = input('post.group_name','n');
+            $group_status = input('post.group_status','-1','intval');
+            $group_title = input('post.group_title','n');
             $page = input('post.page',1,'intval');
         }else{
-            $username = input('username','n');
-            $status = input('status',-1,'intval');
+            $group_name = input('group_name','n');
+            $group_status = input('group_status',-1,'intval');
+            $group_title = input('post.group_title','n');
             $page = input('page',1,'intval');
         }
         $where = array();
-        // 判断名称
-        if($username !="" && $username != 'n'){
-            $where['username'] = $this->strSpaceDel($username);
+        // 接收判断名称
+        if($group_name !="" && $group_name != 'n'){
+            $where['group_name'] = $this->strSpaceDel($group_name);
         }else{
-            $username = 'n';
+            $group_name = 'n';
         }
         // 判断状态
-        if($status > -1){
-            $where['status'] = $status;
+        if($group_status > -1){
+            $where['group_status'] = $group_status;
         }else{
-            $status = -1;
+            $group_status = -1;
         }
         // 求总数
-        $role_total = $this->role->pageData($where,'total');//总条数
+        $role_total = $this->config_group->pageData($where,'total');//总条数
         $where['page'] = $page;
-        $where['field'] = array('admin_id','username','login_time','login_ip','status');
-        $where['order'] = 'admin_id asc';
+        $where['field'] = array('group_id','group_name','group_title','group_sort','group_status','add_time');
+        $where['order'] = 'group_id desc';
         $where['limit'] = 10;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
-        $page_data = $this->admin->pageData($where,'range');
-        // 求用户所属角色组
-       if(!empty($page_data)){
-           foreach($page_data as $k => $v){ 
-               $page_data[$k]['role'] = $this->admin->getUserRole(array('user_id' => $page_data[$k]['admin_id']),array('id','name','remark'));
-           }
-       }
+        $page_data = $this->config_group->pageData($where,'range');
         // 求分页url
-        $page_url = url('Rbac/role',array('username' => $username,'status' => $status),'');
+        $page_url = url('ConfigGroup/index',array('group_name' => $group_name,'group_title' => $group_title,'group_status' => $group_status),'');
         // 载入分页
         $page = new Page($role_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
         // 显示分页
@@ -68,163 +64,165 @@ class ConfigGroup extends Common
         $this->assign('page',$show);
         // 模板赋值
         $this->assign('page_data',$page_data);
-        $this->assign('username',$username);
-        $this->assign('status',$status);
-        $this->assign('page_total',$role_total);
+        $this->assign('group_name',$group_name);
+        $this->assign('group_title',$group_title);
+        $this->assign('group_status',$group_status);
+        $this->assign('page_total', $page_total);
         return $this->fetch();
     }
 
     /**
-     * 添加管理员
+     * 添加配置组
      */
     public function add()
     {
         if($this->request->isPost()){
             // 数据
-            $data = $this->postUserData();
-            $data['login_ip'] = get_client_ip();
-            $data['login_time'] = time();
+            $data = $this->postData();
             $data['add_time'] = time();
-            $data['salt'] = getRandKey();
-            $data['password'] = md5(md5($data['password']).$data['salt']);
+            $data['add_user_id'] = $this->uid;
             // 添加
-            $res = $this->admin->addData($data);
+            $res = $this->config_group->addData($data);
             if($res){
-                $role_id = input('role_id');
-                $role_data = array();
-                if(!empty($role_id)){
-                    foreach($role_id as $v){
-                        $role_data[] = array(
-                            'role_id' => $v,
-                            'user_id' => $res
-                        );
-                    }
-                    $this->role->userRoleAddData($role_data);
-                }
-                save_log('管理员'.$data['username'].'添加成功',2);
-                $this->success('添加管理员'.$data['username'].'成功',url('rbac/user'));
+                save_log('配置组'.$data['group_title'].'添加成功',3);
+                $this->success('添加配置组'.$data['group_title'].'成功',url('ConfigGroup/add'));
             }else{
-                $this->error('添加管理员失败',url('rbac/user'));
+                $this->error('添加配置组失败',url('ConfigGroup/add'));
             }
 
         }else{
-            // 载入角色组
-            $where['status'] = 1;
-            $where['order'] = 'id asc';
-            $role_data = $this->role->pageData($where,'range');
-            $this->assign('role_data',$role_data);
             return $this->fetch();
         }
     }
     /**
-     * 编辑管理员
+     * 编辑配置组
      */
     public function edit()
     {
-        $admin_id = input('admin_id');
-        if(empty($admin_id)){
-            $this->error('管理员id不存在',url('rbac/user'));
+        $group_id = input('group_id');
+        if(empty($group_id)){
+            $this->error('配置组id不存在',url('ConfigGroup/index'));
         }
-        $admin_one = $this->admin->getOne(array('admin_id' => $admin_id));
+        $group_one = $this->config_group->getOne(array('group_id' => $group_id));
         if($this->request->isPost()){
             // 更新user表数据
-            $data = $this->postUserData();
-            // $data['login_ip'] = get_client_ip();  //编辑数据不需要login_time
-            // $data['login_time'] = time();
-            // $data['add_time'] = time();
-            $res = $this->admin->saveData(array('admin_id' => $admin_id),$data);
-            // 删除原有角色
-            $this->role->delUserRole(array('user_id' => $admin_id));
-            // 添加新角色
-            $role_id = input('role_id');
-            $role_data = array();
-            if(!empty($role_id)){
-                foreach($role_id as $k=>$v){
-                    $role_data[] = array(
-                        'user_id' => $admin_id,
-                        'role_id' => $v
-                    );
-                }
-                $addRoleRes = $this->role->addUserRole($role_data);
-            }
+            $data = $this->postData();
+            $res = $this->config_group->saveData(array('group_id' => $group_id),$data);
             // 结果判断
-            if($addRoleRes || $res){
-                save_log('管理员：'.$data['username'].'编辑成功',2);
-                $this->success('用户角色'.$data['username'].'编辑成功',url('Rbac/user'));
+            if($res){
+                save_log('配置组：'.$data['group_name'].'编辑成功',3);
+                $this->success('用户角色'.$data['group_name'].'编辑成功',url('Rbac/user'));
             }else{
-                $this->error('用户角色'.$data['username'].'编辑失败',url('Rbac/user'));
+                $this->error('用户角色'.$data['group_name'].'编辑失败',url('Rbac/user'));
             }
         }else{
-            // 查询数据
-            $this->assign('admin_one',$admin_one);
-            $where['status'] = 1;
-            $where['order'] = 'id asc';
-            // 查询角色组
-            $role_data = $this->role->pageData($where,'range');
-            $this->assign('role_data',$role_data);
-            $role_one = $this->admin->getUserRole(array('user_id' => $admin_id),'id');
-            $roleId_arr = array();
-            if(!empty($role_one)){
-                foreach($role_one as $k=>$v){
-                    $roleId_arr[] = $v['id'];
-                }
-            }
-            $role_one = $roleId_arr;
-            $this->assign('role_one',$role_one);
+            // 渲染编辑页面
+            $this->assign('group_one',$group_one);
             return $this->fetch();
         }        
     }
     /**
-     * 删除管理员
+     * 删除配置组
      */
     public function del()
     {
-        $admin_id = input('admin_id');
-        if(is_array($admin_id)){
-            $admin_arr = $admin_id;
-            $admin_ids = implode(',',$admin_id);
+        $group_id = input('group_id');
+        if(is_array($group_id)){
+            $group_arr = $group_id;
+            $group_ids = implode(',',$group_id);
         }else{
-            $admin_arr = array($admin_id);
-            $admin_ids = $admin_id;
+            $group_arr = array($group_id);
+            $group_ids = $group_id;
         }
         // 判断用户id是否存在
-        foreach($admin_arr as $v){
-            $admin_one = $this->admin->getOne(array('admin_id' => $v));
-            if(empty($admin_one)){
-                $this->error('删除失败，用户不存在',url('Rbac/user'));
+        foreach($group_arr as $v){
+            $group_one = $this->config_group->getOne(array('group_id' => $v));
+            if(empty($group_one)){
+                $this->error('删除失败，配置组id不存在',url('ConfigGroup/index'));
             }
         }
-        // 删除用户
-        foreach($admin_arr as $v){
-            $res = $this->admin->delData(array('admin_id' => $v));
+        // 删除
+        foreach($group_arr as $v){
+            $where = array('group_id' => $v);
+            $res = $this->config_grop->delData($where);
         }
         if($res){
-            save_log('管理员ID：'.$admin_ids.'删除成功',2);
-            $this->success('用户id：'.$admin_ids.'删除成功',url('Rbac/user'));
+            save_log('配置组ID：'.$group_ids.'删除成功',3);
+            $this->success('配置组id：'.$group_ids.'删除成功',url('ConfigGroup/index'));
         }else{
-            $this->success('用户删除失败',url('Rbac/uesr'));
+            $this->success('配置组删除失败',url('ConfigGroup/index'));
         }
     }
     /**
-     * 管理员名称是否重复验证
+     * 配置组名称是否重复验证
      */
-    public function ajaxUsername()
+    public function ajaxGroupName()
     {
         $key = input('name');
         $val = input('param');
-        $admin_id = input('admin_id',0,'intval');
-        $res = $this->admin->ajaxValidate($val,$admin_id);
+        $group_id = input('group_id',0,'intval');
+        // 调用model方法
+        $res = $this->config_group->ajaxGroupName($val,$group_id);
         if(!$res){
             $data = array(
                 'status' => 'y',
-                'info' => '用户名验证通过'
+                'info' => '英文名验证通过'
             );
         }else{
             $data = array(
                 'status' => 'n',
-                'info' => '管理员用户名重复'
+                'info' => '配置组用户名重复'
             );
         }
         return json($data);
+    }
+        /**
+     * 配置组名称是否重复验证
+     */
+    public function ajaxGroupTitle()
+    {
+        $key = input('name');
+        $val = input('param');
+        $group_id = input('group_id',0,'intval');
+        // 调用model方法
+        $res = $this->config_group->ajaxGroupTitle($val,$group_id);
+        if(!$res){
+            $data = array(
+                'status' => 'y',
+                'info' => '中文名验证通过'
+            );
+        }else{
+            $data = array(
+                'status' => 'n',
+                'info' => '配置组用户名重复'
+            );
+        }
+        return json($data);
+    }
+    /**
+     * 过滤搜索框字符串中的空格
+     */
+    function strSpaceDel($str){
+        $str = preg_replace("/ /","",$str);
+        $str = preg_replace("/&nbsp;/","",$str);
+        $str = preg_replace("/　/","",$str);
+        $str = preg_replace("/\r\n/","",$str);
+        $str = str_replace(chr(13),"",$str);
+        $str = str_replace(chr(10),"",$str);
+        $str = str_replace(chr(9),"",$str);
+        return $str;
+    }
+    /**
+     * 接收post数据
+     */
+    public function postData()
+    {
+        $data = array(
+            'group_name' => input('group_name'),
+            'group_title' => input('group_title'),
+            'group_sort' => input('group_sort',1,'intval'),
+            'group_status' => input('group_status',0,'intval')
+        );
+        return $data;
     }
 }
