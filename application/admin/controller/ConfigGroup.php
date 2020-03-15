@@ -30,15 +30,21 @@ class ConfigGroup extends Common
         }else{
             $group_name = input('group_name','n');
             $group_status = input('group_status',-1,'intval');
-            $group_title = input('post.group_title','n');
+            $group_title = input('group_title','n');
             $page = input('page',1,'intval');
         }
         $where = array();
-        // 接收判断名称
+        // 接收判断英文名称
         if($group_name !="" && $group_name != 'n'){
             $where['group_name'] = $this->strSpaceDel($group_name);
         }else{
             $group_name = 'n';
+        }
+        // 接收判断中文名称
+        if($group_title !="" && $group_title != 'n'){
+            $where['group_title'] = $this->strSpaceDel($group_title);
+        }else{
+            $group_title = 'n';
         }
         // 判断状态
         if($group_status > -1){
@@ -50,7 +56,7 @@ class ConfigGroup extends Common
         $role_total = $this->config_group->pageData($where,'total');//总条数
         $where['page'] = $page;
         $where['field'] = array('group_id','group_name','group_title','group_sort','group_status','add_time');
-        $where['order'] = 'group_id desc';
+        $where['order'] = 'group_id asc';
         $where['limit'] = 10;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
@@ -85,7 +91,7 @@ class ConfigGroup extends Common
             $res = $this->config_group->addData($data);
             if($res){
                 save_log('配置组'.$data['group_title'].'添加成功',3);
-                $this->success('添加配置组'.$data['group_title'].'成功',url('ConfigGroup/add'));
+                $this->success('添加配置组'.$data['group_title'].'成功',url('ConfigGroup/index'));
             }else{
                 $this->error('添加配置组失败',url('ConfigGroup/add'));
             }
@@ -110,10 +116,10 @@ class ConfigGroup extends Common
             $res = $this->config_group->saveData(array('group_id' => $group_id),$data);
             // 结果判断
             if($res){
-                save_log('配置组：'.$data['group_name'].'编辑成功',3);
-                $this->success('用户角色'.$data['group_name'].'编辑成功',url('Rbac/user'));
+                save_log('配置组：'.$data['group_title'].'编辑成功',3);
+                $this->success('配置组'.$data['group_title'].'编辑成功',url('ConfigGroup/index'));
             }else{
-                $this->error('用户角色'.$data['group_name'].'编辑失败',url('Rbac/user'));
+                $this->error('配置组'.$data['group_title'].'编辑失败',url('ConfigGroup/index'));
             }
         }else{
             // 渲染编辑页面
@@ -144,7 +150,7 @@ class ConfigGroup extends Common
         // 删除
         foreach($group_arr as $v){
             $where = array('group_id' => $v);
-            $res = $this->config_grop->delData($where);
+            $res = $this->config_group->delData($where);
         }
         if($res){
             save_log('配置组ID：'.$group_ids.'删除成功',3);

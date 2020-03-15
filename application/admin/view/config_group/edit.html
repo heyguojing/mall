@@ -24,29 +24,29 @@
                 </li>
                 <li class="uline">/</li>
                 <li>
-                    <a class="active" href="javascript:;">添加配置组</a>
+                    <a class="active" href="javascript:;">编辑配置组</a>
                 </li>
             </ul>
        </div>
-        <form action="{:url('ConfigGroup/add')}" method="post" class="form form-horizontal">
+        <form action="" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
                 <label class="form-label">配置组英文名称：</label>
                 <div class="formControls ">
-                        <input type="text" class="input-text" value="" placeholder=""  name="group_name" datatype="*" ajaxUrl="{:url('ConfigGroup/ajaxGroupName')}" nullmsg="配置组英文名称不能为空！">
+                        <input type="text" class="input-text" value="{$group_one['group_name']}" placeholder=""  name="group_name" datatype="*" ajaxUrl="{:url('ConfigGroup/ajaxGroupName',array('group_id' => $group_one['group_id']))}" nullmsg="配置组英文名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">配置组中文名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="group_title" datatype="*" ajaxUrl="{:url('ConfigGroup/ajaxGroupTitle')}" nullmsg="配置组中文名称不能为空！">
+                    <input type="text" class="input-text" value="{$group_one['group_title']}" placeholder=""  name="group_title" datatype="*" ajaxUrl="{:url('ConfigGroup/ajaxGroupTitle',array('group_id' => $group_one['group_id']))}" nullmsg="配置组中文名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">配置组排序：</label>
                 <div class="formControls ">
-                    <input type="password" class="input-text" value="" name="group_sort" nullmsg="配置组排序不能为空！">
+                    <input type="text" class="input-text" value="{$group_one['group_sort']}" name="group_sort" nullmsg="配置组排序不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
@@ -54,14 +54,15 @@
                 <label class="form-label text-inline">是否开启：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="group_status" value="1" checked>是
+                        <input type="radio" name="group_status" value="1" {if condition="$group_one['group_status'] eq 1"} checked {/if}>是
                     </label>
                     <label for="">
-                        <input type="radio" name="group_status" value="0">否
+                        <input type="radio" name="group_status" value="0" {if condition="$group_one['group_status'] eq 0"} checked {/if}>否
                     </label>
                 </div>
             </div>        
             <div class="Operate_cont clearfix">
+                <input type="hidden" name="group_id" value="$group_one['group_id']">
                 <input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
             </div>
         </form>

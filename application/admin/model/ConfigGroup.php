@@ -54,7 +54,7 @@ class ConfigGroup extends Common
     public function ajaxGroupName($group_name,$group_id = 0)
     {
         if(empty($group_name)){
-            return true;
+            return 1;
         }
         $where = array();
         $where[] = array('group_name','=',$group_name);
@@ -69,7 +69,7 @@ class ConfigGroup extends Common
     public function ajaxGroupTitle($group_title,$group_id = 0)
     {
         if(empty($group_title)){
-            return true;
+            return 1;
         }
         $where = array();
         $where[] = array('group_title','=',$group_title);

@@ -39,7 +39,8 @@
                         <ul class="search_content clearfix">
                             <li>
                                 <label class="l_f">管理员中文名称:</label>
-                                <input name="group_title" type="text" class="text_add" value="{if condition=" $group_title neq 'n' "} {$group_title} {/if}"/>
+                                <input name="group_title" type="text" class="text_add" value="{if condition=" $group_title neq 'n'
+                                    "} {$group_title} {/if}"/>
                             </li>
                             <li>
                                 <label class="l_f">开启状态:</label>
@@ -92,18 +93,24 @@
                                     {volist name="page_data" id="user"}
                                     <tr>
                                         <td>
-                                            {if condition="$user['group_id'] gt 1"}
                                             <label>
                                                 <input type="checkbox" class="ace id" name="group_id[]" value="{$user['group_id']}">
                                                 <span class="lbl"></span>
                                             </label>
-                                            {/if}
                                         </td>
                                         <td>{$user.group_id}</td>
                                         <td>{$user.group_name}</td>
-                                        <td>{$user.group_title}</td>
+                                        <td>{$user['group_title']}</td>
                                         <td>{$user.group_sort}</td>
-                                        <td>{$user.group_status}</td>
+                                        <td>
+                                            {if condition="$user['group_status'] eq 1"}
+                                            <span class="label label-success radius ajax_get" value="0" title="点我停用" type="group_status" group_id="{$user.group_id}"
+                                                txt="停用">已启用</span>
+                                            {else/}
+                                            <span class="label label-default radius ajax_get" value="1" title="点我启用" type="group_status" group_id="{$user.group_id}"
+                                                txt="启用">已停用</span>
+                                            {/if}
+                                        </td>
                                         <td>{$user.add_time | date="Y-m-d H:i:s"}</td>
                                         <td>
                                             <a title="编辑" href="{:url('ConfigGroup/edit',array('group_id' => $user['group_id']))}" class="btn btn-xs btn-info">
@@ -113,7 +120,7 @@
                                                 class="btn btn-xs btn-warning">
                                                 <i class="fa fa-trash  bigger-120"></i>
                                             </a>
-                                            <a title="参数列表"  href="{:url('Config/index',array('group_id'=>$vo['group_id']))}" class="btn btn-xs btn-danger">
+                                            <a title="参数列表" href="{:url('Config/index',array('group_id'=>$vo['group_id']))}" class="btn btn-xs btn-danger">
                                                 参数列表
                                             </a>
                                         </td>
