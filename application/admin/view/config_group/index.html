@@ -17,10 +17,15 @@
     <script src="__ADMIN__/assets/js/typeahead-bs2.min.js"></script>
     <script src="__ADMIN__/assets/js/jquery.dataTables.min.js"></script>
     <script src="__ADMIN__/assets/js/jquery.dataTables.bootstrap.js"></script>
-    <script src="__ADMIN__/assets/layer/layer.js" type="text/javascript"></script>
     <script src="__ADMIN__/js/lrtk.js" type="text/javascript"></script>
     <script src="__ADMIN__/assets/layer/layer.js" type="text/javascript"></script>
     <script src="__ADMIN__/assets/laydate/laydate.js" type="text/javascript"></script>
+    <script type="text/javascript">var ajax_url = "{:url(MODULE_NAME.'/ConfigGroup/ajaxRecommand')}";</script>
+    <script src="__ADMIN__/js/config_group.js" type="text/javascript"></script>
+    <style>
+        .ajax_get{cursor: pointer;}
+    </style>
+    
 </head>
 
 <body>
@@ -101,7 +106,9 @@
                                         <td>{$user.group_id}</td>
                                         <td>{$user.group_name}</td>
                                         <td>{$user['group_title']}</td>
-                                        <td>{$user.group_sort}</td>
+                                        <td>
+                                            <input type="number" value="{$user['group_sort']}" name="group_sort" class="group_sort" min="1" group_id="{$user['group_id']}">
+                                        </td>
                                         <td>
                                             {if condition="$user['group_status'] eq 1"}
                                             <span class="label label-success radius ajax_get" value="0" title="点我停用" type="group_status" group_id="{$user.group_id}"

@@ -51,13 +51,13 @@
                 </div>
             </div>
             <div class="Operate_cont clearfix">
-                <label class="form-label text-inline">是否开启：</label>
+                <label class="form-label text-inline">状态是否开启：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="group_status" value="1" {if condition="$group_one['group_status'] eq 1"} checked {/if}>是
+                        <input type="radio" name="group_status" value="1" {if condition="$group_one['group_status'] eq 1"} checked {/if}>启用
                     </label>
                     <label for="">
-                        <input type="radio" name="group_status" value="0" {if condition="$group_one['group_status'] eq 0"} checked {/if}>否
+                        <input type="radio" name="group_status" value="0" {if condition="$group_one['group_status'] eq 0"} checked {/if}>停用
                     </label>
                 </div>
             </div>        

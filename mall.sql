@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50714
+Source Server         : php
+Source Server Version : 50721
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50714
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-03-13 23:46:48
+Date: 2020-03-16 17:43:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `mall_access` (
   PRIMARY KEY (`access_id`),
   KEY `groupId` (`role_id`),
   KEY `nodeId` (`node_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=171 DEFAULT CHARSET=utf8 COMMENT='权限表';
+) ENGINE=MyISAM AUTO_INCREMENT=234 DEFAULT CHARSET=utf8 COMMENT='权限表';
 
 -- ----------------------------
 -- Records of mall_access
@@ -37,43 +37,69 @@ INSERT INTO `mall_access` VALUES ('47', '3', '14', '3', null);
 INSERT INTO `mall_access` VALUES ('46', '3', '13', '3', null);
 INSERT INTO `mall_access` VALUES ('45', '3', '12', '3', null);
 INSERT INTO `mall_access` VALUES ('44', '3', '11', '3', null);
-INSERT INTO `mall_access` VALUES ('167', '1', '25', '3', null);
-INSERT INTO `mall_access` VALUES ('166', '1', '24', '3', null);
-INSERT INTO `mall_access` VALUES ('165', '1', '14', '3', null);
-INSERT INTO `mall_access` VALUES ('164', '1', '13', '3', null);
-INSERT INTO `mall_access` VALUES ('163', '1', '12', '3', null);
-INSERT INTO `mall_access` VALUES ('162', '1', '11', '3', null);
-INSERT INTO `mall_access` VALUES ('161', '1', '10', '3', null);
-INSERT INTO `mall_access` VALUES ('160', '1', '9', '3', null);
-INSERT INTO `mall_access` VALUES ('159', '1', '8', '3', null);
-INSERT INTO `mall_access` VALUES ('158', '1', '7', '3', null);
-INSERT INTO `mall_access` VALUES ('157', '1', '6', '3', null);
-INSERT INTO `mall_access` VALUES ('156', '1', '5', '3', null);
-INSERT INTO `mall_access` VALUES ('155', '1', '4', '3', null);
-INSERT INTO `mall_access` VALUES ('154', '1', '3', '3', null);
-INSERT INTO `mall_access` VALUES ('153', '1', '2', '2', null);
-INSERT INTO `mall_access` VALUES ('152', '1', '1', '1', null);
-INSERT INTO `mall_access` VALUES ('125', '2', '27', '2', null);
-INSERT INTO `mall_access` VALUES ('124', '2', '26', '1', null);
-INSERT INTO `mall_access` VALUES ('123', '2', '29', '3', null);
-INSERT INTO `mall_access` VALUES ('122', '2', '5', '3', null);
-INSERT INTO `mall_access` VALUES ('121', '2', '4', '3', null);
-INSERT INTO `mall_access` VALUES ('120', '2', '3', '3', null);
-INSERT INTO `mall_access` VALUES ('119', '2', '2', '2', null);
-INSERT INTO `mall_access` VALUES ('118', '2', '1', '1', null);
-INSERT INTO `mall_access` VALUES ('151', '9', '28', '3', null);
-INSERT INTO `mall_access` VALUES ('150', '9', '27', '2', null);
-INSERT INTO `mall_access` VALUES ('149', '9', '26', '1', null);
-INSERT INTO `mall_access` VALUES ('148', '9', '29', '3', null);
-INSERT INTO `mall_access` VALUES ('147', '9', '5', '3', null);
-INSERT INTO `mall_access` VALUES ('146', '9', '4', '3', null);
-INSERT INTO `mall_access` VALUES ('145', '9', '3', '3', null);
-INSERT INTO `mall_access` VALUES ('144', '9', '2', '2', null);
-INSERT INTO `mall_access` VALUES ('126', '2', '28', '3', null);
-INSERT INTO `mall_access` VALUES ('143', '9', '1', '1', null);
-INSERT INTO `mall_access` VALUES ('168', '1', '26', '1', null);
-INSERT INTO `mall_access` VALUES ('169', '1', '27', '2', null);
-INSERT INTO `mall_access` VALUES ('170', '1', '28', '3', null);
+INSERT INTO `mall_access` VALUES ('189', '1', '34', '2', null);
+INSERT INTO `mall_access` VALUES ('188', '1', '32', '1', null);
+INSERT INTO `mall_access` VALUES ('187', '1', '26', '1', null);
+INSERT INTO `mall_access` VALUES ('186', '1', '25', '3', null);
+INSERT INTO `mall_access` VALUES ('185', '1', '24', '3', null);
+INSERT INTO `mall_access` VALUES ('184', '1', '14', '3', null);
+INSERT INTO `mall_access` VALUES ('183', '1', '13', '3', null);
+INSERT INTO `mall_access` VALUES ('182', '1', '12', '3', null);
+INSERT INTO `mall_access` VALUES ('181', '1', '11', '3', null);
+INSERT INTO `mall_access` VALUES ('180', '1', '10', '3', null);
+INSERT INTO `mall_access` VALUES ('179', '1', '9', '3', null);
+INSERT INTO `mall_access` VALUES ('178', '1', '8', '3', null);
+INSERT INTO `mall_access` VALUES ('177', '1', '7', '3', null);
+INSERT INTO `mall_access` VALUES ('176', '1', '6', '3', null);
+INSERT INTO `mall_access` VALUES ('175', '1', '5', '3', null);
+INSERT INTO `mall_access` VALUES ('174', '1', '4', '3', null);
+INSERT INTO `mall_access` VALUES ('228', '2', '34', '2', null);
+INSERT INTO `mall_access` VALUES ('227', '2', '32', '1', null);
+INSERT INTO `mall_access` VALUES ('226', '2', '26', '1', null);
+INSERT INTO `mall_access` VALUES ('225', '2', '29', '3', null);
+INSERT INTO `mall_access` VALUES ('224', '2', '5', '3', null);
+INSERT INTO `mall_access` VALUES ('223', '2', '4', '3', null);
+INSERT INTO `mall_access` VALUES ('222', '2', '3', '3', null);
+INSERT INTO `mall_access` VALUES ('221', '2', '2', '2', null);
+INSERT INTO `mall_access` VALUES ('216', '9', '34', '2', null);
+INSERT INTO `mall_access` VALUES ('215', '9', '32', '1', null);
+INSERT INTO `mall_access` VALUES ('214', '9', '26', '1', null);
+INSERT INTO `mall_access` VALUES ('213', '9', '29', '3', null);
+INSERT INTO `mall_access` VALUES ('212', '9', '5', '3', null);
+INSERT INTO `mall_access` VALUES ('211', '9', '4', '3', null);
+INSERT INTO `mall_access` VALUES ('210', '9', '3', '3', null);
+INSERT INTO `mall_access` VALUES ('209', '9', '2', '2', null);
+INSERT INTO `mall_access` VALUES ('220', '2', '1', '1', null);
+INSERT INTO `mall_access` VALUES ('208', '9', '1', '1', null);
+INSERT INTO `mall_access` VALUES ('173', '1', '3', '3', null);
+INSERT INTO `mall_access` VALUES ('172', '1', '2', '2', null);
+INSERT INTO `mall_access` VALUES ('171', '1', '1', '1', null);
+INSERT INTO `mall_access` VALUES ('190', '1', '37', '3', null);
+INSERT INTO `mall_access` VALUES ('191', '1', '38', '3', null);
+INSERT INTO `mall_access` VALUES ('192', '1', '39', '3', null);
+INSERT INTO `mall_access` VALUES ('193', '1', '40', '3', null);
+INSERT INTO `mall_access` VALUES ('194', '1', '45', '3', null);
+INSERT INTO `mall_access` VALUES ('195', '1', '46', '3', null);
+INSERT INTO `mall_access` VALUES ('196', '1', '47', '3', null);
+INSERT INTO `mall_access` VALUES ('197', '1', '35', '2', null);
+INSERT INTO `mall_access` VALUES ('198', '1', '41', '3', null);
+INSERT INTO `mall_access` VALUES ('199', '1', '42', '3', null);
+INSERT INTO `mall_access` VALUES ('200', '1', '43', '3', null);
+INSERT INTO `mall_access` VALUES ('201', '1', '44', '3', null);
+INSERT INTO `mall_access` VALUES ('202', '1', '48', '3', null);
+INSERT INTO `mall_access` VALUES ('203', '1', '49', '3', null);
+INSERT INTO `mall_access` VALUES ('204', '1', '50', '3', null);
+INSERT INTO `mall_access` VALUES ('205', '1', '51', '3', null);
+INSERT INTO `mall_access` VALUES ('206', '1', '36', '2', null);
+INSERT INTO `mall_access` VALUES ('207', '1', '33', '1', null);
+INSERT INTO `mall_access` VALUES ('217', '9', '35', '2', null);
+INSERT INTO `mall_access` VALUES ('218', '9', '36', '2', null);
+INSERT INTO `mall_access` VALUES ('219', '9', '33', '1', null);
+INSERT INTO `mall_access` VALUES ('229', '2', '37', '3', null);
+INSERT INTO `mall_access` VALUES ('230', '2', '35', '2', null);
+INSERT INTO `mall_access` VALUES ('231', '2', '41', '3', null);
+INSERT INTO `mall_access` VALUES ('232', '2', '36', '2', null);
+INSERT INTO `mall_access` VALUES ('233', '2', '33', '1', null);
 
 -- ----------------------------
 -- Table structure for mall_admin
@@ -97,8 +123,32 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1584082381', '127.0.0.1', '0', '0');
-INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1578882750', '127.0.0.1', '1577777423', '1578364990');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1584351742', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1584351721', '127.0.0.1', '1577777423', '1578364990');
+
+-- ----------------------------
+-- Table structure for mall_config
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_config`;
+CREATE TABLE `mall_config` (
+  `config_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `group_id` int(10) NOT NULL COMMENT '配置组id',
+  `config_name` varchar(100) NOT NULL DEFAULT '' COMMENT '配置组英文名称',
+  `config_title` varchar(100) NOT NULL DEFAULT '' COMMENT '配置组中文名称',
+  `config_message` varchar(200) NOT NULL DEFAULT '' COMMENT '配置参数提示信息',
+  `config_value` text COMMENT '配置参数值',
+  `config_type` enum('text','radio','textarea','file','select') NOT NULL DEFAULT 'text' COMMENT '配置参数类型',
+  `config_info` varchar(200) NOT NULL DEFAULT '' COMMENT '配置参数',
+  `config_sort` smallint(6) NOT NULL DEFAULT '1' COMMENT '配置参数排序',
+  `config_status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '开启状态0表示关闭1表示开启',
+  `add_time` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
+  `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加者id',
+  PRIMARY KEY (`config_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mall_config
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for mall_config_group
@@ -113,12 +163,19 @@ CREATE TABLE `mall_config_group` (
   `add_time` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加用户',
   PRIMARY KEY (`group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_config_group
 -- ----------------------------
-INSERT INTO `mall_config_group` VALUES ('1', 'WEB_SITE', '站点信息', '1', '1', '1584114299', '1');
+INSERT INTO `mall_config_group` VALUES ('1', 'WEB_SITE', '站点信息', '8', '0', '1584114299', '1');
+INSERT INTO `mall_config_group` VALUES ('2', 'BASIC_SITE', '基本设置', '2', '1', '1584153749', '1');
+INSERT INTO `mall_config_group` VALUES ('3', 'WEB_CODE', '验证码设置', '3', '1', '1584153770', '1');
+INSERT INTO `mall_config_group` VALUES ('4', 'WEB_UPLOAD', '上传设置', '4', '1', '1584153922', '1');
+INSERT INTO `mall_config_group` VALUES ('5', 'WEB_SHOW', '显示设置', '5', '1', '1584153946', '1');
+INSERT INTO `mall_config_group` VALUES ('6', 'WEB_MOBILE_API', '网站手机验证接口', '6', '1', '1584154041', '1');
+INSERT INTO `mall_config_group` VALUES ('7', 'WEB_EMAIL', '邮箱设置', '7', '1', '1584154080', '1');
+INSERT INTO `mall_config_group` VALUES ('8', 'WEB_ORDER', '订单设置', '8', '1', '1584154107', '1');
 
 -- ----------------------------
 -- Table structure for mall_log
@@ -135,7 +192,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -167,6 +224,29 @@ INSERT INTO `mall_log` VALUES ('24', '1', '节点编辑参数添加成功', '158
 INSERT INTO `mall_log` VALUES ('25', '1', '节点删除参数添加成功', '1583941620', '127.0.0.1', '2', 'Rbac', 'addnode', '');
 INSERT INTO `mall_log` VALUES ('26', '1', 'admin登录成功', '1584082381', '127.0.0.1', '1', 'Login', 'Login', '');
 INSERT INTO `mall_log` VALUES ('27', '1', '配置组站点信息添加成功', '1584114299', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('28', '1', 'admin登录成功', '1584153086', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('29', '1', '配置组基本设置添加成功', '1584153749', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('30', '1', '配置组验证码设置添加成功', '1584153770', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('31', '1', '配置组上传设置添加成功', '1584153922', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('32', '1', '配置组显示设置添加成功', '1584153946', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('33', '1', '配置组网站手机验证接口添加成功', '1584154041', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('34', '1', '配置组邮箱设置添加成功', '1584154080', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('35', '1', '配置组订单设置添加成功', '1584154107', '127.0.0.1', '3', 'ConfigGroup', 'add', '');
+INSERT INTO `mall_log` VALUES ('36', '1', 'admin登录成功', '1584321948', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('37', '1', '配置组：站点信息编辑成功', '1584321962', '127.0.0.1', '3', 'ConfigGroup', 'edit', '');
+INSERT INTO `mall_log` VALUES ('38', '1', '配置组：站点信息编辑成功', '1584343418', '127.0.0.1', '3', 'ConfigGroup', 'edit', '');
+INSERT INTO `mall_log` VALUES ('39', '1', '配置组：站点信息编辑成功', '1584343429', '127.0.0.1', '3', 'ConfigGroup', 'edit', '');
+INSERT INTO `mall_log` VALUES ('40', '1', '角色名称：超级管理员编辑成功', '1584351385', '127.0.0.1', '2', 'Rbac', 'access', '');
+INSERT INTO `mall_log` VALUES ('41', '1', 'admin注销成功', '1584351406', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('42', '5', 'user登录成功', '1584351421', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('43', '5', 'user注销成功', '1584351453', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('44', '1', 'admin登录成功', '1584351463', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('45', '1', '角色名称：普通管理员编辑成功', '1584351492', '127.0.0.1', '2', 'Rbac', 'access', '');
+INSERT INTO `mall_log` VALUES ('46', '1', '角色名称：编辑编辑成功', '1584351515', '127.0.0.1', '2', 'Rbac', 'access', '');
+INSERT INTO `mall_log` VALUES ('47', '1', 'admin注销成功', '1584351714', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('48', '5', 'user登录成功', '1584351721', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('49', '5', 'user注销成功', '1584351734', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('50', '1', 'admin登录成功', '1584351742', '127.0.0.1', '1', 'Login', 'Login', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type
@@ -206,7 +286,7 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
@@ -243,6 +323,13 @@ INSERT INTO `mall_node` VALUES ('40', 'del', '', '', '删除配置组', '1', nul
 INSERT INTO `mall_node` VALUES ('42', 'add', '', '', '添加参数', '1', null, '0', '35', '3', '0');
 INSERT INTO `mall_node` VALUES ('43', 'edit', '', '', '编辑参数', '1', null, '0', '35', '3', '0');
 INSERT INTO `mall_node` VALUES ('44', 'del', '', '', '删除参数', '1', null, '0', '35', '3', '0');
+INSERT INTO `mall_node` VALUES ('45', 'ajaxGroupName', null, null, 'ajax更新组英文', '1', null, '0', '34', '3', '0');
+INSERT INTO `mall_node` VALUES ('46', 'ajaxGroupTitle', null, null, 'ajax更新组中文', '1', null, '0', '34', '3', '0');
+INSERT INTO `mall_node` VALUES ('47', 'ajaxRecommand', null, null, 'ajax异步更新相关属性', '1', null, '0', '34', '3', '0');
+INSERT INTO `mall_node` VALUES ('48', 'ajaxConfigName', null, null, 'ajax验证参数英文名称', '1', null, '0', '35', '3', '0');
+INSERT INTO `mall_node` VALUES ('49', 'ajaxGroupTitle', null, null, 'ajax验证参数中文名称', '1', null, '0', '35', '3', '0');
+INSERT INTO `mall_node` VALUES ('50', 'ajaxRecommand', null, null, 'ajax异步更新相关属性', '1', null, '0', '35', '3', '0');
+INSERT INTO `mall_node` VALUES ('51', 'webConfig', null, null, '网站配置', '1', null, '0', '35', '3', '1');
 
 -- ----------------------------
 -- Table structure for mall_role

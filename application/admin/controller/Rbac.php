@@ -291,7 +291,6 @@ class Rbac extends Common
                 save_log('用户'.$admin_one['username'].'密码修改成功',2);
                 $this->success('用户密码'.$admin_one['username'].'重置成功',url('Rbac/user'));
             }else{
-                p("失败");die;
                 $this->error('用户密码'.$admin_one['username'].'重置失败',url('Rbac/user'));
             }
         }else{
@@ -470,7 +469,6 @@ class Rbac extends Common
                 $page_data = $this->role->accessGetField($where,$field);
                 $page_data = node_merge($node_data,$page_data);
                 cache('access_'.$rid,$page_data,86400);
-                p($editdata);
                 save_log('角色名称：'.$editdata['remark'].'编辑成功',2);
                 $this->success('角色名称：'.$editdata['remark'].'编辑成功',url('rbac/role'));                 
             }else{

@@ -83,6 +83,7 @@ class ConfigGroup extends Common
     public function add()
     {
         if($this->request->isPost()){
+            p(11111);
             // 数据
             $data = $this->postData();
             $data['add_time'] = time();
@@ -230,5 +231,34 @@ class ConfigGroup extends Common
             'group_status' => input('group_status',0,'intval')
         );
         return $data;
+    }
+    /**
+     * ajax更新状态
+     */
+    public function ajaxRecommand()
+    {
+        if($this->request->isPost()){
+            $data = array(
+                input('type') => input('value')
+            );
+            $where = array(
+                'group_id' => $this->group_id
+            );
+            $res = $this->config_group->saveData($where,$data);
+            if($res){
+                $data = array(
+                    'status' => 1,
+                    'info' => '修改成功'
+                );
+            }else{
+                $data = array(
+                    'status' => 0,
+                    'info' => '修改失败'
+                );
+            }
+            return json($data);
+        }else{
+            halt('页面不存在');
+        }
     }
 }
