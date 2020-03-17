@@ -64,18 +64,18 @@ class Config extends Common
             $config_status = -1;
         }
         // 求总数
-        $role_total = $this->config->pageData($where,'total');//总条数
+        $page_total = $this->config->pageData($where,'total');//总条数
         $where['page'] = $page;
         $where['field'] = array('group_id','config_id','config_name','config_title','config_sort','config_status','add_time');
         $where['order'] = 'config_id asc';
-        $where['limit'] = 10;//每页显示条数
+        $where['limit'] = 8;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
         $page_data = $this->config->pageData($where,'range');
         // 求分页url
         $page_url = url('Config/index',array('config_name' => $config_name,'config_title' => $config_title,'config_status' => $config_status),'');
         // 载入分页
-        $page = new Page($role_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
+        $page = new Page($page_total,$where['limit'],$where['pageRow'],$where['page'],$page_url,'{page}');
         // 显示分页
         $show = $page->show(5);
         $this->assign('page',$show);

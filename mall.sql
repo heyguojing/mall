@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : php
-Source Server Version : 50721
+Source Server         : localhost_3306
+Source Server Version : 50714
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50721
+Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2020-03-17 17:46:47
+Date: 2020-03-18 00:00:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -144,11 +144,23 @@ CREATE TABLE `mall_config` (
   `add_time` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加者id',
   PRIMARY KEY (`config_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_config
 -- ----------------------------
+INSERT INTO `mall_config` VALUES ('1', '1', 'WEB_TITLE', '网站名称', '网站名称', '多店铺商城', 'text', '', '1', '1', '1584454819', '1');
+INSERT INTO `mall_config` VALUES ('2', '1', 'WEB_COMPANY', '公司名称', '公司名称', '公司名称', 'text', '', '1', '1', '1584454820', '1');
+INSERT INTO `mall_config` VALUES ('3', '1', 'DOMAIN_NAME', '网站域名', '网站域名', 'https://www.phpdecode.cn', 'text', '', '1', '1', '1584454821', '1');
+INSERT INTO `mall_config` VALUES ('4', '1', 'RECORD', '技术支持', '技术支持', 'qq：994743720  新月  php web', 'text', '', '1', '1', '1584454822', '1');
+INSERT INTO `mall_config` VALUES ('5', '1', 'ICP', 'ICP备案号', 'ICP备案号', '备案号：蜀ICP备19023826号', 'text', '', '1', '1', '1584454823', '1');
+INSERT INTO `mall_config` VALUES ('6', '1', 'COPY', '网站版权信息', '网站版权信息', '郭靖  https://www.phpdecode.cn ', 'text', '', '1', '1', '1584454824', '1');
+INSERT INTO `mall_config` VALUES ('7', '1', 'WEB_ON', '是否开启网站', '是否开启网站', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584454836', '1');
+INSERT INTO `mall_config` VALUES ('8', '1', 'WEB_COUNTCODE', '网站第三方统计代码', '网站第三方统计代码', '                    <div class=\"copyright-txt\">\r\n                        备案号：蜀ICP备19023826号   \r\n                    </div>\r', 'textarea', '', '1', '1', '1584454837', '1');
+INSERT INTO `mall_config` VALUES ('9', '1', 'VERSION', '系统版本', '系统版本', 'beta 1.0', 'text', '', '1', '1', '1584454840', '1');
+INSERT INTO `mall_config` VALUES ('10', '2', 'WEB_KEYWORDS', '网站关键字', '网站关键字', 'php开发，web', 'text', '', '1', '1', '1584454841', '1');
+INSERT INTO `mall_config` VALUES ('11', '2', 'WEB_DESCRIPTION', '网站描述', '网站描述', 'php thinkphp web html js bootstrap', 'text', '', '1', '1', '1584454842', '1');
+INSERT INTO `mall_config` VALUES ('12', '2', 'REG_ON', '是否开启注册', '是否开启注册', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584454843', '1');
 
 -- ----------------------------
 -- Table structure for mall_config_group
@@ -168,7 +180,7 @@ CREATE TABLE `mall_config_group` (
 -- ----------------------------
 -- Records of mall_config_group
 -- ----------------------------
-INSERT INTO `mall_config_group` VALUES ('1', 'WEB_SITE', '站点信息', '1', '0', '1584114299', '1');
+INSERT INTO `mall_config_group` VALUES ('1', 'WEB_SITE', '站点信息', '1', '1', '1584114299', '1');
 INSERT INTO `mall_config_group` VALUES ('2', 'BASIC_SITE', '基本设置', '2', '1', '1584153749', '1');
 INSERT INTO `mall_config_group` VALUES ('3', 'WEB_CODE', '验证码设置', '3', '1', '1584153770', '1');
 INSERT INTO `mall_config_group` VALUES ('4', 'WEB_UPLOAD', '上传设置', '4', '1', '1584153922', '1');
@@ -192,7 +204,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -247,6 +259,7 @@ INSERT INTO `mall_log` VALUES ('47', '1', 'admin注销成功', '1584351714', '12
 INSERT INTO `mall_log` VALUES ('48', '5', 'user登录成功', '1584351721', '127.0.0.1', '1', 'Login', 'Login', '');
 INSERT INTO `mall_log` VALUES ('49', '5', 'user注销成功', '1584351734', '127.0.0.1', '1', 'Index', 'logout', '');
 INSERT INTO `mall_log` VALUES ('50', '1', 'admin登录成功', '1584351742', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('51', '1', '配置组公司名称添加成功', '1584454820', '127.0.0.1', '3', 'Config', 'add', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type

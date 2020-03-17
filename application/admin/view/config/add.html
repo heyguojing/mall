@@ -13,6 +13,9 @@
     <script src="__ADMIN__/js/jquery-1.9.1.min.js"></script>
     <script src="__ADMIN__/assets/js/bootstrap.min.js"></script>
     <script src="__ADMIN__/js/common.js" type="text/javascript"></script>
+    <style>
+        textarea{width: 280px;height: 80px;border: 1px solid #ccc;}
+    </style>
 </head>
 
 <body>
@@ -20,7 +23,7 @@
         <div class="crumbs">
             <ul>
                 <li>
-                    <a href="{:url('ConfigGroup/index')}">配置组管理</a>
+                    <a href="{:url('Config/index')}">配置参数管理</a>
                 </li>
                 <li class="uline">/</li>
                 <li>
@@ -28,25 +31,63 @@
                 </li>
             </ul>
        </div>
-        <form action="{:url('ConfigGroup/add')}" method="post" class="form form-horizontal">
+        <form action="{:url('Config/add')}" method="post" class="form form-horizontal">
             <div class="Operate_cont clearfix">
                 <label class="form-label">配置组英文名称：</label>
                 <div class="formControls ">
-                        <input type="text" class="input-text" value="" placeholder=""  name="group_name" datatype="*" ajaxUrl="{:url('ConfigGroup/ajaxGroupName')}" nullmsg="配置组英文名称不能为空！">
+                        <input type="text" class="input-text" value="" placeholder=""  name="config_name" datatype="*" ajaxUrl="{:url('Config/ajaxConfigName')}" nullmsg="配置组英文名称不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">配置组中文名称：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" placeholder=""  name="group_title" datatype="*" ajaxUrl="{:url('ConfigGroup/ajaxGroupTitle')}" nullmsg="配置组中文名称不能为空！">
+                    <input type="text" class="input-text" value="" placeholder=""  name="config_title" datatype="*" ajaxUrl="{:url('Config/ajaxConfigTitle')}" nullmsg="配置组中文名称不能为空！">
+                    <span class="Validform_checktip"></span>
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label">提示信息：</label>
+                <div class="formControls ">
+                    <textarea name="config_message"></textarea>
+                    <span class="Validform_checktip"></span>
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label">显示类型：</label>
+                <div class="formControls ">
+                    <label>
+                        <input type="radio" name="config_type" value="text" checked>text
+                    </label>
+                    <label>
+                        <input type="radio" name="config_type" value="radio">radio
+                    </label>
+                    <label>
+                        <input type="radio" name="config_type" value="textarea">textarea
+                    </label>
+                    <label>
+                        <input type="radio" name="config_type" value="select">select
+                    </label>
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label">配置值：</label>
+                <div class="formControls ">
+                    <textarea name="config_value"></textarea>
+                    <span class="Validform_checktip"></span>
+                </div>
+            </div>
+            <div class="Operate_cont clearfix">
+                <label class="form-label">参数(仅对radio与select有效):</label>
+                <div class="formControls ">
+                    <textarea name="config_info"></textarea>
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
             <div class="Operate_cont clearfix">
                 <label class="form-label">配置组排序：</label>
                 <div class="formControls ">
-                    <input type="text" class="input-text" value="" name="group_sort" nullmsg="配置组排序不能为空！">
+                    <input type="text" class="input-text" value="1" name="config_sort" datatype="*" nullmsg="配置组排序不能为空！">
                     <span class="Validform_checktip"></span>
                 </div>
             </div>
@@ -54,14 +95,15 @@
                 <label class="form-label text-inline">是否开启：</label>
                 <div class="formControls form-inline">
                     <label for="">
-                        <input type="radio" name="group_status" value="1" checked>是
+                        <input type="radio" name="config_status" value="1" checked>是
                     </label>
                     <label for="">
-                        <input type="radio" name="group_status" value="0">否
+                        <input type="radio" name="config_status" value="0">否
                     </label>
                 </div>
             </div>        
             <div class="Operate_cont clearfix">
+                <input type="hidden" name="group_id" value="{$group_id}">
                 <input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
             </div>
         </form>
