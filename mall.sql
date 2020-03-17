@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-03-16 17:43:42
+Date: 2020-03-17 17:46:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -168,7 +168,7 @@ CREATE TABLE `mall_config_group` (
 -- ----------------------------
 -- Records of mall_config_group
 -- ----------------------------
-INSERT INTO `mall_config_group` VALUES ('1', 'WEB_SITE', '站点信息', '8', '0', '1584114299', '1');
+INSERT INTO `mall_config_group` VALUES ('1', 'WEB_SITE', '站点信息', '1', '0', '1584114299', '1');
 INSERT INTO `mall_config_group` VALUES ('2', 'BASIC_SITE', '基本设置', '2', '1', '1584153749', '1');
 INSERT INTO `mall_config_group` VALUES ('3', 'WEB_CODE', '验证码设置', '3', '1', '1584153770', '1');
 INSERT INTO `mall_config_group` VALUES ('4', 'WEB_UPLOAD', '上传设置', '4', '1', '1584153922', '1');
