@@ -83,7 +83,6 @@ class ConfigGroup extends Common
     public function add()
     {
         if($this->request->isPost()){
-            p(11111);
             // 数据
             $data = $this->postData();
             $data['add_time'] = time();

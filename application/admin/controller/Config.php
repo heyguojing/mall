@@ -22,7 +22,7 @@ class Config extends Common
         $this->uid = session(config('rbac.USER_AUTH_KEY'));
     }
     /**
-     * 配置组列表页
+     * 配置参数列表页
      */
     public function index()
     {
@@ -90,13 +90,13 @@ class Config extends Common
     }
 
     /**
-     * 添加配置组
+     * 添加配置参数
      */
     public function add()
     {
         $group_one = $this->config_group->getOne(array('group_id' => $this->group_id));
         if(empty($group_one)){
-            $this->error('该配置组id不存在',url('ConfigGroup/index'));
+            $this->error('该配置参数id不存在',url('ConfigGroup/index'));
         }
         if($this->request->isPost()){
             // 数据
@@ -106,10 +106,10 @@ class Config extends Common
             // 添加
             $res = $this->config->addData($data);
             if($res){
-                save_log('配置组'.$data['config_title'].'添加成功',3);
-                $this->success('添加配置组'.$data['config_title'].'成功',url('Config/index'));
+                save_log('配置参数'.$data['config_title'].'添加成功',3);
+                $this->success('添加配置参数'.$data['config_title'].'成功',url('Config/index',array('group_id' => $this->group_id)));
             }else{
-                $this->error('添加配置组失败',url('Config/add'));
+                $this->error('添加配置参数失败',url('Config/add'));
             }
 
         }else{
@@ -118,13 +118,13 @@ class Config extends Common
         }
     }
     /**
-     * 编辑配置组
+     * 编辑配置参数
      */
     public function edit()
     {
         $config_id = input('config_id');
         if(empty($config_id)){
-            $this->error('配置组id不存在',url('Config/index'));
+            $this->error('配置参数id不存在',url('Config/index'));
         }
         $config_one = $this->config->getOne(array('config_id' => $config_id));
         if($this->request->isPost()){
@@ -133,10 +133,10 @@ class Config extends Common
             $res = $this->config->saveData(array('config_id' => $config_id),$data);
             // 结果判断
             if($res){
-                save_log('配置组：'.$data['config_title'].'编辑成功',3);
-                $this->success('配置组'.$data['config_title'].'编辑成功',url('Config/index'));
+                save_log('配置参数：'.$data['config_title'].'编辑成功',3);
+                $this->success('配置参数'.$data['config_title'].'编辑成功',url('Config/index',array('group_id' => $this->group_id)));
             }else{
-                $this->error('配置组'.$data['config_title'].'编辑失败',url('Config/index'));
+                $this->error('配置参数'.$data['config_title'].'编辑失败',url('Config/index',array('group_id' => $this->group_id)));
             }
         }else{
             // 渲染编辑页面
@@ -145,7 +145,7 @@ class Config extends Common
         }        
     }
     /**
-     * 删除配置组
+     * 删除配置参数
      */
     public function del()
     {
@@ -161,7 +161,7 @@ class Config extends Common
         foreach($config_arr as $v){
             $config_one = $this->config->getOne(array('config_id' => $v));
             if(empty($config_one)){
-                $this->error('删除失败，配置组id不存在',url('Config/index'));
+                $this->error('删除失败，配置参数id不存在',url('Config/index',array('group_id' => $this->group_id)));
             }
         }
         // 删除
@@ -170,14 +170,14 @@ class Config extends Common
             $res = $this->config->delData($where);
         }
         if($res){
-            save_log('配置组ID：'.$config_ids.'删除成功',3);
-            $this->success('配置组id：'.$config_ids.'删除成功',url('Config/index'));
+            save_log('配置参数ID：'.$config_ids.'删除成功',3);
+            $this->success('配置参数id：'.$config_ids.'删除成功',url('Config/index',array('group_id' => $this->group_id)));
         }else{
-            $this->success('配置组删除失败',url('Config/index'));
+            $this->success('配置参数删除失败',url('Config/index'));
         }
     }
     /**
-     * 配置组名称是否重复验证
+     * 配置参数名称是否重复验证
      */
     public function ajaxConfigName()
     {
@@ -194,13 +194,13 @@ class Config extends Common
         }else{
             $data = array(
                 'status' => 'n',
-                'info' => '配置组用户名重复'
+                'info' => '配置参数用户名重复'
             );
         }
         return json($data);
     }
         /**
-     * 配置组名称是否重复验证
+     * 配置参数名称是否重复验证
      */
     public function ajaxConfigTitle()
     {
@@ -217,7 +217,7 @@ class Config extends Common
         }else{
             $data = array(
                 'status' => 'n',
-                'info' => '配置组用户名重复'
+                'info' => '配置参数用户名重复'
             );
         }
         return json($data);

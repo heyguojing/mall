@@ -329,7 +329,7 @@ class Rbac extends Common
         $where['page'] = input('page',1,'intval');
         $where['field'] = array('id','name','remark','status');
         $where['order'] = 'id asc';
-        $where['limit'] = 2;//每页显示条数
+        $where['limit'] = 4;//每页显示条数
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
         $page_data = $this->role->pageData($where,'range');
