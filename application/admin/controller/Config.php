@@ -177,6 +177,25 @@ class Config extends Common
         }
     }
     /**
+     * 网站配置
+     */
+    public function webConfig()
+    {
+        if($this->request->isPost){
+
+        }else{
+            if(!cache('config_page_data')){
+                $where = array();
+                $where[] = array('group_status','=',1);
+                $page_data = $this->config->webConfig($where);
+                // cache('config_page_data',$page_data,86400);
+            }
+            p($page_data);
+            $this->assign('page_data',$page_data);
+            return $this->fetch();
+        }
+    }
+    /**
      * 配置参数名称是否重复验证
      */
     public function ajaxConfigName()

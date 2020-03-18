@@ -62,6 +62,7 @@ class Config extends Common
         }
         $where = array();
         $where[] = array('config_name','=',$config_name);
+        //$where = array('config_name' => $config_name);等价
         if($config_id > 0){ 
             $where[] = array('config_id','<>',$config_id);
         }
@@ -81,5 +82,84 @@ class Config extends Common
             $where[] = array('config_id','<>',$config_id);
         }
         return Db::name($this->table)->where($where)->find();
+    }
+    /**
+     * 获取网站配置数据
+     */
+    public function webConfig($where)
+    {
+        $page_data = Db::name('config_group')->where($where)->order('group_id asc')->select();
+        if($page_data){
+            foreach($page_data as $key => $val){
+                $where = array();
+                $where['config_status'] = 1;
+                $where['group_id'] = $val['group_id'];
+                $config = Db::name($this->table)->where($where)->order('config_sort asc,config_id asc')->select();
+                if($config){
+                    foreach($config as $k => $v){
+                        $func = '_'.$v['config_type'];
+                        $config[$k]['html'] = $this->$func($v);
+                    }
+                }
+                $page_data[$key]['config'] = $config;
+            }
+        }
+        p($page_data);
+        return $page_data;
+    }
+    /**
+     * 输入框
+     */
+    public function _text($v)
+    {
+        // config_value 配置值
+        return '<input type="text" name="config['.$v['config_id'].'][config_value]" value="'.$v['config_value'].'" class="col-xs-10 ">';
+    }
+    /**
+     * 单选框
+     */
+    public function _radio($v)
+    {
+        $html = '';
+        $info = explode(',',$v['config_info']);//array('1|开启','0|关闭')
+        foreach($info as $key => $val){
+            $data = explode('|',$val);//array('1','开启')
+            $checked = $data[0] == $v['config_value']?'checked="checked"':'';
+            $key = $key + 1;
+            if($key%3 == 0){
+                $html.='<label><input name="config['.$v['config_id'].'][config_value]" type="radio" value="'.$data[0].'" class="ace"'.$checked.'><span class="lbl">'.$data[1].'</span></label>';
+            }else{
+                $html.='<label style="margin-left:10px;"><input name="config['.$v['config_id'].'][config_value]" type="radio" value="'.$data[0].'" class="ace"'.$checked.'><span class="lbl">'.$data[1].'</span></label>';
+            }
+        }
+        return $html;
+    }
+    /**
+     * 下拉框
+     */
+    public function _select($v)
+    {
+        $html = '<select name="config['.$v['config_id'].'][config_value]" id="" class="col-xs-10">';
+        $info = explode(',',$v['config_info']);
+        foreach($info as $key => $val){
+            $data = explode('|',$val);
+            $checked = $data[0] == $v['config_value']?'checked = "checked"':'';
+            $html.='<option value="'.$data[0].'" '.$checked.'>'.$data[1].'</option>';
+        }
+        return $html;
+    }
+    /**
+     * 文本域
+     */
+    public function _textarea($v)
+    {
+        return '<textarea class="col-xs-10 " style="height: 60px;" name="config[' . $v['config_id'] . '][config_value]" style="height:100px;border:1px solid #ccc;margin-left:8px;">' . $v['config_value'] . '</textarea>';
+    }
+    /**
+     * 文件上传
+     */
+    public function _file($v)
+    {
+
     }
 }
