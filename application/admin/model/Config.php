@@ -1,7 +1,8 @@
 <?php
 namespace app\admin\model;
 use think\Db;
-
+use think\facade\Env;
+use Org\Util\Dir;
 class Config extends Common
 {
     protected $table;
@@ -104,7 +105,6 @@ class Config extends Common
                 $page_data[$key]['config'] = $config;
             }
         }
-        p($page_data);
         return $page_data;
     }
     /**
@@ -161,5 +161,54 @@ class Config extends Common
     public function _file($v)
     {
 
+    }
+    /**
+     * 更新数据
+     */
+    public function saveData($where = array(),$data = array())
+    {
+        return Db::name($this->table)->where($where)->update($data);
+        $this->saveConfig();
+        return true;
+    }
+    /**
+	 * 添加数据
+	 */
+	public function addData ($data = array())
+	{
+		Db::name($this->table)->insert($data, 0, 1);
+		$this->saveConfig();
+		return true;
+    }
+    /**
+     * 删除数据
+     */
+    public function delData ($where)
+	{
+		 Db::name($this->table)->where($where)->delete();
+		 $this->saveConfig();
+		 return true;
+	}
+    public function saveConfig()
+    {
+        // 删除缓存目录
+        Dir::del(Env::get('runtime_path').'cache/');
+        $page_data = Db::name($this->table)->where(array('config_status' => 1))->order('config_id asc')->select();
+        $arr = array();
+        if(!empty($page_data)){
+            foreach($page_data as $key => $val){
+                $name = strtoupper($val['config_name']);
+                if(strtoupper($val['config_value']) == "TRUE"){
+                    $val['config_value'] = true;
+                }
+                if(strtoupper($val['config_value']) == "FALSE"){
+                    $val['config_value'] = FALSE;
+                }
+                $arr[$name] = htmlspecialchars_decode($val['config_value']);
+            }
+        }
+        //写入配置文件
+        $content = "<?php return ".var_export($arr,true)."\n?>";
+        return file_put_contents("../config/site.php",$content);
     }
 }

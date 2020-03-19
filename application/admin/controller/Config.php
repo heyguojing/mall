@@ -181,8 +181,15 @@ class Config extends Common
      */
     public function webConfig()
     {
-        if($this->request->isPost){
-
+        if($this->request->isPost()){
+            $data = $_POST['config'];
+            if(!is_array($data)){
+                $this->error('错误，数据为空！',url("Config/webConfig"));
+            }
+            foreach($data as $key => $val){
+                $this->config->saveData(array('config_id' => $key),$val);
+            }
+            $this->success('修改成功');
         }else{
             if(!cache('config_page_data')){
                 $where = array();
@@ -190,7 +197,6 @@ class Config extends Common
                 $page_data = $this->config->webConfig($where);
                 // cache('config_page_data',$page_data,86400);
             }
-            p($page_data);
             $this->assign('page_data',$page_data);
             return $this->fetch();
         }
@@ -300,5 +306,9 @@ class Config extends Common
         }else{
             halt('页面不存在');
         }
+    }
+    public function saveConfig()
+    {
+        $this->config->saveConfig();
     }
 }
