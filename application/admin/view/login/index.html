@@ -61,6 +61,7 @@
                                             <input name="password" type="password" id="password" prename="密码" />
                                             <i>密码</i>
                                         </li>
+                                        {if condition="$show_verify eq 1"}
                                         <li class="frame_style form_error">
                                             <label class="Codes_icon"></label>
                                             <input name="code" type="text" id="code" prename="验证码" />
@@ -69,7 +70,7 @@
                                                 <img src="{:url('Login/verify')}" alt="captcha" class="verify">
                                             </div>
                                         </li>
-
+                                        {/if}
                                     </ul>
                                     <div class="space"></div>
 
@@ -106,20 +107,35 @@
             var str = "";
             var username = $.trim($("#username").val());
             var password = $.trim($("#password").val());
-            var code = $.trim($("#code").val());
-            $("input[type$='text'],input[type$='password']").each(function (n) {
-                if ($(this).val() == "") {
-                    layer.alert(str += "" + $(this).attr("prename") + "不能为空！\r\n", {
-                        title: '提示框',
-                        icon: 0,
-                    });
-                    num++;
-                    return false;
-                }
-            });
-            if (num > 0) {
-                return false;
-            } else {
+            {if condition="$show_verify eq 1"}
+                var code = $.trim($("#code").val());
+                {else/}
+                var code = 0;
+            {/if}
+		//判断用户名是否为空
+		if (username == "") {
+			str += "用户名不能为空<br />";
+			num++;
+		}
+		//判断密码是否为空
+		if (password == "") {
+			str += "密码不能为空<br />";
+			num++;
+        }
+        //验证码不能为空
+		{if condition="$show_verify eq 1"}
+		if (code == "") {
+			str += "验证码不能为空<br />";
+			num++;
+		}
+		{/if}
+		if (num > 0) {
+			layer.alert(str, {
+				title: '提示框',
+				icon: 0,
+			});
+			return false;
+		}  else {
                 $.ajax({
                     url:"{:url('Login/login')}",
                     type:"post",
@@ -148,7 +164,7 @@
                             },1000)
                         }
                     }
-                })
+                });
             }
 
         });

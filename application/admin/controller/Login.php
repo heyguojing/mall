@@ -16,6 +16,11 @@ class Login extends Controller
         if(Session::has('uid')){
             return $this->redirect(url('index/index'));
         }else{
+            if(config('site.SHOW_VERIFY') == 1){
+                $this->assign('show_verify',1);
+            }else{
+                $this->assign('show_verify',0);
+            }
             return $this->fetch();
         }
     }
@@ -24,10 +29,10 @@ class Login extends Controller
         ob_clean();//清楚缓存
         $captcha = new Captcha();
         $captcha->codeSet = '123456789';
-        $captcha->fontSize = 40;
-        $captcha->length = 4;
-        $captcha->useCurve = true;
-        $captcha->useNoise = true;
+        $captcha->fontSize = config('site.CODE_FONT_SIZE');
+        $captcha->length = config('site.CODE_LEN');
+        $captcha->useCurve = config('site.CODE_CURVE');
+        $captcha->useNoise = config('site.CODE_NOISE');
         return $captcha->entry();
     }
     public function login()
@@ -35,18 +40,21 @@ class Login extends Controller
         $username = input('username');
         $password = input('password');
         $code = input('code');
-
+        if(empty($code) && config('site.SHOW_VERIFY') == 1){
+            return json(array('status' => 0,'msg' => '验证码为空!'));
+        }
         // 判断用户名和密码是否为空
-        if((empty($username) || empty($password) || empty($code))){
+        if((empty($username) || empty($password))){
             return json(array('status' => 0,'msg' => '用户名或密码不能为空!!!'));
         }
 
         // 判断验证码
-        $captcha = new captcha();
-        if(!$captcha->check($code)){
-            return json(array('status' => 0,'msg' => '验证码输入错误'));
+        if(config('site.SHOW_VERIFY') == 1){
+            $captcha = new captcha();
+            if(!$captcha->check($code)){
+                return json(array('status' => 0,'msg' => '验证码输入错误'));
+            }
         }
-
         // 密码判断以及设置session
         $get_one = $this->admin->getOne(array('username' => $username));
         if(!empty($get_one) && $get_one['password'] == md5(md5($password).$get_one['salt'])){

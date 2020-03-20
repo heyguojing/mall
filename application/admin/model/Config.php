@@ -163,15 +163,6 @@ class Config extends Common
 
     }
     /**
-     * 更新数据
-     */
-    public function saveData($where = array(),$data = array())
-    {
-        return Db::name($this->table)->where($where)->update($data);
-        $this->saveConfig();
-        return true;
-    }
-    /**
 	 * 添加数据
 	 */
 	public function addData ($data = array())
@@ -188,7 +179,16 @@ class Config extends Common
 		 Db::name($this->table)->where($where)->delete();
 		 $this->saveConfig();
 		 return true;
-	}
+    }
+    /**
+     * 更新数据
+     */
+    public function saveData($where = array(),$data = array())
+    {
+        Db::name($this->table)->where($where)->update($data);
+        $res = $this->saveConfig();
+        return true;
+    }
     public function saveConfig()
     {
         // 删除缓存目录
