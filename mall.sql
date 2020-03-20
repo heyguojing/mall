@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-03-18 17:25:47
+Date: 2020-03-20 17:33:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,7 +123,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1584351742', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1584674066', '127.0.0.1', '0', '0');
 INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1584351721', '127.0.0.1', '1577777423', '1578364990');
 
 -- ----------------------------
@@ -149,26 +149,26 @@ CREATE TABLE `mall_config` (
 -- ----------------------------
 -- Records of mall_config
 -- ----------------------------
-INSERT INTO `mall_config` VALUES ('1', '1', 'WEB_TITLE', '网站名称', '网站名称', '多店铺商城', 'text', '', '1', '1', '1584454819', '1');
-INSERT INTO `mall_config` VALUES ('2', '1', 'WEB_COMPANY', '公司名称', '公司名称', '公司名称', 'text', '', '2', '1', '1584454820', '1');
+INSERT INTO `mall_config` VALUES ('1', '1', 'WEB_TITLE', '网站名称', '网站名称', '王多鱼科技有限公司', 'text', '', '1', '1', '1584454819', '1');
+INSERT INTO `mall_config` VALUES ('2', '1', 'WEB_COMPANY', '公司名称', '公司名称', '王多鱼科技有限公司', 'text', '', '1', '1', '1584454820', '1');
 INSERT INTO `mall_config` VALUES ('3', '1', 'DOMAIN_NAME', '网站域名', '网站域名', 'https://www.phpdecode.cn', 'text', '', '1', '1', '1584454821', '1');
 INSERT INTO `mall_config` VALUES ('4', '1', 'RECORD', '技术支持', '技术支持', 'qq：994743720  新月  php web', 'text', '', '1', '1', '1584454822', '1');
-INSERT INTO `mall_config` VALUES ('5', '1', 'ICP', 'ICP备案号', 'ICP备案号', '备案号：蜀ICP备19023826号', 'text', '', '1', '1', '1584454823', '1');
-INSERT INTO `mall_config` VALUES ('6', '1', 'COPY', '网站版权信息', '网站版权信息', '郭靖  https://www.phpdecode.cn ', 'text', '', '1', '1', '1584454824', '1');
+INSERT INTO `mall_config` VALUES ('5', '1', 'ICP', 'ICP备案号', 'ICP备案号', '蜀ICP备19023826号', 'text', '', '1', '1', '1584454823', '1');
+INSERT INTO `mall_config` VALUES ('6', '1', 'COPY', '网站版权信息', '网站版权信息', '郭靖', 'text', '', '1', '1', '1584454824', '1');
 INSERT INTO `mall_config` VALUES ('7', '1', 'WEB_ON', '是否开启网站', '是否开启网站', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584454836', '1');
-INSERT INTO `mall_config` VALUES ('8', '1', 'WEB_COUNTCODE', '网站第三方统计代码', '网站第三方统计代码', '                    <div class=\"copyright-txt\">\r\n                        备案号：蜀ICP备19023826号   \r\n                    </div>\r', 'textarea', '', '1', '1', '1584454837', '1');
-INSERT INTO `mall_config` VALUES ('9', '1', 'VERSION', '系统版本', '系统版本', 'beta 1.0', 'text', '', '1', '1', '1584454840', '1');
+INSERT INTO `mall_config` VALUES ('8', '1', 'WEB_COUNTCODE', '网站第三方统计代码', '网站第三方统计代码', '                    <div class=\"copyright-txt\">\r\n                        备案号：蜀ICP备19023826号   \r\n                    </div>\r\n', 'textarea', '', '1', '1', '1584454837', '1');
+INSERT INTO `mall_config` VALUES ('9', '1', 'VERSION', '系统版本', '系统版本', '1.0版', 'text', '', '1', '1', '1584454840', '1');
 INSERT INTO `mall_config` VALUES ('10', '2', 'WEB_KEYWORDS', '网站关键字', '网站关键字', 'php开发，web', 'text', '', '1', '1', '1584454841', '1');
 INSERT INTO `mall_config` VALUES ('11', '2', 'WEB_DESCRIPTION', '网站描述', '网站描述', 'php thinkphp web html js bootstrap', 'text', '', '1', '1', '1584454842', '1');
 INSERT INTO `mall_config` VALUES ('12', '2', 'REG_ON', '是否开启注册', '是否开启注册', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584454843', '1');
 INSERT INTO `mall_config` VALUES ('13', '2', 'WEB_IP_STATE', '是否限制用户登录ip', '是否限制用户登录ip', '0', 'radio', '1|开启,0|关闭', '1', '1', '1584495105', '1');
 INSERT INTO `mall_config` VALUES ('14', '2', 'REG_POINT', '注册积分', '注册积分', '10', 'text', '', '1', '1', '1584495379', '1');
 INSERT INTO `mall_config` VALUES ('15', '2', 'WEB_MAIN_DOMAIN', '网站主域名前缀', '网站主域名前缀', 'mall', 'text', '', '1', '1', '1584495380', '1');
-INSERT INTO `mall_config` VALUES ('16', '3', 'CODE_CURVE', '是否画混淆曲线', '是否画混淆曲线', '0', 'radio', '1|开启,0|关闭', '2', '1', '1584495381', '1');
+INSERT INTO `mall_config` VALUES ('16', '3', 'CODE_CURVE', '是否画混淆曲线', '是否画混淆曲线', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495381', '1');
 INSERT INTO `mall_config` VALUES ('17', '3', 'CODE_LEN', '验证码长度', '验证码长度', '4', 'text', '', '1', '1', '1584495382', '1');
-INSERT INTO `mall_config` VALUES ('18', '3', 'SHOW_VERIFY', '后台是否开启验证码', '后台是否开启验证码', '0', 'radio', '1|开启,0|关闭', '1', '1', '1584495383', '1');
-INSERT INTO `mall_config` VALUES ('19', '3', 'CODE_NOISE', '是否添加杂点', '是否添加杂点', '0', 'radio', '1|开启,0|关闭', '1', '1', '1584495384', '1');
-INSERT INTO `mall_config` VALUES ('20', '3', 'HOME_SHOW_VERIFY', '前台是否开启验证码', '前台是否开启验证码', '0', 'radio', '1|开启,0|关闭', '1', '1', '1584495390', '1');
+INSERT INTO `mall_config` VALUES ('18', '3', 'SHOW_VERIFY', '后台是否开启验证码', '后台是否开启验证码', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495383', '1');
+INSERT INTO `mall_config` VALUES ('19', '3', 'CODE_NOISE', '是否添加杂点', '是否添加杂点', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495384', '1');
+INSERT INTO `mall_config` VALUES ('20', '3', 'HOME_SHOW_VERIFY', '前台是否开启验证码', '前台是否开启验证码', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495390', '1');
 INSERT INTO `mall_config` VALUES ('21', '3', 'CODE_FONT_SIZE', '验证码字体大小', '验证码字体大小', '30', 'text', '', '1', '1', '1584495391', '1');
 INSERT INTO `mall_config` VALUES ('22', '4', 'UPLOAD_PATH', '上传路径', '上传路径', './upload/', 'text', '', '1', '1', '1584495392', '1');
 INSERT INTO `mall_config` VALUES ('23', '4', 'UPLOAD_TYPE', '上传类型', '上传类型', 'jpg,png,jpeg', 'text', '', '1', '1', '1584495393', '1');
@@ -205,7 +205,8 @@ CREATE TABLE `mall_config_group` (
   `group_status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0表示关闭，1表示开启',
   `add_time` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加用户',
-  PRIMARY KEY (`group_id`)
+  PRIMARY KEY (`group_id`),
+  KEY `group_id` (`group_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -219,6 +220,43 @@ INSERT INTO `mall_config_group` VALUES ('5', 'WEB_SHOW', '显示设置', '5', '1
 INSERT INTO `mall_config_group` VALUES ('6', 'WEB_MOBILE_API', '网站手机验证接口', '6', '1', '1584154041', '1');
 INSERT INTO `mall_config_group` VALUES ('7', 'WEB_EMAIL', '邮箱设置', '7', '1', '1584154080', '1');
 INSERT INTO `mall_config_group` VALUES ('8', 'WEB_ORDER', '订单设置', '8', '1', '1584154107', '1');
+
+-- ----------------------------
+-- Table structure for mall_goods_attr
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_goods_attr`;
+CREATE TABLE `mall_goods_attr` (
+  `goods_attr_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `goods_id` int(10) NOT NULL DEFAULT '0' COMMENT '商品id',
+  `attr_id` int(10) DEFAULT '0' COMMENT '属性id/规格id',
+  `attr_value` varchar(255) NOT NULL DEFAULT '' COMMENT '属性值/规格值',
+  `attr_type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0表示参数1表示规格',
+  `attr_pic` varchar(255) DEFAULT '' COMMENT '规格图片',
+  `attr_status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1正常0删除',
+  PRIMARY KEY (`goods_attr_id`),
+  KEY `type_id` (`goods_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8 COMMENT='商品属性表';
+
+-- ----------------------------
+-- Records of mall_goods_attr
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for mall_goods_type
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_goods_type`;
+CREATE TABLE `mall_goods_type` (
+  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(50) NOT NULL DEFAULT '' COMMENT '类型名称',
+  `type_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '开启状态0表示关闭1表示开启',
+  `add_time` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
+  `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加者id',
+  PRIMARY KEY (`type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='商品类型表';
+
+-- ----------------------------
+-- Records of mall_goods_type
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for mall_log
@@ -235,7 +273,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -299,6 +337,16 @@ INSERT INTO `mall_log` VALUES ('56', '1', '配置参数ID：17删除成功', '15
 INSERT INTO `mall_log` VALUES ('57', '1', '配置参数ID：17删除成功', '1584504189', '127.0.0.1', '3', 'Config', 'del', '');
 INSERT INTO `mall_log` VALUES ('58', '1', '配置参数ID：17删除成功', '1584504278', '127.0.0.1', '3', 'Config', 'del', '');
 INSERT INTO `mall_log` VALUES ('59', '1', '配置参数：网站名称编辑成功', '1584514048', '127.0.0.1', '3', 'Config', 'edit', '');
+INSERT INTO `mall_log` VALUES ('60', '1', '节点网站配置配置成功', '1584524276', '127.0.0.1', '2', 'Rbac', 'editnode', '');
+INSERT INTO `mall_log` VALUES ('61', '1', '节点12312添加成功', '1584524303', '127.0.0.1', '2', 'Rbac', 'addnode', '');
+INSERT INTO `mall_log` VALUES ('62', '1', 'admin登录成功', '1584667308', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('63', '1', 'admin注销成功', '1584673727', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('64', '1', 'admin登录成功', '1584673963', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('65', '1', 'admin注销成功', '1584674008', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('66', '1', 'admin登录成功', '1584674017', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('67', '1', 'admin注销成功', '1584674056', '127.0.0.1', '1', 'Index', 'logout', '');
+INSERT INTO `mall_log` VALUES ('68', '1', 'admin登录成功', '1584674066', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('69', '1', '节点12312添加成功', '1584695052', '127.0.0.1', '2', 'Rbac', 'delnode', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type
@@ -338,7 +386,7 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
@@ -381,7 +429,20 @@ INSERT INTO `mall_node` VALUES ('47', 'ajaxRecommand', null, null, 'ajax异步�
 INSERT INTO `mall_node` VALUES ('48', 'ajaxConfigName', null, null, 'ajax验证参数英文名称', '1', null, '0', '35', '3', '0');
 INSERT INTO `mall_node` VALUES ('49', 'ajaxGroupTitle', null, null, 'ajax验证参数中文名称', '1', null, '0', '35', '3', '0');
 INSERT INTO `mall_node` VALUES ('50', 'ajaxRecommand', null, null, 'ajax异步更新相关属性', '1', null, '0', '35', '3', '0');
-INSERT INTO `mall_node` VALUES ('51', 'webConfig', null, null, '网站配置', '1', null, '0', '35', '3', '1');
+INSERT INTO `mall_node` VALUES ('51', 'webConfig', '', '', '网站配置', '1', null, '0', '35', '3', '1');
+INSERT INTO `mall_node` VALUES ('52', 'GoodsType', null, null, '商品类型', '1', null, '1', '26', '2', '1');
+INSERT INTO `mall_node` VALUES ('53', 'GoodsClass', null, null, '商品分类管理', '1', null, '1', '26', '2', '1');
+INSERT INTO `mall_node` VALUES ('54', 'User', null, null, '会员管理', '1', null, '1', '26', '2', '1');
+INSERT INTO `mall_node` VALUES ('55', 'Store', null, null, '店铺管理', '1', null, '1', '26', '2', '1');
+INSERT INTO `mall_node` VALUES ('56', 'Order', null, null, '订单管理', '1', null, '1', '26', '2', '1');
+INSERT INTO `mall_node` VALUES ('57', 'Goods', null, null, '商品管理', '1', null, '1', '26', '2', '1');
+INSERT INTO `mall_node` VALUES ('58', 'Stat', null, null, '统计管理', '1', null, '1', '26', '2', '1');
+INSERT INTO `mall_node` VALUES ('59', 'index', null, null, '商品类型列表', '1', null, '1', '52', '3', '1');
+INSERT INTO `mall_node` VALUES ('60', 'add', null, null, '添加商品类型', '1', null, '1', '52', '3', '1');
+INSERT INTO `mall_node` VALUES ('61', 'edit', null, null, '编辑商品类型', '1', null, '1', '52', '3', '0');
+INSERT INTO `mall_node` VALUES ('62', 'del', null, null, '删除商品类型', '1', null, '1', '52', '3', '0');
+INSERT INTO `mall_node` VALUES ('63', 'ajaxTypeName', null, null, 'ajax验证商品类型', '1', null, '1', '52', '3', '0');
+INSERT INTO `mall_node` VALUES ('64', 'ajaxRecommand', null, null, 'ajax异步更新相关属性', '1', null, '1', '52', '3', '0');
 
 -- ----------------------------
 -- Table structure for mall_role
