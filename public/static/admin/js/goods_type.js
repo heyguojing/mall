@@ -14,7 +14,7 @@ $(function() {
 		showAllError:true
 	});
 	//ajax更新相关信息
-	$(".ajax_get").live('click', function () {
+	$(".ajax_get").on('click', function () {
 		var type = $(this).attr('type');
 		var value = $(this).attr('value');
 		var type_id = $(this).attr('type_id');
@@ -45,6 +45,7 @@ $(function() {
 		})
 	});
 });
+var i = 1;
 function add_attr () {
 	var _html = "";
 	_html+='<tr>';
