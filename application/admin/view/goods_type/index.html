@@ -22,11 +22,7 @@
 	<script src="__ADMIN__/assets/laydate/laydate.js" type="text/javascript"></script>
 	<script type="text/javascript">var ajax_url = "{:url(MODULE_NAME.'/GoodsType/ajaxRecommand')}";</script>
 	<script src="__ADMIN__/js/goods_type.js" type="text/javascript"></script>
-	<style>
-		.ajax_get {
-			cursor: pointer;
-		}
-	</style>
+	<script type="text/javascript"> var i = 1; </script>
 </head>
 
 <body>
@@ -103,7 +99,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<volist name="page_data" id="vo">
+									{volist name="page_data" id="vo"}
 										<tr>
 											<td>
 												<label>
@@ -115,28 +111,28 @@
 											<td>{$vo.type_id}</td>
 											<td>{$vo.type_name}</td>
 											<td>
-												<if condition="!empty($vo['attr_data'])">
-													<volist name="vo['attr_data']" id="v">
+												{if condition="!empty($vo['attr_data'])"}
+													{volist name="vo['attr_data']" id="v"}
 														{$v.attr_name}&nbsp;&nbsp;[
-														<if condition="$v['attr_style'] eq 1">规格
-															<else/>属性</if>]&nbsp;
-														<if condition="$v['attr_type'] eq 1">
+														{if condition="$v['attr_style'] eq 1"}规格
+															{else/}属性{/if}]&nbsp;
+														{if condition="$v['attr_type'] eq 1"}
 															[{$v.attr_value}](单选框)
-															<elseif condition="$v['attr_type'] eq 2" /> [{$v.attr_value}](复选框)
-															<elseif condition="$v['attr_type'] eq 3" /> [输入框]
-															<elseif condition="$v['attr_type'] eq 4" /> [{$v.attr_value}](下拉框)
-														</if>
+															{elseif condition="$v['attr_type'] eq 2" /} [{$v.attr_value}](复选框)
+															{elseif condition="$v['attr_type'] eq 3" /} [{$v.attr_value}][输入框]
+															{elseif condition="$v['attr_type'] eq 4" /} [{$v.attr_value}](下拉框)
+														{/if}
 														<br/>
-													</volist>
-													<else/>
-												</if>
+													{/volist}
+													{else/}
+												{/if}
 											</td>
 											<td>
-												<if condition="$vo['type_status'] eq 1">
+												{if condition="$vo['type_status'] eq 1"}
 													<span class="label label-success radius ajax_get" value="0" title="点我停用" type="type_status" type_id="{$vo['type_id']}" txt="停用">已启用</span>
-													<else/>
+													{else/}
 													<span class="label label-default radius ajax_get" value="1" title="点我启用" type="type_status" type_id="{$vo['type_id']}" txt="启用">停用</span>
-												</if>
+												{/if}
 											</td>
 											<td>{$vo['add_time']|date="Y-m-d H:i:s"}</td>
 											<td>
@@ -150,7 +146,7 @@
 												</a>
 											</td>
 										</tr>
-									</volist>
+									{/volist}
 								</tbody>
 							</table>
 						</form>

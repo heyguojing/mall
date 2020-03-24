@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2020-03-24 00:17:56
+Date: 2020-03-25 00:23:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,8 +123,34 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1584674066', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1585049862', '127.0.0.1', '0', '0');
 INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1584351721', '127.0.0.1', '1577777423', '1578364990');
+
+-- ----------------------------
+-- Table structure for mall_attr
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_attr`;
+CREATE TABLE `mall_attr` (
+  `attr_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性id',
+  `type_id` int(10) NOT NULL DEFAULT '0' COMMENT '类型id',
+  `attr_name` varchar(50) NOT NULL DEFAULT '' COMMENT '属性名称',
+  `attr_value` varchar(255) NOT NULL DEFAULT '' COMMENT '属性值',
+  `attr_unit` varchar(10) NOT NULL DEFAULT '' COMMENT '属性单位',
+  `attr_search` tinyint(1) DEFAULT '0' COMMENT '是否支持搜索0表示支持1表示支持',
+  `attr_type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '控件类型1单选2多选3下拉4复选框',
+  `attr_sort` int(10) NOT NULL DEFAULT '1' COMMENT '控件排序',
+  `attr_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '开启状态0表示关闭1表示开启',
+  `attr_style` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0表示参数1表示规格',
+  PRIMARY KEY (`attr_id`),
+  KEY `type_id` (`type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='商品属性/规格表';
+
+-- ----------------------------
+-- Records of mall_attr
+-- ----------------------------
+INSERT INTO `mall_attr` VALUES ('1', '1', '颜色', '银色，黑色，金色', '', '0', '1', '1', '1', '1');
+INSERT INTO `mall_attr` VALUES ('2', '1', '版本', '国产，美国进口', '', '0', '2', '2', '1', '1');
+INSERT INTO `mall_attr` VALUES ('3', '2', '品牌', '菊乐，新希望', '', '0', '1', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for mall_config
@@ -252,11 +278,13 @@ CREATE TABLE `mall_goods_type` (
   `add_time` int(10) NOT NULL DEFAULT '0' COMMENT '添加时间',
   `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加者id',
   PRIMARY KEY (`type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='商品类型表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品类型表';
 
 -- ----------------------------
 -- Records of mall_goods_type
 -- ----------------------------
+INSERT INTO `mall_goods_type` VALUES ('1', '手机', '1', '1585058633', '1');
+INSERT INTO `mall_goods_type` VALUES ('2', '牛奶', '1', '1585058750', '1');
 
 -- ----------------------------
 -- Table structure for mall_log
@@ -273,7 +301,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -347,6 +375,10 @@ INSERT INTO `mall_log` VALUES ('66', '1', 'admin登录成功', '1584674017', '12
 INSERT INTO `mall_log` VALUES ('67', '1', 'admin注销成功', '1584674056', '127.0.0.1', '1', 'Index', 'logout', '');
 INSERT INTO `mall_log` VALUES ('68', '1', 'admin登录成功', '1584674066', '127.0.0.1', '1', 'Login', 'Login', '');
 INSERT INTO `mall_log` VALUES ('69', '1', '节点12312添加成功', '1584695052', '127.0.0.1', '2', 'Rbac', 'delnode', '');
+INSERT INTO `mall_log` VALUES ('70', '1', 'admin登录成功', '1585049862', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('71', '1', '商品类型名称添加成功', '1585052374', '127.0.0.1', '5', 'GoodsType', 'add', '');
+INSERT INTO `mall_log` VALUES ('72', '1', '商品类型名称添加成功', '1585058633', '127.0.0.1', '5', 'GoodsType', 'add', '');
+INSERT INTO `mall_log` VALUES ('73', '1', '商品类型名称添加成功', '1585058750', '127.0.0.1', '5', 'GoodsType', 'add', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type

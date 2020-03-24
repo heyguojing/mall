@@ -91,7 +91,6 @@ class GoodsType extends Common
 	public function addData ($data = array())
 	{
         $res = Db::name($this->table)->insert($data['basic'],0,1);
-        p($res);die;
         if($res){
             $attr_name = $data['attr']['attr_name'];
             $attr_value = $data['attr']['attr_value'];
@@ -119,6 +118,13 @@ class GoodsType extends Common
         return true;
     }
     /**
+     * getAttrData
+     */
+    public function getAttrData($where = array(),$field = "*")
+    {
+        return Db::name('attr')->where($where)->field($field)->select();
+    }
+    /**
      * 删除数据
      */
     public function delData ($where)
@@ -135,27 +141,5 @@ class GoodsType extends Common
         Db::name($this->table)->where($where)->update($data);
         $res = $this->saveConfig();
         return true;
-    }
-    public function saveConfig()
-    {
-        // 删除缓存目录
-        Dir::del(Env::get('runtime_path').'cache/');
-        $page_data = Db::name($this->table)->where(array('type_status' => 1))->order('type_id asc')->select();
-        $arr = array();
-        if(!empty($page_data)){
-            foreach($page_data as $key => $val){
-                $name = strtoupper($val['type_name']);
-                if(strtoupper($val['config_value']) == "TRUE"){
-                    $val['config_value'] = true;
-                }
-                if(strtoupper($val['config_value']) == "FALSE"){
-                    $val['config_value'] = FALSE;
-                }
-                $arr[$name] = htmlspecialchars_decode($val['config_value']);
-            }
-        }
-        //写入配置文件
-        $content = "<?php return ".var_export($arr,true)."\n?>";
-        return file_put_contents("../config/site.php",$content);
     }
 }

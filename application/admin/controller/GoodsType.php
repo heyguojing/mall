@@ -18,13 +18,13 @@ class GoodsType extends Common
         $this->type_id = input('type_id',0,'intval');
     }
     /**
-     * 配置参数列表页
+     * 商品类型列表页
      */
     public function index()
     {
         if($this->request->isPost()){
             $type_name = input('post.type_name','n');
-            $type_status = input('post.type_status','-1','intval');
+            $type_status = input('post.type_status','-1');
             $page = input('post.page',1,'intval');
         }else{
             $type_name = input('type_name','n');
@@ -32,11 +32,6 @@ class GoodsType extends Common
             $page = input('page',1,'intval');
         }
         $where = array();
-        if($type_status > 0){
-            $where['$type_status'] = $type_status;
-        }else{
-            $where['$type_status'] = 0;
-        }
         // 接收判断英文名称
         if($type_name !="" && $type_name != 'n'){
             $where['type_name'] = $this->strSpaceDel($type_name);
@@ -58,6 +53,11 @@ class GoodsType extends Common
         $where['pageRow'] = 4;//显示页码数量
         // 求分页数据
         $page_data = $this->goods_type->pageData($where,'range');
+        if(!empty($page_data)){
+            foreach($page_data as $key => $val){
+                $page_data[$key]['attr_data'] =$this->goods_type->getAttrData(array('type_id' => $val['type_id']),'attr_name,attr_value,attr_style,attr_type');
+            }
+        }
         // 求分页url
         $page_url = url('GoodsType/index',array('type_name' => $type_name,'type_status' => $type_status),'');
         // 载入分页
@@ -74,7 +74,7 @@ class GoodsType extends Common
     }
 
     /**
-     * 添加配置参数
+     * 添加商品类型
      */
     public function add()
     {
@@ -83,7 +83,6 @@ class GoodsType extends Common
             $data = $this->postData();
             $data['basic']['add_time'] = time();
             $data['basic']['add_user_id'] = $this->uid;
-            p($data);
             // 添加
             $res = $this->goods_type->addData($data);
             if($res){
@@ -97,13 +96,13 @@ class GoodsType extends Common
         }
     }
     /**
-     * 编辑配置参数
+     * 编辑商品类型
      */
     public function edit()
     {
         $type_id_id = input('type_id_id');
         if(empty($type_id_id)){
-            $this->error('配置参数id不存在',url('type_id/index'));
+            $this->error('商品类型id不存在',url('type_id/index'));
         }
         $type_id_one = $this->type_id->getOne(array('type_id_id' => $type_id_id));
         if($this->request->isPost()){
@@ -112,10 +111,10 @@ class GoodsType extends Common
             $res = $this->type_id->saveData(array('type_id_id' => $type_id_id),$data);
             // 结果判断
             if($res){
-                save_log('配置参数：'.$data['type_id_title'].'编辑成功',3);
-                $this->success('配置参数'.$data['type_id_title'].'编辑成功',url('type_id/index',array('type_id' => $this->type_id)));
+                save_log('商品类型：'.$data['type_id_title'].'编辑成功',3);
+                $this->success('商品类型'.$data['type_id_title'].'编辑成功',url('type_id/index',array('type_id' => $this->type_id)));
             }else{
-                $this->error('配置参数'.$data['type_id_title'].'编辑失败',url('type_id/index',array('type_id' => $this->type_id)));
+                $this->error('商品类型'.$data['type_id_title'].'编辑失败',url('type_id/index',array('type_id' => $this->type_id)));
             }
         }else{
             // 渲染编辑页面
@@ -124,7 +123,7 @@ class GoodsType extends Common
         }        
     }
     /**
-     * 删除配置参数
+     * 删除商品类型
      */
     public function del()
     {
@@ -140,7 +139,7 @@ class GoodsType extends Common
         foreach($type_id_arr as $v){
             $type_id_one = $this->type_id->getOne(array('type_id_id' => $v));
             if(empty($type_id_one)){
-                $this->error('删除失败，配置参数id不存在',url('type_id/index',array('type_id' => $this->type_id)));
+                $this->error('删除失败，商品类型id不存在',url('type_id/index',array('type_id' => $this->type_id)));
             }
         }
         // 删除
@@ -149,10 +148,10 @@ class GoodsType extends Common
             $res = $this->type_id->delData($where);
         }
         if($res){
-            save_log('配置参数ID：'.$type_id_ids.'删除成功',3);
-            $this->success('配置参数id：'.$type_id_ids.'删除成功',url('type_id/index',array('type_id' => $this->type_id)));
+            save_log('商品类型ID：'.$type_id_ids.'删除成功',3);
+            $this->success('商品类型id：'.$type_id_ids.'删除成功',url('type_id/index',array('type_id' => $this->type_id)));
         }else{
-            $this->success('配置参数删除失败',url('type_id/index'));
+            $this->success('商品类型删除失败',url('type_id/index'));
         }
     }
     /**
@@ -202,7 +201,7 @@ class GoodsType extends Common
         }
     }
     /**
-     * 配置参数名称是否重复验证
+     * 商品类型名称是否重复验证
      */
     public function ajaxTypeName()
     {
@@ -219,7 +218,7 @@ class GoodsType extends Common
         }else{
             $data = array(
                 'status' => 'n',
-                'info' => '配置参数用户名重复'
+                'info' => '商品类型用户名重复'
             );
         }
         return json($data);

@@ -45,7 +45,6 @@ $(function() {
 		})
 	});
 });
-var i = 1;
 function add_attr () {
 	var _html = "";
 	_html+='<tr>';
