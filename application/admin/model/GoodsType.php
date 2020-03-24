@@ -48,7 +48,7 @@ class GoodsType extends Common
     /**
      * 配置组验证英文名称
      */
-    public function ajaxGoodsTypeName($type_name,$type_id = 0)
+    public function ajaxTypeName($type_name,$type_id = 0)
     {
         if(empty($type_name)){
             return 1;
@@ -84,67 +84,14 @@ class GoodsType extends Common
         }
         return $page_data;
     }
-    /**
-     * 输入框
-     */
-    public function _text($v)
-    {
-        // config_value 配置值
-        return '<input type="text" name="config['.$v['type_id'].'][config_value]" value="'.$v['config_value'].'" class="col-xs-10 ">';
-    }
-    /**
-     * 单选框
-     */
-    public function _radio($v)
-    {
-        $html = '';
-        $info = explode(',',$v['config_info']);//array('1|开启','0|关闭')
-        foreach($info as $key => $val){
-            $data = explode('|',$val);//array('1','开启')
-            $checked = $data[0] == $v['config_value']?'checked="checked"':'';
-            $key = $key + 1;
-            if($key%3 == 0){
-                $html.='<label><input name="config['.$v['type_id'].'][config_value]" type="radio" value="'.$data[0].'" class="ace"'.$checked.'><span class="lbl">'.$data[1].'</span></label>';
-            }else{
-                $html.='<label style="margin-left:10px;"><input name="config['.$v['type_id'].'][config_value]" type="radio" value="'.$data[0].'" class="ace"'.$checked.'><span class="lbl">'.$data[1].'</span></label>';
-            }
-        }
-        return $html;
-    }
-    /**
-     * 下拉框
-     */
-    public function _select($v)
-    {
-        $html = '<select name="config['.$v['type_id'].'][config_value]" id="" class="col-xs-10">';
-        $info = explode(',',$v['config_info']);
-        foreach($info as $key => $val){
-            $data = explode('|',$val);
-            $checked = $data[0] == $v['config_value']?'checked = "checked"':'';
-            $html.='<option value="'.$data[0].'" '.$checked.'>'.$data[1].'</option>';
-        }
-        return $html;
-    }
-    /**
-     * 文本域
-     */
-    public function _textarea($v)
-    {
-        return '<textarea class="col-xs-10 " style="height: 60px;" name="config[' . $v['type_id'] . '][config_value]" style="height:100px;border:1px solid #ccc;margin-left:8px;">' . $v['config_value'] . '</textarea>';
-    }
-    /**
-     * 文件上传
-     */
-    public function _file($v)
-    {
 
-    }
     /**
 	 * 添加数据
 	 */
 	public function addData ($data = array())
 	{
         $res = Db::name($this->table)->insert($data['basic'],0,1);
+        p($res);die;
         if($res){
             $attr_name = $data['attr']['attr_name'];
             $attr_value = $data['attr']['attr_value'];
@@ -156,15 +103,16 @@ class GoodsType extends Common
             if($attr_name){
                 $arr = array();
                 foreach($attr_name as $key => $val){
-                    $type_id = $res;
+                    $arr['type_id'] = $res;
                     $arr['attr_name'] = $attr_name[$key];
                     $arr['attr_value'] = $attr_value[$key];
                     $arr['attr_unit'] = $attr_unit[$key];
                     $arr['attr_style'] = $attr_style[$key];
-                    $arr['attr_search'] = $attr_search[$key];
                     $arr['attr_type'] = $attr_type[$key];
                     $arr['attr_sort'] = $attr_sort[$key];
-                    Db::name('goods_attr')->insert($arr,0,1);
+                    $arr['attr_search'] = isset($attr_search[$k])?$attr_search[$k]:0;
+                    $arr['attr_status'] = 1;
+                    Db::name('attr')->insert($arr,0,1);
                 }
             }
         }

@@ -68,7 +68,7 @@ function add_attr () {
 	_html+='	    </select>';
 	_html+='	</td>';
 	_html+='	<td>';
-	_html+='	    <input type="text" name="attr_value[]" placeholder="多个值巩逗号区分" datatype="*" nullmsg="参数值不能为空！">';
+	_html+='	    <input type="text" name="attr_value[]" placeholder="多个值逗号区分" datatype="*" nullmsg="参数值不能为空！">';
 	_html+='	    <span class="Validform_checktip"></span>';
 	_html+='	</td>';
 	_html+='	<td>';

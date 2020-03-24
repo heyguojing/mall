@@ -83,11 +83,12 @@ class GoodsType extends Common
             $data = $this->postData();
             $data['basic']['add_time'] = time();
             $data['basic']['add_user_id'] = $this->uid;
+            p($data);
             // 添加
             $res = $this->goods_type->addData($data);
             if($res){
                 save_log('商品类型名称'.$data['type_name'].'添加成功',5);
-                $this->success('添加商品类型名称'.$data['type_name'].'成功',url('GoodsType/index',array('type_id' => $this->type_id)));
+                $this->success('添加商品类型名称'.$data['type_name'].'成功',url('GoodsType/index'));
             }else{
                 $this->error('添加商品类型名称失败',url('GoodsType/add'));
             }
@@ -155,6 +156,27 @@ class GoodsType extends Common
         }
     }
     /**
+     * 接收post数据
+     */
+    public function postData()
+    {   
+        $data = array();
+        $data['basic'] = array(
+            'type_name' => input('type_name','','htmlspecialchars,strip_tags,strtoupper'),
+            'type_status' => input('type_status',0,'intval')
+        );
+        $data['attr'] = array(
+            'attr_name' => input('attr_name'),
+            'attr_value' => input('attr_value'),
+            'attr_unit' => input('attr_unit'),
+            'attr_style' => input('attr_style'),
+            'attr_search' => input('attr_search'),
+            'attr_type' => input('attr_type'),
+            'attr_sort' => input('attr_sort')
+        );
+        return $data;
+    }
+    /**
      * 网站配置
      */
     public function webtype_id()
@@ -182,36 +204,13 @@ class GoodsType extends Common
     /**
      * 配置参数名称是否重复验证
      */
-    public function ajaxtypeName()
+    public function ajaxTypeName()
     {
         $key = input('name');
         $val = input('param');
-        $type_id_id = input('type_id_id',0,'intval');
+        $type_id = input('type_id',0,'intval');
         // 调用model方法
-        $res = $this->type_id->ajaxtype_idName($val,$type_id_id);
-        if(!$res){
-            $data = array(
-                'status' => 'y',
-                'info' => '英文名验证通过'
-            );
-        }else{
-            $data = array(
-                'status' => 'n',
-                'info' => '配置参数用户名重复'
-            );
-        }
-        return json($data);
-    }
-        /**
-     * 配置参数名称是否重复验证
-     */
-    public function ajaxtype_idTitle()
-    {
-        $key = input('name');
-        $val = input('param');
-        $type_id_id = input('type_id_id',0,'intval');
-        // 调用model方法
-        $res = $this->type_id->ajaxtype_idTitle($val,$type_id_id);
+        $res = $this->goods_type->ajaxTypeName($val,$type_id);
         if(!$res){
             $data = array(
                 'status' => 'y',
@@ -237,27 +236,6 @@ class GoodsType extends Common
         $str = str_replace(chr(10),"",$str);
         $str = str_replace(chr(9),"",$str);
         return $str;
-    }
-    /**
-     * 接收post数据
-     */
-    public function postData()
-    {   
-        $data = array();
-        $data['basic'] = array(
-            'type_name' => input('type_name','','htmlspecialchars,strip_tags,strtoupper'),
-            'type_status' => input('type_status',0,'intval')
-        );
-        $data['attr'] = array(
-            'attr_name' => input('attr_name'),
-            'attr_value' => input('attr_value'),
-            'attr_unit' => input('attr_unit'),
-            'attr_style' => input('attr_style'),
-            'attr_search' => input('attr_search'),
-            'attr_type' => input('attr_type'),
-            'attr_sort' => input('attr_sort')
-        );
-        return $data;
     }
     /**
      * ajax更新状态
