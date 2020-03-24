@@ -32,10 +32,10 @@ class GoodsType extends Common
             $page = input('page',1,'intval');
         }
         $where = array();
-        if($type_id > 0){
-            $where['type_id'] = $type_id;
+        if($type_status > 0){
+            $where['$type_status'] = $type_status;
         }else{
-            $where['type_id'] = 0;
+            $where['$type_status'] = 0;
         }
         // 接收判断英文名称
         if($type_name !="" && $type_name != 'n'){
