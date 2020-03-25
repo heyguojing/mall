@@ -48,4 +48,18 @@ class Tests extends Controller
         p($res);
         p($res2);
     }
+    public function columnTest()
+    {
+        $arr1 = Array(
+            1 => 1,
+            2 => 2
+        );
+        $arr2 = Array(
+            0 => 1,
+            1 => 2,
+            2 => 3
+        );
+        $res = in_array(array_keys($arr1),$arr2);
+        var_dump($res);
+    }
 }

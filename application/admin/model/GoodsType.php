@@ -109,7 +109,7 @@ class GoodsType extends Common
                     $arr['attr_style'] = $attr_style[$key];
                     $arr['attr_type'] = $attr_type[$key];
                     $arr['attr_sort'] = $attr_sort[$key];
-                    $arr['attr_search'] = isset($attr_search[$k])?$attr_search[$k]:0;
+                    $arr['attr_search'] = isset($attr_search[$key])?$attr_search[$key]:0;
                     $arr['attr_status'] = 1;
                     Db::name('attr')->insert($arr,0,1);
                 }
@@ -125,6 +125,7 @@ class GoodsType extends Common
         // 商品基本表
         $res = Db::name($this->table)->where($where)->update($data['basic']);
         $attr_id = input('attr_id');
+        //p($attr_id);die;
         $attr_name = $data['attr']['attr_name'];
         $attr_value = $data['attr']['attr_value'];
         $attr_unit = $data['attr']['attr_unit'];
@@ -132,6 +133,7 @@ class GoodsType extends Common
         $attr_search = $data['attr']['attr_search'];
         $attr_type = $data['attr']['attr_type'];
         $attr_sort = $data['attr']['attr_sort'];
+      
         // 获取原有的规格id
         $exist = Db::name('attr')->where($where)->column('attr_id','attr_id');
         // 商品属性表
@@ -143,7 +145,7 @@ class GoodsType extends Common
                 $arr['attr_value'] = $attr_value[$key];
                 $arr['attr_unit'] = $attr_unit[$key];
                 $arr['attr_style'] = $attr_style[$key];
-                $arr['attr_search'] = isset($attr_search[$k])?$attr_search[$k]:0;
+                $arr['attr_search'] = isset($attr_search[$key])?$attr_search[$key]:0;
                 $arr['attr_status'] = 1;
                 $arr['attr_sort'] = $attr_sort[$key];
                 if(in_array($key,$exist)){
@@ -154,6 +156,7 @@ class GoodsType extends Common
             } 
         }
         if(empty($attr_name)){
+            //$where = array('type_id' => $type_id);
             Db::name('attr')->where($where)->delete();
         }else{
             $attr_id_str = array_diff($exist,array_keys($attr_id));
@@ -179,7 +182,7 @@ class GoodsType extends Common
 	{
         Db::name('goods_type')->where($where)->delete();
 		Db::name('attr')->where($where)->delete();
-		 return true;
+		return true;
     }
     /**
      * ajax更新开启关闭
