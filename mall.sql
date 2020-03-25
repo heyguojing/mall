@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50714
+Source Server         : php
+Source Server Version : 50721
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50714
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-03-25 00:23:45
+Date: 2020-03-25 15:29:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -284,7 +284,7 @@ CREATE TABLE `mall_goods_type` (
 -- Records of mall_goods_type
 -- ----------------------------
 INSERT INTO `mall_goods_type` VALUES ('1', '手机', '1', '1585058633', '1');
-INSERT INTO `mall_goods_type` VALUES ('2', '牛奶', '1', '1585058750', '1');
+INSERT INTO `mall_goods_type` VALUES ('2', '牛奶', '0', '1585058750', '1');
 
 -- ----------------------------
 -- Table structure for mall_log

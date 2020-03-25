@@ -100,25 +100,39 @@ class GoodsType extends Common
      */
     public function edit()
     {
-        $type_id_id = input('type_id_id');
-        if(empty($type_id_id)){
-            $this->error('商品类型id不存在',url('type_id/index'));
+        $type_id = input('type_id');
+        if(empty($type_id)){
+            $this->error('商品类型id不存在',url('GoodsType/index'));
         }
-        $type_id_one = $this->type_id->getOne(array('type_id_id' => $type_id_id));
+        $type_one = $this->goods_type->getOne(array('type_id' => $type_id));
         if($this->request->isPost()){
-            // 更新user表数据
+            // 更新表数据
             $data = $this->postData();
-            $res = $this->type_id->saveData(array('type_id_id' => $type_id_id),$data);
+            $res = $this->goods_type->saveData(array('type_id' => $this->type_id),$data,$this->type_id);
             // 结果判断
             if($res){
-                save_log('商品类型：'.$data['type_id_title'].'编辑成功',3);
-                $this->success('商品类型'.$data['type_id_title'].'编辑成功',url('type_id/index',array('type_id' => $this->type_id)));
+                save_log('商品类型：'.$data['type_name'].'编辑成功',3);
+                $this->success('商品类型'.$data['type_name'].'编辑成功',url('GoodsType/edit',array('type_id' => $this->type_id)));
             }else{
-                $this->error('商品类型'.$data['type_id_title'].'编辑失败',url('type_id/index',array('type_id' => $this->type_id)));
+                $this->error('商品类型'.$data['type_name'].'编辑失败',url('GoodsType/edit',array('type_id' => $this->type_id)));
             }
         }else{
             // 渲染编辑页面
-            $this->assign('type_id_one',$type_id_one);
+            $this->assign('type_one',$type_one);
+            $attr_data = $this->goods_type->getAttrData(array('type_id' => $this->type_id));
+            $att_sort_temp = array();
+            if(!empty($attr_data)){
+                foreach($attr_data as $key => $val){
+                    $att_sort_temp[] = $val['attr_sort'];
+                }
+            }
+            if(!empty($att_sort_temp)){
+                $attr_sort = max($att_sort_temp) + 1;
+            }else{
+                $attr_sort = 1;
+            }
+            $this->assign('attr_sort',$attr_sort);
+            $this->assign('attr_data',$attr_data);
             return $this->fetch();
         }        
     }
@@ -127,31 +141,31 @@ class GoodsType extends Common
      */
     public function del()
     {
-        $type_id_id = input('type_id_id');
-        if(is_array($type_id_id)){
-            $type_id_arr = $type_id_id;
-            $type_id_ids = implode(',',$type_id_id);
+        $type_id = input('type_id');
+        if(is_array($type_id)){
+            $type_arr = $type_id;
+            $type_ids = implode(',',$type_id);
         }else{
-            $type_id_arr = array($type_id_id);
-            $type_id_ids = $type_id_id;
+            $type_arr = array($type_id);
+            $type_ids = $type_id;
         }
         // 判断用户id是否存在
-        foreach($type_id_arr as $v){
-            $type_id_one = $this->type_id->getOne(array('type_id_id' => $v));
-            if(empty($type_id_one)){
-                $this->error('删除失败，商品类型id不存在',url('type_id/index',array('type_id' => $this->type_id)));
+        foreach($type_arr as $v){
+            $type_one = $this->goods_type->getOne(array('type_id' => $v));
+            if(empty($type_one)){
+                $this->error('删除失败，商品类型id不存在',url('GoodsType/index'));
             }
         }
         // 删除
-        foreach($type_id_arr as $v){
-            $where = array('type_id_id' => $v);
-            $res = $this->type_id->delData($where);
+        foreach($type_arr as $v){
+            $where = array('type_id' => $v);
+            $res = $this->goods_type->delData($where);
         }
         if($res){
-            save_log('商品类型ID：'.$type_id_ids.'删除成功',3);
-            $this->success('商品类型id：'.$type_id_ids.'删除成功',url('type_id/index',array('type_id' => $this->type_id)));
+            save_log('商品类型ID：'.$type_ids.'删除成功',3);
+            $this->success('商品类型id：'.$type_ids.'删除成功',url('GoodsType/index'));
         }else{
-            $this->success('商品类型删除失败',url('type_id/index'));
+            $this->success('商品类型删除失败',url('GoodsType/index'));
         }
     }
     /**
@@ -175,31 +189,7 @@ class GoodsType extends Common
         );
         return $data;
     }
-    /**
-     * 网站配置
-     */
-    public function webtype_id()
-    {
-        if($this->request->isPost()){
-            $data = $_POST['type_id'];
-            if(!is_array($data)){
-                $this->error('错误，数据为空！',url("type_id/webtype_id"));
-            }
-            foreach($data as $key => $val){
-                $this->type_id->saveData(array('type_id_id' => $key),$val);
-            }
-            $this->success('修改成功');
-        }else{
-            if(!cache('type_id_page_data')){
-                $where = array();
-                $where[] = array('group_status','=',1);
-                $page_data = $this->type_id->webtype_id($where);
-                // cache('type_id_page_data',$page_data,86400);
-            }
-            $this->assign('page_data',$page_data);
-            return $this->fetch();
-        }
-    }
+
     /**
      * 商品类型名称是否重复验证
      */
@@ -246,9 +236,9 @@ class GoodsType extends Common
                 input('type') => input('value')
             );
             $where = array(
-                'type_id_id' => $this->type_id_id
+                'type_id' => $this->type_id
             );
-            $res = $this->type_id->saveData($where,$data);
+            $res = $this->goods_type->ajaxSaveData($where,$data);
             if($res){
                 $data = array(
                     'status' => 1,
@@ -264,9 +254,5 @@ class GoodsType extends Common
         }else{
             halt('页面不存在');
         }
-    }
-    public function savetype_id()
-    {
-        $this->type_id->savetype_id();
     }
 }

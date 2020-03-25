@@ -5,6 +5,7 @@ use think\captcha\Captcha;
 use think\facade\Session;
 use Org\Util\Rbac;
 use think\facade\Env;
+use think\Db;
 class Tests extends Controller
 {
     protected $admin = '';
@@ -17,7 +18,7 @@ class Tests extends Controller
         p(Env::get('runtime_path'));
         p(Env::get('module_path'));
     }
-    public function arrTest()
+    public function arrTest1()
     {
         $arr1 = array(
             'name' => 'ming1',
@@ -32,7 +33,19 @@ class Tests extends Controller
         );
         $res = array_diff($arr1,$arr2);//array('name' => ming1', [0] => 19,'other' => 'wathing')
         p($res);
-        return $res;
     }
-    
+    public function strTest1()
+    {
+        $str = "<a href='test'>Test &,$</a>";
+        print_r(htmlentities($str));;
+        echo("</br>");
+        print_r(htmlspecialchars($str));
+    }
+    public function colValue()
+    {
+        $res = Db::name('attr')->where('attr_id',1)->value('attr_value');
+        $res2 = Db::name('attr')->where('attr_id',1)->column('attr_value');
+        p($res);
+        p($res2);
+    }
 }

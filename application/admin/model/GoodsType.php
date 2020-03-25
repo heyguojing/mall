@@ -118,7 +118,55 @@ class GoodsType extends Common
         return true;
     }
     /**
-     * getAttrData
+     * 更新数据
+     */
+    public function saveData($where = array(),$data = "",$type_id = 0)
+    {
+        // 商品基本表
+        $res = Db::name($this->table)->where($where)->update($data['basic']);
+        $attr_id = input('attr_id');
+        $attr_name = $data['attr']['attr_name'];
+        $attr_value = $data['attr']['attr_value'];
+        $attr_unit = $data['attr']['attr_unit'];
+        $attr_style = $data['attr']['attr_style'];
+        $attr_search = $data['attr']['attr_search'];
+        $attr_type = $data['attr']['attr_type'];
+        $attr_sort = $data['attr']['attr_sort'];
+        // 获取原有的规格id
+        $exist = Db::name('attr')->where($where)->column('attr_id','attr_id');
+        // 商品属性表
+        $arr = array();
+        if($attr_id){
+            foreach($attr_id as $key => $val){
+                $arr['type_id'] = $type_id;
+                $arr['attr_name'] = $attr_name[$key];
+                $arr['attr_value'] = $attr_value[$key];
+                $arr['attr_unit'] = $attr_unit[$key];
+                $arr['attr_style'] = $attr_style[$key];
+                $arr['attr_search'] = isset($attr_search[$k])?$attr_search[$k]:0;
+                $arr['attr_status'] = 1;
+                $arr['attr_sort'] = $attr_sort[$key];
+                if(in_array($key,$exist)){
+                    Db::name('attr')->where(array('attr_id' => $key))->update($arr);
+                }else{
+                    Db::name('attr')->insert($arr,0,1);
+                }
+            } 
+        }
+        if(empty($attr_name)){
+            Db::name('attr')->where($where)->delete();
+        }else{
+            $attr_id_str = array_diff($exist,array_keys($attr_id));
+            if(!empty($attr_id_str)){
+                $where = array();
+                $where[] = array('attr_id','IN',$attr_id_str);
+                Db::name('attr')->where($where)->delete();
+            }
+        }
+        return true;
+    }
+    /**
+     * getAttrData非post编辑数据查询
      */
     public function getAttrData($where = array(),$field = "*")
     {
@@ -129,17 +177,16 @@ class GoodsType extends Common
      */
     public function delData ($where)
 	{
-		 Db::name($this->table)->where($where)->delete();
-		 $this->saveConfig();
+        Db::name('goods_type')->where($where)->delete();
+		Db::name('attr')->where($where)->delete();
 		 return true;
     }
     /**
-     * 更新数据
+     * ajax更新开启关闭
      */
-    public function saveData($where = array(),$data = array())
+    public function ajaxSaveData($where = array(),$data = array())
     {
         Db::name($this->table)->where($where)->update($data);
-        $res = $this->saveConfig();
         return true;
     }
 }
