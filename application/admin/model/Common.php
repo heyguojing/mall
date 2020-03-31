@@ -24,6 +24,10 @@ class Common extends Model
     {
         return Db::name($this->table)->where($where)->update($data);
     }
+    public function tableSaveData($table,$where = array(),$data = array())
+    {
+        return Db::name($table)->where($where)->update($data);
+    }
     /**
      * 删除数据
      */
@@ -50,8 +54,18 @@ class Common extends Model
      */
     public function getField($where,$field,$key)
     {
-        return Db::name($this->table)->where($where)->column($field);
+        return Db::name($this->table)->where($where)->column($field,$key);
     }
+	/**取出多个字段 指定数组键值
+	 * @param $where
+	 * @param $field
+	 * @param $key
+	 * @return array
+	 */
+	public function tableGetField ($table, $where, $field, $key)
+	{
+		return Db::name($table)->where($where)->column($field, $key);
+	}
     /**
      * 设置字段递增
      */

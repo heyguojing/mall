@@ -26,7 +26,6 @@
         .ajax_get {
             cursor: pointer;
         }
-
         .class_name {
             text-align: left !important;
         }
@@ -49,7 +48,7 @@
                     <ul class="search_content clearfix">
                         <li>
                             <label class="l_f">商品分类中文名称:</label>
-                            <input name="class_name" type="text" class="text_add" value="{if condition=" $class_name
+                            <input name="class_name" type="text" class="text_add" value="{if condition="$class_name
                                 neq 'n' "} {$class_name} {/if}" />
                         </li>
                         <li>
@@ -91,10 +90,10 @@
                                         </label>
                                     </th>
                                     <th>ID</th>
-                                    <th>商品分类英文名称</th>
-                                    <th>商品分类中文名称</th>
+                                    <th>商品分类名称</th>
                                     <th>商品分类排序</th>
-                                    <th>状态</th>
+                                    <th>开启状态</th>
+                                    <th>导航显示</th>
                                     <th>添加时间</th>
                                     <th>操作</th>
                                 </tr>
@@ -110,28 +109,28 @@
                                             </label>
                                         </td>
                                         <td>{$user.class_id}</td>
-                                        <td>{$user.class_name}</td>
+                                        <td class="class_name">{$user.class_name}</td>
                                         <td>
                                             <input type="number" value="{$user['class_sort']}" name="class_sort"
                                                 class="class_sort" min="1" class_id="{$user['class_id']}">
                                         </td>
                                         <td>
-                                            <if condition="$user['class_status'] eq 1">
+                                            {if condition="$user['class_status'] eq 1"}
                                                 <span class="label label-success radius ajax_get" value="0" title="点我停用"
                                                     type="class_status" class_id="{$user['class_id']}" txt="停用">已启用</span>
-                                                <else />
+                                                {else /}
                                                 <span class="label label-default radius ajax_get" value="1" title="点我启用"
                                                     type="class_status" class_id="{$user['class_id']}" txt="启用">停用</span>
-                                            </if>
+                                            {/if}
                                         </td>
                                         <td>
-                                            <if condition="$user['class_is_nav'] eq 1">
+                                            {if condition="$user['class_is_nav'] eq 1"}
                                                 <span class="label label-success radius ajax_get" value="0" title="点我关闭导航栏"
                                                     type="class_is_nav" class_id="{$user['class_id']}" txt="关闭">已显示</span>
-                                                <else />
+                                                {else /}
                                                 <span class="label label-default radius ajax_get" value="1" title="点我显示导航栏"
                                                     type="class_is_nav" class_id="{$user['class_id']}" txt="显示">关闭</span>
-                                            </if>
+                                            {/if}
                                         </td>
                                         <td>{$user.add_time | date="Y-m-d H:i:s"}</td>
                                         <td>
@@ -146,7 +145,7 @@
                                                 <i class="fa fa-trash  bigger-120"></i>
                                             </a>
                                             <a title="添加子级"
-                                                href="{:url('GoodsClass/add',array('class_pid'=>$vo['class_id']))}"
+                                                href="{:url('GoodsClass/add',array('class_pid'=>$user['class_id']))}"
                                                 class="btn btn-xs btn-danger">
                                                 添加子级
                                             </a>

@@ -16,7 +16,7 @@ class GoodsClass extends Common
         $this->request = $request;
         $this->goods_class = model('GoodsClass');
         $this->goods_type = model('GoodsType');
-        $this->class_id = input('calss_id',0,'intval');
+        $this->class_id = input('class_id',0,'intval');
         $this->uid = session(config('rbac.USER_AUTH_KEY'));
     }
     /**
@@ -115,8 +115,8 @@ class GoodsClass extends Common
                 $this->error('添加商品分类名称失败',url('GoodsClass/index'));
             }
         }else{
-            $class_id = input('class_id',0,'intval');
-            $this->assign('class_id',$class_id);
+            $class_pid = input('class_pid',0,'intval');
+            $this->assign('class_pid',$class_pid);
             // 求goodsType类型名称
             $goods_type_data = $this->goods_type->getField(array('type_status' => 1),'type_id,type_name','type_id');
             $this->assign('goods_type_data',$goods_type_data);
@@ -201,17 +201,16 @@ class GoodsClass extends Common
      */
     public function postData()
     {   
-        $data = array();
-        $data['basic'] = array(
-            'class_name' => input('class_name','','htmlspecialchars,strip_tags,strtoupper'),
+        $data = array(
+            'class_name' => input('class_name','','htmlspecialchars,strip_tags'),
             'class_keywords' => input('class_keywords','','htmlspecialchars,strip_tags'),
             'class_desc' => input('class_desc','','htmlspecialchars,strip_tags'),
-            'class_url' => input('class_url','','htmlspecialchars,strip_tags'),
+            'class_url' => input('class_url',''),
             'class_is_nav' => input('class_is_nva',0,'intval'),
             'class_status' => input('class_status',0,'intval'),
-            'class_srot' => input('class_sort',1,'intval'),
+            'class_sort' => input('class_sort',1,'intval'),
+            'type_id' => input('type_id',0,'intval'),
             'class_pid' => input('class_pid',0,'intval'),
-            'type_id' => input('type_id',0,'intval')
         );
         return $data;
     }
@@ -226,7 +225,8 @@ class GoodsClass extends Common
 			);
 			$where = array(
 				'class_id' => $this->class_id,
-			);
+            );
+            p($this->class_id);
 			$res = $this->goods_class->saveData($where, $data);
 			if ($res) {
 				$data = array(
