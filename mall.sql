@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50714
+Source Server         : php
+Source Server Version : 50721
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50714
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-03-31 08:27:05
+Date: 2020-03-31 17:49:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -294,6 +294,83 @@ CREATE TABLE `mall_goods_class` (
 -- ----------------------------
 -- Records of mall_goods_class
 -- ----------------------------
+INSERT INTO `mall_goods_class` VALUES ('1', '手机/运营商/数码', '', '', '0', '1', '1', '', '1', '1543931305', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('2', '手机通讯', '', '', '1', '1', '1', '', '1', '1543932245', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('3', '手机', '手机', '', '2', '1', '1', '', '1', '1543935607', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('4', '游戏手机', '游戏手机', '', '2', '1', '1', '', '1', '1543935976', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('5', '运营商', '运营商', '', '1', '1', '1', '', '1', '1543935995', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('6', '手机配件', '', '', '1', '1', '1', '', '1', '1543936036', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('7', '家用电器', '', '', '0', '1', '1', '', '1', '1547910463', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('8', '电视', '', '', '7', '1', '1', '', '1', '1547910491', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('9', '超薄电视', '超薄电视', '', '8', '1', '1', '', '1', '1547910516', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('10', '空调', '', '', '7', '1', '1', '', '1', '1552748834', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('11', 'OLED电视', '', '', '8', '1', '1', '', '1', '1552748901', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('12', '曲面电视', '', '', '8', '1', '1', '', '1', '1552748935', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('13', '4K超清电视', '4K超清电视', '', '8', '1', '1', '', '1', '1552749233', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('14', '55英寸', '', '', '8', '1', '1', '', '1', '1552749259', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('15', '65英寸', '65英寸', '', '8', '1', '1', '', '1', '1552749275', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('16', '电视配件', '', '', '8', '1', '1', '', '1', '1552749293', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('17', '壁挂式空调', '壁挂式空调', '', '10', '1', '1', '', '1', '1552750015', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('18', '柜式空调', '柜式空调', '', '10', '1', '1', '', '1', '1552750053', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('19', '中央空调', '中央空调', '', '10', '1', '1', '', '1', '1552750076', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('20', '一级能效空调', '一级能效空调', '', '10', '1', '1', '', '1', '1552750089', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('21', '变频空调', '变频空调', '', '10', '1', '1', '', '1', '1552750106', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('22', '1.5匹空调', '1.5匹空调', '', '10', '1', '1', '', '1', '1552750124', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('23', '洗衣机', '洗衣机', '', '7', '1', '1', '', '1', '1552750196', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('24', '滚筒洗衣机', '滚筒洗衣机', '', '23', '1', '1', '', '1', '1552750236', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('25', '洗烘一体机', '洗烘一体机', '', '23', '1', '1', '', '1', '1552750270', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('26', '波轮洗衣机', '波轮洗衣机', '', '23', '1', '1', '', '1', '1552750301', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('27', '迷你洗衣机', '迷你洗衣机', '', '23', '1', '1', '', '1', '1552750316', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('28', '烘干机', '烘干机', '', '23', '1', '1', '', '1', '1552750334', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('29', '洗衣机配件', '洗衣机配件', '', '23', '1', '1', '', '1', '1552750353', '2', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('30', '老人机', '老人机', '', '2', '1', '1', '', '1', '1552750518', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('31', '对讲机', '对讲机', '', '2', '1', '1', '', '1', '1552750529', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('32', '合约机', '合约机', '', '5', '1', '1', '', '1', '1552750607', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('33', '中国电信', '中国电信', '', '5', '1', '1', '', '1', '1552750640', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('34', '中国移动', '中国移动', '', '5', '1', '1', '', '1', '1552750657', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('35', '中国联通', '中国联通', '', '5', '1', '1', '', '1', '1552750668', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('36', '手机壳', '手机壳', '', '6', '1', '1', '', '1', '1552750745', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('37', '贴膜', '贴膜', '', '6', '1', '1', '', '1', '1552750759', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('38', '手机存储卡', '手机存储卡', '', '6', '1', '1', '', '1', '1552750771', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('39', '数据线', '数据线', '', '6', '1', '1', '', '1', '1552750855', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('40', '电脑/办公', '电脑/办公', '', '0', '1', '1', '', '1', '1552751248', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('41', '电脑整机', '电脑整机', '', '40', '1', '1', '', '1', '1552751394', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('42', '笔记本', '笔记本', '', '41', '1', '1', '', '1', '1552751418', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('43', '游戏本', '游戏本', '', '41', '1', '1', '', '1', '1552751446', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('44', '平板电脑', '平板电脑', '', '41', '1', '1', '', '1', '1552751554', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('45', '电脑配件', '电脑配件', '', '40', '1', '1', '', '1', '1552751568', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('46', '显示器', '显示器', '', '45', '1', '1', '', '1', '1552751598', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('47', 'CPU', 'CPU', '', '45', '1', '1', '', '1', '1552751663', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('48', '主板', '主板', '', '45', '1', '1', '', '1', '1552751681', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('49', '显卡', '显卡', '', '45', '1', '1', '', '1', '1552751707', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('50', '外设产品', '外设产品', '', '40', '1', '1', '', '1', '1552751749', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('51', '鼠标', '鼠标', '', '50', '1', '1', '', '1', '1552751767', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('52', '键盘', '键盘', '', '50', '1', '1', '', '1', '1552751784', '3', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('53', '键鼠', '键鼠', '', '50', '1', '1', '', '1', '1552751799', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('54', '家居/家具/家装/厨具', '', '', '0', '1', '1', '', '1', '1552751862', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('55', '厨具', '厨具', '', '54', '1', '1', '', '1', '1552752563', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('56', '水具', '水具', '', '55', '1', '1', '', '1', '1552752577', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('57', '酒具', '酒具', '', '55', '1', '1', '', '1', '1552752605', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('58', '烹饪锅具', '烹饪锅具', '', '55', '1', '1', '', '1', '1552752646', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('59', '家纺', '家纺', '', '54', '1', '1', '', '1', '1552752775', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('60', '四件套', '四件套', '', '59', '1', '1', '', '1', '1552752788', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('61', '被子', '被子', '', '59', '1', '1', '', '1', '1552752805', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('62', '枕芯', '枕芯', '', '59', '1', '1', '', '1', '1552752836', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('63', '生活日用', '', '', '54', '1', '1', '', '1', '1552752947', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('64', '收纳用品', '收纳用品', '', '63', '1', '1', '', '1', '1552752959', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('65', '雨伞雨具', '雨伞雨具', '', '63', '1', '1', '', '1', '1552752978', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('66', '净化除味', '净化除味', '', '63', '1', '1', '', '1', '1552753004', '4', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('67', '服装服饰', '', '', '0', '1', '1', '', '1', '1552753243', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('68', '女装', '女装', '', '67', '1', '1', '', '1', '1552753367', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('69', '商场同款', '商场同款', '', '68', '1', '1', '', '1', '1552753388', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('70', '时尚套装', '时尚套装', '', '68', '1', '1', '', '1', '1552753402', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('71', '连衣裙', '连衣裙', '', '68', '1', '1', '', '1', '1552753429', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('72', '半身裙', '半身裙', '', '68', '1', '1', '', '1', '1552753448', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('73', 'T恤', 'T恤', '', '68', '1', '1', '', '1', '1552753462', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('74', '男装', '男装', '', '67', '1', '1', '', '1', '1552753496', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('75', 'T恤', 'T恤', '', '74', '1', '1', '', '1', '1552753510', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('76', '牛仔裤', '牛仔裤', '', '74', '1', '1', '', '1', '1552753525', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('77', '休闲裤', '休闲裤', '', '74', '1', '1', '', '1', '1552753539', '5', '1', '');
 
 -- ----------------------------
 -- Table structure for mall_goods_type
