@@ -49,7 +49,7 @@ class GoodsClass extends Common
         if($class_name == 'n'){
             $where['class_pid'] = 0;
         }
-        // 求总数
+        // 总条数
         $page_total = $this->goods_class->pageData($where,'total');//总条数
         $where['page'] = $page;
         $where['field'] = array('class_id','class_name','class_status','add_time','class_sort','class_is_nav','class_pid');
@@ -88,7 +88,7 @@ class GoodsClass extends Common
         $arr['class_sort'] = $class_one['class_sort'];
         $arr['class_is_nav'] = $class_one['class_is_nav'];
         $arr['class_pid'] = $class_one['class_pid'];
-        $child_data = $this->goods_class->getField(array('class_pid' => $arr['class_id']),'class_id,class_name,class_status,add_time,class_sort,class_is_nav,class_pid');
+        $child_data = $this->goods_class->getField(array('class_pid' => $arr['class_id']),'class_id,class_name,class_status,add_time,class_sort,class_is_nav,class_pid','class_id');
         if(!empty($child_data)){
             foreach($child_data as $key => $val){
                 $arr['child'][] = $this->_childClass($val);
@@ -215,17 +215,46 @@ class GoodsClass extends Common
         );
         return $data;
     }
-
+	/**
+	 * ajax更新相关属性
+	 */
+	public function ajaxRecommand ()
+	{
+		if ($this->request->isPost()) {
+			$data = array(
+				input('type') => input('value')
+			);
+			$where = array(
+				'class_id' => $this->class_id,
+			);
+			$res = $this->goods_class->saveData($where, $data);
+			if ($res) {
+				$data = array(
+					'info' => '更新成功',
+					'status' => 1,
+				);
+			} else {
+				$data = array(
+					'info' => '更新失败',
+					'status' => 0,
+				);
+			}
+			return json($data);
+		} else {
+			halt('页面不存在');
+		}
+	}
     /**
      * 商品分类名称是否重复验证
      */
-    public function ajaxTypeName()
+    public function ajaxClassName()
     {
         $key = input('name');
         $val = input('param');
         $class_id = input('class_id',0,'intval');
+        $class_pid = input('class_pid',0,'intval');
         // 调用model方法
-        $res = $this->goods_class->ajaxTypeName($val,$class_id);
+        $res = $this->goods_class->ajaxClassName($val,$class_pid,$class_id);
         if(!$res){
             $data = array(
                 'status' => 'y',
@@ -251,34 +280,5 @@ class GoodsClass extends Common
         $str = str_replace(chr(10),"",$str);
         $str = str_replace(chr(9),"",$str);
         return $str;
-    }
-    /**
-     * ajax更新状态
-     */
-    public function ajaxRecommand()
-    {
-        if($this->request->isPost()){
-            $data = array(
-                input('type') => input('value')
-            );
-            $where = array(
-                'class_id' => $this->class_id
-            );
-            $res = $this->goods_class->ajaxSaveData($where,$data);
-            if($res){
-                $data = array(
-                    'status' => 1,
-                    'info' => '修改成功'
-                );
-            }else{
-                $data = array(
-                    'status' => 0,
-                    'info' => '修改失败'
-                );
-            }
-            return json($data);
-        }else{
-            halt('页面不存在');
-        }
     }
 }
