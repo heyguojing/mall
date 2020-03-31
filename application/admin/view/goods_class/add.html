@@ -1,0 +1,95 @@
+<include file="common/header"/>
+<body>
+<div class="type_style">
+	<div class="crumbs">
+		<ul>
+			<li>
+				<a href="{:url('GoodsClass/index')}">商品分类管理</a>
+			</li>
+			<li class="uline">/</li>
+			<li>
+				<a class="active" href="javascript:;">添加商品分类</a>
+			</li>
+		</ul>
+	</div>
+	<form action="" method="post" class="form form-horizontal">
+		<div class="Operate_cont clearfix">
+			<label class="form-label">商品分类名称：</label>
+			<div class="formControls ">
+				<input type="text" class="input-text" value="" placeholder="" name="class_name" datatype="*"
+				       nullmsg="商品分类英文名称不能为空！"
+				       ajaxurl="{:url('GoodsClass/ajaxClassName',array('class_pid'=>$class_pid))}">
+				<span class="Validform_checktip"></span>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<label class="form-label">商品分类关键词：</label>
+			<div class="formControls ">
+				<textarea name="class_keywords" style="width: 244px;height:80px;border:1px solid #ccc;"></textarea>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<label class="form-label">商品分类描述：</label>
+			<div class="formControls ">
+				<textarea name="class_desc" style="width: 244px;height:80px;border:1px solid #ccc;"></textarea>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<label class="form-label">商品分类跳转url地址：</label>
+			<div class="formControls ">
+				<input type="text" class="input-text" value="" placeholder="" name="class_url">
+				<span class="Validform_checktip"></span>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<label class="form-label">商品分类排序：</label>
+			<div class="formControls ">
+				<input type="text" class="input-text" value="1" placeholder="" name="class_sort" datatype="n"
+				       nullmsg="商品分类排序不能为空！">
+				<span class="Validform_checktip"></span>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<label class="form-label">所属商品类型：</label>
+			<div class="formControls ">
+				<select name="type_id" style="width:165px;">
+					<volist name="goods_type_data" id="vo" key="k">
+						<option value="{$key}">{$vo}</option>
+					</volist>
+				</select>
+				<span class="Validform_checktip"></span>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<label class="form-label">是否导航栏：</label>
+			<div class="formControls">
+				<label>
+					<input type="radio" name="class_is_nav" value="1" checked>是
+				</label>
+				<label>
+					<input type="radio" name="class_is_nav" value="0">否
+				</label>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<label class="form-label">是否开启：</label>
+			<div class="formControls">
+				<label>
+					<input type="radio" name="class_status" value="1" checked>是
+				</label>
+				<label>
+					<input type="radio" name="class_status" value="0">否
+				</label>
+			</div>
+		</div>
+		<div class="Operate_cont clearfix">
+			<input type="hidden" name="class_pid" value="{$class_pid}"/>
+			<input class="btn btn-primary radius Operate_cont_btn" type="submit" value="提交">
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript" src="__STATIC__/admin/Widget/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/role.js"></script>
+</body>
+</html>

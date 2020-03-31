@@ -604,7 +604,6 @@ class Query
     public function column($field, $key = '')
     {
         $this->parseOptions();
-
         return $this->connection->column($this, $field, $key);
     }
 
