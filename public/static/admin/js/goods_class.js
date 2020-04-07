@@ -7,7 +7,7 @@ $(function () {
 		var obj = $(this);
 		var _html = obj.attr('txt');
 		layer.confirm('确认' + _html + '吗？', function (index) {
-			layer.closeAll();
+			layer.close(index);
 			$.post(ajax_url, {type: type, value: value, class_id: class_id}, function (data) {
 				if (data.status == 1) {
 					value = parseInt(value);
@@ -21,22 +21,22 @@ $(function () {
 						}
 						obj.addClass('label-success').removeClass('label-default');
 						obj.attr('value', 0);
+						window.location.reload();
 					} else {
 						if (type == "class_status") {
 							obj.attr('title', '点我启用').html('停用').attr('txt', '启用');
-							window.location.reload();
 						}else if(type == "class_is_nav"){
 							obj.attr('title', '点我显示导航栏').html('关闭').attr('txt', '显示');
-							window.location.reload();
 						}
 						obj.addClass('label-default').removeClass('label-success');
 						obj.attr('value', 1);
 					}
 				} else {
 					layer.msg(data.info, {icon: 2});
+					location.reload();
 				}
 			}, 'json')
-		})
+		});
 	});
 	//ajax排序
 	$(".class_sort").on("change",function(){
@@ -45,9 +45,11 @@ $(function () {
 		var class_id = $(this).attr('class_id');
 		$.post(ajax_url, {type:type, value: value, class_id: class_id}, function (data) {
 			if (data.status == 1) {
-				//layer.msg(data.info, {icon: 1});
+				layer.msg(data.info, {icon: 1});
+				window.location.reload();
 			} else {
 				layer.msg(data.info, {icon: 2});
+				window.location.reload();
 			}
 		}, 'json');
 	})
