@@ -87,12 +87,12 @@ if (!function_exists('show_child_class')) {
 				$_html .= '		<a title="编辑"';
 				$_html .= '		   href="' . url('GoodsClass/edit', array('class_id' => $vo['class_id'])) . '"';
 				$_html .= '		   class="btn btn-xs btn-info">';
-				$_html .= '			<i class="fa fa-edit bigger-120"></i>';
+				$_html .= '			<i class="fa fa-edit bigger-120"></i>编辑';
 				$_html .= '		</a>';
 				$_html .= '		<a title="删除" href="javascript:;" onclick="confirm_msg(this)"';
 				$_html .= '		   url="' . url('GoodsClass/del', array('class_id' => $vo['class_id'])) . '"';
 				$_html .= '		   class="btn btn-xs btn-warning">';
-				$_html .= '			<i class="fa fa-trash  bigger-120"></i>';
+				$_html .= '			<i class="fa fa-trash  bigger-120"></i>删除';
 				$_html .= '		</a>';
 				$_html .= '		<a title="添加子级"  href="' . url('GoodsClass/add', array('class_pid' => $vo['class_id'])) . '" class="btn btn-xs btn-danger">';
 				$_html .= '			添加子级';

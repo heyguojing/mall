@@ -129,6 +129,7 @@ class GoodsClass extends Common
     public function edit()
     {
         $class_id = input('class_id');
+        $class_one = $this->goods_class->getOne(array('class_id' => $class_id));
         if(empty($class_id)){
             $this->error('商品分类id不存在',url('GoodsType/index'));
         }
@@ -140,27 +141,16 @@ class GoodsClass extends Common
             // 结果判断
             if($res){
                 save_log('商品分类：'.$data['class_name'].'编辑成功',3);
-                $this->success('商品分类'.$data['class_name'].'编辑成功',url('GoodsType/edit',array('class_id' => $this->class_id)));
+                $this->success('商品分类'.$data['class_name'].'编辑成功',url('GoodsClass/index',array('class_id' => $this->class_id)));
             }else{
-                $this->error('商品分类'.$data['class_name'].'编辑失败',url('GoodsType/edit',array('class_id' => $this->class_id)));
+                $this->error('商品分类'.$data['class_name'].'编辑失败',url('GoodsClass/index',array('class_id' => $this->class_id)));
             }
         }else{
             // 渲染编辑页面
             $this->assign('class_one',$class_one);
-            $attr_data = $this->goods_class->getAttrData(array('class_id' => $this->class_id));
-            $att_sort_temp = array();
-            if(!empty($attr_data)){
-                foreach($attr_data as $key => $val){
-                    $att_sort_temp[] = $val['attr_sort'];
-                }
-            }
-            if(!empty($att_sort_temp)){
-                $attr_sort = max($att_sort_temp) + 1;
-            }else{
-                $attr_sort = 1;
-            }
-            $this->assign('attr_sort',$attr_sort);
-            $this->assign('attr_data',$attr_data);
+            // 获取商品类型
+            $goods_type_data = $this->goods_type->getField(array('type_status' => 1),'type_id,type_name','type_id');
+            $this->assign('goods_type_data',$goods_type_data);
             return $this->fetch();
         }        
     }
@@ -169,19 +159,26 @@ class GoodsClass extends Common
      */
     public function del()
     {
-        $class_id = input('class_id');
+        $class_id = input('class_id','');
         if(is_array($class_id)){
             $class_arr = $class_id;
+            // 数组转化为字符串success显示
             $class_ids = implode(',',$class_id);
         }else{
-            $class_arr = array($class_id);
+            $class_arr = array((int)$class_id);
             $class_ids = $class_id;
         }
         // 判断用户id是否存在
         foreach($class_arr as $v){
-            $class_one = $this->goods_class->getOne(array('class_id' => $v));
+            $where = array('class_id' => $v);
+            $class_one = $this->goods_class->getOne($where);
             if(empty($class_one)){
-                $this->error('删除失败，商品分类id不存在',url('GoodsType/index'));
+                $this->error('商品id为空',url('GoodsClass/index'));
+            }
+            $where = array('class_pid' => $v);
+            $child_data = $this->goods_class->pageData($where,'range');
+            if(!empty($child_data)){
+                $this->error('该商品包含子id，不能删除');
             }
         }
         // 删除
@@ -191,9 +188,9 @@ class GoodsClass extends Common
         }
         if($res){
             save_log('商品分类ID：'.$class_ids.'删除成功',3);
-            $this->success('商品分类id：'.$class_ids.'删除成功',url('GoodsType/index'));
+            $this->success('商品分类id：'.$class_ids.'删除成功',url('GoodsClass/index'));
         }else{
-            $this->success('商品分类删除失败',url('GoodsType/index'));
+            $this->success('商品分类删除失败',url('GoodsClass/index'));
         }
     }
     /**

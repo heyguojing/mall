@@ -22,9 +22,13 @@ class GoodsClass extends Common
             $where[] = array('class_status','=',$param['class_status']);
         }
         // 根据角色中文名查询
-        if(isset($param['class_name']) && $param['class_name'] != ''){
-            $where[] = array('class_name','like','%'.$param['class_name'].'%');
+        if(isset($param['class_pid']) && $param['class_pid'] != ''){
+            $where[] = array('class_pid','like','%'.$param['class_pid'].'%');
         }
+        //根据分类名称查询
+		if (isset($param['class_name']) && $param['class_name'] != "") {
+			$where[] = array('class_name', 'like', '%' . $param['class_name'] . '%');
+		}
         if($range == 'total'){
             // 求总数
             return Db::name($this->table)->where($where)->count();

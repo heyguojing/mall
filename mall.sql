@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : php
-Source Server Version : 50721
+Source Server         : localhost_3306
+Source Server Version : 50714
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50721
+Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2020-03-31 17:49:03
+Date: 2020-04-08 23:35:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,7 +123,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1585572580', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1585665740', '127.0.0.1', '0', '0');
 INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1584351721', '127.0.0.1', '1577777423', '1578364990');
 
 -- ----------------------------
@@ -289,14 +289,14 @@ CREATE TABLE `mall_goods_class` (
   KEY `class_pid` (`class_pid`),
   KEY `type_id` (`type_id`),
   KEY `class_sort` (`class_sort`)
-) ENGINE=MyISAM AUTO_INCREMENT=78 DEFAULT CHARSET=utf8 COMMENT='商品分类表';
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8 COMMENT='商品分类表';
 
 -- ----------------------------
 -- Records of mall_goods_class
 -- ----------------------------
-INSERT INTO `mall_goods_class` VALUES ('1', '手机/运营商/数码', '', '', '0', '1', '1', '', '1', '1543931305', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('1', '手机/运营商/数码', 'sdfsss', 'sdfs', '0', '1', '0', '', '1', '1543931305', '1', '3', 'sdfsd');
 INSERT INTO `mall_goods_class` VALUES ('2', '手机通讯', '', '', '1', '1', '1', '', '1', '1543932245', '1', '1', '');
-INSERT INTO `mall_goods_class` VALUES ('3', '手机', '手机', '', '2', '1', '1', '', '1', '1543935607', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('3', '手机', '手机', 'ss', '2', '1', '0', '', '1', '1543935607', '1', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('4', '游戏手机', '游戏手机', '', '2', '1', '1', '', '1', '1543935976', '1', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('5', '运营商', '运营商', '', '1', '1', '1', '', '1', '1543935995', '1', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('6', '手机配件', '', '', '1', '1', '1', '', '1', '1543936036', '1', '1', '');
@@ -371,6 +371,8 @@ INSERT INTO `mall_goods_class` VALUES ('74', '男装', '男装', '', '67', '1', 
 INSERT INTO `mall_goods_class` VALUES ('75', 'T恤', 'T恤', '', '74', '1', '1', '', '1', '1552753510', '5', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('76', '牛仔裤', '牛仔裤', '', '74', '1', '1', '', '1', '1552753525', '5', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('77', '休闲裤', '休闲裤', '', '74', '1', '1', '', '1', '1552753539', '5', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('78', '手机', 'sdfsdfsdf', 'sdfsdfs', '0', '1', '1', '', '1', '1585663137', '1', '1', 'www.baidu.com');
+INSERT INTO `mall_goods_class` VALUES ('79', '手机通讯测试', '', '', '2', '1', '1', '', '1', '1586272382', '1', '1', '');
 
 -- ----------------------------
 -- Table structure for mall_goods_type
@@ -389,7 +391,7 @@ CREATE TABLE `mall_goods_type` (
 -- Records of mall_goods_type
 -- ----------------------------
 INSERT INTO `mall_goods_type` VALUES ('1', '手机', '1', '1585058633', '1');
-INSERT INTO `mall_goods_type` VALUES ('2', '牛奶', '0', '1585058750', '1');
+INSERT INTO `mall_goods_type` VALUES ('2', '牛奶', '1', '1585058750', '1');
 
 -- ----------------------------
 -- Table structure for mall_log
@@ -406,7 +408,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -487,6 +489,13 @@ INSERT INTO `mall_log` VALUES ('73', '1', '商品类型名称添加成功', '158
 INSERT INTO `mall_log` VALUES ('74', '1', 'admin登录成功', '1585146398', '127.0.0.1', '1', 'Login', 'Login', '');
 INSERT INTO `mall_log` VALUES ('75', '1', 'admin登录成功', '1585486360', '127.0.0.1', '1', 'Login', 'Login', '');
 INSERT INTO `mall_log` VALUES ('76', '1', 'admin登录成功', '1585572580', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('77', '1', '商品分类名称手机添加成功', '1585663137', '127.0.0.1', '6', 'GoodsClass', 'add', '');
+INSERT INTO `mall_log` VALUES ('78', '1', 'admin登录成功', '1585665740', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('79', '1', '商品分类名称手机通讯测试添加成功', '1586272382', '127.0.0.1', '6', 'GoodsClass', 'add', '');
+INSERT INTO `mall_log` VALUES ('80', '1', '商品分类：手机/运营商/数码编辑成功', '1586357369', '127.0.0.1', '3', 'GoodsClass', 'edit', '');
+INSERT INTO `mall_log` VALUES ('81', '1', '商品分类：手机/运营商/数码编辑成功', '1586357434', '127.0.0.1', '3', 'GoodsClass', 'edit', '');
+INSERT INTO `mall_log` VALUES ('82', '1', '商品分类：手机/运营商/数码编辑成功', '1586357574', '127.0.0.1', '3', 'GoodsClass', 'edit', '');
+INSERT INTO `mall_log` VALUES ('83', '1', '商品分类：手机编辑成功', '1586357715', '127.0.0.1', '3', 'GoodsClass', 'edit', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type
@@ -526,7 +535,7 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
@@ -583,6 +592,10 @@ INSERT INTO `mall_node` VALUES ('61', 'edit', null, null, '编辑商品类型', 
 INSERT INTO `mall_node` VALUES ('62', 'del', null, null, '删除商品类型', '1', null, '1', '52', '3', '0');
 INSERT INTO `mall_node` VALUES ('63', 'ajaxTypeName', null, null, 'ajax验证商品类型', '1', null, '1', '52', '3', '0');
 INSERT INTO `mall_node` VALUES ('64', 'ajaxRecommand', null, null, 'ajax异步更新相关属性', '1', null, '1', '52', '3', '0');
+INSERT INTO `mall_node` VALUES ('65', 'index', null, null, '商品分类列表', '1', null, '1', '53', '3', '1');
+INSERT INTO `mall_node` VALUES ('66', 'add', null, null, '添加商品分类', '1', null, '1', '53', '3', '1');
+INSERT INTO `mall_node` VALUES ('67', 'edit', null, null, '编辑商品分类', '1', null, '1', '53', '3', '0');
+INSERT INTO `mall_node` VALUES ('68', 'del', null, null, '删除商品分类', '1', null, '1', '53', '3', '0');
 
 -- ----------------------------
 -- Table structure for mall_role
