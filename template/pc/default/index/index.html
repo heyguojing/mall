@@ -1,0 +1,357 @@
+{include file="common/header" /}
+<link href="__INDEX__/css/index.css" rel="stylesheet" type="text/css" />
+<body>
+    {include file="common/top" /}
+    <!--轮播 -->
+    <div class="banner">
+        <div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
+            <ul class="am-slides">
+                <li style="background:#55be59;">
+                    <a href="{$index_banner_data[0]['adv_url']}"><img src="{$index_banner_data[0]['adv_img']}" /></a>
+                </li>
+                <li style="background:#f44661;">
+                    <a href="{$index_banner_data[1]['adv_url']}"><img src="{$index_banner_data[1]['adv_img']}" /></a>
+                </li>
+                <li style="background:#0f1024;">
+                    <a hrefi="{$index_banner_data[2]['adv_url']}"><img src="{$index_banner_data[2]['adv_img']}" /></a>
+                </li>
+                <li style="background:#ff9801;">
+                    <a href="{$index_banner_data[3]['adv_url']}"><img src="{$index_banner_data[3]['adv_img']}" /></a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--全部分类-->
+    <div class="shopNav">
+        <div class="slideall">
+
+            <div class="long-title"><span class="all-goods">全部分类</span></div>
+            <div class="nav-cont">
+                <ul>
+                    <li class="index"><a href="javascript:;">首页</a></li>
+                    <li class="qc"><a href="javascript:;">闪购</a></li>
+                    <li class="qc"><a href="javascript:;">限时抢</a></li>
+                    <li class="qc"><a href="javascript:;">团购</a></li>
+                    <li class="qc last"><a href="javascript:;">大包装</a></li>
+                </ul>
+            </div>
+
+            <!--左侧边分类 -->
+            <div id="nav" class="navfull">
+                <div class="area clearfix">
+                    <div class="category-content" id="guide_2">
+                        <div class="category">
+                            <ul class="category-list" id="js_climit_li">
+                                <volist name="nav_class_data" id="vo">
+                                <li class="appliance js_toggle relative first" class_id="{$vo['class_id']}">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name">
+                                            <a class="ml-22" href="{$vo['url']}" title="{$vo['class_name']}">{$vo['class_name']}</a>
+                                        </h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <!--<dl class="dl-sort">
+															<dt><span title="蛋糕">蛋糕</span></dt>
+															<dd><a title="蒸蛋糕" href="javascript:;" target="_blank"><span>蒸蛋糕</span></a></dd>
+
+														</dl>-->
+
+
+                                                    </div>
+                                                    <!--<div class="brand-side">
+														<dl class="dl-sort"><dt><span>实力商家</span></dt>
+															<dd><a rel="nofollow" title="呵官方旗舰店" target="_blank" href="store.html" rel="nofollow"><span  class="red" >呵官方旗舰店</span></a></dd>
+
+														</dl>
+													</div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                </volist>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--轮播-->
+            <!--手机小导航 -->
+            <div class="am-g am-g-fixed smallnav">
+                <div class="am-u-sm-3">
+                    <a href="{:url('Category/index')}"><img src="__INDEX__/images/navsmall.jpg" />
+                        <div class="title">商品分类</div>
+                    </a>
+                </div>
+                <div class="am-u-sm-3">
+                    <a href="javascript:;"><img src="__INDEX__/images/huismall.jpg" />
+                        <div class="title">大聚惠</div>
+                    </a>
+                </div>
+                <div class="am-u-sm-3">
+                    <a href="{:url('User/index')}"><img src="__INDEX__/images/mansmall.jpg" />
+                        <div class="title">个人中心</div>
+                    </a>
+                </div>
+                <div class="am-u-sm-3">
+                    <a href="javascript:;"><img src="__INDEX__/images/moneysmall.jpg" />
+                        <div class="title">投资理财</div>
+                    </a>
+                </div>
+            </div>
+            <!--公告 -->
+            <div class="marqueen">
+                <span class="marqueen-title">商城头条</span>
+                <div class="demo">
+
+                    <ul>
+                        <li class="title-first">
+                            <a target="_blank" href="javascript:;">
+                                <img src="__INDEX__/images/TJ2.jpg"></img>
+                                <span>[特惠]</span>商城爆品1分秒
+                            </a>
+                        </li>
+                        <li class="title-first">
+                            <a target="_blank" href="javascript:;">
+                                <span>[公告]</span>商城与广州市签署战略合作协议
+                                <img src="__INDEX__/images/TJ.jpg"></img>
+                                <p>XXXXXXXXXXXXXXXXXX</p>
+                            </a>
+                        </li>
+
+                        <div class="mod-vip">
+                            <div class="m-baseinfo">
+                                <a href="javascript:;" target="_blank">
+                                    <img src="__INDEX__/images/getAvatar.do.jpg">
+                                </a>
+                                <em>
+									Hi,<span class="s-name">小叮当</span>
+									<a href="javascript:;" target="_blank"><p>点击更多优惠活动</p></a>
+								</em>
+                            </div>
+                            <div class="member-logout">
+                                <a class="am-btn-warning btn" href="{:url('Login/index')}">登录</a>
+                                <a class="am-btn-warning btn" href="{:url('Login/reg')}">注册</a>
+                            </div>
+                            <div class="member-login">
+                                <a href="javascript:;"><strong>0</strong>待收货</a>
+                                <a href="javascript:;"><strong>0</strong>待发货</a>
+                                <a href="javascript:;"><strong>0</strong>待付款</a>
+                                <a href="javascript:;"><strong>0</strong>待评价</a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <li><a target="_blank" href="javascript:;"><span>[特惠]</span>洋河年末大促，低至两件五折</a></li>
+                        <li><a target="_blank" href="javascript:;"><span>[公告]</span>华北、华中部分地区配送延迟</a></li>
+                        <li><a target="_blank" href="javascript:;"><span>[特惠]</span>家电狂欢千亿礼券 买1送1！</a></li>
+
+                    </ul>
+                    <div class="advTip"><img src="__INDEX__/images/advTip.jpg" /></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--主内容区-->
+    <div class="shopMainbg">
+        <div class="shopMain" id="shopmain">
+
+            <!--今日推荐 -->
+
+            <div class="am-g am-g-fixed recommendation">
+                <div class="clock am-u-sm-3">
+                    <img src="__INDEX__/images/2016.png "></img>
+                    <p>今日
+                        <br>推荐</p>
+                </div>
+                <div class="am-u-sm-4 am-u-lg-3 ">
+                    <div class="info ">
+                        <h3>真的有鱼</h3>
+                        <h4>开年福利篇</h4>
+                    </div>
+                    <div class="recommendationMain one">
+                        <a href="javascript:;" target="_blank">
+                            <img src="__INDEX__/images/tj.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="am-u-sm-4 am-u-lg-3 ">
+                    <div class="info ">
+                        <h3>囤货过冬</h3>
+                        <h4>让爱早回家</h4>
+                    </div>
+                    <div class="recommendationMain two">
+                        <a href="javascript:;" target="_blank">
+                            <img src="__INDEX__/images/tj1.png " alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="am-u-sm-4 am-u-lg-3 ">
+                    <div class="info ">
+                        <h3>浪漫情人节</h3>
+                        <h4>甜甜蜜蜜</h4>
+                    </div>
+                    <div class="recommendationMain three">
+                        <a href="javascript:;" target="_blank">
+                            <img src="__INDEX__/images/tj2.png " alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clear "></div>
+            <!--热门活动 -->
+
+            <div class="am-container activity ">
+                <div class="shopTitle ">
+                    <h4>活动</h4>
+                    <h3>每期活动 优惠享不停 </h3>
+                    <span class="more ">
+                              <a href="javascript:;">全部活动<i class="am-icon-angle-right" style="padding-left:10px;" ></i></a>
+                        </span>
+                </div>
+                <div class="am-g am-g-fixed ">
+                    <div class="am-u-sm-3 ">
+                        <a href="javascript:;" target="_blank">
+                            <div class="icon-sale one "></div>
+                            <h4>秒杀</h4>
+                            <div class="activityMain ">
+                                <img src="__INDEX__/uploads/activity1.jpg "></img>
+                            </div>
+                            <div class="info ">
+                                <h3>春节送礼优选</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="am-u-sm-3 ">
+                        <a href="javascript:;" target="_blank">
+                            <div class="icon-sale two "></div>
+                            <h4>特惠</h4>
+                            <div class="activityMain ">
+                                <img src="__INDEX__/uploads/activity2.jpg ">
+                            </div>
+                            <div class="info ">
+                                <h3>春节送礼优选</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="am-u-sm-3 ">
+                        <a href="javascript:;" target="_blank">
+                            <div class="icon-sale three "></div>
+                            <h4>团购</h4>
+                            <div class="activityMain ">
+                                <img src="__INDEX__/uploads/activity3.jpg ">
+                            </div>
+                            <div class="info ">
+                                <h3>春节送礼优选</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="am-u-sm-3 last ">
+                        <a href="javascript:;" target="_blank">
+                            <div class="icon-sale "></div>
+                            <h4>超值</h4>
+                            <div class="activityMain ">
+                                <img src="__INDEX__/images/activity.jpg ">
+                            </div>
+                            <div class="info ">
+                                <h3>春节送礼优选</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clear "></div>
+
+            <volist name="class_data" id="vo" key="key">
+            <div id="f{$key}">
+                <!--甜点-->
+                <div class="am-container ">
+                    <div class="shopTitle ">
+                        <h4>{$vo['class_name']}</h4>
+                        <h3>{$vo['class_name']}</h3>
+                        <div class="today-brands ">
+                            <volist name="vo['child']" id="v1">
+                            <a href="{$v1['url']}">{$v1['class_name']}</a>
+                            </volist>
+                        </div>
+                        <span class="more ">
+                        <a href="{$vo['url']}">更多<i class="am-icon-angle-right" style="padding-left:10px ;" ></i></a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="am-g am-g-fixed floodFour">
+                    <div class="am-u-sm-5 am-u-md-4 text-one list ">
+                        <div class="word">
+                            <?php echo htmlspecialchars_decode($vo['ad_data']['adv_content']);?>
+
+                        </div>
+                        <a href="javascript:;">
+                            <div class="outer-con ">
+                                <div class="title ">
+                                    开抢啦！
+                                </div>
+                                <div class="sub-title ">
+                                    零食大礼包
+                                </div>
+                            </div>
+                            <img src="__INDEX__/images/act1.png " />
+                        </a>
+                        <div class="triangle-topright"></div>
+                    </div>
+                    <volist name="vo['goods_data']" id="v1" key="k1">
+	                <if condition="$k1 eq 1">
+	                <div class="am-u-sm-7 am-u-md-4 text-two sug">
+	                <elseif  condition="$k1 eq 2" />
+		            <div class="am-u-sm-7 am-u-md-4 text-two">
+	                <elseif  condition="$k1 eq 3" />
+			         <div class="am-u-sm-3 am-u-md-2 text-three big">
+	                <elseif  condition="$k1 eq 4" />
+				     <div class="am-u-sm-3 am-u-md-2 text-three sug">
+	                <elseif  condition="$k1 eq 5" />
+					 <div class="am-u-sm-3 am-u-md-2 text-three ">
+	                <elseif  condition="$k1 eq 6" />
+					 <div class="am-u-sm-3 am-u-md-2 text-three last big ">
+	                </if>
+
+                        <div class="outer-con ">
+                            <div class="title">
+                                <a href="{$v1['url']}" target="_blank">{$v1['goods_name_20']}</a>
+                            </div>
+                            <div class="sub-title ">
+                                ¥{$v1['goods_price']}
+                            </div>
+                            <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                        </div>
+                        <a href="{$v1['url']}" target="_blank"><img src="{$v1['goods_thumb']}" /></a>
+                    </div>
+                    </volist>
+	        
+                </div>
+                <div class="clear "></div>
+            </div>
+            </volist>
+        </div>
+    </div>
+    <!--底部版权-->
+    {include file="common/footer" /}
+    <!--右边栏-->
+    {include file="common/sidebar" /}
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<div class="hmtop">
+    <!--顶部导航条 -->
+    <div class="site-top-nav">
+        <div class="am-container header">
+            <a href="/" class="home fl"><i class="am-icon-home"></i>首页</a>
+            <div class="fl" id="menu-user">
+                <if condition="$Think.session.home_uid gt 0">
+                <!--登陆后显示开始-->
+                    <a href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="home fl logined">{$Think.session.user_mobile}<i class="am-icon-angle-down"></i></a>
+                <div class="nav-user-panel">
+                    <div class="site-nav-user-wrapper">
+                        <a href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="site-nav-user-avatar"> <img id="nav-user-avatar" src="__INDEX__/images/getAvatar.do.jpg" width="80" height="80" alt="{$Think.session.user_mobile}的头像"></a>
+                    </div>
+                    <div class="site-nav-user-info">
+                        <p class="site-nav-user-operate"> <a href="{:url('index/User/info','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_top">账号管理</a> <span class="site-nav-pipe">|</span> <a href="{:url('index/Login/logout','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_top">退出</a> </p>
+                        <p class="level-info tao-score">积分：511</p>
+                        <p class="level-info ">普通会员</p>
+                    </div>
+                </div>
+                <!--登陆后显示结束-->
+                    <else/>
+                <!--未登陆-->
+                    <a href="{:url('index/Login/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="fl no-login">亲，请登陆</a>
+                    <a href="{:url('index/Login/reg','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="fl reg">免费注册</a>
+                <!--未登陆-->
+                </if>
+            </div>
+            <ul class="header-top">
+                <li class="s1 has-icon user-meta"> <a rel="nofollow" href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">我的阿西里西<i class="am-icon-angle-down"></i></a>
+                    <ol class="ext-mode" id="menu-personal">
+                        <li class="s2"> <a target="_blank" href="{:url('index/UserOrder/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">已买到的宝贝</a> </li>
+                        <li class="s2"> <a href="javascript:;">我的足迹</a> </li>
+                    </ol>
+                </li>
+                <li class="s1 has-line shopping-cart-v2">
+                    <a class="cart-info-wrap" href="{:url('index/Cart/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank" rel="nofollow"> <i
+                            class="am-icon-shopping-cart"></i> <span class="cart-info">购物车<i class="num">{$total_rows}</i></span>
+                    <div class="shop-cart-info empty-cart">
+                        <!--                       购物车里没有商品！-->
+                        <ul class="max_height_ie6">
+
+                        </ul>
+                        <div class="subbox">
+                            <div class="fr"><a href="{:url('index/Cart/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank" class="gocart">查看购物车</a></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="s1 my-collect has-line"> <a href="javascript:;" target="_blank" class="text display_u" rel="nofollow"><i class="am-icon-star"></i> 我的收藏</a> </li>
+                <li class="s1 has-line has-icon custom-item"> <a rel="nofollow" href="javascript:;" target="_blank">客户服务<i class="layui-icon layui-icon-down"></i></a>
+                    <ol class="ext-mode">
+                        <li class="s2"><a target="_blank" href="javascript:;">消费者服务</a></li>
+                        <li class="s2"><a target="_blank" href="javascript:;">商家服务</a></li>
+                        <li class="s2"><a target="_blank" href="javascript:;">规则中心</a></li>
+                    </ol>
+                </li>
+                <li class="s1 has-line has-icon myxiaodian"> <a href="{:url('index/Seller/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank" class="text display_u">卖家中心<i class="layui-icon layui-icon-down"></i></a>
+                    <ol class="ext-mode">
+                        <if condition="$Think.session.store_id gt 0">
+                            <li class="s2"><a target="_blank" href="{:url('index/Seller/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">管理后台</a></li>
+                            <li class="s2"><a target="_blank" href="{:url('index/SellerOrder/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">已卖出的宝贝</a></li>
+                            <li class="s2"><a target="_blank" href="{:url('index/SellerGoods/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">出售中的宝贝</a></li>
+                            <else/>
+                            <li class="s2"><a target="_blank" href="{:url('index/User/enter','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">商家入驻</a></li>
+                        </if>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--悬浮搜索框-->
+    <div class="nav white">
+        <div class="logo"><img src="__INDEX__/images/logo.png" /></div>
+        <div class="logoBig">
+            <li><img src="__INDEX__/images/logo.png" /></li>
+        </div>
+        <div class="search-bar pr">
+            <form class="search-box" action="{:url('index/Search/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" method="post">
+                <i class="am-icon am-icon-search"></i>
+                <input id="searchInput" name="keywords" type="text" placeholder="搜索" autocomplete="off" value="{$keywords}">
+                <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+            </form>
+        </div>
+
+        <div class="nav-extra">
+            <div class="qr-box">
+                <div class="qr">
+                    <div class="qr-bd clearfix">
+                        <span id="mtb" class="h">手机扫一扫</span>
+                        <img class="qrcode" src="__INDEX__/images/qr.png">
+                    </div>
+                    <a href="javascript:;" target="_self" class="qr-ft" role="button" aria-label="关闭二维码">
+                        <i class="am-icon am-icon-close"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

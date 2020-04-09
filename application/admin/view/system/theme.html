@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商城后台管理系统-{$Think.config.site.WEB_TITLE} </title>
+    <link rel="shortcut icon" href="__ADMIN__/images/favicon.ico">
+    <link href="__ADMIN__/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__ADMIN__/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="__ADMIN__/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="__ADMIN__/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="__ADMIN__/assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="__ADMIN__/css/style.css" />
+    <script src="__ADMIN__/assets/js/ace-extra.min.js"></script>
+    <script src="__ADMIN__/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='__ADMIN__/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
+    </script>
+    <script src="__ADMIN__/assets/js/bootstrap.min.js"></script>
+    <script src="__ADMIN__/assets/js/typeahead-bs2.min.js"></script>
+    <script src="__ADMIN__/assets/js/ace-elements.min.js"></script>
+    <script src="__ADMIN__/assets/js/ace.min.js"></script>
+    <script src="__ADMIN__/assets/layer/layer.js" type="text/javascript"></script>
+    <script src="__ADMIN__/assets/laydate/laydate.js" type="text/javascript"></script>
+    <script src="__ADMIN__/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="__ADMIN__/js/index.js" type="text/javascript"></script>
+	<script src="__STATIC__/admin/assets/layer/layer.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="margin clearfix">
+	<div class="defray_style pc-theme">
+		<!--模板列表-->
+		<div class="defray_list cover_style clearfix">
+			<div class="type_title">PC模板列表</div>
+			<div class="defray_content clearfix">
+				<volist name="page_data" id="vo">
+					<ul class="defray_info <if condition="$vo['is_default'] eq 1">selected</if>">
+					<li class="defray_name">{$vo['name']}</li>
+					<li class="name_logo"><img onclick="viewtheme(this);" src="{$vo['thumb']}" vsrc="{$vo['thumb_big']}" width="100%" height="150px;" />
+						<span class="use-mask"><b>正在使用</b></span>
+					</li>
+					<li class="description">
+						<p>
+							开发人员：<span>{$vo['author']}</span>
+							<br> 适用版本：
+							<span>{$Think.config.site.WEB_TITLE} {$vo['version']}</span>
+							<br>更新时间：
+							<span>{$vo['time']}</span>
+							<br>
+						</p>
+					</li>
+					<li class="select-btn">
+						<a href="javascript:void(0);" onclick="sw_theme(this);" theme="{$key}" class="template">设为默认</a>
+					</li>
+				</ul>
+				</volist>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function sw_theme(obj) {
+		if($(obj).parents(".defray_info").hasClass('selected')){
+			return false;
+		}
+		var theme = $(obj).attr('theme');
+		layer.confirm('确认要切换吗？', function(index) {
+			$.post('',{theme:theme},function (data) {
+				if(data.status == 1){
+					$(obj).parents("ul").siblings().removeClass("selected");
+					$(obj).parents("ul").addClass("selected");
+					layer.msg('主题切换成功!', {
+						icon: 1,
+						time: 1000
+					});
+				}
+			},'json')
+
+		});
+	}
+
+	function viewtheme(obj) {
+		var img = new Image();
+		var vimg = $(obj).attr("vsrc");
+		var imgHtml = "<img class='viewimg' src='" + vimg + "' />";
+		layer.open({
+			type: 1,
+			shade: [0.6, '#000000'],
+			shadeClose: true,
+			title: false,
+			area: [700 + 'px', 700 + 'px'],
+			content: imgHtml,
+		});
+	}
+
+</script>
+</body>
+
+</html>

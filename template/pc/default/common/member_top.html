@@ -1,0 +1,90 @@
+<header>
+	<article>
+		<div class="hmtop">
+			<div class="site-top-nav">
+				<div class="am-container header">
+					<a href="/" class="home fl"><i class="am-icon-home"></i>首页</a>
+					<div class="fl" id="menu-user">
+						<!--登陆后显示开始-->
+						<a href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="home fl logined">{$Think.session.user_mobile}<i class="am-icon-angle-down"></i></a>
+						<div class="nav-user-panel">
+							<div class="site-nav-user-wrapper">
+								<a href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="site-nav-user-avatar">
+									<img id="nav-user-avatar" src="__STATIC__/index/images/getAvatar.do.jpg" width="80" height="80"
+								                                                           alt="{$Think.session.user_mobile}的头像">
+								</a>
+							</div>
+							<div class="site-nav-user-info">
+								<p class="site-nav-user-operate"> <a href="{:url('index/User/info','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_top">账号管理</a> <span class="site-nav-pipe">|</span> <a href="{:url('index/Login/logout','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_top">退出</a> </p>
+								<p class="level-info tao-score">积分：511</p>
+								<p class="level-info ">普通会员</p>
+							</div>
+						</div>
+						<!--登陆后显示结束-->
+					</div>
+					<ul class="header-top">
+						<li class="s1 has-icon user-meta"> <a rel="nofollow" href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">我的阿西里西<i class="am-icon-angle-down"></i></a>
+							<ol class="ext-mode" id="menu-personal">
+								<li class="s2"> <a target="_blank" href="{:url('index/UserOrder/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">已买到的宝贝</a> </li>
+								<li class="s2"> <a href="javascript:;">我的足迹</a> </li>
+							</ol>
+						</li>
+						<li class="s1 has-line shopping-cart-v2">
+							<a class="cart-info-wrap" href="{:url('index/Cart/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank" rel="nofollow"> <i
+									class="am-icon-shopping-cart"></i> <span class="cart-info">购物车<i class="num">{$total_rows}</i></span>
+							</a><span class="shopping-cart-loading"></span>
+							<div class="shop-cart-info empty-cart">
+								<!--                       购物车里没有商品！-->
+								<ul class="max_height_ie6">
+
+								</ul>
+								<div class="subbox">
+									<div class="fr"><a href="{:url('index/Cart/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank" class="gocart">查看购物车</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="s1 my-collect has-line"><a href="javascript:;" target="_blank" class="text display_u"
+						                                      rel="nofollow"><i class="am-icon-star"></i> 我的收藏</a></li>
+						<li class="s1 has-line has-icon custom-item"><a rel="nofollow" href="javascript:;" target="_blank">客户服务<i
+								class="layui-icon layui-icon-down"></i></a>
+							<ol class="ext-mode">
+								<li class="s2"><a target="_blank" href="javascript:;">消费者服务</a></li>
+								<li class="s2"><a target="_blank" href="javascript:;">商家服务</a></li>
+								<li class="s2"><a target="_blank" href="javascript:;">规则中心</a></li>
+							</ol>
+						</li>
+						<li class="s1 has-line has-icon myxiaodian"> <a href="{:url('index/Seller/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank" class="text display_u">卖家中心<i class="layui-icon layui-icon-down"></i></a>
+							<ol class="ext-mode">
+								<if condition="$Think.session.store_id gt 0">
+									<li class="s2"><a target="_blank" href="{:url('index/Seller/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">管理后台</a></li>
+									<li class="s2"><a target="_blank" href="{:url('index/SellerOrder/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">已卖出的宝贝</a></li>
+									<li class="s2"><a target="_blank" href="{:url('index/SellerGoods/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">出售中的宝贝</a></li>
+									<else/>
+									<li class="s2"><a target="_blank" href="{:url('index/User/enter','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">商家入驻</a></li>
+								</if>
+							</ol>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--全部分类及搜索-->
+		<div class="nav-box">
+			<div class="nav white">
+				<div class="logo"><img src="__STATIC__/index/images/logo.png"/></div>
+				<div class="logoBig">
+					<li><img src="__STATIC__/index/images/logo.png"/></li>
+				</div>
+
+				<div class="search-bar pr">
+					<form>
+						<i class="am-icon am-icon-search"></i>
+						<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索"
+						       autocomplete="off">
+						<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+					</form>
+				</div>
+			</div>
+		</div>
+	</article>
+</header>

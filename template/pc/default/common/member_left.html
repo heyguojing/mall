@@ -1,0 +1,42 @@
+<aside class="menu">
+	<ul>
+		<li class="person <if condition="CONTROLLER_NAME eq 'User' && ACTION_NAME eq 'index'">active</if>">
+			<a href="{:url('User/index')}">个人中心</a>
+		</li>
+		<li class="person">
+			<a href="javascript:;">个人资料</a>
+			<ul>
+				<li <if condition="CONTROLLER_NAME eq 'User' && ACTION_NAME eq 'info'">class="active"</if>><a href="{:url('User/info')}">个人信息</a></li>
+				<li <if condition="CONTROLLER_NAME eq 'User' && ACTION_NAME eq 'safe'">class="active"</if>><a href="{:url('User/safe')}">安全设置</a></li>
+				<li <if condition="CONTROLLER_NAME eq 'Address'">class="active"</if>><a href="{:url('Address/index')}">收货地址</a></li>
+			</ul>
+		</li>
+		<li class="person">
+			<a href="javascript:;">我的交易</a>
+			<ul>
+				<li  <if condition="CONTROLLER_NAME eq 'UserOrder' && ACTION_NAME eq 'index'">class="active"</if>><a href="{:url('UserOrder/index')}">订单管理</a></li>
+				<li <if condition="CONTROLLER_NAME eq 'UserOrder' && ACTION_NAME eq 'refundlist'">class="active"</if>><a href="{:url('UserOrder/refundList')}">退款售后</a></li>
+			</ul>
+		</li>
+		<li class="person">
+			<a href="javascript:;">我的资产</a>
+			<ul>
+				<li><a href="javascript:;">优惠券 </a></li>
+				<li><a href="javascript:;">红包</a></li>
+				<li><a href="javascript:;">账单明细</a></li>
+			</ul>
+		</li>
+
+		<li class="person">
+			<a href="javascript:;">我的小窝</a>
+			<ul>
+				<li <if condition="CONTROLLER_NAME eq 'UserCollect'">class="active"</if>><a href="{:url('UserCollect/index')}">收藏</a></li>
+				<li <if condition="CONTROLLER_NAME eq 'User' && ACTION_NAME eq 'history'">class="active"</if>><a href="{:url('User/history')}">足迹</a></li>
+				<li <if condition="CONTROLLER_NAME eq 'UserOrder' && ACTION_NAME eq 'comment'">class="active"</if>><a href="{:url('UserOrder/comment')}">评价</a></li>
+				<li <if condition="CONTROLLER_NAME eq 'UserMessage'">class="active"</if>><a href="{:url('UserMessage/index')}">消息</a></li>
+			</ul>
+		</li>
+
+	</ul>
+
+</aside>

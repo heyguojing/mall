@@ -1,0 +1,123 @@
+<div class="tip">
+	<div class="tip-box">
+		<div class="sidebar-box">
+			<div id="sidebar">
+				<div id="wrap">
+					<div id="prof" class="item ">
+						<a href="javascript:;">
+							<i class="am-icon am-icon-user setting"></i>
+						</a>
+						<div class="ibar_login_box status_login">
+							<div class="avatar_box">
+								<p class="avatar_imgbox"><img src="__STATIC__/index/images/no-img_mid_.jpg "/></p>
+								<ul class="user_info">
+									<li>{$Think.session.user_mobile}</li>
+									<li>级&nbsp;别普通会员</li>
+								</ul>
+							</div>
+							<div class="login_btnbox">
+								<a href="javascript:;" class="login_order ">我的订单</a>
+								<a href="javascript:;" class="login_favorite ">我的收藏</a>
+							</div>
+							<i class="icon_arrow_white"></i>
+						</div>
+
+					</div>
+					<div id="shop-cart" class="item">
+						<a href="javascript:;">
+							<i class="am-icon am-icon-shopping-cart"></i>
+							<p>购物车</p>
+							<p class="cart_num ">{$total_rows}</p>
+						</a>
+
+					</div>
+					<div id="asset" class="item">
+						<a href="javascript:;">
+							<i class="am-icon am-icon-cny view"></i>
+						</a>
+						<div class="mp_tooltip ">
+							我的资产
+							<i class="icon_arrow_right_black "></i>
+						</div>
+					</div>
+
+					<div id="foot" class="item ">
+						<a href="javascript:;">
+							<i class="am-icon am-icon-history zuji"></i>
+						</a>
+						<div class="mp_tooltip ">
+							我的足迹
+							<i class="icon_arrow_right_black "></i>
+						</div>
+					</div>
+
+					<div id="brand" class="item ">
+						<a href="javascript:;">
+							<i class="am-icon am-icon-star-o wdsc"></i>
+						</a>
+						<div class="mp_tooltip ">
+							我的收藏
+							<i class="icon_arrow_right_black "></i>
+						</div>
+					</div>
+
+					<div id="broadcast" class="item ">
+						<a href="javascript:;">
+							<i class="am-icon am-icon-paypal chongzhi "></i>
+						</a>
+						<div class="mp_tooltip ">
+							我要充值
+							<i class="icon_arrow_right_black "></i>
+						</div>
+					</div>
+
+					<div class="quick_toggle ">
+						<li class="qtitem">
+							<a href="javascript:;"><i class="am-icon am-icon-headphones kfzx"></i>
+								<div class="mp_tooltip ">客服中心<i class="icon_arrow_right_black "></i></div>
+							</a>
+						</li>
+						<!--二维码 -->
+						<li class="qtitem">
+							<a href="#none"><i class="am-icon am-icon-qrcode"></i></a>
+							<div class="mp_qrcode " style="display:none; "><img
+									src="__STATIC__/index/images/weixin_code_145.png "/><i
+									class="icon_arrow_white "></i></div>
+						</li>
+						<li class="qtitem">
+							<a href="javascript:;" class="return-top"><i class="am-icon am-icon-chevron-up top"></i></a>
+						</li>
+					</div>
+
+					<!--回到顶部 -->
+					<div id="quick_links_pop " class="quick_links_pop hide "></div>
+				</div>
+			</div>
+			<!--购物车小页面开始-->
+			<div class="sidebar-cart-box">
+				<div class="cart-inner-box">
+					<div class="sclist">
+
+					</div>
+				</div>
+				<!--底部结算开始-->
+				<div class="sc-handler">
+					<div class="sc-cashier-wrap">
+						<div class="sc-total">
+							<h3><span class="tm-e2">已选</span><strong class="sc-checked-num">0</strong><span
+									class="sc-e2">件</span></h3>
+							<span class="sc-total-fee-wrap"><strong class="sc-total-fee">¥0</strong></span>
+						</div>
+						<div class="sc-cashier">
+							<div class="sc-go"><a href="{:url('index/Order/Cart','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank">结 算</a><i
+									class="am-icon-chevron-circle-right"></i></div>
+						</div>
+					</div>
+				</div>
+				<!--底部结算结束-->
+			</div>
+			<!--购物车小页面结束-->
+		</div>
+	</div>
+</div>
+<script src="__STATIC__/index/extends/js/quick_links.js"></script>

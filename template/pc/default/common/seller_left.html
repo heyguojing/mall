@@ -1,0 +1,82 @@
+<div class="col-sub layui-col-space10 layui-col-xs3 layui-col-md3 layui-col-lg2">
+	<div class="seller-sidebar">
+		<div class="category-wrapper">
+			<div class="layui-collapse">
+
+				<!--未开店显示-->
+				<!--菜单列表开始-->
+				<!--菜单列表结束-->
+				<!--未开店显示-->
+
+				<!--菜单列表开始-->
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">交易管理<i class="am-icon am-icon-gavel"></i></h2>
+					<div class="layui-colla-content layui-show">
+						<ul class="list">
+							<li><a  href="{:url('SellerOrder/index')}" <if condition="CONTROLLER_NAME eq 'SellerOrder' && ACTION_NAME eq 'index'">class="active"</if>>已卖出的宝贝</a></li>
+							<li><a  href="{:url('SellerOrder/comment')}" <if condition="CONTROLLER_NAME eq 'SellerOrder' && ACTION_NAME eq 'comment'">class="active"</if>>评价管理</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--菜单列表结束-->
+				<!--菜单列表开始-->
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">物流管理<i class="am-icon am-icon-truck"></i></h2>
+					<div class="layui-colla-content layui-show">
+						<ul class="list">
+							<li><a  href="javascript:;">发货</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--菜单列表结束-->
+				<!--菜单列表开始-->
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">商品管理<i class="am-icon am-icon-shopping-bag"></i></h2>
+					<div class="layui-colla-content layui-show">
+						<ul class="list">
+							<li><a target="_blank" href="{:url('SellerGoods/add')}">发布商品</a></li>
+							<li><a  href="{:url('SellerGoods/index')}">出售中的商品</a></li>
+							<li><a  href="javascript:;">仓库中的商品</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--菜单列表结束-->
+				<!--菜单列表开始-->
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">店铺管理<i class="am-icon am-icon-sitemap"></i></h2>
+					<div class="layui-colla-content layui-show">
+						<ul class="list">
+							<li><a  href="javascript:;">查看店铺</a></li>
+							<li><a  href="{:url('Seller/set')}" <if condition="CONTROLLER_NAME eq 'Seller' &&  ACTION_NAME eq 'set'">class="active"</if>>店铺设置</a></li>
+							<li><a  href="{:url('SellerStoreClass/index')}" <if condition="CONTROLLER_NAME eq 'SellerStoreClass'">class="active"</if>>宝贝分类</a></li>
+							<li><a  href="{:url('Seller/domain')}" <if condition="CONTROLLER_NAME eq 'Seller' &&  ACTION_NAME eq 'domain'">class="active"</if>>域名设置</a></li>
+							<li><a   href="{:url('Seller/template')}" <if condition="CONTROLLER_NAME eq 'Seller' &&  ACTION_NAME eq 'template'">class="active"</if>>店铺模板设置</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--菜单列表结束-->
+				<!--菜单列表开始-->
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">客户服务<i class="am-icon am-icon-user-md"></i></h2>
+					<div class="layui-colla-content layui-show">
+						<ul class="list">
+							<li><a  href="{:url('SellerOrder/refundList')}" <if condition="CONTROLLER_NAME eq 'SellerOrder' && ACTION_NAME eq 'refundlist'">class="active"</if>>退款管理</a></li>
+							<li><a  href="javascript:;">违规记录</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--菜单列表结束-->
+				<!--菜单列表开始-->
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">消息服务<i class="am-icon am-icon-user-md"></i></h2>
+					<div class="layui-colla-content layui-show">
+						<ul class="list">
+							<li><a href="{:url('SellerMessage/index')}" <if condition="CONTROLLER_NAME eq 'SellerMessage'">class="active"</if>>消息列表</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--菜单列表结束-->
+			</div>
+		</div>
+	</div>
+</div>

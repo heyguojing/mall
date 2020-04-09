@@ -1,0 +1,79 @@
+<div class="nav-box">
+	<div class="nav white">
+		<div class="logo"><img src="__STATIC__/index/images/logo.png" /></div>
+		<div class="logoBig">
+			<li><img src="__STATIC__/index/images/logo.png" /></li>
+		</div>
+
+		<div class="search-bar pr">
+			<form action="{:url('index/search/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" method="post">
+				<i class="am-icon am-icon-search"></i>
+				<input id="searchInput" name="keywords" type="text" placeholder="搜索" autocomplete="off" value="{$keywords}">
+				<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
+			</form>
+		</div>
+	</div>
+
+	<!--全部分类-->
+	<div class="shopNav">
+		<div class="slideall">
+
+			<div class="long-title"><span class="all-goods">全部分类</span></div>
+			<div class="nav-cont">
+				<ul>
+					<li class="index"><a href="{:url('index/index/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">首页</a></li>
+					<li class="qc"><a href="javascript:;">闪购</a></li>
+					<li class="qc"><a href="javascript:;">限时抢</a></li>
+					<li class="qc"><a href="javascript:;">团购</a></li>
+					<li class="qc last"><a href="javascript:;">大包装</a></li>
+				</ul>
+			</div>
+
+			<!--左侧边分类 -->
+			<div id="nav" class="navfull">
+				<div class="area clearfix">
+					<div class="category-content" id="guide_2">
+						<div class="category">
+							<ul class="category-list" id="js_climit_li">
+								<volist name="nav_class_data" id="vo">
+								<li class="appliance js_toggle relative first" class_id="{$vo['class_id']}">
+									<div class="category-info">
+										<h3 class="category-name b-category-name">
+											<a class="ml-22" href="{$vo['url']}" title="{$vo['class_name']}">{$vo['class_name']}</a>
+										</h3>
+										<em>&gt;</em>
+									</div>
+									<div class="menu-item menu-in top">
+										<div class="area-in">
+											<div class="area-bg">
+												<div class="menu-srot">
+													<div class="sort-side">
+														<!--<dl class="dl-sort">
+															<dt><span title="蛋糕">蛋糕</span></dt>
+															<dd><a title="蒸蛋糕" href="javascript:;" target="_blank"><span>蒸蛋糕</span></a></dd>
+
+														</dl>-->
+
+
+													</div>
+													<!--<div class="brand-side">
+														<dl class="dl-sort"><dt><span>实力商家</span></dt>
+															<dd><a rel="nofollow" title="呵官方旗舰店" target="_blank" href="store.html" rel="nofollow"><span  class="red" >呵官方旗舰店</span></a></dd>
+
+														</dl>
+													</div>-->
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								</volist>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--轮播-->
+		</div>
+	</div>
+</div>
