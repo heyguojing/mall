@@ -62,4 +62,29 @@ class Tests extends Controller
         $res = in_array(array_keys($arr1),$arr2);
         var_dump($res);
     }
+    public function api()
+    {
+        // 美洽
+        $url = "http://api.meiqia.com/v1/conversations/26016288";
+
+        $arr = $this->curl_get($url);
+        // var_dump($arr);
+        // die;
+        $res = json_decode($arr,true);
+        return json_encode($res);
+    }
+    public function curl_get($url)
+    {
+        $info = curl_init();
+        curl_setopt($info,CURLOPT_RETURNTRANSFER,true);
+        curl_setopt($info,CURLOPT_HEADER,0);
+        curl_setopt($info,CURLOPT_NOBODY,0);
+        curl_setopt($info,CURLOPT_SSL_VERIFYPEER,false);
+        curl_setopt($info,CURLOPT_SSL_VERIFYPEER,false);
+        curl_setopt($info,CURLOPT_SSL_VERIFYHOST,false);
+        curl_setopt($info,CURLOPT_URL,$url);
+        $output = curl_exec($info);
+        curl_close($info);
+        return $output;
+    }
 }

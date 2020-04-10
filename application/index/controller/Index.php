@@ -8,6 +8,7 @@ class Index extends Common
 {
     public function index()
     {
+        p(config("template.tpl_replace_string.__INDEX__"));
         return $this->fetch();
     }
 

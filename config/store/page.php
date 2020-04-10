@@ -1,0 +1,33 @@
+ <?php  
+ return array(
+   // URL伪静态后缀
+    'url_html_suffix'        => '',
+    'first_tag_open'=> '<li>',
+    'first_tag_close'=> '</li>',
+    'last_tag_open'=> '<li>',
+    'last_tag_close'=> '</li>',
+    'next_tag_open'=> '<li>',
+    'next_tag_close'=> '</li>',
+    'prev_tag_open'=> '<li>',
+    'prev_tag_close'=>'</li>',
+    'num_tag_open'=> '<li>',
+    'num_tag_close'=>'</li>',
+    'cur_tag_open'=>'<li class="am-active">',
+    'cur_tag_close'=>'</li>',
+    'cur_a_open'=>'<a href="javascript:;" ',
+    'cur_a_close'=>'</a>',
+    'cur_a_end'=>'>',
+    'anchor_class'=>' ',
+    'current_anchor_class'=> '',
+    'prev_class'=>' class="layui-laypage-prev" ',
+    'next_class'=>' class="layui-laypage-next" ',
+    'first_class'=> ' class="first" ',
+    'end_class'=> ' class="end" ',
+    'first_link'=> '首页',
+    'last_link'=> '尾页',
+    'next_link'=>' 下一页 ',
+    'prev_link'=> ' 上一页 ',
+    'URL_MODEL'=>2,
+    'PAGE_VAR'=>'page',
+    'PAGE_STYLE'=>2
+);
