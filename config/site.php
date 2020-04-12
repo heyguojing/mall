@@ -25,7 +25,7 @@
   'CODE_FONT_SIZE' => '30',
   'UPLOAD_PATH' => './upload/',
   'UPLOAD_TYPE' => 'jpg,png,jpeg',
-  'WEB_STYLE' => 'default',
+  'WEB_STYLE' => 'template_1',
   'WEB_STORE_DIR' => 'store',
   'SMS_ACCOUNT_SID' => 'a1979e260cf49cbec7ad31f99734ed93',
   'SMS_TOKEN' => '25798be441257d1ea1a6b105664c3840',

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商城后台管理系统-{$Think.config.site.WEB_TITLE} </title>
+    <link rel="shortcut icon" href="__ADMIN__/images/favicon.ico">
+    <link href="__ADMIN__/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="__ADMIN__/js/jquery-1.8.3.min.js"></script>
+    <script src="__ADMIN__/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript"> var offset = 0; </script>
+    <style>
+        thead {
+            background-color: #f2dede
+        }
+
+        .more {
+            width: 100%;
+            margin-bottom: 500px;
+        }
+
+        .more a {
+            color: #fff;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>page_from_url来路页</th>
+                    <th>page_land_url着陆页</th>
+                    <th>search_engine_kw搜索关键字</th>
+                    <th>page_land_title着陆页标题</th>
+                    <th>ticket_content工单内容</th>
+                    <th>resolver姓名</th>
+                    <th>ticket_create_tm工单创建时间</th>
+                    <th>resolved_tm回复时间</th>
+                    <th>visitor_ip访客ip</th>
+                </tr>
+            </thead>
+            <tbody>
+                {volist name="res" id="vo"}
+                {volist name="vo" id="voshow"}
+                <tr class="success">
+                    <td>{$key+1}</td>
+                    <td>{$voshow['page_from_url']|substr=0,30}</td>
+                    <td>{$voshow['page_land_url']}</td>
+                    <td>{$voshow['search_engine_kw']}</td>
+                    <td>{$voshow['page_land_title']}</td>
+                    <td>
+                        {if condition="!empty($voshow['ticket_content'])"}
+                        {volist name="$voshow['ticket_content']" id="voc"}
+                        {if condition="$voc['from'] eq 'client'"}顾客：{else/}客服：{/if}{$voc['content']}</br>
+                        {/volist}
+                        {/if}
+                    </td>
+                    <td>
+                        {if condition="!empty($voshow['resolver'])"}
+                        {volist name="$voshow['resolver']" id="vor"}
+                        {$vor}
+                        {/volist}
+                        {/if}
+                    </td>
+                    <td>{$voshow['ticket_create_tm']}</td>
+                    <td>{$voshow['resolved_tm']}</td>
+                    <td>{$voshow['visitor_ip']}</td>
+                </tr>
+                {/volist}
+                {/volist}
+            </tbody>
+        </table>
+        <!-- table2 -->
+        <div class="row">
+            <button type="button" class="more btn btn-success btn-lg"><a href="javascript:;">查看更多>></a></button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $('.more').on('click', function () {
+        var offset = 20;
+        console.log(offset);
+        $.ajax({
+            type: 'post',
+            url: '{:url(\'Tests/apishow\')}',
+            dataType: 'json',
+            data: {
+                'offset': offset
+            },
+            success: function (data) {
+                console.log(data);
+                if (data.length != 0) {
+                    $.each(data, function (index, item) {
+                        $.each(item, function (index2, item2) {
+                            index2 += 1;
+                            var strVar = "";
+                            strVar += "                <tr class=\"danger\">";
+                            strVar += "                    <td>" + index2 + "<\/td>";
+                            strVar += "                    <td>" + item2['page_from_url'].substring(0, 30) + "<\/td>";
+                            strVar += "                    <td>" + item2['page_land_url'] + "<\/td>";
+                            strVar += "                    <td>" + item2['search_engine_kw'] + "<\/td>";
+                            strVar += "                    <td>" + item2['page_land_title'] + "<\/td>";
+                            var content = $.each(JSON.stringify(item2['ticket_content']),function(index3,item3){
+                                return item3.from + item3.content;
+                            });
+                            console.log(content);
+                            strVar += "                    <td>"+content+"<\/td>";
+                            strVar += "                    <td>" + item2['resolver']['name'] + "<\/br>" + item2['resolver']['account'] + "<\/td>";
+                            strVar += "                    <td>" + item2['ticket_create_tm'] + "<\/td>";
+                            strVar += "                    <td>" + item2['resolved_tm'] + "<\/td>";
+                            strVar += "                    <td>" + item2['visitor_ip'] + "<\/td>";
+                            strVar += "                <\/tr>";
+                            $("tbody > tr:last").after(strVar);
+                        })
+                    });
+                }
+            }
+        })
+    });
+</script>
+
+</html>
