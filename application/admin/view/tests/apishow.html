@@ -37,15 +37,20 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>page_from_url来路页</th>
-                    <th>page_land_url着陆页</th>
-                    <th>search_engine_kw搜索关键字</th>
-                    <th>page_land_title着陆页标题</th>
-                    <th>ticket_content工单内容</th>
-                    <th>resolver姓名</th>
-                    <th>ticket_create_tm工单创建时间</th>
-                    <th>resolved_tm回复时间</th>
-                    <th>visitor_ip访客ip</th>
+                    <th>来路页</th>
+                    <th>着陆页</th>
+                    <th>搜索关键字</th>
+                    <th>点击页</th>
+                    <th>着陆页标题</th>
+                    <th>工单内容</th>
+                    <th>姓名</th>
+                    <th>工单创建时间</th>
+                    <th>回复时间</th>
+                    <th>访客ip</th>
+                    <th>工单来源</th>
+                    <th>访客位置</th>
+                    <th>访客操作系统类型</th>
+                    <th>访客浏览器类型</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,9 +58,10 @@
                 {volist name="vo" id="voshow"}
                 <tr class="success">
                     <td>{$key+1}</td>
-                    <td>{$voshow['page_from_url']|substr=0,30}</td>
+                    <td>{$voshow['page_from_url']}</td>
                     <td>{$voshow['page_land_url']}</td>
                     <td>{$voshow['search_engine_kw']}</td>
+                    <td>{$voshow['page_click_url']}</td>
                     <td>{$voshow['page_land_title']}</td>
                     <td>
                         {if condition="!empty($voshow['ticket_content'])"}
@@ -67,13 +73,17 @@
                     <td>
                         {if condition="!empty($voshow['resolver'])"}
                         {volist name="$voshow['resolver']" id="vor"}
-                        {$vor}
+                            {$vor}
                         {/volist}
                         {/if}
                     </td>
                     <td>{$voshow['ticket_create_tm']}</td>
                     <td>{$voshow['resolved_tm']}</td>
                     <td>{$voshow['visitor_ip']}</td>
+                    <td>{$voshow['ticket_source']}</td>
+                    <td>{$voshow['visitor_location']}</td>
+                    <td>{$voshow['visitor_os']}</td>
+                    <td>{$voshow['visitor_browser']}</td>
                 </tr>
                 {/volist}
                 {/volist}
@@ -86,9 +96,11 @@
     </div>
 </body>
 <script type="text/javascript">
+    var offset = 0;
+    var i = 0;
+    var style = ['info','warning','danger'];
     $('.more').on('click', function () {
-        var offset = 20;
-        console.log(offset);
+        offset += 20;
         $.ajax({
             type: 'post',
             url: '{:url(\'Tests/apishow\')}',
@@ -103,21 +115,32 @@
                         $.each(item, function (index2, item2) {
                             index2 += 1;
                             var strVar = "";
-                            strVar += "                <tr class=\"danger\">";
+                            strVar += "                <tr class=\""+style[2]+"\">";
                             strVar += "                    <td>" + index2 + "<\/td>";
-                            strVar += "                    <td>" + item2['page_from_url'].substring(0, 30) + "<\/td>";
+                            strVar += "                    <td>" + item2['page_from_url'] + "<\/td>";
                             strVar += "                    <td>" + item2['page_land_url'] + "<\/td>";
                             strVar += "                    <td>" + item2['search_engine_kw'] + "<\/td>";
+                            strVar += "                    <td>" + item2['page_click_url'] + "<\/td>";
                             strVar += "                    <td>" + item2['page_land_title'] + "<\/td>";
-                            var content = $.each(JSON.stringify(item2['ticket_content']),function(index3,item3){
-                                return item3.from + item3.content;
-                            });
-                            console.log(content);
-                            strVar += "                    <td>"+content+"<\/td>";
+                            var content = "";
+                            for(var i in item2['ticket_content']){
+                                var tmp = item2['ticket_content'][i].from;
+                                if(tmp == "client"){
+                                    tmp = "顾客";
+                                }else if(tmp == "agent"){
+                                    tmp = "客服";
+                                }
+                                content += tmp +"："+item2['ticket_content'][i].content+"</br>";
+                            }
+                            strVar += "                    <td>" + content + "<\/td>";
                             strVar += "                    <td>" + item2['resolver']['name'] + "<\/br>" + item2['resolver']['account'] + "<\/td>";
                             strVar += "                    <td>" + item2['ticket_create_tm'] + "<\/td>";
                             strVar += "                    <td>" + item2['resolved_tm'] + "<\/td>";
                             strVar += "                    <td>" + item2['visitor_ip'] + "<\/td>";
+                            strVar += "                    <td>" + item2['ticket_source'] + "<\/td>";
+                            strVar += "                    <td>" + item2['visitor_location'] + "<\/td>";
+                            strVar += "                    <td>" + item2['visitor_os'] + "<\/td>";
+                            strVar += "                    <td>" + item2['visitor_browser'] + "<\/td>";
                             strVar += "                <\/tr>";
                             $("tbody > tr:last").after(strVar);
                         })

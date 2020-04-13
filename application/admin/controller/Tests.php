@@ -195,7 +195,6 @@ class Tests extends Controller
 	{
 		if($this->request->isPost()){
 			$offset = input('offset',0,'intval');
-			$offset = input('offset',0,'intval');
 			ini_set('user_agent', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; GreenBrowser)');
 			$data = array(
 				'ticket_start_from_tm' => '2020-03-01 00:00:00',
