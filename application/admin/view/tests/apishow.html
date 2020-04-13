@@ -58,7 +58,7 @@
                 {volist name="vo" id="voshow"}
                 <tr class="success">
                     <td>{$key+1}</td>
-                    <td>{$voshow['page_from_url']}</td>
+                    <td>{$voshow['page_from_url']|substr = 0,30}</td>
                     <td>{$voshow['page_land_url']}</td>
                     <td>{$voshow['search_engine_kw']}</td>
                     <td>{$voshow['page_click_url']}</td>
@@ -97,7 +97,6 @@
 </body>
 <script type="text/javascript">
     var offset = 0;
-    var i = 0;
     var style = ['info','warning','danger'];
     $('.more').on('click', function () {
         offset += 20;
@@ -117,7 +116,7 @@
                             var strVar = "";
                             strVar += "                <tr class=\""+style[2]+"\">";
                             strVar += "                    <td>" + index2 + "<\/td>";
-                            strVar += "                    <td>" + item2['page_from_url'] + "<\/td>";
+                            strVar += "                    <td>" + item2['page_from_url'].substring(0,30) + "<\/td>";
                             strVar += "                    <td>" + item2['page_land_url'] + "<\/td>";
                             strVar += "                    <td>" + item2['search_engine_kw'] + "<\/td>";
                             strVar += "                    <td>" + item2['page_click_url'] + "<\/td>";

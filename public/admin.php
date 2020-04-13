@@ -11,7 +11,8 @@
 
 // [ 应用入口文件 ]
 namespace think;
-
+define('ROOT_PATH',dirname(str_replace("\\",'/',$_SERVER['SCRIPT_FILENAME']))."/");
+define('TMPLATE_PATH',ROOT_PATH."../template/");
 // 加载基础文件
 require __DIR__ . '/../thinkphp/base.php';
 

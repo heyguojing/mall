@@ -1,0 +1,117 @@
+{include file="common/header" /}
+<link rel="stylesheet" href="__INDEX__/extends/layui2.4.5/css/layui.css">
+<link href="__INDEX__/css/login.css" rel="stylesheet" type="text/css">
+<script>
+	var send_code = "{:url('Login/sendCode')}";
+	var skip_url = "{:url('User/index')}";
+</script>
+<script src="__INDEX__/js/reg.js"></script>
+
+
+<body>
+
+    <div class="login-boxtitle">
+        <a href="/"><img alt="logo" src="__INDEX__/images/logo.png" /></a>
+    </div>
+    <div class="res-banner">
+        <div class="res-main">
+            <div class="login-banner-bg"><span></span><img src="__INDEX__/images/login_bg.jpg" /></div>
+            <div class="login-box">
+
+                <div class="am-tabs" id="doc-my-tabs">
+                    <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+                        <li class="am-active"><a href="javascript:;">手机号注册</a></li>
+                        <li><a href="javascript:;">邮箱注册</a></li>
+                    </ul>
+                    <div class="am-tabs-bd">
+                        <div class="am-tab-panel am-active">
+                            <form method="post" action="javaascript:;">
+                                <div class="list-input">
+                                    <div class="user-phone">
+                                        <label for="mobile"><i class="am-icon-mobile-phone am-icon-md"></i></label>
+                                        <input type="text" name="mobile"  id="mobile" placeholder="请输入手机号">
+                                    </div>
+
+                                    <div class="verification">
+                                        <label for="mobile_verify"><i class="am-icon-plug"></i></label>
+                                        <input type="text" name="mobile_verify" id="mobile_verify" placeholder="图形验证码">
+                                        <span class="verify-img verify">
+                                        <img src="{:url('Login/verify')}" alt="验证码" maxlength="4">
+                                        </span>
+                                    </div>
+                                    <div class="verification">
+                                        <label for="mobile_code"><i class="am-icon-code-fork"></i></label>
+                                        <input type="text" name="mobile_code" id="mobile_code" placeholder="请输入验证码">
+                                        <input type="button" class="dyMobileButton" value="获取验证码" onclick="sendMobileCode(this);">
+                                    </div>
+                                    <div class="user-pass">
+                                        <label for="mobile_password"><i class="am-icon-lock"></i></label>
+                                        <input type="password" name="mobile_password" id="mobile_password" placeholder="设置密码">
+                                    </div>
+                                    <div class="user-pass">
+                                        <label for="mobile_re_password"><i class="am-icon-lock"></i></label>
+                                        <input type="password" name="mobile_re_password" id="mobile_re_password" placeholder="确认密码">
+                                    </div>
+                                </div>
+                                <div class="login-links">
+                                    <label for="reader_mobile">
+                                        <input id="reader_mobile" type="checkbox" name="reader_mobile" value="1"> 点击表示您同意商城《服务协议》
+                                    </label>
+                                </div>
+                                <div class="am-cf">
+                                    <input type="submit" onclick="mobile_submit();"  value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+                                </div>
+                                <hr>
+                            </form>
+                        </div>
+                        <div class="am-tab-panel">
+                            <form method="post" action="javaascript:;">
+                                <div class="list-input">
+                                    <div class="user-email">
+                                        <label for="email"><i class="am-icon-envelope-o"></i></label>
+                                        <input type="text" name="email" id="email" placeholder="请输入邮箱账号">
+                                    </div>
+                                    <div class="verification">
+                                        <label for="email_verify"><i class="am-icon-plug"></i></label>
+                                        <input type="text" name="email_verify" id="email_verify" placeholder="图形验证码">
+                                        <a class="verify-img verify" href="javascript:void(0);">
+                                            <img src="{:url('Login/verify')}" alt="验证码">
+                                        </a>
+                                    </div>
+                                    <div class="verification">
+                                        <label for="email_code"><i class="am-icon-code-fork"></i></label>
+                                        <input type="text" name="email_code" id="email_code" placeholder="请输入验证码">
+                                        <input type="button" class="dyEmailButton" value="获取验证码" onclick="sendEmailCode(this);">
+                                    </div>
+                                    <div class="user-pass">
+                                        <label for="email_password"><i class="am-icon-lock"></i></label>
+                                        <input type="password" name="email_password" id="email_password" placeholder="设置密码">
+                                    </div>
+                                    <div class="user-pass">
+                                        <label for="email_re_password"><i class="am-icon-lock"></i></label>
+                                        <input type="password" name="email_re_password" id="email_re_password" placeholder="确认密码">
+                                    </div>
+                                </div>
+                                <div class="login-links">
+                                    <label for="reader_email">
+                                        <input id="reader_email" name="reader_email" type="checkbox" value="1"> 点击表示您同意商城《服务协议》
+                                    </label>
+                                </div>
+                                <div class="am-cf">
+                                    <input type="submit" onclick="email_submit();"  value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--底部版权-->
+    {include file="common/footer" /}
+
+   
+</body>
+
+</html>
