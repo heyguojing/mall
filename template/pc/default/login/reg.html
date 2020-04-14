@@ -110,8 +110,11 @@
     </div>
     <!--底部版权-->
     {include file="common/footer" /}
-
-   
 </body>
-
+<script type="text/javascript">
+    $('.verify img').on('click',function () {
+        var src = "{:url('Login/reg')}" + "?rand" + Math.round(Math.random()*1000);
+        $(this).attr('src',src);
+    })
+</script>
 </html>

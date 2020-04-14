@@ -394,10 +394,9 @@ $(function () {
 		addToCart(obj, event);
 	});
 	//点击验证码
-	$(".verify img").click(function () {
-
-		$(this).attr('src', '/login/verify' + "?" + Math.round(Math.random() * 1000));
-	});
+	// $(".verify img").click(function () {
+	// 	$(this).attr('src', '/login/verify' + "?" + Math.round(Math.random() * 1000));
+	// });
 	//获取购物车列表数据
 	$(".shopping-cart-v2").hover(function () {
 		//异步获取购物车数据

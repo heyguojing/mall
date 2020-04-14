@@ -1,7 +1,7 @@
 <?php return array (
   'type' => 'Think',
   'auto_rule' => 1,
-  'view_path' => '../template/pc/template_1/',
+  'view_path' => '../template/pc/default/',
   'view_suffix' => 'html',
   'view_depr' => '\\',
   'tpl_begin' => '{',
