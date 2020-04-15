@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50714
+Source Server         : php
+Source Server Version : 50721
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50714
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2020-04-08 23:35:51
+Date: 2020-04-15 17:08:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,7 +123,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1585665740', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1586914967', '127.0.0.1', '0', '0');
 INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1584351721', '127.0.0.1', '1577777423', '1578364990');
 
 -- ----------------------------
@@ -233,7 +233,7 @@ CREATE TABLE `mall_config_group` (
   `add_user_id` int(10) NOT NULL DEFAULT '0' COMMENT '添加用户',
   PRIMARY KEY (`group_id`),
   KEY `group_id` (`group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_config_group
@@ -246,6 +246,7 @@ INSERT INTO `mall_config_group` VALUES ('5', 'WEB_SHOW', '显示设置', '5', '1
 INSERT INTO `mall_config_group` VALUES ('6', 'WEB_MOBILE_API', '网站手机验证接口', '6', '1', '1584154041', '1');
 INSERT INTO `mall_config_group` VALUES ('7', 'WEB_EMAIL', '邮箱设置', '7', '1', '1584154080', '1');
 INSERT INTO `mall_config_group` VALUES ('8', 'WEB_ORDER', '订单设置', '8', '1', '1584154107', '1');
+INSERT INTO `mall_config_group` VALUES ('9', 'WEB_STYLE', '网站主题', '9', '1', '1584154180', '1');
 
 -- ----------------------------
 -- Table structure for mall_goods_attr
@@ -296,7 +297,7 @@ CREATE TABLE `mall_goods_class` (
 -- ----------------------------
 INSERT INTO `mall_goods_class` VALUES ('1', '手机/运营商/数码', 'sdfsss', 'sdfs', '0', '1', '0', '', '1', '1543931305', '1', '3', 'sdfsd');
 INSERT INTO `mall_goods_class` VALUES ('2', '手机通讯', '', '', '1', '1', '1', '', '1', '1543932245', '1', '1', '');
-INSERT INTO `mall_goods_class` VALUES ('3', '手机', '手机', 'ss', '2', '1', '0', '', '1', '1543935607', '1', '1', '');
+INSERT INTO `mall_goods_class` VALUES ('3', '手机', '手机', 'ss', '2', '1', '1', '', '1', '1543935607', '1', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('4', '游戏手机', '游戏手机', '', '2', '1', '1', '', '1', '1543935976', '1', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('5', '运营商', '运营商', '', '1', '1', '1', '', '1', '1543935995', '1', '1', '');
 INSERT INTO `mall_goods_class` VALUES ('6', '手机配件', '', '', '1', '1', '1', '', '1', '1543936036', '1', '1', '');
@@ -408,7 +409,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -496,6 +497,13 @@ INSERT INTO `mall_log` VALUES ('80', '1', '商品分类：手机/运营商/数�
 INSERT INTO `mall_log` VALUES ('81', '1', '商品分类：手机/运营商/数码编辑成功', '1586357434', '127.0.0.1', '3', 'GoodsClass', 'edit', '');
 INSERT INTO `mall_log` VALUES ('82', '1', '商品分类：手机/运营商/数码编辑成功', '1586357574', '127.0.0.1', '3', 'GoodsClass', 'edit', '');
 INSERT INTO `mall_log` VALUES ('83', '1', '商品分类：手机编辑成功', '1586357715', '127.0.0.1', '3', 'GoodsClass', 'edit', '');
+INSERT INTO `mall_log` VALUES ('84', '1', '节点主题配置添加成功', '1586417724', '127.0.0.1', '2', 'Rbac', 'addnode', '');
+INSERT INTO `mall_log` VALUES ('85', '1', '配置组：网站主题编辑成功', '1586420291', '127.0.0.1', '3', 'ConfigGroup', 'edit', '');
+INSERT INTO `mall_log` VALUES ('86', '1', 'admin登录成功', '1586482894', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('87', '1', 'admin登录成功', '1586739498', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('88', '1', 'admin登录成功', '1586765543', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('89', '1', 'admin登录成功', '1586828550', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('90', '1', 'admin登录成功', '1586914967', '127.0.0.1', '1', 'Login', 'Login', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type
@@ -535,7 +543,7 @@ CREATE TABLE `mall_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COMMENT='节点表';
+) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8 COMMENT='节点表';
 
 -- ----------------------------
 -- Records of mall_node
@@ -596,6 +604,7 @@ INSERT INTO `mall_node` VALUES ('65', 'index', null, null, '商品分类列表',
 INSERT INTO `mall_node` VALUES ('66', 'add', null, null, '添加商品分类', '1', null, '1', '53', '3', '1');
 INSERT INTO `mall_node` VALUES ('67', 'edit', null, null, '编辑商品分类', '1', null, '1', '53', '3', '0');
 INSERT INTO `mall_node` VALUES ('68', 'del', null, null, '删除商品分类', '1', null, '1', '53', '3', '0');
+INSERT INTO `mall_node` VALUES ('69', 'theme', '', '', '主题配置', '1', null, '1', '36', '3', '1');
 
 -- ----------------------------
 -- Table structure for mall_role
@@ -636,3 +645,42 @@ CREATE TABLE `mall_role_user` (
 INSERT INTO `mall_role_user` VALUES ('1', '1');
 INSERT INTO `mall_role_user` VALUES ('2', '5');
 INSERT INTO `mall_role_user` VALUES ('9', '5');
+
+-- ----------------------------
+-- Table structure for mall_user
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_user`;
+CREATE TABLE `mall_user` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `user_name` varchar(60) DEFAULT '' COMMENT '用户名',
+  `user_truename` varchar(50) DEFAULT NULL COMMENT '用户真实姓名',
+  `user_mobile` varchar(20) DEFAULT '' COMMENT '手机号码',
+  `user_id_card_truename` varchar(50) DEFAULT '' COMMENT '身份证真实姓名',
+  `user_id_card` varchar(30) DEFAULT '' COMMENT '身份证',
+  `user_card_status` tinyint(1) DEFAULT NULL COMMENT '实名状态0否1是',
+  `user_email` varchar(60) DEFAULT '' COMMENT '邮箱',
+  `user_password` varchar(32) NOT NULL DEFAULT '' COMMENT '密码',
+  `user_payword` varchar(32) DEFAULT '' COMMENT '支付密码',
+  `user_question_1` tinyint(1) DEFAULT '0' COMMENT '问题1',
+  `user_question_2` tinyint(1) DEFAULT '0' COMMENT '问题2',
+  `user_answer_1` varchar(200) DEFAULT '' COMMENT '答案1',
+  `user_answer_2` varchar(200) DEFAULT '' COMMENT '答案2',
+  `user_salt` char(10) DEFAULT '' COMMENT '秘钥',
+  `user_reg_time` int(10) DEFAULT '0' COMMENT '注册时间',
+  `user_reg_ip` varchar(50) DEFAULT '0.0.0.0' COMMENT '注册ip',
+  `user_login_time` int(10) DEFAULT '0' COMMENT '登录时间',
+  `user_login_ip` varchar(50) DEFAULT '0.0.0.0' COMMENT '登录ip',
+  `user_point` int(10) DEFAULT '0' COMMENT '用户积分',
+  `user_sex` tinyint(1) DEFAULT '0' COMMENT '性别0保密1男2女',
+  `user_avatar` varchar(200) DEFAULT '' COMMENT '用户头像',
+  `user_birthday` int(10) DEFAULT '0' COMMENT '用户生日',
+  `address_id` int(10) DEFAULT '0' COMMENT '用户默认地址',
+  `user_status` tinyint(1) DEFAULT '0' COMMENT '用户状态',
+  `update_time` int(10) DEFAULT '0' COMMENT '更新时间',
+  PRIMARY KEY (`uid`),
+  KEY `user_status` (`user_status`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户表';
+
+-- ----------------------------
+-- Records of mall_user
+-- ----------------------------

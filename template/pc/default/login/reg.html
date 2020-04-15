@@ -113,7 +113,7 @@
 </body>
 <script type="text/javascript">
     $('.verify img').on('click',function () {
-        var src = "{:url('Login/reg')}" + "?rand" + Math.round(Math.random()*1000);
+        var src = "{:url('Login/verify')}" + "?rand=" + Math.round(Math.random()*1000);
         $(this).attr('src',src);
     })
 </script>
