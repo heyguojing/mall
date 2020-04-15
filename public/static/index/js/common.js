@@ -854,8 +854,8 @@ function store_collect (obj, store_id) {
 	})
 }
 
-//构建websocket请求
-if (uid > 0) {
+//构建websocket请求  uid > 0
+if (false) {
 
 	var lockReconnect = false;  //避免ws重复连接
 	var ws = null;          // 判断当前浏览器是否支持WebSocket

@@ -50,7 +50,7 @@ class Login extends Common
             // 发送验证码
             $res = send_sms($mobile,$code);
             session('mobile_code',$code);
-            if($res['code'] = "000000"){
+            if($res['code'] == '000000'){
                 session('mobile',$mobile);
                 session('mobile_time',time()+60);
                 return json(array('status' => 1,'info' => "发送成功，请注意查收"));
@@ -69,11 +69,11 @@ class Login extends Common
                 return json(array('status' => 0,'info' => '请于一分钟之后再试'));
             }
             // 发送验证码
-            $res = Email::send($email,'【靖多鱼科技】账号验证码：','【靖多鱼科技】您的验证码是：'.$code.'，请于1分钟内输入验证，如非本人操作，可不用理会！');
+            $res = Email::send($email,'【靖多鱼科技】：','【靖多鱼科技】您的验证码是：'.$code.'，请于1分钟内输入验证，如非本人操作，可不用理会！');
             if($res){
                 session('email',$email);
                 session('email_time',time()+60);
-                return json(array('status' => 0,'info' => '发送成功,请注意邮箱查收'));
+                return json(array('status' => 1,'info' => '发送成功,请注意邮箱查收'));
             }else{
                 return json(array('status' => 0,'info' => '发送失败，请重试'));
             }
