@@ -16,9 +16,62 @@ class Login extends Common
     }
     public function reg()
     {
-        if($this->request->isPost && $this->request->isAjax){
-
+        if($this->request->isPost() && $this->request->isAjax()){
+            $mobile = input('mobile');
+            $email = input('email');
+            $code = input('code');
+            $type = input('type');
+            $password = input('password');
+            // 判断验证码
+            if($type == "mobile"){
+                if(session('mobile_code') == $mobile && session('mobile_time') > time()){
+                    if(session('mobile_code') != $code){
+                        return json(array('status' => 0,'info' => '手机验证码不正确！'));
+                    }
+                }else{
+                    return json(array('status' => 0,'info' => '手机验证码不正确！'));
+                }
+            }else{
+                if(session('email_code') == $email && session('email_time') > time()){
+                    if(session('email_code') != $code){
+                        return json(array('status' => 0,'info' => '邮箱验证码不正确'));
+                    }
+                }else{
+                    return json(array('status' => 0,'info' => '邮箱验证码不正确'));
+                }
+            }
+            // 注册
+            session('mobile',null);
+            session('mobile_code',null);
+            session('mobile_time',null);
+            session('email',null);
+            session('email_code',null);
+            session('email_time',null);
+            $data = array(
+                'user_mobile' => $mobile,
+                'user_email' => $email,
+                'user_password' => $password,
+                'user_status' => 1,
+                'update_time' => time(),
+                'user_point' => config('site.REG_POINT'),
+                'user_salt' => getRandKey(),
+                'user_reg_time' => time(),
+                'user_reg_ip' => get_client_ip(),
+                'user_login_time' => time(),
+                'user_login_ip' => get_client_ip()
+            );
+            $data['user_password'] = md5(md5($data['user_password']).$data['user_salt']);
+            $res = $this->user->addData($data);
+            if($res){
+                session('home_id',$res);
+                return json(array('status' => 1,'info' => '注册成功!'));
+            }else{
+                return json(array('status' => 0,'info' => '注册失败'));
+            }
         }else{
+			$this->assign('seo_title', '用户注册-' . config('site.WEB_TITLE'));
+			$this->assign('seo_keywords', config('site.WEB_KEYWORDS'));
+			$this->assign('seo_desc', config('site.WEB_DESCRIPTION'));
             return $this->fetch();
         }
     }

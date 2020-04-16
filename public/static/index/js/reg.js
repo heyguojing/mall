@@ -90,8 +90,6 @@ function sendEmailCode (obj) {
 			}
 		}
 	})
-
-
 }
 
 /**

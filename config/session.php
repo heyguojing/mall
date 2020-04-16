@@ -24,5 +24,5 @@ return [
     // 是否自动开启 SESSION
     'auto_start'     => false,
     // 过期时间,session机制，不操作就会掉，生产环境不设置
-    // 'expire' => 3600,
+    'expire' => 3600,
 ];
