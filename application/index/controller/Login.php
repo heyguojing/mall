@@ -24,20 +24,20 @@ class Login extends Common
             $password = input('password');
             // 判断验证码
             if($type == "mobile"){
-                if(session('mobile_code') == $mobile && session('mobile_time') > time()){
+                if(session('mobile') == $mobile && session('mobile_time') >= time()){
                     if(session('mobile_code') != $code){
-                        return json(array('status' => 0,'info' => '手机验证码不正确！'));
+                        return json(array('status' => 0,'info' => '手机验证码不正确！1'));
                     }
                 }else{
-                    return json(array('status' => 0,'info' => '手机验证码不正确！'));
+                    return json(array('status' => 0,'info' => '手机验证码不正确！2'));
                 }
             }else{
-                if(session('email_code') == $email && session('email_time') > time()){
+                if(session('email') == $email && session('email_time') >= time()){
                     if(session('email_code') != $code){
-                        return json(array('status' => 0,'info' => '邮箱验证码不正确'));
+                        return json(array('status' => 0,'info' => '邮箱验证码不正确1'));
                     }
                 }else{
-                    return json(array('status' => 0,'info' => '邮箱验证码不正确'));
+                    return json(array('status' => 0,'info' => '邮箱验证码不正确2'));
                 }
             }
             // 注册
@@ -73,6 +73,15 @@ class Login extends Common
 			$this->assign('seo_keywords', config('site.WEB_KEYWORDS'));
 			$this->assign('seo_desc', config('site.WEB_DESCRIPTION'));
             return $this->fetch();
+        }
+    }
+    /**
+     * 检测用户是否已经登陆
+     */
+    public function checkLogin()
+    {
+        if(session('home_uid') > 0){
+            $this->redirect('User/index');
         }
     }
     /*
@@ -123,6 +132,7 @@ class Login extends Common
             }
             // 发送验证码
             $res = Email::send($email,'【靖多鱼科技】：','【靖多鱼科技】您的验证码是：'.$code.'，请于1分钟内输入验证，如非本人操作，可不用理会！');
+            session('email_code',$code);
             if($res){
                 session('email',$email);
                 session('email_time',time()+60);

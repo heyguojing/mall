@@ -18,4 +18,5 @@ Route::get('hello/:name', 'index/hello');
 return [
 
 ];
+Route::rule('www','index');
 Route::miss('Index/index');
