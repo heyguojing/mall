@@ -1,6 +1,6 @@
 <?php return array (
-  'WEB_TITLE' => '王多鱼科技有限公司',
-  'WEB_COMPANY' => '王多鱼科技有限公司',
+  'WEB_TITLE' => '靖多鱼科技有限公司',
+  'WEB_COMPANY' => '靖多鱼科技有限公司',
   'DOMAIN_NAME' => 'https://www.phpdecode.cn',
   'RECORD' => 'qq：994743720  新月  php web',
   'ICP' => '蜀ICP备19023826号',
@@ -16,7 +16,7 @@
   'REG_ON' => '1',
   'WEB_IP_STATE' => '0',
   'REG_POINT' => '10',
-  'WEB_MAIN_DOMAIN' => 'www',
+  'WEB_MAIN_DOMAIN' => 'mall',
   'CODE_CURVE' => '1',
   'CODE_LEN' => '4',
   'SHOW_VERIFY' => '1',

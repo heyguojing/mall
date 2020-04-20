@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : php
-Source Server Version : 50721
+Source Server         : localhost_3306
+Source Server Version : 50714
 Source Host           : localhost:3306
 Source Database       : mall
 
 Target Server Type    : MYSQL
-Target Server Version : 50721
+Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2020-04-15 17:08:52
+Date: 2020-04-21 00:33:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -123,7 +123,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1586914967', '127.0.0.1', '0', '0');
+INSERT INTO `mall_admin` VALUES ('1', 'admin', 'e14d86bc21c071979bb4f22f18d29696', 'e80adc', '1', '1587393491', '127.0.0.1', '0', '0');
 INSERT INTO `mall_admin` VALUES ('5', 'user', '46a2e3c28812367a6d3eea9de9cc3112', '70ee55', '1', '1584351721', '127.0.0.1', '1577777423', '1578364990');
 
 -- ----------------------------
@@ -175,8 +175,8 @@ CREATE TABLE `mall_config` (
 -- ----------------------------
 -- Records of mall_config
 -- ----------------------------
-INSERT INTO `mall_config` VALUES ('1', '1', 'WEB_TITLE', '网站名称', '网站名称', '王多鱼科技有限公司', 'text', '', '1', '1', '1584454819', '1');
-INSERT INTO `mall_config` VALUES ('2', '1', 'WEB_COMPANY', '公司名称', '公司名称', '王多鱼科技有限公司', 'text', '', '1', '1', '1584454820', '1');
+INSERT INTO `mall_config` VALUES ('1', '1', 'WEB_TITLE', '网站名称', '网站名称', '靖多鱼科技有限公司', 'text', '', '1', '1', '1584454819', '1');
+INSERT INTO `mall_config` VALUES ('2', '1', 'WEB_COMPANY', '公司名称', '公司名称', '靖多鱼科技有限公司', 'text', '', '1', '1', '1584454820', '1');
 INSERT INTO `mall_config` VALUES ('3', '1', 'DOMAIN_NAME', '网站域名', '网站域名', 'https://www.phpdecode.cn', 'text', '', '1', '1', '1584454821', '1');
 INSERT INTO `mall_config` VALUES ('4', '1', 'RECORD', '技术支持', '技术支持', 'qq：994743720  新月  php web', 'text', '', '1', '1', '1584454822', '1');
 INSERT INTO `mall_config` VALUES ('5', '1', 'ICP', 'ICP备案号', 'ICP备案号', '蜀ICP备19023826号', 'text', '', '1', '1', '1584454823', '1');
@@ -194,15 +194,15 @@ INSERT INTO `mall_config` VALUES ('16', '3', 'CODE_CURVE', '是否画混淆曲�
 INSERT INTO `mall_config` VALUES ('17', '3', 'CODE_LEN', '验证码长度', '验证码长度', '4', 'text', '', '1', '1', '1584495382', '1');
 INSERT INTO `mall_config` VALUES ('18', '3', 'SHOW_VERIFY', '后台是否开启验证码', '后台是否开启验证码', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495383', '1');
 INSERT INTO `mall_config` VALUES ('19', '3', 'CODE_NOISE', '是否添加杂点', '是否添加杂点', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495384', '1');
-INSERT INTO `mall_config` VALUES ('20', '3', 'HOME_SHOW_VERIFY', '前台是否开启验证码', '前台是否开启验证码', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495390', '1');
+INSERT INTO `mall_config` VALUES ('20', '3', 'HOME_SHOW_VERIFY', '前台是否开启验证码', '前台是否开启验证码', '0', 'radio', '1|开启,0|关闭', '1', '1', '1584495390', '1');
 INSERT INTO `mall_config` VALUES ('21', '3', 'CODE_FONT_SIZE', '验证码字体大小', '验证码字体大小', '30', 'text', '', '1', '1', '1584495391', '1');
 INSERT INTO `mall_config` VALUES ('22', '4', 'UPLOAD_PATH', '上传路径', '上传路径', './upload/', 'text', '', '1', '1', '1584495392', '1');
 INSERT INTO `mall_config` VALUES ('23', '4', 'UPLOAD_TYPE', '上传类型', '上传类型', 'jpg,png,jpeg', 'text', '', '1', '1', '1584495393', '1');
 INSERT INTO `mall_config` VALUES ('24', '5', 'WEB_STYLE', '网站主题模板', '主题设置中修改生效', 'default', 'text', '', '1', '1', '1584495394', '1');
 INSERT INTO `mall_config` VALUES ('25', '5', 'WEB_STORE_DIR', '店铺目录', '店铺目录', 'store', 'text', '', '1', '1', '1584495395', '1');
-INSERT INTO `mall_config` VALUES ('26', '6', 'SMS_ACCOUNT_SID', '短信账号id', '短信账号id', 'a1979e260cf49cbec7ad31f99734ed93', 'text', '', '1', '1', '1584495396', '1');
-INSERT INTO `mall_config` VALUES ('27', '6', 'SMS_TOKEN', '短信token认证', '短信token认证', '25798be441257d1ea1a6b105664c3840', 'text', '', '1', '1', '1584495395', '1');
-INSERT INTO `mall_config` VALUES ('28', '6', 'SMS_APP_ID', '短信appid', '短信appid', '9e72c6afaa5748d09cf2035258f613ed', 'text', '', '1', '1', '1584495395', '1');
+INSERT INTO `mall_config` VALUES ('26', '6', 'SMS_ACCOUNT_SID', '短信账号id', '短信账号id', 'f581c3b503eb86c94813e7edfc10910a', 'text', '', '1', '1', '1584495396', '1');
+INSERT INTO `mall_config` VALUES ('27', '6', 'SMS_TOKEN', '短信token认证', '短信token认证', '6e9b9a7524dffc62e5b7c4d0c75c2e89', 'text', '', '1', '1', '1584495395', '1');
+INSERT INTO `mall_config` VALUES ('28', '6', 'SMS_APP_ID', '短信appid', '短信appid', '2a5fd81b17de45ffab11ffbcfb14f5ec', 'text', '', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('29', '7', 'EMAIL_SMTP_DEBUG', '启用SMTP调试', '0 = 关闭 (生产使用) 1 = 客户端的消息 2 = 客户端和服务端的消息', '0', 'radio', '0|关闭,1|客户端的消息,2|客户端和服务端的消息', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('30', '7', 'EMAIL_DEBUG_OUTPUT', '请求HTML友好的调试输出', '请求HTML友好的调试输出', 'html', 'text', '', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('31', '7', 'EMAIL_HOST', '邮箱主机', '设置邮件服务器的主机名', 'smtp.qq.com', 'text', '', '1', '1', '1584495395', '1');
@@ -210,11 +210,11 @@ INSERT INTO `mall_config` VALUES ('32', '7', 'EMAIL_SMTP_SECURE', 'SMTP客户端
 INSERT INTO `mall_config` VALUES ('33', '7', 'EMAIL_PORT', '远程服务器端口号', '远程服务器端口号', '465', 'text', '465', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('34', '7', 'EMAIL_SMTP_AUTH', '是否使用SMTP认证', '是否使用SMTP认证', '1', 'radio', '1|开启,0|关闭', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('35', '7', 'EMAIL_USERNAME', '用于SMTP身份验证的用户名', '用于SMTP身份验证的用户名', '994743720@qq.com', 'text', '', '1', '1', '1584495395', '1');
-INSERT INTO `mall_config` VALUES ('36', '7', 'EMAIL_PASSWORD', 'SMTP身份验证的密码', '用于SMTP身份验证的密码 (非登陆密码哟)', 'bdrufxdqjreybceb', 'text', '', '1', '1', '1584495395', '1');
+INSERT INTO `mall_config` VALUES ('36', '7', 'EMAIL_PASSWORD', 'SMTP身份验证的密码', '用于SMTP身份验证的密码 (非登陆密码哟)', 'jcfdbjojjmjvbbcg', 'text', '', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('37', '7', 'EMAIL_SETFROM_ADDRESS', '消息是从谁发送', '设置消息是从谁发送 (填写SMTP身份验证的用户名)', '994743720@qq.com', 'text', '', '1', '1', '1584495395', '1');
-INSERT INTO `mall_config` VALUES ('38', '7', 'EMAIL_SETFROM_NAME', '设置消息是从谁发送 ', '设置消息是从谁发送 (填写SMTP身份验证的名称)', 'phpdecode.cn', 'text', '', '1', '1', '1584495395', '1');
+INSERT INTO `mall_config` VALUES ('38', '7', 'EMAIL_SETFROM_NAME', '设置消息是从谁发送 ', '设置消息是从谁发送 (填写SMTP身份验证的名称)', '靖多鱼', 'text', '', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('39', '7', 'EMAIL_ADDREPLY_TO_ADDRESS', '设置回复邮箱地址', '设置回复邮箱地址', '994743720@qq.com', 'text', '', '1', '1', '1584495395', '1');
-INSERT INTO `mall_config` VALUES ('40', '7', 'EMAIL_ADDREPLY_TO_NAME', '设置回复邮箱用户名', '设置回复邮箱用户名', 'jinggithub', 'text', '', '1', '1', '1584495395', '1');
+INSERT INTO `mall_config` VALUES ('40', '7', 'EMAIL_ADDREPLY_TO_NAME', '设置回复邮箱用户名', '设置回复邮箱用户名', '靖多鱼', 'text', '', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('41', '8', 'ORDER_OVER_PAY', '订单超时付款时间', '订单超时付款时间', '86400*30', 'text', '', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('42', '8', 'ORDER_CONFIRM_PAY', '订单确认收货时间', '订单确认收货时间', '86400*30', 'text', '', '1', '1', '1584495395', '1');
 INSERT INTO `mall_config` VALUES ('43', '8', 'ORDER_RETURN_TIME', '订单退款时间', '订单退款时间', '86400*30', 'text', '', '1', '1', '1584495395', '1');
@@ -409,7 +409,7 @@ CREATE TABLE `mall_log` (
   `log_action` varchar(20) DEFAULT '' COMMENT '日志方法',
   `param` varchar(4000) DEFAULT '' COMMENT '日志参数',
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mall_log
@@ -504,6 +504,8 @@ INSERT INTO `mall_log` VALUES ('87', '1', 'admin登录成功', '1586739498', '12
 INSERT INTO `mall_log` VALUES ('88', '1', 'admin登录成功', '1586765543', '127.0.0.1', '1', 'Login', 'Login', '');
 INSERT INTO `mall_log` VALUES ('89', '1', 'admin登录成功', '1586828550', '127.0.0.1', '1', 'Login', 'Login', '');
 INSERT INTO `mall_log` VALUES ('90', '1', 'admin登录成功', '1586914967', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('91', '1', 'admin登录成功', '1587311828', '127.0.0.1', '1', 'Login', 'Login', '');
+INSERT INTO `mall_log` VALUES ('92', '1', 'admin登录成功', '1587393491', '127.0.0.1', '1', 'Login', 'Login', '');
 
 -- ----------------------------
 -- Table structure for mall_log_type
@@ -679,8 +681,9 @@ CREATE TABLE `mall_user` (
   `update_time` int(10) DEFAULT '0' COMMENT '更新时间',
   PRIMARY KEY (`uid`),
   KEY `user_status` (`user_status`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of mall_user
 -- ----------------------------
+INSERT INTO `mall_user` VALUES ('4', '', null, '13198522552', '', '', null, null, '71a9183eaa333d3f8904da146de2fd83', '', '0', '0', '', '', '5fba97', '1587310693', '127.0.0.1', '1587394120', '127.0.0.1', '10', '0', '', '0', '0', '1', '1587310693');
