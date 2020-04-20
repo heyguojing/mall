@@ -9,7 +9,7 @@
                     <a href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="home fl logined">{$Think.session.user_mobile}<i class="am-icon-angle-down"></i></a>
                 <div class="nav-user-panel">
                     <div class="site-nav-user-wrapper">
-                        <a href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="site-nav-user-avatar"> <img id="nav-user-avatar" src="__INDEX__/images/getAvatar.do.jpg" width="80" height="80" alt="{$Think.session.user_mobile}的头像"></a>
+                        <a href="{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" class="site-nav-user-avatar"> <img id="nav-user-avatar" src="__STATIC__/index/images/getAvatar.do.jpg" width="80" height="80" alt="{$Think.session.user_mobile}的头像"></a>
                     </div>
                     <div class="site-nav-user-info">
                         <p class="site-nav-user-operate"> <a href="{:url('index/User/info','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_top">账号管理</a> <span class="site-nav-pipe">|</span> <a href="{:url('index/Login/logout','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_top">退出</a> </p>
@@ -69,9 +69,9 @@
     </div>
     <!--悬浮搜索框-->
     <div class="nav white">
-        <div class="logo"><img src="__INDEX__/images/logo.png" /></div>
+        <div class="logo"><img src="__STATIC__/index/images/logo.png" /></div>
         <div class="logoBig">
-            <li><img src="__INDEX__/images/logo.png" /></li>
+            <li><img src="__STATIC__/index/images/logo.png" /></li>
         </div>
         <div class="search-bar pr">
             <form class="search-box" action="{:url('index/Search/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" method="post">
@@ -86,7 +86,7 @@
                 <div class="qr">
                     <div class="qr-bd clearfix">
                         <span id="mtb" class="h">手机扫一扫</span>
-                        <img class="qrcode" src="__INDEX__/images/qr.png">
+                        <img class="qrcode" src="__STATIC__/index/images/qr.png">
                     </div>
                     <a href="javascript:;" target="_self" class="qr-ft" role="button" aria-label="关闭二维码">
                         <i class="am-icon am-icon-close"></i>

@@ -1,5 +1,5 @@
 
-//手机注册提交
+//手机登陆提交
 function login_submit () {
 	var username = $.trim($('#username').val());
 	if (username.length == 0) {
@@ -26,10 +26,10 @@ function login_submit () {
 	//记住账号
 	var remember_me = $("#remember-me:checked").val();
 	var data = {
-		username: username,
-		password: password,
-		code: code,
-		remember_me: remember_me,
+		'username': username,
+		'password': password,
+		'code': code,
+		'remember_me': remember_me,
 	}
 	ajax_login(data);
 	return false;

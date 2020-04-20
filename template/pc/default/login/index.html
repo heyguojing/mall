@@ -1,0 +1,81 @@
+{include file="common/header" /}
+<link rel="stylesheet" href="__INDEX__/extends/layui2.4.5/css/layui.css">
+<link href="__INDEX__/css/login.css" rel="stylesheet" type="text/css">
+<script>
+    var skip_url = "{$skip_url}";
+</script>
+<script src="__INDEX__/js/login.js"></script>
+<style>
+    .am-fr {
+        float: right;
+        line-height: 42px;
+    }
+</style>
+
+<body>
+
+    <div class="login-boxtitle">
+        <a href="/"><img alt="logo" src="__INDEX__/images/logo.png" /></a>
+    </div>
+
+    <div class="login-banner">
+        <div class="login-main">
+            <div class="login-banner-bg"><span></span><img src="__INDEX__/images/login_bg.jpg" /></div>
+            <div class="login-box">
+
+                <h3 class="title">会员登录</h3>
+
+                <div class="clear"></div>
+
+                <div class="login-form">
+                    <form action="javascript:;" method="post">
+                        <div class="list-input">
+                            <div class="user-name">
+                                <label for="username"><i class="am-icon-user"></i></label>
+                                <input type="text" name="username" id="username" value="{$username}"
+                                    placeholder="邮箱/手机/用户名">
+                            </div>
+                            <div class="user-pass">
+                                <label for="password"><i class="am-icon-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="请输入密码">
+                            </div>
+                            {if condition="$show_verify eq 1"}
+                            <div class="verification">
+                                <label for="code"><i class="am-icon-plug"></i></label>
+                                <input type="text" name="code" id="code" placeholder="图形验证码">
+                                <a class="verify-img verify" href="javascript:void(0);">
+                                    <img src="{:url('Login/verify')}" alt="验证码">
+                                </a>
+                            </div>
+                            {/if}
+                        </div>
+                        <div class="login-links">
+                            <label for="remember-me">
+                                <input id="remember-me" type="checkbox" name="remember_me" {if
+                                    condition="!empty($username)" }checked{/if} value="1">记住用户名</label>
+                            <a href="javascript:;" class="am-fr">忘记密码</a>
+                            <br />
+                        </div>
+                        <div class="am-cf">
+                            <input type="submit" onclick="login_submit();" value="登 录"
+                                class="am-btn am-btn-primary am-btn-sm">
+                        </div>
+                    </form>
+                </div>
+                <div class="am-cf">
+                    <a href="{:url('Login/reg')}" class="am-fr am-btn">免费注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部版权-->
+    {include file="common/footer" /}
+</body>
+<script>
+    $('.verify img').on('click', function () {
+        var src = "{:url('Login/verify')}" + "?rand=" + Math.round(Math.random() * 1000);
+        $(this).attr('src', src);
+    })
+</script>
+
+</html>

@@ -12,5 +12,21 @@
     <link rel="stylesheet" href="__INDEX__/extends/layui2.4.5/css/layui.css">
     <script src="__INDEX__/extends/js/jquery-1.7.2.min.js"></script>
     <script src="__INDEX__/extends/AmazeUI-2.7.2/js/amazeui.min.js"></script>
+    <script>
+	    var show_verify = "{$show_verify}";
+	    var uid = parseInt("{$Think.session.home_uid}");
+	    var ajax_cart_data = "{:url('index/Cart/ajaxCartData','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var ajax_cart_del_url = "{:url('index/Cart/delJsonp','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var ajax_cart_side_data = "{:url('index/Cart/ajaxSideData','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var cart_index_url = "{:url('index/Cart/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var cart_update_url = "{:url('index/Cart/updateJsonp','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var cart_status_url = "{:url('index/Cart/cartStatusJsonp','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var cart_ajax_status_all_url = "{:url('index/Cart/cartStatusAllJsonp','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var store_collect_url = "{:url('index/User/StoreCollect','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+ 	    var login_url = "{:url('index/Login/login','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var user_index_url = "{:url('index/User/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var logout_url = "{:url('index/Login/logOut','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+	    var index_url = "{:url('index/index/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}";
+    </script>
     <script src="__INDEX__/js/common.js"></script>
 </head>

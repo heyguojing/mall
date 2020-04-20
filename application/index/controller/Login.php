@@ -3,6 +3,7 @@
 namespace app\index\controller;
 use think\captcha\Captcha;
 use think\facade\Session;
+use think\facade\Request;
 use phpmailer\Email;
 use think\Db;
 
@@ -13,6 +14,85 @@ class Login extends Common
     {
         parent::__construct();
         $this->user = Model('user');
+    }
+    /**
+     * 用户登陆
+     */
+    public function index()
+    {
+        // 检测用户是否已经登陆
+        $this->checkLogin();
+        if($this->request->isPost() && $this->request->isAjax()){
+            $data = $this->_login_common();
+            return json($data);
+        }else{
+            $username = cookie('username');
+            $skip_url = session('redirect_url')?session('redirect_url'):url('User/index');
+            $this->assign('seo_title', '用户登陆-' . config('site.WEB_TITLE'));
+            $this->assign('seo_keywords', config('site.WEB_KEYWORDS'));
+            $this->assign('seo_desc', config('site.WEB_DESCRIPTION'));
+            $this->assign('skip_url',$skip_url);
+            $this->assign('username',$username);
+            return $this->fetch();
+        }
+    }
+    /**
+     * 用户登陆公共部分
+     */
+    public function _login_common()
+    {
+        $code = input('code');
+        $username = input('username');
+        $password = input('password');
+        // 判断验证码是否为空
+        // if(empty($code) && config('site.HOME_SHOW_VERIFY') == 1){
+        //     $data = array('status' => 0,'info' => '参数不正确');
+        //     return $data;
+        // }
+        // 判断用户名和密码是否为空
+        if(empty($username) || empty($password)){
+            $data = array('status' => 0,'info' => '用户名和密码为空');
+            return $data;
+        }
+        // 判断图形验证码
+        if(config('site.HOME_SHOW_VERIFY') == 1){
+            $captcha = new Captcha();
+            if(!$captcha->check($code)){
+                return array('status' => 0,'info' => '验证码错误');
+            }
+        }
+        // 判断手机号，邮箱
+        $where = array();
+        $where[] = array("","EXP",Db::raw("(user_name = '".$username."' and user_name != '') or (user_mobile = '".$username."' and user_mobile != '') or (user_email ='".$username."' and user_email != '')"));
+        $user_one = $this->user->getOne($where);
+        if(!empty($user_one) && $user_one['user_password'] == md5(md5($password).$user_one['user_salt'])){
+            session('home_id',$user_one['uid']);
+            session('login_time',date('Y-m-d H:i:s',time()));
+            session('login_ip',get_client_ip());
+            if(!empty($user_one['mobile'])){
+                session('user_mobile',$user_one['user_mobile']);
+                $user_mobile = $user_one['user_mobile'];
+            }elseif(!empty($user_one['email'])){
+                session('user_email',$user_one['user_email']);
+                $user_emial = $user_one['user_email'];
+            }
+            // 更新用户登陆信息
+            $data = array(
+                'user_login_time' => time(),
+                'user_login_ip' => get_client_ip()
+            );
+            $data = $this->user->saveData(array('uid' => $user_one['uid']),$data);
+            if(input('remember_me') == 1){
+                cookie('username',$username,86400*7);
+            }else{
+                cookie('username',null);
+            }
+            $data = array('status' => 1,'info' => '登录成功');
+            return $data;
+        }else{
+            $data = array('status' => 0,'info' => '账号或者密码错误');
+            return $data;
+        }
     }
     public function reg()
     {
@@ -63,6 +143,7 @@ class Login extends Common
             $data['user_password'] = md5(md5($data['user_password']).$data['user_salt']);
             $res = $this->user->addData($data);
             if($res){
+                // checkLogin
                 session('home_id',$res);
                 return json(array('status' => 1,'info' => '注册成功!'));
             }else{
