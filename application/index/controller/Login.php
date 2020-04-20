@@ -37,6 +37,15 @@ class Login extends Common
         }
     }
     /**
+     * jsonp登陆
+     */
+    public function login()
+    {
+        $this->checkLogin();
+        $res = $this->_login_common();
+        return jsonp($res);
+    }
+    /**
      * 用户登陆公共部分
      */
     public function _login_common()
@@ -45,10 +54,10 @@ class Login extends Common
         $username = input('username');
         $password = input('password');
         // 判断验证码是否为空
-        // if(empty($code) && config('site.HOME_SHOW_VERIFY') == 1){
-        //     $data = array('status' => 0,'info' => '参数不正确');
-        //     return $data;
-        // }
+        if(empty($code) && config('site.HOME_SHOW_VERIFY') == 1){
+            $data = array('status' => 0,'info' => '参数不正确');
+            return $data;
+        }
         // 判断用户名和密码是否为空
         if(empty($username) || empty($password)){
             $data = array('status' => 0,'info' => '用户名和密码为空');
@@ -106,18 +115,18 @@ class Login extends Common
             if($type == "mobile"){
                 if(session('mobile') == $mobile && session('mobile_time') >= time()){
                     if(session('mobile_code') != $code){
-                        return json(array('status' => 0,'info' => '手机验证码不正确！1'));
+                        return json(array('status' => 0,'info' => '手机验证码不正确！'));
                     }
                 }else{
-                    return json(array('status' => 0,'info' => '手机验证码不正确！2'));
+                    return json(array('status' => 0,'info' => '手机验证码不正确！'));
                 }
             }else{
                 if(session('email') == $email && session('email_time') >= time()){
                     if(session('email_code') != $code){
-                        return json(array('status' => 0,'info' => '邮箱验证码不正确1'));
+                        return json(array('status' => 0,'info' => '邮箱验证码不正确'));
                     }
                 }else{
-                    return json(array('status' => 0,'info' => '邮箱验证码不正确2'));
+                    return json(array('status' => 0,'info' => '邮箱验证码不正确'));
                 }
             }
             // 注册
@@ -224,6 +233,15 @@ class Login extends Common
         }
     }
     /**
+     * 用户注销
+     */
+    public function logOut()
+    {
+        session('home_uid',null);
+        // $this->skipUrl($_SERVER['HTTP_REFERER']);
+        $this->success('退出成功',url('Login/index'));
+    }
+    /**
      * 生成验证码
      */
     public function verify()
@@ -236,4 +254,4 @@ class Login extends Common
 		$captcha->useCurve = config('site.CODE_CURVE');
 		return $captcha->entry();
     }
-}
+}   
