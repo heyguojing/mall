@@ -1,0 +1,49 @@
+{include file="common/header" /}
+<link rel="stylesheet" href="__INDEX__/css/seller.css">
+<body class="main-html seller_open_store">
+<!--顶部导航-->
+{include file="common/member_top" /}
+{include file="common/seller_ad" /}
+<div class="layui-container">
+	<div class="layui-row store-type">
+		<ul class="store-type-ul">
+			<li class="layui-col-xs4">
+				<span class="layui-col-xs2 am-icon am-icon-sitemap"></span>
+				<div class="layui-col-xs10 type-info">
+					<span class="type-info-t">开店须知</span>
+					<span class="type-info-c">开店相关信息阅读</span>
+				</div>
+			</li>
+			<li class="layui-col-xs4">
+				<span class="layui-col-xs2 am-icon am-icon-file-o"></span>
+				<div class="layui-col-xs10 type-info">
+					<span class="type-info-t">申请开店认证</span>
+					<span class="type-info-c">店铺开通后完善店铺信息</span>
+				</div>
+			</li>
+			<li class="layui-col-xs4">
+				<span class="layui-col-xs2 am-icon am-icon-check"></span>
+				<div class="layui-col-xs10 type-info">
+					<span class="type-info-t">创建店铺成功</span>
+					<span class="type-info-c">普通店、品牌店、旗舰店</span>
+				</div>
+			</li>
+		</ul>
+		<div class="store-type-go">
+			<div class="store-notice">
+				<p>
+					1、商城有权根据（包括但不仅限于）品牌需求、公司经营状况、服务水平等其他因素退回客户申请；</p>
+				<p> 2、商城有权在申请入驻及后续经营阶段要求客户提供其他资质；商城将结合各行业发展动态、国家相关规定及消费者购买需求，不定期更新招商标准；</p>
+				<p> 3、申请企业须确保其申请入驻及后续经营阶段提供的相关资质的真实性（若企业提供的相关资质如商标注册证、授权书等由第三方提供，请务必先行核实文件的真实有效性），一旦发现虚假资质，申请企业将被商城列入非诚信客户名单，并不再进行合作；</p>
+				<p> 4、商城暂不接受未取得国家商标总局颁发的商标注册证或商标受理通知书的品牌开店申请（部分类目的进口商品除外），亦不接受纯图形类商标的入驻申请。
+				</p>
+			</div>
+			<a href="{:url('User/enterSecond')}" class="layui-btn layui-btn-normal">马上申请开店</a>
+		</div>
+	</div>
+</div>
+<!--底部版权-->
+{include file="common/footer" /}
+</body>
+
+</html>
