@@ -13,7 +13,8 @@
 				<label class="layui-form-label">店铺名称</label>
 				<div class="layui-input-inline">
 					<input type="text" name="store_name" datatype="*" nullmsg="店铺名称不能为空！" placeholder="请输入店铺名称"
-					       class="layui-input" ajaxurl="{:url('user/ajaxStoreName')}">
+					       class="layui-input" value="{$store_one['store_name']}"
+					       ajaxurl="{:url('user/ajaxStoreName',array('store_id'=>$store_one['store_id']))}">
 				</div>
 				<div class="layui-form-mid layui-word-aux">
 					<span class="Validform_checktip"></span>
@@ -27,35 +28,53 @@
 					</button>
 				</div>
 				<div class="view-logo">
-					<img src="__INDEX__/images/01.jpg" width="50" height="50" alt="" id="store_logo_thumb"
-					     style="display: none;">
-					<input type="hidden" name="store_logo" value="">
+					{if condition="!empty($store_one['store_logo'])"}
+						<img src="{$store_one['store_logo']}" width="50" height="50" alt="" id="store_logo_thumb"
+						     >
+						<else/>
+						<img src="__INDEX__/images/01.jpg" width="50" height="50" alt="" id="store_logo_thumb"
+						     style="display: none;">
+					{/if}
+					<input type="hidden" name="store_logo" value="{$store_one['store_logo']}">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">店铺简介</label>
 				<div class="layui-input-inline">
-					<textarea name="store_desc" placeholder="请输入店铺简介" class="layui-textarea desc"></textarea>
+					<textarea name="store_desc" placeholder="请输入店铺简介" class="layui-textarea desc">{$store_one['store_desc']}</textarea>
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">店铺地址</label>
 				<div class="layui-inline">
-					<select lay-ignore name="store_province" id="store_province" datatype="*" nullmsg="请选择省份！" onchange="load_region(this.value,'store_city')">
+					<select lay-ignore name="store_province" id="store_province" datatype="*" nullmsg="请选择省份！"
+					        onchange="load_region(this.value,'store_city')">
 						<option value="0">请选择省份</option>
 						{volist name="province_data" id="vo"}
-						<option value="{$vo['region_id']}">{$vo['region_name']}</option>
+							<option value="{$vo['region_id']}" {if condition="$store_one['store_province'] eq $vo['region_id'
+							]"}selected{/if}>{$vo['region_name']}</option>
 						{/volist}
 					</select>
 				</div>
 				<div class="layui-inline">
-					<select lay-ignore name="store_city" id="store_city" datatype="*" nullmsg="请选择城市！" onchange="load_region(this.value,'store_district')">
+					<select lay-ignore name="store_city" id="store_city" datatype="*" nullmsg="请选择城市！"
+					        onchange="load_region(this.value,'store_district')">
 						<option value="0">请选择城市</option>
+						{volist name="city_data" id="vo"}
+							<option value="{$vo['region_id']}" {if condition="$store_one['store_city'] eq $vo['region_id'
+							]"}selected{/if}>{$vo['region_name']}</option>
+						{/volist}
+
 					</select>
 				</div>
 				<div class="layui-inline">
-					<select lay-ignore name="store_district" id="store_district" datatype="*" nullmsg="请选择区域！" onchange="load_region(this.value,'null')">
+					<select lay-ignore name="store_district" id="store_district" datatype="*" nullmsg="请选择区域！"
+					        onchange="load_region(this.value,'null')">
 						<option value="0">请选择区域</option>
+						{volist name="district_data" id="vo"}
+							<option value="{$vo['region_id']}" {if condition="$store_one['store_district'] eq $vo['region_id'
+							]"}selected{/if}>{$vo['region_name']}</option>
+						{/volist}
 					</select>
 				</div>
 				<div class="layui-inline layui-word-aux">
@@ -66,7 +85,8 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">详细地址</label>
 				<div class="layui-input-inline detial-address">
-					<input type="text" name="store_user_address" datatype="*" nullmsg="详细地址不能为空！" placeholder="请输入详细地址" class="layui-input">
+					<input type="text" name="store_user_address" datatype="*" nullmsg="详细地址不能为空！" placeholder="请输入详细地址"
+					       class="layui-input" value="{$store_one['store_user_address']}">
 				</div>
 				<div class="layui-form-mid layui-word-aux">
 					<span class="Validform_checktip"></span>
@@ -79,20 +99,20 @@
 					</button>
 					<button type="button" class="layui-btn" id="store_card_side"><i class="layui-icon">&#xe60d;</i>上传背面
 					</button>
-					<input type="hidden" name="store_card_front" value="" datatype="*" nullmsg="必须上传身份证！">
-					<input type="hidden" name="store_card_side" value="" datatype="*" nullmsg="必须上传身份证！">
+					<input type="hidden" name="store_card_front" value="{$store_one['store_card_front']}" datatype="*" nullmsg="必须上传身份证！">
+					<input type="hidden" name="store_card_side" value="{$store_one['store_card_side']}" datatype="*" nullmsg="必须上传身份证！">
 					<span class="Validform_checktip"></span>
 				</div>
 				<div class="view-id">
-					<img id="store_card_front_thumb" src="__INDEX__/images/id_top.jpg" alt="正面">
-					<img id="store_card_side_thumb" src="__INDEX__/images/id_bottom.jpg" alt="背面">
+					<img id="store_card_front_thumb" src="{$store_one['store_card_front']}" alt="正面">
+					<img id="store_card_side_thumb" src="{$store_one['store_card_side']}" alt="背面">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">联系人</label>
 				<div class="layui-input-inline">
 					<input type="text" name="store_people" placeholder="请输入联系人" datatype="*" nullmsg="联系人不能为空！"
-					       class="layui-input">
+					       class="layui-input" value="{$store_one['store_people']}">
 				</div>
 				<div class="layui-form-mid layui-word-aux">
 					<span class="Validform_checktip"></span>
@@ -101,8 +121,9 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">联系电话</label>
 				<div class="layui-input-inline">
-					<input type="text" name="store_mobile" placeholder="请输入联系电话" datatype="m" nullmsg="联系电话不能为空！" errormsg="联系电话格式不正确"
-					       class="layui-input">
+					<input type="text" name="store_mobile" placeholder="请输入联系电话" datatype="m" nullmsg="联系电话不能为空！"
+					       errormsg="联系电话格式不正确"
+					       class="layui-input" value="{$store_one['store_mobile']}">
 				</div>
 				<div class="layui-form-mid layui-word-aux">
 					<span class="Validform_checktip"></span>
@@ -125,57 +146,49 @@
 </script>
 <script src="__INDEX__/js/enter.js"></script>
 <script>
-	layui.use(['form','upload'],function(){
+	layui.use(['form', 'upload'], function () {
 		var upload = layui.upload;
 		upload_img('store_logo');
 		upload_img('store_card_front');
 		upload_img('store_card_side');
-		function upload_img(id){
-			//layui 上传
+
+		function upload_img (id) {
+			//选完文件后自动上传
 			upload.render({
-				elem:'#' + id,
-				url:"{:url('Common/upload')}",
-				auto:true,
-				accept:'file',
-				data:{type: id,name:'file'},
-				drag:true,
-				size:3072,  // 文件3M以内
-				multiple:true,
-				number:8,
-				drag:true,
-				before:function(obj){
-					var img_url = $('input[name='+id+']').val();
+				elem: '#' + id,
+				url: "{:url('Common/upload')}",
+				auto: true,
+				accept: 'file', //普通文件
+				data: {type: id, name: 'file'},
+				before: function (obj) {
+					var img_url = $('input[name=' + id + ']').val();
 					// 删除老数据
-					if(img_url != ''){
+					if (img_url != '') {
 						$.ajax({
-							type:'post',
-							url:"{:url('index/Common/delImg')}",
-							dataType:'json',
-							data:{img_url:img_url},
-							success:function(data){
-								// console.log(data);
-							}
+							url: "{:url('Common/delImg')}",
+							type: 'POST',
+							data: {
+								img_url: img_url
+							},
 						});
 					}
-					// 本地预览
-					obj.preview(function(index, file, result){
-						$("#"+id+"_thumb").attr('src',result).show();
+					//本地本地预览示例
+					obj.preview(function (index, file, result) {
+						$("#" + id + "_thumb").attr('src', result).show();
 					});
 				},
-				// 成功上传的回调
-				done:function(res){
-					if(res.code > 0){
-						layer.msg('上传失败',{icon: 2});
-					}else{
-						layer.msg('上传成功',{icon: 1});
-						$("#"+id+'_thumb').attr('src',res.msg.src).show();
-						$("input[name="+id+"]").val(res.msg.src);
+				done: function (res) {
+					//上传完毕回调
+					if (res.code > 0) {
+						return layer.msg('上传失败');
+					} else {
+						$("#" + id + "_thumb").attr('src', res.data.src).show();
+						$('input[name=' + id + ']').val(res.data.src);
 					}
 				}
-
 			});
 		}
-	})
+	});
 </script>
 </body>
 

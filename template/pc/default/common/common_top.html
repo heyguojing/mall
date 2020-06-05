@@ -54,13 +54,10 @@
 				</li>
 				<li class="s1 has-line has-icon myxiaodian"> <a href="{:url('index/Seller/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}" target="_blank" class="text display_u">卖家中心<i class="layui-icon layui-icon-down"></i></a>
 					<ol class="ext-mode">
-						<if condition="$Think.session.store_id gt 0">
 						<li class="s2"><a target="_blank" href="{:url('index/Seller/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">管理后台</a></li>
 						<li class="s2"><a target="_blank" href="{:url('index/SellerOrder/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">已卖出的宝贝</a></li>
 						<li class="s2"><a target="_blank" href="{:url('index/SellerGoods/index','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">出售中的宝贝</a></li>
-							<else/>
 						<li class="s2"><a target="_blank" href="{:url('index/User/enter','',true,config('site.WEB_MAIN_DOMAIN').config('cookie.domain'))}">商家入驻</a></li>
-						</if>
 					</ol>
 				</li>
 			</ul>

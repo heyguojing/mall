@@ -1,0 +1,70 @@
+<include file="common/header" />
+<link href="__STATIC__/index/css/personal.css" rel="stylesheet" type="text/css">
+<link href="__STATIC__/index/css/foot.css" rel="stylesheet" type="text/css">
+
+
+<body>
+<!--顶部导航-->
+<include file="common/member_top" />
+<!--主内容区开始-->
+<div class="center">
+	<div class="col-main">
+		<div class="main-wrap">
+			<div class="user-foot">
+				<!--标题 -->
+				<div class="am-cf am-padding">
+					<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">我的足迹</strong> / <small>Browser&nbsp;History</small></div>
+				</div>
+				<hr>
+				<div class="goods-list">
+					<volist name="page_data" id="vo">
+					<!--足迹列表 -->
+					<div class="goods">
+						<div class="goods-box">
+							<div class="goods-pic">
+								<div class="goods-pic-box">
+									<a class="goods-pic-link" target="_blank" href="{$vo['goods_url']}" title="{$vo['goods_name']}">
+										<img src="{$vo['goods_thumb']}" class="goods-img"></a>
+								</div>
+								<a class="goods-delete" href="javascript:void(0);" url="{:url('User/delHistory',array('view_id'=>$vo['view_id']))}" onclick="confirm_msg(this)">
+									<i class="am-icon-trash"></i>
+								</a>
+								<if condition="$vo['goods_status'] eq 0">
+								<div class="goods-status goods-status-show">
+									<span class="desc">宝贝已下架</span>
+								</div>
+								</if>
+							</div>
+
+							<div class="goods-attr">
+								<div class="good-title">
+									<a class="title" href="{$vo['goods_url']}" target="_blank">{$vo['goods_name']}</a>
+								</div>
+								<div class="goods-price">
+                                        <span class="g_price">
+                                        <span>¥</span><strong>{$vo['goods_price']}</strong>
+                                        </span>
+									<span class="g_price g_price-original">
+                                        <span>¥</span><strong>{$vo['goods_del_price']}</strong>
+                                        </span>
+								</div>
+							</div>
+						</div>
+					</div>
+					</volist>
+				</div>
+			</div>
+			<!--分页 -->
+			<ul class="am-pagination am-pagination-center">
+				<?php echo htmlspecialchars_decode($page);?>
+			</ul>
+		</div>
+	</div>
+	<include file="common/member_left" />
+</div>
+<!--主内容区结束-->
+<!--底部版权-->
+<include file="common/footer" />
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<include file="common/header"/>
+<link href="__STATIC__/index/css/personal.css" rel="stylesheet" type="text/css">
+<link href="__STATIC__/index/css/password.css" rel="stylesheet" type="text/css">
+<script src="__STATIC__/index/js/user.js"></script>
+
+<body>
+<!--顶部导航-->
+<include file="common/member_top"/>
+<!--主内容区开始-->
+<div class="center">
+	<div class="col-main">
+		<div class="main-wrap">
+			<div class="am-cf am-padding">
+				<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">设置安全问题</strong> / <small>Set&nbsp;Safety&nbsp;Question</small></div>
+			</div>
+			<hr/>
+			<!--进度条-->
+			<div class="m-progress">
+				<div class="m-progress-list">
+                        <span class="step-1 step">
+                                <em class="u-progress-stage-bg"></em>
+                                <i class="u-stage-icon-inner">1<em class="bg"></em></i>
+                                <p class="stage-name">设置安全问题</p>
+                            </span>
+					<span class="step-2 step">
+                                <em class="u-progress-stage-bg"></em>
+                                <i class="u-stage-icon-inner">2<em class="bg"></em></i>
+                                <p class="stage-name">完成</p>
+                            </span>
+					<span class="u-progress-placeholder"></span>
+				</div>
+				<div class="u-progress-bar total-steps-2">
+					<div class="u-progress-bar-inner"></div>
+				</div>
+			</div>
+			<form class="am-form am-form-horizontal user_question_form" action="" method="post">
+				<div class="am-form-group select">
+					<label class="am-form-label" for="user_question_1">问题一</label>
+					<div class="am-form-content">
+						<select  name="user_question_1" id="user_question_1">
+							<option value="0" selected>请选择安全问题</option>
+							<option value="1" <if condition="$user_one['user_question_1'] eq 1">selected</if>>您最喜欢去哪里玩？</option>
+							<option value="2" <if condition="$user_one['user_question_1'] eq 2">selected</if>>您最喜欢的颜色是什么？</option>
+							<option value="3" <if condition="$user_one['user_question_1'] eq 3">selected</if>>您的故乡在哪里？</option>
+						</select>
+					</div>
+				</div>
+				<div class="am-form-group">
+					<label for="user_answer_1" class="am-form-label">答案</label>
+					<div class="am-form-content">
+						<input type="text" id="user_answer_1" name="user_answer_1" placeholder="请输入安全问题答案" value="{$user_one['user_answer_1']}">
+					</div>
+				</div>
+				<div class="am-form-group select">
+					<label for="user_question_2" class="am-form-label">问题二</label>
+					<div class="am-form-content">
+						<select  name="user_question_2" id="user_question_2">
+							<option value="0" selected>请选择安全问题</option>
+							<option value="1" <if condition="$user_one['user_question_2'] eq 1">selected</if> <if condition="$user_one['user_question_1'] eq 1"> style="display:none;"</if>>您最喜欢去哪里玩？</option>
+							<option value="2" <if condition="$user_one['user_question_2'] eq 1">selected</if> <if condition="$user_one['user_question_1'] eq 2"> style="display:none;"</if>>您最喜欢的颜色是什么？</option>
+							<option value="3" <if condition="$user_one['user_question_2'] eq 1">selected</if> <if condition="$user_one['user_question_1'] eq 3"> style="display:none;"</if>>您的故乡在哪里？</option>
+						</select>
+					</div>
+				</div>
+				<div class="am-form-group">
+					<label for="user_answer_2" class="am-form-label">答案</label>
+					<div class="am-form-content">
+						<input type="text" id="user_answer_2" name="user_answer_2" placeholder="请输入安全问题答案"  value="{$user_one['user_answer_2']}">
+					</div>
+				</div>
+				<div class="info-btn">
+					<button class="am-btn am-btn-danger">保存修改</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+	<include file="common/member_left" />
+</div>
+<!--主内容区结束-->
+<!--底部版权-->
+<include file="common/footer" />
+</body>
+
+</html>

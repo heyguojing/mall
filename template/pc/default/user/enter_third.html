@@ -1,0 +1,41 @@
+{include file="common/header"/}
+<link rel="stylesheet" href="__INDEX__/css/seller.css">
+<body class="main-html seller-open-store-success">
+<!--顶部导航-->
+{include file="common/member_top"/}
+{include file="common/seller_ad" /}
+<div class="layui-container">
+	<div class="layui-row success-box">
+		{if condition="$store_one['store_status'] neq 2"}
+			<div class="status-box success">
+				{if condition="$store_one['store_status'] eq 1"}
+					<i class="am-icon-btn am-success am-icon-shield"></i>
+				{/if}
+				{if condition="$store_one['store_status'] eq 0"}
+					<h1>提交申请开店成功，请等待3-5个工作日审核！</h1>
+				{/if}
+				<div class="desc">
+					<p><span class="bg-success">状态：</span>{$store_status}</p>
+				</div>
+				{if condition="$store_one['store_status'] eq 1"}
+					<a href="{:url('seller/index')}" class="layui-btn layui-btn-normal">马上去发布宝贝</a>
+				{/if}
+			</div>
+		{/if}
+		{if condition="$store_one['store_status'] eq 2"}
+		<div class="status-box warning">
+			<i class="am-icon-btn am-warning am-icon-warning"></i>
+			<h1>提交申请开店失败，请重新修改资料提交！</h1>
+			<div class="desc">
+				<p>{$store_one['store_reason']}</p>
+			</div>
+			<a href="{:url('user/enterSecondEdit')}" class="layui-btn layui-btn-normal">修改资料</a>
+		</div>
+		{/if}
+	</div>
+</div>
+<!--底部版权-->
+{include file="common/footer"/}
+</body>
+
+</html>

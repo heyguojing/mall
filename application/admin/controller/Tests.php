@@ -206,8 +206,6 @@ class Tests extends Controller
 				'enterprise_id' => '9041'
 			);
 			$res = file_get_contents("http://api.meiqia.com/v1/tickets?" . http_build_query($data,"\n"));
-			//$url = file_get_contents("http://api.meiqia.com/v1/tickets?ticket_start_from_tm=2020-03-01 00:00:00&ticket_start_to_tm=2020-03-31 23:59:59&offset=0&limit=20&app_id=f5e2f6be71704a13e938371f94aaae01&sign=75946d4afa08677a96579911bd673442&enterprise_id=9041");
-			//$res = $this->http_post_data($url);
 			$res = json_decode($res,true);
 			unset($res['errno']);
 			unset($res['errmsg']);
@@ -233,7 +231,14 @@ class Tests extends Controller
 			$this->assign('res',$res);
 			return $this->fetch();
 		}
-    }
+	}
+	public function str_replace()
+	{
+		$search  = array('A', 'B', 'C', 'D', 'E');
+		$replace = array('B', 'C', 'D', 'E');
+		$subject = 'A';
+		echo str_replace($search, $replace, $subject);
+	}
 }
 
 

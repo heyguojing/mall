@@ -1,0 +1,74 @@
+<include file="common/header"/>
+<link href="__STATIC__/index/css/personal.css" rel="stylesheet" type="text/css">
+<link href="__STATIC__/index/css/password.css" rel="stylesheet" type="text/css">
+<script src="__STATIC__/index/js/user.js"></script>
+
+<body>
+<!--顶部导航-->
+<include file="common/member_top"/>
+<!--主内容区开始-->
+<div class="center">
+	<div class="col-main">
+		<div class="main-wrap">
+			<div class="am-cf am-padding">
+				<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">实名认证</strong> / <small>Real&nbsp;authentication</small></div>
+			</div>
+			<hr/>
+			<!--进度条-->
+			<div class="m-progress">
+				<div class="m-progress-list">
+                        <span class="step-1 step">
+                                <em class="u-progress-stage-bg"></em>
+                                <i class="u-stage-icon-inner">1<em class="bg"></em></i>
+                                <p class="stage-name">实名认证</p>
+                            </span>
+					<span class="step-2 step">
+                                <em class="u-progress-stage-bg"></em>
+                                <i class="u-stage-icon-inner">2<em class="bg"></em></i>
+                                <p class="stage-name">完成</p>
+                            </span>
+					<span class="u-progress-placeholder"></span>
+				</div>
+				<div class="u-progress-bar total-steps-2">
+					<div class="u-progress-bar-inner"></div>
+				</div>
+			</div>
+			<form class="am-form am-form-horizontal bind_id_card_form" method="post" action="">
+				<div class="am-form-group bind">
+					<label for="user-info" class="am-form-label">账户名</label>
+					<div class="am-form-content">
+						<span id="user-info">{$Think.session.user_mobile}</span>
+					</div>
+				</div>
+				<div class="am-form-group">
+					<label for="user_id_card_truename" class="am-form-label">真实姓名</label>
+					<div class="am-form-content">
+						<input type="text" id="user_id_card_truename" name="user_id_card_truename" placeholder="请输入您的真实姓名" value="{$user_one['user_id_card_truename']}" <if condition="!empty($user_one['user_id_card_truename']) && $user_one['user_card_status'] neq 2">disabled</if>>
+					</div>
+				</div>
+				<div class="am-form-group">
+					<label for="user_id_card" class="am-form-label">身份证号</label>
+					<div class="am-form-content">
+						<input type="text" id="user_id_card" name="user_id_card" placeholder="请输入您的身份证信息" value="{$user_one['user_id_card']}"  <if condition="!empty($user_one['user_id_card']) && $user_one['user_card_status'] neq 2">disabled</if>>
+					</div>
+				</div>
+				<if condition="(!empty($user_one['user_id_card']) && $user_one['user_card_status'] eq 2) ||(empty($user_one['user_id_card']))">
+				<div class="info-btn">
+					<button class="am-btn am-btn-danger">保存修改</button>
+				</div>
+				<else/>
+					<div class="info-btn">
+						<div class="am-btn am-btn-danger">等待后台审核</div>
+					</div>
+				</if>
+			</form>
+		</div>
+	</div>
+	<include file="common/member_left"/>
+</div>
+<!--主内容区结束-->
+<!--底部版权-->
+<include file="common/footer"/>
+</body>
+
+</html>

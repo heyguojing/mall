@@ -16,7 +16,7 @@
   'REG_ON' => '1',
   'WEB_IP_STATE' => '0',
   'REG_POINT' => '10',
-  'WEB_MAIN_DOMAIN' => 'mall',
+  'WEB_MAIN_DOMAIN' => 'www',
   'CODE_CURVE' => '1',
   'CODE_LEN' => '4',
   'SHOW_VERIFY' => '1',

@@ -75,7 +75,8 @@ class Login extends Common
         $where[] = array("","EXP",Db::raw("(user_name = '".$username."' and user_name != '') or (user_mobile = '".$username."' and user_mobile != '') or (user_email ='".$username."' and user_email != '')"));
         $user_one = $this->user->getOne($where);
         if(!empty($user_one) && $user_one['user_password'] == md5(md5($password).$user_one['user_salt'])){
-            session('home_id',$user_one['uid']);
+            // 登陆成功存入session
+            session('home_uid',$user_one['uid']);
             session('login_time',date('Y-m-d H:i:s',time()));
             session('login_ip',get_client_ip());
             if(!empty($user_one['mobile'])){
@@ -153,7 +154,7 @@ class Login extends Common
             $res = $this->user->addData($data);
             if($res){
                 // checkLogin
-                session('home_id',$res);
+                session('home_uid',$res);
                 return json(array('status' => 1,'info' => '注册成功!'));
             }else{
                 return json(array('status' => 0,'info' => '注册失败'));

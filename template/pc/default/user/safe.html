@@ -1,0 +1,176 @@
+<include file="common/header" />
+<link href="__STATIC__/index/css/personal.css" rel="stylesheet" type="text/css">
+<link href="__STATIC__/index/css/safety.css" rel="stylesheet" type="text/css">
+<script src="__STATIC__/index/js/user.js"></script>
+
+
+<body>
+<!--顶部导航-->
+<include file="common/member_top" />
+<!--主内容区开始-->
+<div class="center">
+	<div class="col-main">
+		<div class="main-wrap">
+			<div class="user-safety">
+				<div class="am-cf am-padding">
+					<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">账户安全</strong> / <small>Set&nbsp;up&nbsp;Safety</small></div>
+				</div>
+				<hr/>
+
+				<!--头像 -->
+				<div class="user-infoPic">
+
+					<div class="filePic" id="user_avatar">
+						<if condition="!empty($user_one['user_avatar'])">
+							<img class="am-circle am-img-thumbnail" src="{$user_one['user_avatar']}" alt="" id="user_avatar_thumb" />
+							<else/>
+							<img class="am-circle am-img-thumbnail" src="__STATIC__/index/images/getAvatar.do.jpg" alt="" id="user_avatar_thumb"/>
+						</if>
+						<input type="hidden" name="user_avatar" value="{$user_one['user_avatar']}" />
+					</div>
+
+					<p class="am-form-help">头像</p>
+
+					<div class="info-m">
+						<div><b>用户名：<i>小叮当</i></b></div>
+						<div class="u-level">
+                                <span class="rank r2">
+							             <s class="vip1"></s><a class="classes" href="javascript:;">铜牌会员</a>
+						            </span>
+						</div>
+						<div class="u-safety">
+							<a href="{:url('User/safe')}">
+								账户安全
+								<span class="u-profile"><i class="bc_ee0000" style="width: 60px;" width="0">60分</i></span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="check">
+					<ul>
+						<li>
+							<i class="i-safety-lock"></i>
+							<div class="m-left">
+								<div class="fore1">登录密码</div>
+								<div class="fore2"><small>为保证您购物安全，建议您定期更改密码以保护账户安全。</small></div>
+							</div>
+							<div class="fore3">
+								<a href="{:url('User/password')}">
+									<div class="am-btn am-btn-secondary">修改</div>
+								</a>
+							</div>
+						</li>
+						<li>
+							<i class="i-safety-wallet"></i>
+							<div class="m-left">
+								<div class="fore1">支付密码</div>
+								<div class="fore2"><small>启用支付密码功能，为您资产账户安全加把锁。</small></div>
+							</div>
+							<div class="fore3">
+								<a href="{:url('User/payword')}">
+									<if condition="!empty($user_one['user_payword'])">
+										<div class="am-btn am-btn-secondary">修改密码</div>
+									<else/>
+										<div class="am-btn am-btn-secondary">立即启用</div>
+									</if>
+								</a>
+							</div>
+						</li>
+						<li>
+							<i class="i-safety-iphone"></i>
+							<div class="m-left">
+								<div class="fore1">手机验证</div>
+								<div class="fore2">
+									<if condition="!empty($user_one['user_mobile'])">
+									<small>您验证的手机：{:hide_mobile($user_one['user_mobile'])} 若已丢失或停用，请立即更换</small>
+									<else/>
+									<small>您尚未绑定手机</small>
+									</if>
+								</div>
+							</div>
+							<div class="fore3">
+								<if condition="!empty($user_one['user_mobile'])">
+								<a href="{:url('User/bindMobile')}">
+									<div class="am-btn am-btn-secondary">换绑</div>
+								</a>
+								<else/>
+								<a href="{:url('User/bindMobile')}">
+									<div class="am-btn am-btn-secondary">立即绑定</div>
+								</a>
+								</if>
+							</div>
+						</li>
+						<li>
+							<i class="i-safety-mail"></i>
+							<div class="m-left">
+								<div class="fore1">邮箱验证</div>
+								<div class="fore2">
+									<if condition="!empty($user_one['user_email'])">
+									<small>您验证的邮箱：{:hide_email($user_one['user_email'])}  可用于快速找回登录密码</small>
+									<else/>
+									<small>您尚未绑定邮箱</small>
+									</if>
+								</div>
+							</div>
+							<div class="fore3">
+								<if condition="!empty($user_one['user_email'])">
+									<a href="{:url('User/bindEmail')}">
+										<div class="am-btn am-btn-secondary">换绑</div>
+									</a>
+									<else/>
+									<a href="{:url('User/bindEmail')}">
+										<div class="am-btn am-btn-secondary">立即绑定</div>
+									</a>
+								</if>
+							</div>
+						</li>
+						<li>
+							<i class="i-safety-idcard"></i>
+							<div class="m-left">
+								<div class="fore1">实名认证</div>
+								<div class="fore2"><small>用于提升账号的安全性和信任级别，认证后不能修改认证信息。</small></div>
+							</div>
+							<div class="fore3">
+								<if condition="$user_one['user_card_status'] eq 0">
+								<a href="{:url('User/bindIdCard')}">
+									<div class="am-btn am-btn-secondary">认证</div>
+								</a>
+								<else/>
+								<a href="javascript:;">
+									<div class="am-btn am-btn-secondary">认证通过</div>
+								</a>
+								</if>
+							</div>
+						</li>
+						<li>
+							<i class="i-safety-security"></i>
+							<div class="m-left">
+								<div class="fore1">安全问题</div>
+								<div class="fore2"><small>保护账户安全，验证您身份的工具之一。</small></div>
+							</div>
+							<div class="fore3">
+								<if condition="$user_one['user_card_status'] eq 0">
+								<a href="{:url('User/SafeQuestion')}">
+									<div class="am-btn am-btn-secondary">设置</div>
+								</a>
+								<else/>
+								<a href="{:url('User/SafeQuestion')}">
+									<div class="am-btn am-btn-secondary">修改</div>
+								</a>
+								</if>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="login-out"><a class="login-out-btn" href="javascript:;">退出登陆</a></div>
+			</div>
+		</div>
+	</div>
+	<include file="common/member_left" />
+</div>
+<!--主内容区结束-->
+<!--底部版权-->
+<include file="common/footer" />
+</body>
+</html>

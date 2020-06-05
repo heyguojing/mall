@@ -1,0 +1,87 @@
+<include file="common/header"/>
+<link href="__STATIC__/index/css/personal.css" rel="stylesheet" type="text/css">
+<link href="__STATIC__/index/css/password.css" rel="stylesheet" type="text/css">
+<script src="__STATIC__/index/js/user.js"></script>
+
+<body>
+<!--顶部导航-->
+<include file="common/member_top"/>
+<!--主内容区开始-->
+<div class="center">
+	<div class="col-main">
+		<div class="main-wrap">
+			<div class="am-cf am-padding">
+				<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">绑定手机</strong> /
+					<small>Bind&nbsp;Phone</small>
+				</div>
+			</div>
+			<hr/>
+			<!--进度条-->
+			<div class="m-progress">
+				<div class="m-progress-list">
+                        <span class="step-1 step">
+                                <em class="u-progress-stage-bg"></em>
+                                <i class="u-stage-icon-inner">1<em class="bg"></em></i>
+                                <p class="stage-name">绑定手机</p>
+                            </span>
+					<span class="step-2 step">
+                                <em class="u-progress-stage-bg"></em>
+                                <i class="u-stage-icon-inner">2<em class="bg"></em></i>
+                                <p class="stage-name">完成</p>
+                            </span>
+					<span class="u-progress-placeholder"></span>
+				</div>
+				<div class="u-progress-bar total-steps-2">
+					<div class="u-progress-bar-inner"></div>
+				</div>
+			</div>
+			<form class="am-form am-form-horizontal bind_mobile_form" method="post">
+				<if condition="!empty($user_one['user_mobile'])">
+					<div class="am-form-group bind">
+						<label for="user-phone" class="am-form-label">验证手机</label>
+						<div class="am-form-content">
+							<span id="user-phone">{:hide_mobile($user_one['user_mobile'])}</span>
+						</div>
+					</div>
+					<div class="am-form-group code">
+						<label for="old_user_mobile_code" class="am-form-label">验证码</label>
+						<div class="am-form-content">
+							<input type="text" id="old_user_mobile_code" name="old_user_mobile_code" placeholder="短信验证码">
+						</div>
+						<a class="btn" href="javascript:void(0);"
+						   onClick="send_mobile_code(this,'{$user_one['user_mobile']}');">
+							<div class="am-btn am-btn-danger">验证码</div>
+						</a>
+					</div>
+					<input type="hidden" name="old_user_mobile" value="{$user_one['user_mobile']}"/>
+				</if>
+				<div class="am-form-group">
+					<label for="user_mobile" class="am-form-label">验证手机</label>
+					<div class="am-form-content">
+						<input type="text" name="user_mobile" id="user_mobile" placeholder="绑定新手机号">
+					</div>
+				</div>
+				<div class="am-form-group code">
+					<label for="user_mobile_code" class="am-form-label">验证码</label>
+					<div class="am-form-content">
+						<input type="text" id="user_mobile_code" name="user_mobile_code" placeholder="短信验证码">
+					</div>
+					<a class="btn" href="javascript:void(0);" onClick="send_mobile_code(this,0);">
+						<div class="am-btn am-btn-danger">验证码</div>
+					</a>
+				</div>
+				<div class="info-btn">
+					<button class="am-btn am-btn-danger">保存修改</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+	<include file="common/member_left"/>
+</div>
+<!--主内容区结束-->
+<!--底部版权-->
+<include file="common/footer"/>
+</body>
+
+</html>

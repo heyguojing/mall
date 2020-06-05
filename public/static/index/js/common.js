@@ -438,7 +438,27 @@ $(function () {
 		$(".empty-cart").hide();
 	})
 });
+/**
+ * ajax 异步加载city
+ */
 
+// function load_region (region_id,region_type)
+// {
+// 	$.post('/Common/ajaxCity',{'region_pid':region_id},function(data){
+// 		if(rgion_type == 'store_city'){
+// 			$('#' + region_type).html('<option value="0">请选择城市</option>');
+// 			$('#store_district').html('<option value="0">请选择地区</option>');
+// 		}else if(region_type == 'store_district'){
+// 			$('#' + region_type).html('<option value="0">请选择地区</option>');
+// 		}if(region_type != 'null'){
+// 			$.each(data.region_name,function(key,val){
+// 				$('#' + region_type).append('<option value="'+val.region_id+'>'+val.region_name+'</option>')
+// 			});
+// 		}else{
+
+// 		}
+// 	},'json')
+// }
 /**
  * ajax异步删除购物车
  * @param self
@@ -574,31 +594,6 @@ function a_belong_b (a, b) {
 		}
 	}
 	return flag;
-}
-
-/**
- * ajax获取店铺地区
- * @param region_id
- * @param region_type
- */
-function load_region (region_id, region_type) {
-	$.post('/common/ajaxCity', {'region_pid': region_id}, function (data) {
-		if (data.status == 1) {
-			if (region_type == "store_city") {
-				$("#" + region_type).html('<option value="0">请选择城市</option>');
-				$("#store_district").html('<option value="0">请选择地区</option>');
-			} else if (region_type == "store_district") {
-				$("#store_district").html('<option value="0">请选择地区</option>');
-			}
-			if (region_type != "null") {
-				$.each(data.region_data, function (k, vo) {
-					$("#" + region_type).append('<option value="' + vo.region_id + '">' + vo.region_name + '</option>')
-				})
-			}
-		} else {
-
-		}
-	}, 'json');
 }
 
 /**
